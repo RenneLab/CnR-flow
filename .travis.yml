@@ -15,5 +15,6 @@ install:
 - conda update -q conda
 - conda info -a
 script:
-- ./install_cutruntools.sh
+- ls
+- bash install_cutruntools.sh
 - ./nextflow run . --mode validate_all
