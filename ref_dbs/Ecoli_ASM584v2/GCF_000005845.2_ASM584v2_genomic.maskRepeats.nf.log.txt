@@ -1,0 +1,1002 @@
+nxf-scratch-dir c6a-s18:/scratch/local/57307408/nxf.oUvxI4nnl0
+Executor: slurm  -  Time:null  -  Mem:10 GB  -  Queue: null
+RepeatMasker -s -a -html -gff -dir RepeatMasker_Output  -pa 8 GCF_000005845.2_ASM584v2_genomic.fna
+RepeatMasker version open-4.0.9
+Search Engine: NCBI/RMBLAST [ 2.9.0+ ]
+Master RepeatMasker Database: /apps/repeatmasker/4.0.9/share/RepeatMasker/Libraries/RepeatMaskerLib.embl ( Complete Database: CONS-Dfam_3.0 )
+
+
+
+analyzing file GCF_000005845.2_ASM584v2_genomic.fna
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 2 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS186#ARTEFACT in NC_000913.3frag-1: 15493 - 15835
+  IS186#ARTEFACT in NC_000913.3frag-1: 15880 - 15978
+  IS186#ARTEFACT in NC_000913.3frag-1: 16089 - 16345
+  IS186#ARTEFACT in NC_000913.3frag-1: 16521 - 16691
+  IS1#ARTEFACT in NC_000913.3frag-1: 19820 - 20018
+  IS1#ARTEFACT in NC_000913.3frag-1: 20144 - 20484
+identifying Simple Repeats in batch 1 of 80
+identifying Simple Repeats in batch 3 of 80
+identifying Simple Repeats in batch 4 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS1#ARTEFACT in NC_000913.3frag-6: 683 - 881
+  IS1#ARTEFACT in NC_000913.3frag-6: 1158 - 1347
+  IS3#ARTEFACT in NC_000913.3frag-6: 25258 - 25617
+  IS3#ARTEFACT in NC_000913.3frag-6: 26105 - 26307
+identifying Simple Repeats in batch 6 of 80
+identifying full-length ALUs in batch 2 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS1#ARTEFACT in NC_000913.3frag-5: 25952 - 26150
+  IS1#ARTEFACT in NC_000913.3frag-5: 26276 - 26616
+  IS30#ARTEFACT in NC_000913.3frag-5: 38665 - 38988
+  IS30#ARTEFACT in NC_000913.3frag-5: 39691 - 39770
+  IS5#ARTEFACT in NC_000913.3frag-5: 41990 - 43025
+  IS1#ARTEFACT in NC_000913.3frag-5: 47207 - 47405
+  IS1#ARTEFACT in NC_000913.3frag-5: 47682 - 47871
+  IS30#ARTEFACT in NC_000913.3frag-5: 48041 - 48120
+  IS1#ARTEFACT in NC_000913.3frag-5: 58678 - 58876
+  IS1#ARTEFACT in NC_000913.3frag-5: 59153 - 59342
+identifying Simple Repeats in batch 5 of 80
+identifying full-length ALUs in batch 1 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS2#ARTEFACT in NC_000913.3frag-7: 33929 - 34572
+  IS3#ARTEFACT in NC_000913.3frag-7: 43940 - 44142
+  IS3#ARTEFACT in NC_000913.3frag-7: 44630 - 44992
+identifying Simple Repeats in batch 7 of 80
+identifying full-length ALUs in batch 3 of 80
+identifying Simple Repeats in batch 8 of 80
+identifying full-length ALUs in batch 4 of 80
+identifying full-length ALUs in batch 6 of 80
+identifying full-length ALUs in batch 5 of 80
+identifying full-length ALUs in batch 7 of 80
+identifying full-length ALUs in batch 8 of 80
+identifying full-length interspersed repeats in batch 2 of 80
+identifying full-length interspersed repeats in batch 3 of 80
+identifying full-length interspersed repeats in batch 1 of 80
+identifying full-length interspersed repeats in batch 4 of 80
+identifying full-length interspersed repeats in batch 6 of 80
+identifying full-length interspersed repeats in batch 5 of 80
+identifying full-length interspersed repeats in batch 7 of 80
+identifying full-length interspersed repeats in batch 8 of 80
+identifying remaining ALUs in batch 2 of 80
+identifying remaining ALUs in batch 3 of 80
+identifying remaining ALUs in batch 1 of 80
+identifying remaining ALUs in batch 6 of 80
+identifying remaining ALUs in batch 5 of 80
+identifying remaining ALUs in batch 4 of 80
+identifying remaining ALUs in batch 7 of 80
+identifying remaining ALUs in batch 8 of 80
+identifying most interspersed repeats in batch 3 of 80
+identifying most interspersed repeats in batch 2 of 80
+identifying most interspersed repeats in batch 6 of 80
+identifying most interspersed repeats in batch 1 of 80
+identifying most interspersed repeats in batch 5 of 80
+identifying most interspersed repeats in batch 7 of 80
+identifying most interspersed repeats in batch 8 of 80
+identifying most interspersed repeats in batch 4 of 80
+identifying long interspersed repeats in batch 7 of 80
+identifying long interspersed repeats in batch 6 of 80
+identifying long interspersed repeats in batch 1 of 80
+identifying long interspersed repeats in batch 2 of 80
+identifying long interspersed repeats in batch 4 of 80
+identifying long interspersed repeats in batch 5 of 80
+identifying long interspersed repeats in batch 3 of 80
+identifying long interspersed repeats in batch 8 of 80
+identifying ancient repeats in batch 6 of 80
+identifying ancient repeats in batch 7 of 80
+identifying ancient repeats in batch 1 of 80
+identifying ancient repeats in batch 2 of 80
+identifying ancient repeats in batch 4 of 80
+identifying ancient repeats in batch 3 of 80
+identifying ancient repeats in batch 8 of 80
+identifying ancient repeats in batch 5 of 80
+identifying retrovirus-like sequences in batch 1 of 80
+identifying retrovirus-like sequences in batch 4 of 80
+identifying retrovirus-like sequences in batch 2 of 80
+identifying retrovirus-like sequences in batch 7 of 80
+identifying retrovirus-like sequences in batch 5 of 80
+identifying retrovirus-like sequences in batch 6 of 80
+identifying retrovirus-like sequences in batch 3 of 80
+identifying retrovirus-like sequences in batch 8 of 80
+identifying Simple Repeats in batch 1 of 80
+identifying Simple Repeats in batch 4 of 80
+identifying Simple Repeats in batch 7 of 80
+identifying Simple Repeats in batch 2 of 80
+identifying Simple Repeats in batch 5 of 80
+identifying Simple Repeats in batch 6 of 80
+identifying Simple Repeats in batch 8 of 80
+identifying Simple Repeats in batch 3 of 80
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 9 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS3#ARTEFACT in NC_000913.3frag-10: 44826 - 45188
+  IS3#ARTEFACT in NC_000913.3frag-10: 45676 - 45878
+  IS5#ARTEFACT in NC_000913.3frag-10: 52651 - 53686
+identifying Simple Repeats in batch 10 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 9 of 80
+identifying full-length ALUs in batch 10 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS186#ARTEFACT in NC_000913.3frag-11: 28163 - 28505
+  IS186#ARTEFACT in NC_000913.3frag-11: 28550 - 28648
+  IS186#ARTEFACT in NC_000913.3frag-11: 28759 - 29015
+  IS186#ARTEFACT in NC_000913.3frag-11: 29191 - 29361
+identifying Simple Repeats in batch 11 of 80
+identifying full-length ALUs in batch 11 of 80
+identifying full-length interspersed repeats in batch 9 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-12: 49921 - 50956
+identifying Simple Repeats in batch 12 of 80
+identifying full-length interspersed repeats in batch 10 of 80
+identifying full-length ALUs in batch 12 of 80
+identifying full-length interspersed repeats in batch 11 of 80
+
+Checking for E. coli insertion elements
+identifying full-length interspersed repeats in batch 12 of 80
+identifying Simple Repeats in batch 13 of 80
+identifying remaining ALUs in batch 9 of 80
+identifying remaining ALUs in batch 10 of 80
+identifying full-length ALUs in batch 13 of 80
+
+Checking for E. coli insertion elements
+identifying remaining ALUs in batch 11 of 80
+identifying full-length interspersed repeats in batch 13 of 80
+identifying Simple Repeats in batch 14 of 80
+identifying remaining ALUs in batch 12 of 80
+identifying most interspersed repeats in batch 9 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 14 of 80
+identifying most interspersed repeats in batch 10 of 80
+identifying most interspersed repeats in batch 11 of 80
+identifying Simple Repeats in batch 15 of 80
+identifying full-length interspersed repeats in batch 14 of 80
+identifying remaining ALUs in batch 13 of 80
+identifying full-length ALUs in batch 15 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 12 of 80
+identifying full-length interspersed repeats in batch 15 of 80
+identifying long interspersed repeats in batch 9 of 80
+identifying Simple Repeats in batch 16 of 80
+identifying long interspersed repeats in batch 10 of 80
+identifying full-length ALUs in batch 16 of 80
+identifying most interspersed repeats in batch 13 of 80
+identifying remaining ALUs in batch 14 of 80
+identifying long interspersed repeats in batch 11 of 80
+identifying full-length interspersed repeats in batch 16 of 80
+identifying remaining ALUs in batch 15 of 80
+identifying ancient repeats in batch 9 of 80
+identifying ancient repeats in batch 10 of 80
+identifying long interspersed repeats in batch 12 of 80
+identifying retrovirus-like sequences in batch 9 of 80
+identifying most interspersed repeats in batch 14 of 80
+identifying remaining ALUs in batch 16 of 80
+identifying ancient repeats in batch 11 of 80
+identifying long interspersed repeats in batch 13 of 80
+identifying retrovirus-like sequences in batch 10 of 80
+identifying most interspersed repeats in batch 15 of 80
+identifying ancient repeats in batch 12 of 80
+identifying Simple Repeats in batch 9 of 80
+identifying retrovirus-like sequences in batch 11 of 80
+identifying ancient repeats in batch 13 of 80
+identifying Simple Repeats in batch 10 of 80
+identifying most interspersed repeats in batch 16 of 80
+identifying Simple Repeats in batch 11 of 80
+identifying long interspersed repeats in batch 14 of 80
+identifying retrovirus-like sequences in batch 12 of 80
+identifying retrovirus-like sequences in batch 13 of 80
+identifying long interspersed repeats in batch 15 of 80
+identifying Simple Repeats in batch 12 of 80
+identifying Simple Repeats in batch 13 of 80
+identifying ancient repeats in batch 14 of 80
+identifying ancient repeats in batch 15 of 80
+identifying long interspersed repeats in batch 16 of 80
+identifying retrovirus-like sequences in batch 14 of 80
+identifying retrovirus-like sequences in batch 15 of 80
+identifying ancient repeats in batch 16 of 80
+identifying Simple Repeats in batch 15 of 80
+identifying Simple Repeats in batch 14 of 80
+identifying retrovirus-like sequences in batch 16 of 80
+identifying Simple Repeats in batch 16 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 17 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 17 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 18 of 80
+identifying full-length interspersed repeats in batch 17 of 80
+identifying full-length ALUs in batch 18 of 80
+
+Checking for E. coli insertion elements
+The following E coli IS elements could not be confidently clipped out:
+  IS1#ARTEFACT in NC_000913.3frag-19: 5965 - 6136
+  IS1#ARTEFACT in NC_000913.3frag-19: 6413 - 6611
+  IS3#ARTEFACT in NC_000913.3frag-19: 50536 - 50738
+  IS3#ARTEFACT in NC_000913.3frag-19: 51226 - 51588
+identifying Simple Repeats in batch 19 of 80
+identifying full-length ALUs in batch 19 of 80
+identifying Simple Repeats in batch 20 of 80
+identifying full-length interspersed repeats in batch 18 of 80
+identifying remaining ALUs in batch 17 of 80
+identifying full-length ALUs in batch 20 of 80
+identifying full-length interspersed repeats in batch 19 of 80
+identifying full-length interspersed repeats in batch 20 of 80
+identifying remaining ALUs in batch 18 of 80
+identifying most interspersed repeats in batch 17 of 80
+identifying remaining ALUs in batch 19 of 80
+identifying remaining ALUs in batch 20 of 80
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 18 of 80
+identifying Simple Repeats in batch 22 of 80
+identifying most interspersed repeats in batch 19 of 80
+identifying Simple Repeats in batch 21 of 80
+identifying full-length ALUs in batch 22 of 80
+
+Checking for E. coli insertion elements
+identifying long interspersed repeats in batch 17 of 80
+identifying most interspersed repeats in batch 20 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 21 of 80
+identifying full-length interspersed repeats in batch 22 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-23: 23753 - 24788
+identifying Simple Repeats in batch 23 of 80
+identifying full-length interspersed repeats in batch 21 of 80
+identifying full-length ALUs in batch 23 of 80
+identifying Simple Repeats in batch 24 of 80
+identifying full-length ALUs in batch 24 of 80
+identifying ancient repeats in batch 17 of 80
+identifying long interspersed repeats in batch 19 of 80
+identifying long interspersed repeats in batch 18 of 80
+identifying remaining ALUs in batch 22 of 80
+identifying full-length interspersed repeats in batch 23 of 80
+identifying long interspersed repeats in batch 20 of 80
+identifying full-length interspersed repeats in batch 24 of 80
+identifying remaining ALUs in batch 21 of 80
+identifying retrovirus-like sequences in batch 17 of 80
+identifying ancient repeats in batch 19 of 80
+identifying ancient repeats in batch 18 of 80
+identifying most interspersed repeats in batch 22 of 80
+identifying remaining ALUs in batch 23 of 80
+identifying remaining ALUs in batch 24 of 80
+identifying Simple Repeats in batch 17 of 80
+identifying ancient repeats in batch 20 of 80
+identifying most interspersed repeats in batch 21 of 80
+identifying retrovirus-like sequences in batch 19 of 80
+identifying retrovirus-like sequences in batch 18 of 80
+identifying retrovirus-like sequences in batch 20 of 80
+identifying most interspersed repeats in batch 24 of 80
+identifying most interspersed repeats in batch 23 of 80
+identifying Simple Repeats in batch 19 of 80
+identifying long interspersed repeats in batch 22 of 80
+identifying Simple Repeats in batch 18 of 80
+identifying long interspersed repeats in batch 21 of 80
+identifying Simple Repeats in batch 20 of 80
+identifying ancient repeats in batch 22 of 80
+identifying ancient repeats in batch 21 of 80
+identifying long interspersed repeats in batch 23 of 80
+identifying long interspersed repeats in batch 24 of 80
+identifying retrovirus-like sequences in batch 22 of 80
+identifying retrovirus-like sequences in batch 21 of 80
+identifying ancient repeats in batch 23 of 80
+identifying Simple Repeats in batch 22 of 80
+identifying ancient repeats in batch 24 of 80
+identifying Simple Repeats in batch 21 of 80
+identifying retrovirus-like sequences in batch 23 of 80
+
+Checking for E. coli insertion elements
+identifying retrovirus-like sequences in batch 24 of 80
+identifying Simple Repeats in batch 23 of 80
+identifying Simple Repeats in batch 24 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-25: 4308 - 5343
+  IS5#ARTEFACT in NC_000913.3frag-25: 35934 - 36550
+identifying Simple Repeats in batch 25 of 80
+identifying full-length ALUs in batch 25 of 80
+identifying full-length interspersed repeats in batch 25 of 80
+
+Checking for E. coli insertion elements
+identifying remaining ALUs in batch 25 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS2#ARTEFACT in NC_000913.3frag-26: 18083 - 18726
+  IS30#ARTEFACT in NC_000913.3frag-26: 19525 - 19848
+  IS30#ARTEFACT in NC_000913.3frag-26: 20551 - 20630
+identifying Simple Repeats in batch 26 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 26 of 80
+identifying Simple Repeats in batch 27 of 80
+identifying full-length interspersed repeats in batch 26 of 80
+identifying most interspersed repeats in batch 25 of 80
+identifying full-length ALUs in batch 27 of 80
+identifying full-length interspersed repeats in batch 27 of 80
+
+Checking for E. coli insertion elements
+identifying remaining ALUs in batch 26 of 80
+identifying long interspersed repeats in batch 25 of 80
+identifying Simple Repeats in batch 28 of 80
+identifying remaining ALUs in batch 27 of 80
+identifying full-length ALUs in batch 28 of 80
+identifying ancient repeats in batch 25 of 80
+
+Checking for E. coli insertion elements
+identifying full-length interspersed repeats in batch 28 of 80
+identifying most interspersed repeats in batch 26 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS2#ARTEFACT in NC_000913.3frag-29: 26997 - 27640
+identifying Simple Repeats in batch 29 of 80
+
+Checking for E. coli insertion elements
+identifying retrovirus-like sequences in batch 25 of 80
+identifying full-length ALUs in batch 29 of 80
+identifying most interspersed repeats in batch 27 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 25 of 80
+identifying Simple Repeats in batch 30 of 80
+identifying full-length interspersed repeats in batch 29 of 80
+identifying remaining ALUs in batch 28 of 80
+identifying full-length ALUs in batch 30 of 80
+identifying long interspersed repeats in batch 26 of 80
+identifying Simple Repeats in batch 31 of 80
+identifying full-length ALUs in batch 31 of 80
+identifying long interspersed repeats in batch 27 of 80
+identifying full-length interspersed repeats in batch 30 of 80
+identifying remaining ALUs in batch 29 of 80
+identifying full-length interspersed repeats in batch 31 of 80
+
+Checking for E. coli insertion elements
+identifying ancient repeats in batch 26 of 80
+identifying most interspersed repeats in batch 28 of 80
+identifying ancient repeats in batch 27 of 80
+identifying Simple Repeats in batch 32 of 80
+identifying remaining ALUs in batch 30 of 80
+identifying retrovirus-like sequences in batch 26 of 80
+identifying full-length ALUs in batch 32 of 80
+identifying remaining ALUs in batch 31 of 80
+identifying most interspersed repeats in batch 29 of 80
+identifying retrovirus-like sequences in batch 27 of 80
+identifying Simple Repeats in batch 26 of 80
+identifying full-length interspersed repeats in batch 32 of 80
+identifying most interspersed repeats in batch 30 of 80
+identifying long interspersed repeats in batch 28 of 80
+identifying most interspersed repeats in batch 31 of 80
+identifying Simple Repeats in batch 27 of 80
+identifying long interspersed repeats in batch 29 of 80
+identifying remaining ALUs in batch 32 of 80
+identifying long interspersed repeats in batch 30 of 80
+identifying ancient repeats in batch 28 of 80
+identifying long interspersed repeats in batch 31 of 80
+identifying ancient repeats in batch 29 of 80
+identifying retrovirus-like sequences in batch 28 of 80
+identifying ancient repeats in batch 30 of 80
+identifying ancient repeats in batch 31 of 80
+identifying most interspersed repeats in batch 32 of 80
+
+Checking for E. coli insertion elements
+identifying retrovirus-like sequences in batch 29 of 80
+identifying Simple Repeats in batch 28 of 80
+identifying Simple Repeats in batch 33 of 80
+identifying Simple Repeats in batch 29 of 80
+identifying full-length ALUs in batch 33 of 80
+identifying retrovirus-like sequences in batch 30 of 80
+identifying retrovirus-like sequences in batch 31 of 80
+
+Checking for E. coli insertion elements
+identifying long interspersed repeats in batch 32 of 80
+identifying Simple Repeats in batch 30 of 80
+identifying Simple Repeats in batch 31 of 80
+identifying full-length interspersed repeats in batch 33 of 80
+identifying Simple Repeats in batch 34 of 80
+identifying full-length ALUs in batch 34 of 80
+identifying ancient repeats in batch 32 of 80
+identifying full-length interspersed repeats in batch 34 of 80
+identifying remaining ALUs in batch 33 of 80
+identifying retrovirus-like sequences in batch 32 of 80
+identifying remaining ALUs in batch 34 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 32 of 80
+identifying most interspersed repeats in batch 33 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS1#ARTEFACT in NC_000913.3frag-35: 6697 - 6895
+  IS1#ARTEFACT in NC_000913.3frag-35: 7021 - 7361
+identifying Simple Repeats in batch 35 of 80
+identifying full-length ALUs in batch 35 of 80
+identifying most interspersed repeats in batch 34 of 80
+identifying long interspersed repeats in batch 33 of 80
+
+Checking for E. coli insertion elements
+identifying full-length interspersed repeats in batch 35 of 80
+
+Checking for E. coli insertion elements
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-36: 36358 - 37440
+  IS2#ARTEFACT in NC_000913.3frag-36: 39164 - 39807
+identifying Simple Repeats in batch 36 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-37: 13944 - 14979
+identifying Simple Repeats in batch 37 of 80
+identifying long interspersed repeats in batch 34 of 80
+identifying full-length ALUs in batch 36 of 80
+identifying full-length ALUs in batch 37 of 80
+identifying ancient repeats in batch 33 of 80
+identifying remaining ALUs in batch 35 of 80
+identifying full-length interspersed repeats in batch 36 of 80
+identifying full-length interspersed repeats in batch 37 of 80
+identifying ancient repeats in batch 34 of 80
+identifying retrovirus-like sequences in batch 33 of 80
+identifying remaining ALUs in batch 37 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 35 of 80
+identifying Simple Repeats in batch 33 of 80
+identifying remaining ALUs in batch 36 of 80
+identifying retrovirus-like sequences in batch 34 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS3#ARTEFACT in NC_000913.3frag-38: 24360 - 24722
+  IS3#ARTEFACT in NC_000913.3frag-38: 25210 - 25412
+identifying Simple Repeats in batch 38 of 80
+identifying most interspersed repeats in batch 37 of 80
+identifying Simple Repeats in batch 34 of 80
+identifying full-length ALUs in batch 38 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 36 of 80
+identifying long interspersed repeats in batch 35 of 80
+identifying full-length interspersed repeats in batch 38 of 80
+identifying Simple Repeats in batch 39 of 80
+identifying long interspersed repeats in batch 37 of 80
+identifying full-length ALUs in batch 39 of 80
+
+Checking for E. coli insertion elements
+identifying full-length interspersed repeats in batch 39 of 80
+identifying ancient repeats in batch 35 of 80
+identifying long interspersed repeats in batch 36 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-40: 27129 - 28164
+identifying Simple Repeats in batch 40 of 80
+identifying remaining ALUs in batch 38 of 80
+identifying ancient repeats in batch 37 of 80
+identifying full-length ALUs in batch 40 of 80
+identifying retrovirus-like sequences in batch 35 of 80
+identifying remaining ALUs in batch 39 of 80
+identifying full-length interspersed repeats in batch 40 of 80
+identifying retrovirus-like sequences in batch 37 of 80
+identifying ancient repeats in batch 36 of 80
+identifying Simple Repeats in batch 35 of 80
+identifying most interspersed repeats in batch 38 of 80
+identifying Simple Repeats in batch 37 of 80
+identifying most interspersed repeats in batch 39 of 80
+identifying remaining ALUs in batch 40 of 80
+identifying retrovirus-like sequences in batch 36 of 80
+identifying long interspersed repeats in batch 38 of 80
+identifying Simple Repeats in batch 36 of 80
+identifying long interspersed repeats in batch 39 of 80
+identifying ancient repeats in batch 38 of 80
+identifying most interspersed repeats in batch 40 of 80
+identifying ancient repeats in batch 39 of 80
+identifying retrovirus-like sequences in batch 38 of 80
+identifying Simple Repeats in batch 38 of 80
+
+Checking for E. coli insertion elements
+identifying retrovirus-like sequences in batch 39 of 80
+identifying long interspersed repeats in batch 40 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 41 of 80
+identifying Simple Repeats in batch 39 of 80
+identifying full-length ALUs in batch 41 of 80
+identifying Simple Repeats in batch 42 of 80
+identifying full-length interspersed repeats in batch 41 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 42 of 80
+identifying ancient repeats in batch 40 of 80
+identifying full-length interspersed repeats in batch 42 of 80
+identifying Simple Repeats in batch 43 of 80
+identifying retrovirus-like sequences in batch 40 of 80
+identifying full-length ALUs in batch 43 of 80
+identifying remaining ALUs in batch 41 of 80
+identifying Simple Repeats in batch 40 of 80
+identifying full-length interspersed repeats in batch 43 of 80
+identifying remaining ALUs in batch 42 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 41 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS186#ARTEFACT in NC_000913.3frag-44: 20594 - 20936
+  IS186#ARTEFACT in NC_000913.3frag-44: 20981 - 21079
+  IS186#ARTEFACT in NC_000913.3frag-44: 21190 - 21446
+  IS186#ARTEFACT in NC_000913.3frag-44: 21622 - 21792
+identifying Simple Repeats in batch 44 of 80
+identifying remaining ALUs in batch 43 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 44 of 80
+identifying most interspersed repeats in batch 42 of 80
+identifying full-length interspersed repeats in batch 44 of 80
+identifying long interspersed repeats in batch 41 of 80
+identifying Simple Repeats in batch 45 of 80
+identifying most interspersed repeats in batch 43 of 80
+identifying long interspersed repeats in batch 42 of 80
+identifying full-length ALUs in batch 45 of 80
+identifying remaining ALUs in batch 44 of 80
+
+Checking for E. coli insertion elements
+identifying ancient repeats in batch 41 of 80
+identifying ancient repeats in batch 42 of 80
+identifying full-length interspersed repeats in batch 45 of 80
+identifying long interspersed repeats in batch 43 of 80
+identifying Simple Repeats in batch 46 of 80
+identifying most interspersed repeats in batch 44 of 80
+identifying full-length ALUs in batch 46 of 80
+identifying retrovirus-like sequences in batch 41 of 80
+identifying retrovirus-like sequences in batch 42 of 80
+identifying remaining ALUs in batch 45 of 80
+identifying ancient repeats in batch 43 of 80
+identifying full-length interspersed repeats in batch 46 of 80
+identifying Simple Repeats in batch 41 of 80
+identifying Simple Repeats in batch 42 of 80
+
+Checking for E. coli insertion elements
+identifying long interspersed repeats in batch 44 of 80
+identifying retrovirus-like sequences in batch 43 of 80
+identifying remaining ALUs in batch 46 of 80
+identifying most interspersed repeats in batch 45 of 80
+identifying Simple Repeats in batch 47 of 80
+identifying full-length ALUs in batch 47 of 80
+identifying Simple Repeats in batch 43 of 80
+identifying full-length interspersed repeats in batch 47 of 80
+
+Checking for E. coli insertion elements
+identifying ancient repeats in batch 44 of 80
+identifying most interspersed repeats in batch 46 of 80
+identifying Simple Repeats in batch 48 of 80
+identifying retrovirus-like sequences in batch 44 of 80
+identifying full-length ALUs in batch 48 of 80
+identifying long interspersed repeats in batch 45 of 80
+identifying remaining ALUs in batch 47 of 80
+identifying full-length interspersed repeats in batch 48 of 80
+identifying long interspersed repeats in batch 46 of 80
+identifying Simple Repeats in batch 44 of 80
+identifying ancient repeats in batch 45 of 80
+identifying remaining ALUs in batch 48 of 80
+identifying most interspersed repeats in batch 47 of 80
+identifying ancient repeats in batch 46 of 80
+identifying retrovirus-like sequences in batch 45 of 80
+identifying retrovirus-like sequences in batch 46 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 48 of 80
+
+Checking for E. coli insertion elements
+identifying long interspersed repeats in batch 47 of 80
+identifying Simple Repeats in batch 49 of 80
+identifying Simple Repeats in batch 46 of 80
+identifying Simple Repeats in batch 45 of 80
+identifying Simple Repeats in batch 50 of 80
+identifying full-length ALUs in batch 49 of 80
+identifying full-length ALUs in batch 50 of 80
+identifying long interspersed repeats in batch 48 of 80
+identifying ancient repeats in batch 47 of 80
+identifying full-length interspersed repeats in batch 50 of 80
+identifying full-length interspersed repeats in batch 49 of 80
+identifying retrovirus-like sequences in batch 47 of 80
+identifying ancient repeats in batch 48 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 47 of 80
+identifying remaining ALUs in batch 50 of 80
+identifying Simple Repeats in batch 51 of 80
+identifying full-length ALUs in batch 51 of 80
+identifying retrovirus-like sequences in batch 48 of 80
+identifying remaining ALUs in batch 49 of 80
+identifying full-length interspersed repeats in batch 51 of 80
+identifying Simple Repeats in batch 48 of 80
+identifying most interspersed repeats in batch 50 of 80
+identifying most interspersed repeats in batch 49 of 80
+identifying long interspersed repeats in batch 50 of 80
+identifying remaining ALUs in batch 51 of 80
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+identifying ancient repeats in batch 50 of 80
+identifying long interspersed repeats in batch 49 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS2#ARTEFACT in NC_000913.3frag-52: 38664 - 39307
+identifying Simple Repeats in batch 52 of 80
+identifying Simple Repeats in batch 53 of 80
+identifying full-length ALUs in batch 52 of 80
+identifying full-length ALUs in batch 53 of 80
+identifying retrovirus-like sequences in batch 50 of 80
+identifying most interspersed repeats in batch 51 of 80
+identifying full-length interspersed repeats in batch 52 of 80
+identifying full-length interspersed repeats in batch 53 of 80
+identifying ancient repeats in batch 49 of 80
+identifying Simple Repeats in batch 50 of 80
+
+Checking for E. coli insertion elements
+identifying retrovirus-like sequences in batch 49 of 80
+identifying remaining ALUs in batch 53 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-54: 56555 - 57590
+identifying Simple Repeats in batch 54 of 80
+identifying remaining ALUs in batch 52 of 80
+identifying Simple Repeats in batch 49 of 80
+identifying full-length ALUs in batch 54 of 80
+identifying long interspersed repeats in batch 51 of 80
+identifying full-length interspersed repeats in batch 54 of 80
+identifying most interspersed repeats in batch 53 of 80
+identifying most interspersed repeats in batch 52 of 80
+identifying ancient repeats in batch 51 of 80
+identifying remaining ALUs in batch 54 of 80
+identifying retrovirus-like sequences in batch 51 of 80
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+identifying long interspersed repeats in batch 53 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS2#ARTEFACT in NC_000913.3frag-55: 55005 - 55648
+identifying Simple Repeats in batch 55 of 80
+identifying Simple Repeats in batch 56 of 80
+identifying long interspersed repeats in batch 52 of 80
+identifying full-length ALUs in batch 55 of 80
+identifying full-length ALUs in batch 56 of 80
+identifying Simple Repeats in batch 51 of 80
+identifying most interspersed repeats in batch 54 of 80
+identifying full-length interspersed repeats in batch 55 of 80
+identifying ancient repeats in batch 53 of 80
+identifying full-length interspersed repeats in batch 56 of 80
+identifying ancient repeats in batch 52 of 80
+identifying retrovirus-like sequences in batch 53 of 80
+identifying remaining ALUs in batch 55 of 80
+identifying long interspersed repeats in batch 54 of 80
+identifying retrovirus-like sequences in batch 52 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 53 of 80
+identifying remaining ALUs in batch 56 of 80
+identifying Simple Repeats in batch 57 of 80
+identifying most interspersed repeats in batch 55 of 80
+identifying Simple Repeats in batch 52 of 80
+identifying full-length ALUs in batch 57 of 80
+identifying ancient repeats in batch 54 of 80
+identifying full-length interspersed repeats in batch 57 of 80
+identifying most interspersed repeats in batch 56 of 80
+identifying retrovirus-like sequences in batch 54 of 80
+identifying long interspersed repeats in batch 55 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 54 of 80
+identifying long interspersed repeats in batch 56 of 80
+identifying ancient repeats in batch 55 of 80
+identifying remaining ALUs in batch 57 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-58: 59865 - 59988
+identifying Simple Repeats in batch 58 of 80
+identifying full-length ALUs in batch 58 of 80
+identifying retrovirus-like sequences in batch 55 of 80
+identifying ancient repeats in batch 56 of 80
+identifying full-length interspersed repeats in batch 58 of 80
+identifying Simple Repeats in batch 55 of 80
+identifying most interspersed repeats in batch 57 of 80
+identifying retrovirus-like sequences in batch 56 of 80
+
+Checking for E. coli insertion elements
+identifying remaining ALUs in batch 58 of 80
+identifying Simple Repeats in batch 56 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-59: 1861 - 2896
+identifying Simple Repeats in batch 59 of 80
+identifying full-length ALUs in batch 59 of 80
+identifying most interspersed repeats in batch 58 of 80
+identifying long interspersed repeats in batch 57 of 80
+identifying full-length interspersed repeats in batch 59 of 80
+
+Checking for E. coli insertion elements
+identifying ancient repeats in batch 57 of 80
+identifying long interspersed repeats in batch 58 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 60 of 80
+identifying remaining ALUs in batch 59 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 61 of 80
+identifying retrovirus-like sequences in batch 57 of 80
+identifying full-length ALUs in batch 60 of 80
+identifying full-length ALUs in batch 61 of 80
+identifying ancient repeats in batch 58 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS1#ARTEFACT in NC_000913.3frag-62: 45812 - 46152
+  IS1#ARTEFACT in NC_000913.3frag-62: 46278 - 46476
+identifying Simple Repeats in batch 62 of 80
+identifying Simple Repeats in batch 57 of 80
+identifying full-length interspersed repeats in batch 60 of 80
+identifying full-length ALUs in batch 62 of 80
+identifying full-length interspersed repeats in batch 61 of 80
+identifying most interspersed repeats in batch 59 of 80
+identifying retrovirus-like sequences in batch 58 of 80
+identifying full-length interspersed repeats in batch 62 of 80
+identifying Simple Repeats in batch 58 of 80
+identifying remaining ALUs in batch 60 of 80
+identifying long interspersed repeats in batch 59 of 80
+identifying remaining ALUs in batch 61 of 80
+identifying remaining ALUs in batch 62 of 80
+identifying most interspersed repeats in batch 60 of 80
+identifying ancient repeats in batch 59 of 80
+identifying most interspersed repeats in batch 61 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 62 of 80
+identifying retrovirus-like sequences in batch 59 of 80
+identifying long interspersed repeats in batch 60 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS5#ARTEFACT in NC_000913.3frag-63: 56361 - 57396
+identifying Simple Repeats in batch 63 of 80
+identifying long interspersed repeats in batch 61 of 80
+identifying full-length ALUs in batch 63 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 59 of 80
+identifying long interspersed repeats in batch 62 of 80
+identifying Simple Repeats in batch 64 of 80
+
+Checking for E. coli insertion elements
+identifying full-length interspersed repeats in batch 63 of 80
+identifying ancient repeats in batch 60 of 80
+identifying full-length ALUs in batch 64 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS150#ARTEFACT in NC_000913.3frag-65: 9610 - 9900
+identifying Simple Repeats in batch 65 of 80
+identifying ancient repeats in batch 62 of 80
+identifying ancient repeats in batch 61 of 80
+identifying full-length ALUs in batch 65 of 80
+identifying full-length interspersed repeats in batch 64 of 80
+identifying retrovirus-like sequences in batch 60 of 80
+identifying remaining ALUs in batch 63 of 80
+identifying full-length interspersed repeats in batch 65 of 80
+identifying retrovirus-like sequences in batch 62 of 80
+identifying Simple Repeats in batch 60 of 80
+identifying retrovirus-like sequences in batch 61 of 80
+identifying remaining ALUs in batch 64 of 80
+identifying Simple Repeats in batch 62 of 80
+identifying most interspersed repeats in batch 63 of 80
+identifying Simple Repeats in batch 61 of 80
+identifying remaining ALUs in batch 65 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 64 of 80
+identifying Simple Repeats in batch 66 of 80
+identifying long interspersed repeats in batch 63 of 80
+identifying full-length ALUs in batch 66 of 80
+identifying most interspersed repeats in batch 65 of 80
+identifying long interspersed repeats in batch 64 of 80
+identifying full-length interspersed repeats in batch 66 of 80
+identifying ancient repeats in batch 63 of 80
+identifying long interspersed repeats in batch 65 of 80
+
+Checking for E. coli insertion elements
+identifying remaining ALUs in batch 66 of 80
+identifying retrovirus-like sequences in batch 63 of 80
+identifying ancient repeats in batch 64 of 80
+identifying Simple Repeats in batch 67 of 80
+identifying Simple Repeats in batch 63 of 80
+identifying full-length ALUs in batch 67 of 80
+identifying ancient repeats in batch 65 of 80
+
+Checking for E. coli insertion elements
+identifying full-length interspersed repeats in batch 67 of 80
+identifying most interspersed repeats in batch 66 of 80
+identifying retrovirus-like sequences in batch 64 of 80
+identifying Simple Repeats in batch 68 of 80
+identifying Simple Repeats in batch 64 of 80
+identifying full-length ALUs in batch 68 of 80
+identifying retrovirus-like sequences in batch 65 of 80
+identifying remaining ALUs in batch 67 of 80
+identifying Simple Repeats in batch 65 of 80
+identifying full-length interspersed repeats in batch 68 of 80
+identifying long interspersed repeats in batch 66 of 80
+identifying most interspersed repeats in batch 67 of 80
+
+Checking for E. coli insertion elements
+identifying remaining ALUs in batch 68 of 80
+
+Checking for E. coli insertion elements
+identifying ancient repeats in batch 66 of 80
+identifying Simple Repeats in batch 70 of 80
+identifying Simple Repeats in batch 69 of 80
+identifying full-length ALUs in batch 70 of 80
+identifying retrovirus-like sequences in batch 66 of 80
+identifying long interspersed repeats in batch 67 of 80
+identifying full-length ALUs in batch 69 of 80
+identifying most interspersed repeats in batch 68 of 80
+identifying full-length interspersed repeats in batch 70 of 80
+identifying Simple Repeats in batch 66 of 80
+identifying full-length interspersed repeats in batch 69 of 80
+identifying ancient repeats in batch 67 of 80
+identifying long interspersed repeats in batch 68 of 80
+identifying remaining ALUs in batch 70 of 80
+
+Checking for E. coli insertion elements
+identifying retrovirus-like sequences in batch 67 of 80
+identifying remaining ALUs in batch 69 of 80
+identifying ancient repeats in batch 68 of 80
+identifying Simple Repeats in batch 71 of 80
+identifying Simple Repeats in batch 67 of 80
+identifying full-length ALUs in batch 71 of 80
+identifying most interspersed repeats in batch 70 of 80
+identifying most interspersed repeats in batch 69 of 80
+identifying retrovirus-like sequences in batch 68 of 80
+identifying full-length interspersed repeats in batch 71 of 80
+
+Checking for E. coli insertion elements
+identifying long interspersed repeats in batch 70 of 80
+identifying Simple Repeats in batch 72 of 80
+identifying Simple Repeats in batch 68 of 80
+identifying full-length ALUs in batch 72 of 80
+identifying long interspersed repeats in batch 69 of 80
+identifying remaining ALUs in batch 71 of 80
+identifying ancient repeats in batch 70 of 80
+identifying full-length interspersed repeats in batch 72 of 80
+identifying ancient repeats in batch 69 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 71 of 80
+identifying retrovirus-like sequences in batch 70 of 80
+identifying remaining ALUs in batch 72 of 80
+identifying Simple Repeats in batch 73 of 80
+identifying retrovirus-like sequences in batch 69 of 80
+identifying Simple Repeats in batch 70 of 80
+identifying full-length ALUs in batch 73 of 80
+identifying long interspersed repeats in batch 71 of 80
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 69 of 80
+identifying full-length interspersed repeats in batch 73 of 80
+identifying most interspersed repeats in batch 72 of 80
+identifying Simple Repeats in batch 74 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 74 of 80
+identifying ancient repeats in batch 71 of 80
+identifying Simple Repeats in batch 75 of 80
+identifying remaining ALUs in batch 73 of 80
+identifying full-length interspersed repeats in batch 74 of 80
+identifying full-length ALUs in batch 75 of 80
+identifying long interspersed repeats in batch 72 of 80
+identifying retrovirus-like sequences in batch 71 of 80
+identifying full-length interspersed repeats in batch 75 of 80
+identifying Simple Repeats in batch 71 of 80
+identifying most interspersed repeats in batch 73 of 80
+identifying remaining ALUs in batch 74 of 80
+identifying ancient repeats in batch 72 of 80
+identifying remaining ALUs in batch 75 of 80
+identifying most interspersed repeats in batch 74 of 80
+identifying retrovirus-like sequences in batch 72 of 80
+identifying long interspersed repeats in batch 73 of 80
+
+Checking for E. coli insertion elements
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 75 of 80
+identifying Simple Repeats in batch 72 of 80
+identifying Simple Repeats in batch 76 of 80
+identifying Simple Repeats in batch 77 of 80
+identifying full-length ALUs in batch 76 of 80
+identifying long interspersed repeats in batch 74 of 80
+identifying full-length ALUs in batch 77 of 80
+identifying ancient repeats in batch 73 of 80
+identifying full-length interspersed repeats in batch 77 of 80
+identifying full-length interspersed repeats in batch 76 of 80
+identifying ancient repeats in batch 74 of 80
+identifying long interspersed repeats in batch 75 of 80
+identifying retrovirus-like sequences in batch 73 of 80
+identifying retrovirus-like sequences in batch 74 of 80
+identifying remaining ALUs in batch 76 of 80
+identifying remaining ALUs in batch 77 of 80
+identifying Simple Repeats in batch 73 of 80
+identifying ancient repeats in batch 75 of 80
+identifying Simple Repeats in batch 74 of 80
+identifying retrovirus-like sequences in batch 75 of 80
+identifying most interspersed repeats in batch 76 of 80
+
+Checking for E. coli insertion elements
+identifying most interspersed repeats in batch 77 of 80
+identifying Simple Repeats in batch 75 of 80
+The following E coli IS elements could not be confidently clipped out:
+  IS2#ARTEFACT in NC_000913.3frag-78: 33205 - 33848
+  IS30#ARTEFACT in NC_000913.3frag-78: 41855 - 41934
+  IS30#ARTEFACT in NC_000913.3frag-78: 42637 - 42960
+identifying Simple Repeats in batch 78 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 78 of 80
+identifying long interspersed repeats in batch 76 of 80
+identifying long interspersed repeats in batch 77 of 80
+identifying Simple Repeats in batch 79 of 80
+identifying full-length interspersed repeats in batch 78 of 80
+
+Checking for E. coli insertion elements
+identifying full-length ALUs in batch 79 of 80
+identifying ancient repeats in batch 76 of 80
+identifying ancient repeats in batch 77 of 80
+identifying Simple Repeats in batch 80 of 80
+identifying full-length interspersed repeats in batch 79 of 80
+identifying full-length ALUs in batch 80 of 80
+identifying retrovirus-like sequences in batch 76 of 80
+identifying full-length interspersed repeats in batch 80 of 80
+identifying remaining ALUs in batch 78 of 80
+identifying retrovirus-like sequences in batch 77 of 80
+identifying remaining ALUs in batch 79 of 80
+identifying Simple Repeats in batch 76 of 80
+identifying Simple Repeats in batch 77 of 80
+identifying remaining ALUs in batch 80 of 80
+identifying most interspersed repeats in batch 78 of 80
+identifying most interspersed repeats in batch 79 of 80
+identifying long interspersed repeats in batch 78 of 80
+identifying most interspersed repeats in batch 80 of 80
+identifying ancient repeats in batch 78 of 80
+identifying long interspersed repeats in batch 79 of 80
+identifying retrovirus-like sequences in batch 78 of 80
+identifying long interspersed repeats in batch 80 of 80
+identifying ancient repeats in batch 79 of 80
+identifying Simple Repeats in batch 78 of 80
+identifying retrovirus-like sequences in batch 79 of 80
+identifying ancient repeats in batch 80 of 80
+identifying Simple Repeats in batch 79 of 80
+identifying retrovirus-like sequences in batch 80 of 80
+identifying Simple Repeats in batch 80 of 80
+processing output: 
+cycle 1 
+cycle 2 
+cycle 3 
+cycle 4 
+cycle 5 
+cycle 6 
+cycle 7 
+cycle 8 
+cycle 9 
+cycle 10 
+Generating output... 
+masking
+done
+COMMAND="$(echo RepeatMasker -s -a -html -gff -dir RepeatMasker_Output  -pa 8 GCF_000005845.2_ASM584v2_genomic.fna)"
+COMMAND="$(echo RepeatMasker -s -a -html -gff -dir RepeatMasker_Output  -pa 8 GCF_000005845.2_ASM584v2_genomic.fna)"
+set +v +H +o history
+‘RepeatMasker_Output/GCF_000005845.2_ASM584v2_genomic.fna.masked’ -> ‘GCF_000005845.2_ASM584v2_genomic_masked.fasta’
+cp: cannot stat ‘.command.log’: No such file or directory

@@ -1,0 +1,7 @@
+nxf-scratch-dir c29a-s1:/tmp/nxf.K9VWYB5rfR
+Executor: local  -  Time:null  -  Mem:2 GB  -  Queue: null
+samtools faidx GCF_000005845.2_ASM584v2_genomic_masked.fasta
+COMMAND="$(echo samtools faidx GCF_000005845.2_ASM584v2_genomic_masked.fasta)"
+COMMAND="$(echo samtools faidx GCF_000005845.2_ASM584v2_genomic_masked.fasta)"
+set +v +H +o history
+cp: cannot stat ‘.command.log’: No such file or directory

@@ -1,0 +1,23 @@
+
+  -- GCF_000005845.2_ASM584v2_genomic.fna.gz --
+    Sequences acquired from:
+    ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz
+    on: 2020-08-10 11:01:56.295972
+    Operation performed by seq_manip_v10.py
+
+
+  -- GCF_000005845.2_ASM584v2_genomic.fna --
+    Fasta Sequences were Unzipped
+    On: 2020-08-10 11:01:58.751500
+    using command:
+      gunzip \
+      -f GCF_000005845.2_ASM584v2_genomic.fna.gz
+
+
+  -- GCF_000005845.2_ASM584v2_genomic.fna.fai --
+    A Fasta Index was then created.
+    Operation performed by: "samtools/1.10"
+    On: 2020-08-10 11:02:01.480662
+    using command:
+      samtools faidx GCF_000005845.2_ASM584v2_genomic.fna
+

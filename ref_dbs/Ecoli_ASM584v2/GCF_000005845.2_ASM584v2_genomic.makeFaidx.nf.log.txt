@@ -1,0 +1,7 @@
+nxf-scratch-dir c29a-s1:/tmp/nxf.0yWaP3gARr
+Executor: local  -  Time:null  -  Mem:2 GB  -  Queue: null
+samtools faidx GCF_000005845.2_ASM584v2_genomic.fna
+COMMAND="$(echo samtools faidx GCF_000005845.2_ASM584v2_genomic.fna)"
+COMMAND="$(echo samtools faidx GCF_000005845.2_ASM584v2_genomic.fna)"
+set +v +H +o history
+cp: cannot stat ‘.command.log’: No such file or directory

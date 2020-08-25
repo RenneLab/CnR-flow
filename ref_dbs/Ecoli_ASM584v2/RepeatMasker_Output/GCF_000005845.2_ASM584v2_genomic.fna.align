@@ -1,0 +1,4157 @@
+17 18.44 0.00 0.00 NC_000913.3 198 235 (4641417) (CATCAC)n#Simple_repeat 1 38 (0) m_b1s252i0 1
+
+  NC_000913.3          198 CATTAGCACCACCATTACCACCACCATCACCATTACCA 235
+                              i v  i      i    i            i    
+  (CATCAC)n#Sim          1 CATCACCATCACCATCACCATCACCATCACCATCACCA 38
+
+Matrix = Unknown
+Transitions / transversions = 5.00 (5/1)
+Gap_init rate = 0.00 (0 / 37), avg. gap size = 0.0 (0 / 0)
+
+
+12 13.86 0.00 0.00 NC_000913.3 73612 73635 (4568017) (GCA)n#Simple_repeat 1 24 (0) m_b2s252i0 2
+
+  NC_000913.3        73612 GCAGCAACAGCAGCAGCGCCAGCA 73635
+                                 i          iv     
+  (GCA)n#Simple          1 GCAGCAGCAGCAGCAGCAGCAGCA 24
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (2/1)
+Gap_init rate = 0.00 (0 / 23), avg. gap size = 0.0 (0 / 0)
+
+
+19 19.93 3.28 3.28 NC_000913.3 84032 84092 (4557560) (ATTA)n#Simple_repeat 1 61 (0) m_b2s252i1 3
+
+  NC_000913.3        84032 ATT-ATTGATCAATTAATGTTAAGAATTAATGCATTAAATATATAAATTA 84080
+                              -   i  i       - v vv       vv     v  -  v     
+  (ATTA)n#Simpl          1 ATTAATTAATTAATTAAT-TAATTAATTAATTAATTAATTA-ATTAATTA 48
+
+  NC_000913.3        84081 ATT-ATTAAATAA 84092
+                              -     v   
+  (ATTA)n#Simpl         49 ATTAATTAATTAA 61
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (2/8)
+Gap_init rate = 0.07 (4 / 60), avg. gap size = 1.00 (4 / 4)
+
+
+14 4.94 0.00 0.00 NC_000913.3 105352 105372 (4536280) (CGG)n#Simple_repeat 1 21 (0) m_b2s252i2 4
+
+  NC_000913.3       105352 CGGCGTCGGCGGCGGCGGCGG 105372
+                                v               
+  (CGG)n#Simple          1 CGGCGGCGGCGGCGGCGGCGG 21
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/1)
+Gap_init rate = 0.00 (0 / 20), avg. gap size = 0.0 (0 / 0)
+
+
+16 24.62 0.00 0.00 NC_000913.3 130299 130341 (4511311) (TGA)n#Simple_repeat 1 43 (0) m_b3s252i0 5
+
+  NC_000913.3       130299 TGGTGATGATAATCATCATTGTCATGATGATGATGGTCATGAT 130341
+                             i       i  v  v  vi v            i v     
+  (TGA)n#Simple          1 TGATGATGATGATGATGATGATGATGATGATGATGATGATGAT 43
+
+Matrix = Unknown
+Transitions / transversions = 0.80 (4/5)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+19 22.11 0.00 0.00 NC_000913.3 164814 164860 (4476792) (GACGAT)n#Simple_repeat 1 47 (0) m_b3s252i1 6
+
+  NC_000913.3       164814 GAAGATGACGATGATTACGACGATTATGATGACTATGAGGATGAAGA 164860
+                             v           iv i      v i      v    v     v  
+  (GACGAT)n#Sim          1 GACGATGACGATGACGATGACGATGACGATGACGATGACGATGACGA 47
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (3/6)
+Gap_init rate = 0.00 (0 / 46), avg. gap size = 0.0 (0 / 0)
+
+
+13 12.94 9.09 2.13 NC_000913.3 167166 167209 (4474443) (CAGCAA)n#Simple_repeat 1 47 (0) m_b3s252i3 7
+
+  NC_000913.3       167166 CAGCCGCAGCAACAGC--C-GCAACAGCAACCTGC-TCAGCAAGAGCA 167209
+                               vi          -- -          - v  -v      v    
+  (CAGCAA)n#Sim          1 CAGCAACAGCAACAGCAACAGCAACAGCAA-CAGCAACAGCAACAGCA 47
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.09 (4 / 43), avg. gap size = 1.25 (5 / 4)
+
+
+205 28.30 0.00 0.00 NC_000913.3 207332 207384 (4434268) C MamRTE1#LINE/RTE-BovB (824) 2988 2936 m_b4s601i0 8
+
+  NC_000913.3       207332 TCAACGCTGAACTGGCGATGAAAATCTTCGACCTGGTGGAGAAATTCGCT 207381
+                              i v   v i  v             i i ivv   v  iiv   v  
+C MamRTE1#LINE/       2988 TCAGCTCTGTATTGCCGATGAAAATCTTTGGCTGCGTGTAGGGTTTCCCT 2939
+
+  NC_000913.3       207382 GGT 207384
+                              
+C MamRTE1#LINE/       2938 GGT 2936
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 35.80
+Transitions / transversions = 0.88 (7/8)
+Gap_init rate = 0.00 (0 / 52), avg. gap size = 0.0 (0 / 0)
+
+
+747 29.86 5.57 2.99 NC_000913.3 224527 224885 (4416767) SSU-rRNA_Hsa#rRNA 1025 1392 (477) m_b4s551i0 9
+
+  NC_000913.3       224527 TCAGGTGCGAAAGCGTGGGGAGCAAACAGGATTAGATACCCTGGTAGTCC 224576
+                              i vi      ivv i  vv i  v v   i       v v     i 
+  SSU-rRNA_Hsa#       1025 TCAAGAACGAAAGTCGGAGGTTCGAAGACGATCAGATACCGTCGTAGTTC 1074
+
+  NC_000913.3       224577 ACGCCGTAAACGATGTCGACTTG---------GAGGTTGTGCCCTTGA-- 224615
+                           vvi  i         i    iv --------- iv   i v   v   --
+  SSU-rRNA_Hsa#       1075 CGACCATAAACGATGCCGACCGGCGATGCGGCGGCGTTATTCCCATGACC 1124
+
+  NC_000913.3       224616 -GGCGTG--GCTTCCGG--AGCTAACG-CGTTAAGTCGACCGCCTGGGGA 224659
+                           - v  v --        -- i i  v - v  ii  i--   --v     
+  SSU-rRNA_Hsa#       1125 CGCCGGGCAGCTTCCGGGAAACCAAAGTCTTTGGGTT--CCG--GGGGGA 1170
+
+  NC_000913.3       224660 GTACGGCCGCAAGGTTAAAACTCAAATGAATTGACGG--GGGCCCGCACA 224707
+                              i  ii    i i i     i   v          --    v -   v
+  SSU-rRNA_Hsa#       1171 GTATGGTTGCAAAGCTGAAACTTAAAGGAATTGACGGAAGGGCAC-CACC 1219
+
+  NC_000913.3       224708 AGCGGTGGAGCATGTGGTTTAATTCGATGCAACGCGAAGAACCTTACCTG 224757
+                             vi       v  i  i      i  iv    i  iii     i   i 
+  SSU-rRNA_Hsa#       1220 AGGAGTGGAGCCTGCGGCTTAATTTGACTCAACACGGGAAACCTCACCCG 1269
+
+  NC_000913.3       224758 GTCTTGACATCCACAGAACTTTCCAGAGATGGATTGGTGCCTTCGGGA-A 224806
+                            i iv    ivv    i --- iv v    v   v v - i   vv  -v
+  SSU-rRNA_Hsa#       1270 GCCCGGACACGGACAGGA---TTGACAGATTGATAGCT-CTTTCTCGATT 1315
+
+  NC_000913.3       224807 CTGTGAGACAGGTGCTGCATGGCTGTCGTCAGCTCGTGTTGTGAAATGTT 224856
+                            i   i --v    v        i  iv i  i v   vv i  vv   i
+  SSU-rRNA_Hsa#       1316 CCGTGGG--TGGTGGTGCATGGCCGTTCTTAGTTGGTGGAGCGATTTGTC 1363
+
+  NC_000913.3       224857 GGGTTAAGTCCCGCAACGAGCGCAACCCT 224885
+                           v      v   vii     i  vi  i  
+  SSU-rRNA_Hsa#       1364 TGGTTAATTCCGATAACGAACGAGACTCT 1392
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 34.68
+Transitions / transversions = 1.12 (55/49)
+Gap_init rate = 0.05 (19 / 358), avg. gap size = 1.63 (31 / 19)
+
+
+366 36.95 3.94 0.00 NC_000913.3 224977 225179 (4416473) SSU-rRNA_Hsa#rRNA 1500 1710 (159) m_b4s551i1 9
+
+  NC_000913.3       224977 GCCCTTA--CGACCAGGGCTACACACGTGCTACAATGGCGCATACAAAGA 225024
+                                  --i v  i     i   i  i      v  i vviiv  iv v
+  SSU-rRNA_Hsa#       1500 GCCCTTAGATGTCCGGGGCTGCACGCGCGCTACACTGACTGGCTCAGCGT 1549
+
+  NC_000913.3       225025 GAAGCGACCTCGCGAGAGCAAGCG-----GACCTCATAAAGTGCGT-CGT 225068
+                            viv v   iii  vvi   i   -----i   ivv i  viv i -  i
+  SSU-rRNA_Hsa#       1550 GTGCCTACCCTACGCCGGCAGGCGCGGGTAACCCGTTGAACCCCATTCGC 1599
+
+  NC_000913.3       225069 AGTCCGGATTGGAGTCTGCAACTCGACTCCATGAAGTCGGAATCGCTAGT 225118
+                           ii vv    i  i vi     i vvv i       vvv     iv i   
+  SSU-rRNA_Hsa#       1600 GATGGGGATCGGGGATTGCAATTATTCCCCATGAACGAGGAATTCCCAGT 1649
+
+  NC_000913.3       225119 AATCGTGGATCAGAATGCCACGGTGAATACGTTCCCGGGCCTTGTACACA 225168
+                             vi i  i   v  vviii  v   v  v  i  i vv i         
+  SSU-rRNA_Hsa#       1650 AAGTGCGGGTCATAAGCTTGCGTTGATTAAGTCCCTGCCCTTTGTACACA 1699
+
+  NC_000913.3       225169 CCGCCCGTCAC 225179
+                                    i 
+  SSU-rRNA_Hsa#       1700 CCGCCCGTCGC 1710
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 43.82
+Transitions / transversions = 1.14 (40/35)
+Gap_init rate = 0.01 (3 / 202), avg. gap size = 2.67 (8 / 3)
+
+
+262 11.63 0.00 0.00 NC_000913.3 225262 225304 (4416348) SSU-rRNA_Hsa#rRNA 1824 1866 (3) m_b4s551i2 10
+
+  NC_000913.3       225262 AAGTCGTAACAAGGTAACCGTAGGGGAACCTGCGGTTGGATCA 225304
+                                          vv       v          vv      
+  SSU-rRNA_Hsa#       1824 AAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAGGGATCA 1866
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 12.80
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+197 29.03 1.61 0.00 NC_000913.3 225382 225443 (4416209) MamSINE1#SINE/tRNA-RTE 7 69 (221) m_b4s601i1 11
+
+  NC_000913.3       225382 GGCTTGT-AGCTCAGGTGGTTAGAGCGCACCCCTGATAAGGGTGAGGTCG 225430
+                               v  -       v          i iviv  i  i   vii     i
+  MamSINE1#SINE          7 GGCTGGTTAGCTCAGTTGGTTAGAGCACGGTGCTAATGAGGCCAAGGTCA 56
+
+  NC_000913.3       225431 GTGGTTCAAGTCC 225443
+                           vv     i vi  
+  MamSINE1#SINE         57 CGGGTTCGATCCC 69
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 32.47
+Transitions / transversions = 1.25 (10/8)
+Gap_init rate = 0.02 (1 / 61), avg. gap size = 1.00 (1 / 1)
+
+
+327 21.33 0.00 1.33 NC_000913.3 225500 225575 (4416077) tRNA-Ala-GCY_v#tRNA 1 75 (0) c_b4s401i0 12
+
+  NC_000913.3       225500 GGGGCTATAGCTCAGCTGGGAGAGCGCCTGCTTTGCACGCAGGAGGTCTG 225549
+                               v i        -   v       v     v   i   v    i iv
+  tRNA-Ala-GCY_          1 GGGGGTGTAGCTCAG-TGGTAGAGCGCGTGCTTAGCATGCACGAGGCCCC 49
+
+  NC_000913.3       225550 CGGTTCGATCCCGCATAGCTCCACCA 225575
+                           v           vvii v        
+  tRNA-Ala-GCY_         50 GGGTTCGATCCCCGGCACCTCCACCA 75
+
+Matrix = 18p51g.matrix
+Kimura (with divCpGMod) = 25.11
+Transitions / transversions = 0.60 (6/10)
+Gap_init rate = 0.01 (1 / 75), avg. gap size = 1.00 (1 / 1)
+
+
+393 22.44 0.00 1.87 NC_000913.3 225931 226039 (4415613) LSU-rRNA_Hsa#rRNA 17 123 (4912) m_b4s551i3 13
+
+  NC_000913.3       225931 ATGAGGCGAACCGGGGGAACTGAAACATCTAAGTACCCCGAGGAAAAGAA 225980
+                            i v     v   vv -  i v  i   v v   vvv v           
+  LSU-rRNA_Hsa#         17 ACGTGGCGACCCGCTG-AATTTAAGCATATTAGTCAGCGGAGGAAAAGAA 65
+
+  NC_000913.3       225981 ATCAACCGAGATTCCCCCAGTAGCGGCGAGCGAACGGGGAGGAGCCCAGA 226030
+                            ii    ii       i     i       i    i    i        v
+  LSU-rRNA_Hsa#         66 ACTAACCAGGATTCCCTCAGTAACGGCGAGTGAACAGGGAAGAGCCCAGC 115
+
+  NC_000913.3       226031 GCCTGAATC 226039
+                              -     
+  LSU-rRNA_Hsa#        116 GCC-GAATC 123
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 25.61
+Transitions / transversions = 1.00 (12/12)
+Gap_init rate = 0.02 (2 / 108), avg. gap size = 1.00 (2 / 2)
+
+
+353 22.45 1.98 3.00 NC_000913.3 226177 226277 (4415375) LSU-rRNA_Hsa#rRNA 316 415 (4620) m_b4s551i4 13
+
+  NC_000913.3       226177 TCCAAGGCTAAATACT--CCTGACTGACCGATAGTGAACCAGTACCGTGA 226224
+                             i            i-- vi  --          v   v      i i 
+  LSU-rRNA_Hsa#        316 TCTAAGGCTAAATACCGGCACGA--GACCGATAGTCAACAAGTACCATAA 363
+
+  NC_000913.3       226225 GGGAAAGGCGAAAAGAACCCCGGCGAGGGGAGTGAAAAAGAACCTGAAAC 226274
+                                  vi         iii iv  - i    vv  i  ii v      
+  LSU-rRNA_Hsa#        364 GGGAAAGTTGAAAAGAACTTTGAAGA-GAGAGTTCAAGAGGGCGTGAAAC 412
+
+  NC_000913.3       226275 CGT 226277
+                              
+  LSU-rRNA_Hsa#        413 CGT 415
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 24.53
+Transitions / transversions = 1.75 (14/8)
+Gap_init rate = 0.04 (4 / 100), avg. gap size = 1.25 (5 / 4)
+
+
+299 31.07 2.65 1.97 NC_000913.3 226427 226577 (4415075) LSU-rRNA_Hsa#rRNA 1504 1655 (3380) m_b4s551i5 14
+
+  NC_000913.3       226427 GACCCGAAACCCGGTGATCTAGCCATGGGCAGGTTGAAGGTTG-GGTAAC 226475
+                                    v?i     v  ?vv v     i  vi    viv -  v   
+  LSU-rRNA_Hsa#       1504 GACCCGAAAGNTGGTGAACTNTGCCTGGGCGGGGCGAAGCCGGAGGAAAC 1553
+
+  NC_000913.3       226476 ACTAACTGGAGGACCGAACCGA--CTAATGTTGAAAAATTAG-CGGATGA 226522
+                           v ?ii-      v   v v  i--  i    --iv    ii -  vvii 
+  LSU-rRNA_Hsa#       1554 TCNGG-TGGAGGTCCGTAGCGGTCCTGATGT--GCAAATCGGTCGTCCAA 1600
+
+  NC_000913.3       226523 CTTGTGGCTGGGGGTGAAAGGCCAATCAAACCGGGAGATAGCTGGTTCTC 226572
+                            i  v v? i    i     i i    i    ivvvii          i 
+  LSU-rRNA_Hsa#       1601 CCTGGGTNTAGGGGCGAAAGACTAATCGAACCATCTAGTAGCTGGTTCCC 1650
+
+  NC_000913.3       226573 CCCGA 226577
+                           i  i 
+  LSU-rRNA_Hsa#       1651 TCCAA 1655
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 35.57
+Transitions / transversions = 1.19 (25/21)
+Gap_init rate = 0.04 (6 / 150), avg. gap size = 1.17 (7 / 6)
+
+
+549 33.15 2.79 7.58 NC_000913.3 227529 227887 (4413765) LSU-rRNA_Hsa#rRNA 3612 3954 (1081) m_b4s551i6 14
+
+  NC_000913.3       227529 CAACTGTTTATTAAAAACACAGCACTGTGCAAACACGAAAGTGGACGT-- 227576
+                            i   ?    v ?      v    ii i v ii v  vi- i  ii  --
+  LSU-rRNA_Hsa#       3612 CGACTNTTTAATNAAAACAAAGCATCGCGAAGGCCCGCG-GCGGGTGTTG 3660
+
+  NC_000913.3       227577 ATACGGTGTGACGCCTGCCCGGTGC-CGGAAGGTTAATTGATGGGGTTAG 227625
+                            ii  i     ivi      i    - v   v  i  -------------
+  LSU-rRNA_Hsa#       3661 ACGCGATGTGATTTCTGCCCAGTGCTCTGAATGTCAA------------- 3697
+
+  NC_000913.3       227626 CGCAAGCGAAGCTCTTGATCGAAGCCCCGGTAAACGGCGGCCGTAACTAT 227675
+                           ----  i    vvv  v vi     v v            vv        
+  LSU-rRNA_Hsa#       3698 ----AGTGAAGAAATTCAATGAAGCGCGGGTAAACGGCGGGAGTAACTAT 3743
+
+  NC_000913.3       227676 AACGGTCCTAAGGTAGCGAAATTCCTTGTCGGGTAAGTTCCGACCTGCAC 227725
+                           i  vv  i         v    v   i   ivv   v vvi   vi   i
+  LSU-rRNA_Hsa#       3744 GACTCTCTTAAGGTAGCCAAATGCCTCGTCATCTAATTAGTGACGCGCAT 3793
+
+  NC_000913.3       227726 GAATGGCGTAAT--GATGGCCAGGCTGTCTCCACCCGAGACTCAGTGAAA 227773
+                                 vvv  i--   vv   --     i i   iivv ii   i    
+  LSU-rRNA_Hsa#       3794 GAATGGATGAACGAGATTCCCA--CTGTCCCTACCTACTATCCAGCGAAA 3841
+
+  NC_000913.3       227774 TTGAACTCGCTGTGAAGATGCAGTGTACCCG---CGGCAAGACGGAAAGA 227820
+                           iiiv ---  iiv iii i -i iv iv v --- i  ii iviii    
+  LSU-rRNA_Hsa#       3842 CCACA---GCCAAGGGAACG-GGCTTGGCGGAATCAGCGGGGAAAGAAGA 3887
+
+  NC_000913.3       227821 CCCCGTGAACCTTTACTATAGCTTGACAC--TGAACATTGAGCCTTGATG 227868
+                              i  vi v   v   v   ii  i   --    v --  vv vv  v 
+  LSU-rRNA_Hsa#       3888 CCCTGTTGAGCTTGACTCTAGTCTGGCACGGTGAAGA--GACACGAGAGG 3935
+
+  NC_000913.3       227869 TGTAGGATAGGTGGGAGGC 227887
+                                i   i         
+  LSU-rRNA_Hsa#       3936 TGTAGAATAAGTGGGAGGC 3954
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 38.68
+Transitions / transversions = 1.20 (60/50)
+Gap_init rate = 0.09 (31 / 358), avg. gap size = 1.16 (36 / 31)
+
+
+564 29.95 4.68 6.25 NC_000913.3 227962 228367 (4413285) LSU-rRNA_Hsa#rRNA 4126 4525 (510) m_b4s551i7 14
+
+  NC_000913.3       227962 GACCCGTAATCCGGGTTGCGGACAGTGTCTGGTGGGTAGTTTGACTGGGG 228011
+                                  --      -----   i   i v      v             
+  LSU-rRNA_Hsa#       4126 GACCCGT--TCCGGG-----GACGGTGCCAGGTGGGGAGTTTGACTGGGG 4168
+
+  NC_000913.3       228012 CGGT-CTCCTCCTAAAGAGTAACGGAGGAGCACGAAGGTTGGCTAATCCT 228060
+                               - v   vii   vi    i v   v iv v    ivi   v vvvv
+  LSU-rRNA_Hsa#       4169 CGGTACACCTGTCAAACGGTAATGCAGGTGTCCTAAGGCGAGCTCAGGGA 4218
+
+  NC_000913.3       228061 GGTCGGACA--TCAGGAGGTTAGTGCAATGGCATAAGCCAGCTTGACTGC 228108
+                             v i  v --  vv v  --  iiv  v    v    iv      iivi
+  LSU-rRNA_Hsa#       4219 GGACAGAAACCTCCCGTGG--AGCAGAAGGGCAAAAGCTCGCTTGATCTT 4266
+
+  NC_000913.3       228109 GAGCGTGACGGCGCGAG--CAGGT-GCGAAAGCAGGTCATAGTGATCC-- 228153
+                             viv -- i ii   i--   ii- i      i  v v vii     --
+  LSU-rRNA_Hsa#       4267 GATTTT--CAGTACGAATACAGACCGTGAAAGCGGGGCCTCACGATCCTT 4314
+
+  NC_000913.3       228154 --GGT------GGTTCTGAATGGAAGGGCCATCGCTCAACGGATAAAAGG 228195
+                           -- ii------    i i iii i   ---------iiv    --    v
+  LSU-rRNA_Hsa#       4315 CTGACCTTTTGGGTTTTAAGCAGGAGG---------TGTCGGA--AAAGT 4353
+
+  NC_000913.3       228196 TACTCCGGGGATAACAGGCTGATACCGCCCAAGAGTTCATATCGACGGCG 228245
+                              iv i        v    vi iv  v     v       v     v  
+  LSU-rRNA_Hsa#       4354 TACCACAGGGATAACTGGCTTGTGGCGGCCAAGCGTTCATAGCGACGTCG 4403
+
+  NC_000913.3       228246 GTGTTTGGCACCTCGATGTCGGCTCATCACATCCTGGGGCTGAAGTAGG- 228294
+                           v v    iiv i ? ?   ?  i  v  vi   v v ---   i ii i-
+  LSU-rRNA_Hsa#       4404 CTTTTTGATCCTTNGNTGTNGGTTCTTCCTATCATTG---TGAGGCGGAN 4450
+
+  NC_000913.3       228295 -TC-CCAAGGGTATGGCTGTTCGCCATTTAAAGTGGTACGCGAGCTGGGT 228342
+                           -  -     v  ?v ii     i  vvi  ?v v  v ??i       ? 
+  LSU-rRNA_Hsa#       4451 TTCACCAAGCGTNGGATTGTTCACCCACTANCGGGGAANNTGAGCTGGNT 4500
+
+  NC_000913.3       228343 TTAGAACGTCGTGAGACAGTTCGGT 228367
+                                v ??i         v ii  
+  LSU-rRNA_Hsa#       4501 TTAGACCNNTGTGAGACAGGTTAGT 4525
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 37.44
+Transitions / transversions = 1.04 (58/56)
+Gap_init rate = 0.09 (35 / 405), avg. gap size = 1.26 (44 / 35)
+
+
+277 18.38 0.00 5.00 NC_000913.3 228933 228995 (4412657) tRNA-Gly-GGY#tRNA 6 65 (9) m_b4s502i0 15
+
+  NC_000913.3       228933 GGTAGTTCAGTCGGTTAGAATACCTGCCTGTCACGCAGGGGGTCGCGGGT 228982
+                              i       v --      v ii     i     i  i  i -     
+  tRNA-Gly-GGY#          6 GGTGGTTCAGTGG--TAGAATTCTCGCCTGCCACGCGGGAGGCC-CGGGT 52
+
+  NC_000913.3       228983 TCGAGTCCCGTCC 228995
+                               v     v  
+  tRNA-Gly-GGY#         53 TCGATTCCCGGCC 65
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 17.30
+Transitions / transversions = 1.75 (7/4)
+Gap_init rate = 0.05 (3 / 62), avg. gap size = 1.00 (3 / 3)
+
+
+251 18.38 0.00 5.00 NC_000913.3 236936 236998 (4404654) tRNA-Gly-GGY#tRNA 6 65 (9) m_b5s502i0 16
+
+  NC_000913.3       236936 GGTAGTTCAGTCGGTTAGAATACCTGCCTGTCACGCAGGGGGTCGCGGGT 236985
+                              i       v --      v ii     i     i  i  i -     
+  tRNA-Gly-GGY#          6 GGTGGTTCAGTGG--TAGAATTCTCGCCTGCCACGCGGGAGGCC-CGGGT 52
+
+  NC_000913.3       236986 TCGAGTCCCGTCC 236998
+                               v     v  
+  tRNA-Gly-GGY#         53 TCGATTCCCGGCC 65
+
+Matrix = 20p53g.matrix
+Kimura (with divCpGMod) = 17.30
+Transitions / transversions = 1.75 (7/4)
+Gap_init rate = 0.05 (3 / 62), avg. gap size = 1.00 (3 / 3)
+
+
+11 27.69 0.00 0.00 NC_000913.3 238792 238830 (4402822) (TTTTCCA)n#Simple_repeat 1 39 (0) m_b5s252i0 17
+
+  NC_000913.3       238792 TTTTCCCTTTTCCATTTATCAAGTTCCTGTTGCCGTTTT 238830
+                                 v          vi  vv    vv  v  i    
+  (TTTTCCA)n#Si          1 TTTTCCATTTTCCATTTTCCATTTTCCATTTTCCATTTT 39
+
+Matrix = Unknown
+Transitions / transversions = 0.29 (2/7)
+Gap_init rate = 0.00 (0 / 38), avg. gap size = 0.0 (0 / 0)
+
+
+14 12.68 0.00 0.00 NC_000913.3 246315 246340 (4395312) (TTGA)n#Simple_repeat 1 26 (0) m_b5s252i1 18
+
+  NC_000913.3       246315 TTGATTGATTGAATGGTTAATTGATT 246340
+                                       v  i  i       
+  (TTGA)n#Simpl          1 TTGATTGATTGATTGATTGATTGATT 26
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (2/1)
+Gap_init rate = 0.00 (0 / 25), avg. gap size = 0.0 (0 / 0)
+
+
+244 28.99 0.00 0.00 NC_000913.3 262878 262946 (4378706) tRNA-Lys-AAG#tRNA 8 76 (0) m_b5s502i1 19
+
+  NC_000913.3       262878 TAGCTCAGTTGGTAGAGCAGCGCATTCGTAATGCGAAGGTCGTAGGTTCG 262927
+                                    i         vviv i  v    viv i      i      
+  tRNA-Lys-AAG#          8 TAGCTCAGTCGGTAGAGCATGAGACTCTTAATCTCAGGGTCGTGGGTTCG 57
+
+  NC_000913.3       262928 ACTCCTATTATCGGCACCA 262946
+                            vi  i ivv v   i   
+  tRNA-Lys-AAG#         58 AGCCCCACGTTGGGCGCCA 76
+
+Matrix = 20p53g.matrix
+Kimura (with divCpGMod) = 30.60
+Transitions / transversions = 1.00 (10/10)
+Gap_init rate = 0.00 (0 / 68), avg. gap size = 0.0 (0 / 0)
+
+
+14 13.19 2.86 2.86 NC_000913.3 448607 448641 (4193011) (GTGCGC)n#Simple_repeat 1 35 (0) m_b8s252i0 20
+
+  NC_000913.3       448607 GTGCCCGTGTTCGTGCGCGTGGGCAGT-CGCGTGCG 448641
+                               v    iv          v  -  -        
+  (GTGCGC)n#Sim          1 GTGCGCGTGCGCGTGCGCGTGCGC-GTGCGCGTGCG 35
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.06 (2 / 34), avg. gap size = 1.00 (2 / 2)
+
+
+186 20.00 5.00 0.00 NC_000913.3 453502 453541 (4188111) L2#LINE/L2 1272 1313 (1769) m_b8s601i0 21
+
+  NC_000913.3       453502 GCTGAACGCGGCTGTTGAAAAATACGTAA--ATATTGACTGG 453541
+                                   i     vv      i  ii  --  ii       
+  L2#LINE/L2          1272 GCTGAACGTGGCTGGAGAAAAACACACAACCATGCTGACTGG 1313
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 24.17
+Transitions / transversions = 3.00 (6/2)
+Gap_init rate = 0.03 (1 / 39), avg. gap size = 2.00 (2 / 1)
+
+
+16 8.60 4.88 4.88 NC_000913.3 520472 520512 (4121140) (GCTGGC)n#Simple_repeat 1 41 (0) m_b9s252i0 22
+
+  NC_000913.3       520472 GCTGGCGCTAAGC-CTGGCGGTGGC-CTGCGTGCTGGCGCTGG 520512
+                                    -i  -      v    -   - i           
+  (GCTGGC)n#Sim          1 GCTGGCGCT-GGCGCTGGCGCTGGCGCTG-GCGCTGGCGCTGG 41
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (2/1)
+Gap_init rate = 0.10 (4 / 40), avg. gap size = 1.00 (4 / 4)
+
+
+197 23.68 0.00 0.00 NC_000913.3 585952 585989 (4055663) L2#LINE/L2 2884 2921 (161) m_b11s601i0 23
+
+  NC_000913.3       585952 AAGGCCTCGCAATGGCTTGCAAGGCTTTACATGTTTTG 585989
+                              v   ii       i i      ii      v i  
+  L2#LINE/L2          2884 AAGTCCTTACAATGGCCTACAAGGCCCTACATGATCTG 2921
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 30.11
+Transitions / transversions = 3.50 (7/2)
+Gap_init rate = 0.00 (0 / 37), avg. gap size = 0.0 (0 / 0)
+
+
+187 18.43 0.00 2.63 NC_000913.3 621554 621592 (4020060) X6A_LINE#LINE/CR1 79 116 (962) m_b11s601i1 24
+
+  NC_000913.3       621554 TAATAGCGCAGTTGCTCCGGCGATCAGCACCGGGATCAG 621592
+                                   vi  -  i    v    i i       i   
+  X6A_LINE#LINE         79 TAATAGCGGGGT-GCCCCGGGGATCGGTACCGGGACCAG 116
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 18.41
+Transitions / transversions = 2.50 (5/2)
+Gap_init rate = 0.03 (1 / 38), avg. gap size = 1.00 (1 / 1)
+
+
+285 29.41 0.00 0.00 NC_000913.3 696666 696733 (3944919) C tRNA-Ile-ATT#tRNA (0) 75 8 m_b12s502i0 25
+
+  NC_000913.3       696666 GTGGCTACGACGGGATTCGAACCTGTGACCCCATCATTATGAGTGATGTG 696715
+                                ivvv     iv       i i    iiiv i    v  iiviii 
+C tRNA-Ile-ATT#         75 GTGGCCCGTACGGGGATCGAACCCGCGACCTTGGCGTTATTAGCACCACG 26
+
+  NC_000913.3       696716 CTCTAACCAACTGAGCTA 696733
+                                             
+C tRNA-Ile-ATT#         25 CTCTAACCAACTGAGCTA 8
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 29.62
+Transitions / transversions = 1.86 (13/7)
+Gap_init rate = 0.00 (0 / 67), avg. gap size = 0.0 (0 / 0)
+
+
+314 25.37 0.00 0.00 NC_000913.3 696675 696741 (3944911) C MamSINE1#SINE/tRNA-RTE (218) 72 6 m_b12s502i1 26
+
+  NC_000913.3       696675 ACGGGATTCGAACCTGTGACCCCATCATTATGAGTGATGTGCTCTAACCA 696724
+                                iv       i      iiiv v i  v  iivi            
+C MamSINE1#SINE         72 ACGGGGATCGAACCCGTGACCTTGGCCTCATTAGCACCGTGCTCTAACCA 23
+
+  NC_000913.3       696725 ACTGAGCTACGTAGCCA 696741
+                                    vvi     
+C MamSINE1#SINE         22 ACTGAGCTAACCAGCCA 6
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 27.34
+Transitions / transversions = 1.43 (10/7)
+Gap_init rate = 0.00 (0 / 66), avg. gap size = 0.0 (0 / 0)
+
+
+285 29.41 0.00 0.00 NC_000913.3 697059 697126 (3944526) C tRNA-Ile-ATT#tRNA (0) 75 8 m_b13s502i2 27
+
+  NC_000913.3       697059 GTGGCTACGACGGGATTCGAACCTGTGACCCCATCATTATGAGTGATGTG 697108
+                                ivvv     iv       i i    iiiv i    v  iiviii 
+C tRNA-Ile-ATT#         75 GTGGCCCGTACGGGGATCGAACCCGCGACCTTGGCGTTATTAGCACCACG 26
+
+  NC_000913.3       697109 CTCTAACCAACTGAGCTA 697126
+                                             
+C tRNA-Ile-ATT#         25 CTCTAACCAACTGAGCTA 8
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 29.62
+Transitions / transversions = 1.86 (13/7)
+Gap_init rate = 0.00 (0 / 67), avg. gap size = 0.0 (0 / 0)
+
+
+314 25.37 0.00 0.00 NC_000913.3 697068 697134 (3944518) C MamSINE1#SINE/tRNA-RTE (218) 72 6 m_b13s502i3 28
+
+  NC_000913.3       697068 ACGGGATTCGAACCTGTGACCCCATCATTATGAGTGATGTGCTCTAACCA 697117
+                                iv       i      iiiv v i  v  iivi            
+C MamSINE1#SINE         72 ACGGGGATCGAACCCGTGACCTTGGCCTCATTAGCACCGTGCTCTAACCA 23
+
+  NC_000913.3       697118 ACTGAGCTACGTAGCCA 697134
+                                    vvi     
+C MamSINE1#SINE         22 ACTGAGCTAACCAGCCA 6
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 27.34
+Transitions / transversions = 1.43 (10/7)
+Gap_init rate = 0.00 (0 / 66), avg. gap size = 0.0 (0 / 0)
+
+
+232 24.06 8.14 3.33 NC_000913.3 700376 700461 (3941191) MER91B#DNA/hAT-Tip100 99 188 (2) m_b13s601i0 29
+
+  NC_000913.3       700376 AATTTTCCAGCAAATGCTGGAGCAAAATACCGTTGAGCA--TGGCGCGTT 700423
+                                   i   i   -- v  i   i ii -     v --v     v  
+  MER91B#DNA/hA         99 AATTTTCCGGCAGATG--GCAGTAAAGTGTC-TTGAGGAAGGGGCGCCTT 145
+
+  NC_000913.3       700424 TTACCA----GCGCAAAAGCGCCG-ATTGCCGAGCGGTGATCC 700461
+                             v i ----  i    i i    -  v v v       ii  
+  MER91B#DNA/hA        146 TTTCTAATTCGCACAAAGGTGCCGTATGGGCTAGCGGTGGCCC 188
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 27.97
+Transitions / transversions = 1.50 (12/8)
+Gap_init rate = 0.07 (6 / 85), avg. gap size = 1.67 (10 / 6)
+
+
+16 19.38 2.44 0.00 NC_000913.3 708022 708062 (3933590) (ATAAA)n#Simple_repeat 1 42 (0) m_b13s252i0 30
+
+  NC_000913.3       708022 ATAAAATAAATTTAAA-ATAACAAAACATAATTAAATAAAAT 708062
+                                     v v   - v  i    i v   v         
+  (ATAAA)n#Simp          1 ATAAAATAAAATAAAATAAAATAAAATAAAATAAAATAAAAT 42
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.03 (1 / 40), avg. gap size = 1.00 (1 / 1)
+
+
+14 11.68 8.11 0.00 NC_000913.3 770850 770886 (3870766) (TAATTA)n#Simple_repeat 1 40 (0) m_b14s252i0 31
+
+  NC_000913.3       770850 TAATTATAA-TATAATTATAAGT-TAACTA-AATGTTAAT 770886
+                                    -           v -   i  -   vv    
+  (TAATTA)n#Sim          1 TAATTATAATTATAATTATAATTATAATTATAATTATAAT 40
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.08 (3 / 36), avg. gap size = 1.00 (3 / 3)
+
+
+273 22.73 0.00 0.00 NC_000913.3 780557 780622 (3861030) tRNA-Tyr-TAC#tRNA 4 69 (5) m_b14s502i0 32
+
+  NC_000913.3       780557 TCGTTAGCTCAGTTGGTAGAGCAGTTGACTTTTAATCAATTGGTCGCAGG 780606
+                              v        i         i vv    v vi   vv v      v  
+  tRNA-Tyr-TAC#          4 TCGATAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGG 53
+
+  NC_000913.3       780607 TTCGAATCCTGCACGA 780622
+                                v   v  v   
+  tRNA-Tyr-TAC#         54 TTCGATTCCGGCTCGA 69
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 25.38
+Transitions / transversions = 0.25 (3/12)
+Gap_init rate = 0.00 (0 / 65), avg. gap size = 0.0 (0 / 0)
+
+
+273 22.73 0.00 0.00 NC_000913.3 780846 780911 (3860741) tRNA-Tyr-TAC#tRNA 4 69 (5) m_b14s502i1 33
+
+  NC_000913.3       780846 TCGTTAGCTCAGTTGGTAGAGCAGTTGACTTTTAATCAATTGGTCGCAGG 780895
+                              v        i         i vv    v vi   vv v      v  
+  tRNA-Tyr-TAC#          4 TCGATAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGG 53
+
+  NC_000913.3       780896 TTCGAATCCTGCACGA 780911
+                                v   v  v   
+  tRNA-Tyr-TAC#         54 TTCGATTCCGGCTCGA 69
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 25.38
+Transitions / transversions = 0.25 (3/12)
+Gap_init rate = 0.00 (0 / 65), avg. gap size = 0.0 (0 / 0)
+
+
+273 22.73 0.00 0.00 NC_000913.3 781150 781215 (3860437) tRNA-Tyr-TAC#tRNA 4 69 (5) m_b14s502i2 34
+
+  NC_000913.3       781150 TCGTTAGCTCAGTTGGTAGAGCAGTTGACTTTTAATCAATTGGTCGCAGG 781199
+                              v        i         i vv    v vi   vv v      v  
+  tRNA-Tyr-TAC#          4 TCGATAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGG 53
+
+  NC_000913.3       781200 TTCGAATCCTGCACGA 781215
+                                v   v  v   
+  tRNA-Tyr-TAC#         54 TTCGATTCCGGCTCGA 69
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 25.38
+Transitions / transversions = 0.25 (3/12)
+Gap_init rate = 0.00 (0 / 65), avg. gap size = 0.0 (0 / 0)
+
+
+273 22.73 0.00 0.00 NC_000913.3 781372 781437 (3860215) tRNA-Tyr-TAC#tRNA 4 69 (5) m_b14s502i3 35
+
+  NC_000913.3       781372 TCGTTAGCTCAGTTGGTAGAGCAGTTGACTTTTAATCAATTGGTCGCAGG 781421
+                              v        i         i vv    v vi   vv v      v  
+  tRNA-Tyr-TAC#          4 TCGATAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGG 53
+
+  NC_000913.3       781422 TTCGAATCCTGCACGA 781437
+                                v   v  v   
+  tRNA-Tyr-TAC#         54 TTCGATTCCGGCTCGA 69
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 25.38
+Transitions / transversions = 0.25 (3/12)
+Gap_init rate = 0.00 (0 / 65), avg. gap size = 0.0 (0 / 0)
+
+
+273 22.73 0.00 0.00 NC_000913.3 781580 781645 (3860007) tRNA-Tyr-TAC#tRNA 4 69 (5) m_b14s502i4 36
+
+  NC_000913.3       781580 TCGTTAGCTCAGTTGGTAGAGCAGTTGACTTTTAATCAATTGGTCGCAGG 781629
+                              v        i         i vv    v vi   vv v      v  
+  tRNA-Tyr-TAC#          4 TCGATAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGG 53
+
+  NC_000913.3       781630 TTCGAATCCTGCACGA 781645
+                                v   v  v   
+  tRNA-Tyr-TAC#         54 TTCGATTCCGGCTCGA 69
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 25.38
+Transitions / transversions = 0.25 (3/12)
+Gap_init rate = 0.00 (0 / 65), avg. gap size = 0.0 (0 / 0)
+
+
+11 27.68 0.00 0.00 NC_000913.3 832052 832090 (3809562) (GTCGCG)n#Simple_repeat 1 39 (0) m_b15s252i0 37
+
+  NC_000913.3       832052 GTGGCGGCGGCGGTCGTGGGCAAGGTGGTGGTCGCGGTC 832090
+                             v    iv       i  v iv   v i          
+  (GTCGCG)n#Sim          1 GTCGCGGTCGCGGTCGCGGTCGCGGTCGCGGTCGCGGTC 39
+
+Matrix = Unknown
+Transitions / transversions = 0.80 (4/5)
+Gap_init rate = 0.00 (0 / 38), avg. gap size = 0.0 (0 / 0)
+
+
+13 10.81 3.12 3.12 NC_000913.3 836309 836340 (3805312) (CATAAA)n#Simple_repeat 1 32 (0) m_b15s252i1 38
+
+  NC_000913.3       836309 CATAAAAATACAACAAACACAT-AACATAAACA 836340
+                                 v   -    v v    -          
+  (CATAAA)n#Sim          1 CATAAACATA-AACATAAACATAAACATAAACA 32
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/3)
+Gap_init rate = 0.06 (2 / 31), avg. gap size = 1.00 (2 / 2)
+
+
+19 20.40 0.00 0.00 NC_000913.3 933860 933904 (3707748) (GATGAA)n#Simple_repeat 1 45 (0) m_b17s252i0 39
+
+  NC_000913.3       933860 GATGAAGATGAGTATGAAGACGACGAAGAGTATGAAGATGAAAAT 933904
+                                      iv       i  v  v  iv           i  
+  (GATGAA)n#Sim          1 GATGAAGATGAAGATGAAGATGAAGATGAAGATGAAGATGAAGAT 45
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (4/4)
+Gap_init rate = 0.00 (0 / 44), avg. gap size = 0.0 (0 / 0)
+
+
+185 27.28 3.51 3.51 NC_000913.3 936196 936252 (3705400) C OldhAT1#DNA/hAT-Ac (1895) 947 891 m_b17s601i0 40
+
+  NC_000913.3       936196 GACTACCGGTTCCGGTAAATCTGT--CGGTGTGAACGCGATGATCCTGAG 936243
+                              i  i   i --ii v      --i i       i   i vi   v  
+C OldhAT1#DNA/h        947 GACCACTGGTCC--ACATATCTGTGGTGATGTGAACACGACGCCCCTCAG 900
+
+  NC_000913.3       936244 CATGCTTTA 936252
+                            v     i 
+C OldhAT1#DNA/h        899 CTTGCTTCA 891
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 32.92
+Transitions / transversions = 2.75 (11/4)
+Gap_init rate = 0.05 (3 / 56), avg. gap size = 1.33 (4 / 3)
+
+
+188 17.39 2.13 2.13 NC_000913.3 982051 982097 (3659555) C OldhAT1#DNA/hAT-Ac (2537) 305 259 m_b17s601i1 41
+
+  NC_000913.3       982051 GGCAGATGGTGCTATTGGCCCGGCA-ACACGTGACTGGTTAAACGTAA 982097
+                                       v v          - i iv  -    v v  i    
+C OldhAT1#DNA/h        305 GGCAGATGGTGCAAATGGCCCGGCATATATTTG-CTGGATCAATGTAA 259
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 19.79
+Transitions / transversions = 0.60 (3/5)
+Gap_init rate = 0.04 (2 / 46), avg. gap size = 1.00 (2 / 2)
+
+
+12 19.32 4.65 2.27 NC_000913.3 998393 998435 (3643217) (ATTA)n#Simple_repeat 1 44 (0) m_b18s252i0 42
+
+  NC_000913.3       998393 ATTAACT-ATT-ATTAATAGAACTCATTAATTGTTTTATTAATTA 998435
+                                i -   -      -v  i v       iv  v        
+  (ATTA)n#Simpl          1 ATTAATTAATTAATTAAT-TAATTAATTAATTAATTAATTAATTA 44
+
+Matrix = Unknown
+Transitions / transversions = 0.75 (3/4)
+Gap_init rate = 0.07 (3 / 42), avg. gap size = 1.00 (3 / 3)
+
+
+12 25.69 0.00 0.00 NC_000913.3 1019431 1019467 (3622185) (GGAGCT)n#Simple_repeat 1 37 (0) m_b18s252i1 43
+
+  NC_000913.3      1019431 GGTGCCGGAGCTGGAGCCGGAGCAACTACTGGAGCTG 1019467
+                             v  i           i     vivvi         
+  (GGAGCT)n#Sim          1 GGAGCTGGAGCTGGAGCTGGAGCTGGAGCTGGAGCTG 37
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (4/4)
+Gap_init rate = 0.00 (0 / 36), avg. gap size = 0.0 (0 / 0)
+
+
+16 17.01 6.52 0.00 NC_000913.3 1080414 1080459 (3561193) (GCTGGT)n#Simple_repeat 1 49 (0) m_b19s252i0 44
+
+  NC_000913.3      1080414 GCTGGTG-TGG-G-TAGGGCGTGTGATGGTGCTGGTGGTGGCGCTGGTG 1080459
+                                  -   - - i v  vv   v           v   i       
+  (GCTGGT)n#Sim          1 GCTGGTGCTGGTGCTGGTGCTGGTGCTGGTGCTGGTGCTGGTGCTGGTG 49
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.07 (3 / 45), avg. gap size = 1.00 (3 / 3)
+
+
+66 3.03 0.00 0.00 NC_000913.3 1198438 1198505 (3443147) (ATGAAATG)n#Simple_repeat 1 68 (0) c_b21s251i0 45
+
+  NC_000913.3      1198438 ATGAAATAATGAAATAATGAAATGATGAAATGATGAAATGATGAAATGAT 1198487
+                                  i       i                                  
+  (ATGAAATG)n#S          1 ATGAAATGATGAAATGATGAAATGATGAAATGATGAAATGATGAAATGAT 50
+
+  NC_000913.3      1198488 GAAATGATGAAATGATGA 1198505
+                                             
+  (ATGAAATG)n#S         51 GAAATGATGAAATGATGA 68
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (2/0)
+Gap_init rate = 0.00 (0 / 67), avg. gap size = 0.0 (0 / 0)
+
+
+12 25.24 2.38 0.00 NC_000913.3 1219480 1219521 (3422131) (TGTTTT)n#Simple_repeat 1 43 (0) m_b22s252i0 46
+
+  NC_000913.3      1219480 TGTTTATCTATTTAAATTT-TTTGTGCTTTTGTTTTTGTCTTT 1219521
+                                v v v   ivv   -   v  i            i   
+  (TGTTTT)n#Sim          1 TGTTTTTGTTTTTGTTTTTGTTTTTGTTTTTGTTTTTGTTTTT 43
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (3/6)
+Gap_init rate = 0.02 (1 / 41), avg. gap size = 1.00 (1 / 1)
+
+
+13 18.17 0.00 0.00 NC_000913.3 1229831 1229861 (3411791) (ACCGGC)n#Simple_repeat 1 31 (0) m_b22s252i1 47
+
+  NC_000913.3      1229831 ACCGGCGACGACACCGGCTGCGGCACCGGCA 1229861
+                                 iv  i       vv           
+  (ACCGGC)n#Sim          1 ACCGGCACCGGCACCGGCACCGGCACCGGCA 31
+
+Matrix = Unknown
+Transitions / transversions = 0.67 (2/3)
+Gap_init rate = 0.00 (0 / 30), avg. gap size = 0.0 (0 / 0)
+
+
+14 28.43 0.00 0.00 NC_000913.3 1311273 1311319 (3330333) (AGCCGG)n#Simple_repeat 1 47 (0) m_b23s252i0 48
+
+  NC_000913.3      1311273 AGCCGCCACCGGAGCCGGTGGTAGAGCCAGAACCGGAACCTGAGCCG 1311319
+                                vvi          v vii     i  i     i  v      
+  (AGCCGG)n#Sim          1 AGCCGGAGCCGGAGCCGGAGCCGGAGCCGGAGCCGGAGCCGGAGCCG 47
+
+Matrix = Unknown
+Transitions / transversions = 1.20 (6/5)
+Gap_init rate = 0.00 (0 / 46), avg. gap size = 0.0 (0 / 0)
+
+
+20 12.24 0.00 0.00 NC_000913.3 1311359 1311394 (3330258) (AAGCCG)n#Simple_repeat 1 36 (0) m_b23s252i1 49
+
+  NC_000913.3      1311359 AAGCCGAAGCCGAAACCTAAGCCAAAACCGAAGCCG 1311394
+                                         i  v     i  i         
+  (AAGCCG)n#Sim          1 AAGCCGAAGCCGAAGCCGAAGCCGAAGCCGAAGCCG 36
+
+Matrix = Unknown
+Transitions / transversions = 3.00 (3/1)
+Gap_init rate = 0.00 (0 / 35), avg. gap size = 0.0 (0 / 0)
+
+
+17 22.26 0.00 2.08 NC_000913.3 1326590 1326638 (3315014) (CGGTGG)n#Simple_repeat 1 48 (0) m_b23s252i3 50
+
+  NC_000913.3      1326590 CGGTGGTGGTGCTGGCGGCGGCGCGGGTGGCGGAGGCGGTGGTGGCTGG 1326638
+                                 i    vi  i     i vv        v        i  -   
+  (CGGTGG)n#Sim          1 CGGTGGCGGTGGCGGTGGCGGTGGCGGTGGCGGTGGCGGTGGCGG-TGG 48
+
+Matrix = Unknown
+Transitions / transversions = 1.25 (5/4)
+Gap_init rate = 0.02 (1 / 48), avg. gap size = 1.00 (1 / 1)
+
+
+22 16.94 4.05 5.48 NC_000913.3 1329531 1329604 (3312048) (AGCAAA)n#Simple_repeat 1 73 (0) m_b23s252i4 51
+
+  NC_000913.3      1329531 AGCAAAAACAGTGGCACAAAGCGCAGAAGAAAAAGCATAAGCAAGAAGCG 1329580
+                                  i  ivi   -   --   i   v       v      -    i
+  (AGCAAA)n#Sim          1 AGCAAAAGCAAAAGCA-AAA--GCAAAAGCAAAAGCAAAAGCAA-AAGCA 46
+
+  NC_000913.3      1329581 AAAGC---AGCAAAAGCGAAAGCCAAA 1329604
+                                ---         i     v   
+  (AGCAAA)n#Sim         47 AAAGCAAAAGCAAAAGCAAAAGCAAAA 73
+
+Matrix = Unknown
+Transitions / transversions = 1.50 (6/4)
+Gap_init rate = 0.07 (5 / 73), avg. gap size = 1.40 (7 / 5)
+
+
+12 15.30 3.45 0.00 NC_000913.3 1401786 1401814 (3239838) (GTT)n#Simple_repeat 1 30 (0) m_b25s252i0 52
+
+  NC_000913.3      1401786 GTTGTTG-TGTTTGCGTTGTTGTTGTTATT 1401814
+                                  -    vvi            i  
+  (GTT)n#Simple          1 GTTGTTGTTGTTGTTGTTGTTGTTGTTGTT 30
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (2/2)
+Gap_init rate = 0.04 (1 / 28), avg. gap size = 1.00 (1 / 1)
+
+
+12 18.76 2.63 2.63 NC_000913.3 1457340 1457377 (3184275) (GTGCAAA)n#Simple_repeat 1 38 (0) m_b26s252i0 53
+
+  NC_000913.3      1457340 GTGCGACCTGCAAA-TGCAAAGTGCTGCGTGGCAAAGTG 1457377
+                               i vv      -          viv  -        
+  (GTGCAAA)n#Si          1 GTGCAAAGTGCAAAGTGCAAAGTGCAAAGT-GCAAAGTG 38
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (2/4)
+Gap_init rate = 0.05 (2 / 37), avg. gap size = 1.00 (2 / 2)
+
+
+199 26.92 1.92 0.00 NC_000913.3 1574990 1575041 (3066611) C X7B_LINE#LINE/CR1 (34) 216 164 m_b28s601i0 54
+
+  NC_000913.3      1574990 TTCCTGCAATGAACCGGTATGAATTTG-CAGCCATAAATTTACCTGATCC 1575038
+                                vi   i v  iv    i  i i-  v    i      i  i v  
+C X7B_LINE#LINE        216 TTCCTTTAATAACCCATTATGGATCTATCATCCATGAATTTATCTAAACC 167
+
+  NC_000913.3      1575039 TTT 1575041
+                              
+C X7B_LINE#LINE        166 TTT 164
+
+Matrix = 25p47g.matrix
+Kimura (with divCpGMod) = 34.54
+Transitions / transversions = 1.80 (9/5)
+Gap_init rate = 0.02 (1 / 51), avg. gap size = 1.00 (1 / 1)
+
+
+214 31.75 0.00 3.66 NC_000913.3 1599173 1599257 (3042395) MamRTE1#LINE/RTE-BovB 2086 2167 (1645) m_b28s601i1 55
+
+  NC_000913.3      1599173 TCTTCCAGCAGCGTATAGGTGTCGATGCCTAAACGTTCGGCAATCAGTTT 1599222
+                            i   v     - v vi  v v  v   i  i    - v   - vi i  
+  MamRTE1#LINE/       2086 TTTTCAAGCAG-GAAGGGGAGACGCTGCTTAGACGT-CTGCA-TAGGCTT 2132
+
+  NC_000913.3      1599223 TTCTTCGGCACAGAAAGCATCGCGGAACCAGCGCA 1599257
+                                 i   i vii  i i  v    viiv    
+  MamRTE1#LINE/       2133 TTCTTCAGCATATGGAGTACCGAGGAAATGCCGCA 2167
+
+Matrix = 25p47g.matrix
+Kimura (with divCpGMod) = 42.11
+Transitions / transversions = 1.17 (14/12)
+Gap_init rate = 0.04 (3 / 84), avg. gap size = 1.00 (3 / 3)
+
+
+229 8.89 13.33 0.00 NC_000913.3 1635470 1635514 (3006138) C Helitron1Na_Mam#RC/Helitron (193) 869 819 m_b29s502i0 56
+
+  NC_000913.3      1635470 AACTGCAAGTTTCGG---GTAT--GCAGATT-TGTCAAAAGTCTGCCCCT 1635513
+                             v i  i       ---    --       -             i    
+C Helitron1Na_M        869 AAATACAGGTTTCGGAAGGTATAAGCAGATTCTGTCAAAAGTCTGTCCCT 820
+
+  NC_000913.3      1635514 G 1635514
+                            
+C Helitron1Na_M        819 G 819
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 9.59
+Transitions / transversions = 3.00 (3/1)
+Gap_init rate = 0.07 (3 / 44), avg. gap size = 2.00 (6 / 3)
+
+
+184 27.50 0.00 0.00 NC_000913.3 1673216 1673255 (2968397) LFSINE_Vert#SINE/tRNA 409 448 (11) m_b29s601i0 57
+
+  NC_000913.3      1673216 CCAGGGTGGTTAACCCGGCAATTTTCATCAGCGATAAACT 1673255
+                                 iv  i  i      vi     iv   iv    i 
+  LFSINE_Vert#S        409 CCAGGGCTGTCAATCCGGCACCTTTCACGAGCACTAAATT 448
+
+Matrix = 25p47g.matrix
+Kimura (with divCpGMod) = 31.54
+Transitions / transversions = 1.75 (7/4)
+Gap_init rate = 0.00 (0 / 39), avg. gap size = 0.0 (0 / 0)
+
+
+12 13.67 0.00 0.00 NC_000913.3 1685375 1685398 (2956254) (GATT)n#Simple_repeat 1 24 (0) m_b30s252i0 58
+
+  NC_000913.3      1685375 GATTCATTGAGTAATTGATTGATT 1685398
+                               v     v i           
+  (GATT)n#Simpl          1 GATTGATTGATTGATTGATTGATT 24
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.00 (0 / 23), avg. gap size = 0.0 (0 / 0)
+
+
+192 32.14 0.00 0.00 NC_000913.3 1746442 1746497 (2895155) MamSINE1#SINE/tRNA-RTE 14 69 (221) m_b31s601i0 59
+
+  NC_000913.3      1746442 TAGCTCAGTTGGTTAGAGCACCACCTTGACATGGTGGGGGTCGTTGGTTC 1746491
+                                                viivi i iiv  ivii    iiv     
+  MamSINE1#SINE         14 TAGCTCAGTTGGTTAGAGCACGGTGCTAATGAGGCCAAGGTCACGGGTTC 63
+
+  NC_000913.3      1746492 GAGTCC 1746497
+                             vi  
+  MamSINE1#SINE         64 GATCCC 69
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 41.04
+Transitions / transversions = 2.00 (12/6)
+Gap_init rate = 0.00 (0 / 55), avg. gap size = 0.0 (0 / 0)
+
+
+181 32.14 0.00 0.00 NC_000913.3 1746523 1746578 (2895074) MamSINE1#SINE/tRNA-RTE 14 69 (221) m_b31s601i1 60
+
+  NC_000913.3      1746523 TAGCTCAGTTGGTTAGAGCACCACCTTGACATGGTGGGGGTCGGTGGTTC 1746572
+                                                viivi i iiv  ivii    ivv     
+  MamSINE1#SINE         14 TAGCTCAGTTGGTTAGAGCACGGTGCTAATGAGGCCAAGGTCACGGGTTC 63
+
+  NC_000913.3      1746573 GAGTCC 1746578
+                             vi  
+  MamSINE1#SINE         64 GATCCC 69
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 43.67
+Transitions / transversions = 1.57 (11/7)
+Gap_init rate = 0.00 (0 / 55), avg. gap size = 0.0 (0 / 0)
+
+
+180 17.70 12.50 2.86 NC_000913.3 1785180 1785243 (2856409) AmnL2-1#LINE/L2 277 346 (2267) m_b31s601i2 61
+
+  NC_000913.3      1785180 TCATGATCT---CAACGTTGGTCAGTCCC-----ATGTCGTTGCGCACAC 1785221
+                                    --- v   i?  i  v   ?-----    --   ?    v 
+  AmnL2-1#LINE/        277 TCATGATCTTNCCTACGCNGGCCACTCCNTGGTTATGT--TTGNGCACTC 324
+
+  NC_000913.3      1785222 GTTTCACTGCTTCACACTCCAG 1785243
+                           v      i ?i    v ii   
+  AmnL2-1#LINE/        325 TTTTCACCGNCTCACCCCTCAG 346
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 19.93
+Transitions / transversions = 1.20 (6/5)
+Gap_init rate = 0.06 (4 / 63), avg. gap size = 2.50 (10 / 4)
+
+
+13 10.69 3.12 3.12 NC_000913.3 1893822 1893853 (2747799) (TATTTA)n#Simple_repeat 1 32 (0) m_b33s252i0 62
+
+  NC_000913.3      1893822 TATTTATATTTATAATTTCAATTT-TATCTATA 1893853
+                                        -    vv    -   i    
+  (TATTTA)n#Sim          1 TATTTATATTTAT-ATTTATATTTATATTTATA 32
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.06 (2 / 31), avg. gap size = 1.00 (2 / 2)
+
+
+12 22.13 0.00 0.00 NC_000913.3 1893851 1893882 (2747770) (ATAAAA)n#Simple_repeat 1 32 (0) m_b33s252i1 63
+
+  NC_000913.3      1893851 ATAAAACTAACTATATAAATAAACATAAACAT 1893882
+                                 v   vv   v       v     v  
+  (ATAAAA)n#Sim          1 ATAAAAATAAAAATAAAAATAAAAATAAAAAT 32
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/6)
+Gap_init rate = 0.00 (0 / 31), avg. gap size = 0.0 (0 / 0)
+
+
+17 6.98 0.00 6.25 NC_000913.3 1900755 1900788 (2740864) (CGGCAT)n#Simple_repeat 1 32 (0) m_b33s252i2 64
+
+  NC_000913.3      1900755 CGGGATCGGCATCGGCATCGGGTTATCGGCATCG 1900788
+                              v               -  -i          
+  (CGGCAT)n#Sim          1 CGGCATCGGCATCGGCATC-GG-CATCGGCATCG 32
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/1)
+Gap_init rate = 0.06 (2 / 33), avg. gap size = 1.00 (2 / 2)
+
+
+246 26.79 0.00 0.00 NC_000913.3 1992055 1992110 (2649542) C tRNA-Lys-AAG#tRNA (13) 63 8 m_b35s502i0 65
+
+  NC_000913.3      1992055 GAGACTCGAACTCGCGACCCCGACCTTGGCAAGGTCGTGCTCTACCAACT 1992104
+                            i i       i i      i  vv  iiv ivv  i         i   
+C tRNA-Lys-AAG#         63 GGGGCTCGAACCCACGACCCTGAGATTAAGAGTCTCATGCTCTACCGACT 14
+
+  NC_000913.3      1992105 GAGCTA 1992110
+                                 
+C tRNA-Lys-AAG#         13 GAGCTA 8
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 31.66
+Transitions / transversions = 2.00 (10/5)
+Gap_init rate = 0.00 (0 / 55), avg. gap size = 0.0 (0 / 0)
+
+
+13 22.87 5.88 0.00 NC_000913.3 2002773 2002823 (2638829) (AGTTGC)n#Simple_repeat 1 54 (0) m_b35s252i0 66
+
+  NC_000913.3      2002773 AGTTGTAGCTTTAGTAGTATTTGCA--T-CAGTTACAGTTGCATTTGCCG 2002819
+                                i  i vi   v i v     -- -     i        v    v 
+  (AGTTGC)n#Sim          1 AGTTGCAGTTGCAGTTGCAGTTGCAGTTGCAGTTGCAGTTGCAGTTGCAG 50
+
+  NC_000913.3      2002820 TTGC 2002823
+                               
+  (AGTTGC)n#Sim         51 TTGC 54
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (5/5)
+Gap_init rate = 0.04 (2 / 50), avg. gap size = 1.50 (3 / 2)
+
+
+15 15.26 0.00 0.00 NC_000913.3 2004083 2004111 (2637541) (CCA)n#Simple_repeat 1 29 (0) m_b35s252i1 67
+
+  NC_000913.3      2004083 CCGCCACCAGCACCACCAGCAGCACCACC 2004111
+                             i      v        v  v       
+  (CCA)n#Simple          1 CCACCACCACCACCACCACCACCACCACC 29
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.00 (0 / 28), avg. gap size = 0.0 (0 / 0)
+
+
+18 17.22 0.00 6.12 NC_000913.3 2014578 2014629 (2627023) (GTTGCTG)n#Simple_repeat 1 49 (0) m_b35s252i2 68
+
+  NC_000913.3      2014578 GTTACTTGCTGCCGGTCGCTGGTTGCTGGTACTGCTGGTGGCGTGGCTGC 2014627
+                              i  v i   i   i             --       v  -   i   
+  (GTTGCTG)n#Si          1 GTTGCTGGTTGCTGGTTGCTGGTTGCTGGT--TGCTGGTTGC-TGGTTGC 47
+
+  NC_000913.3      2014628 TG 2014629
+                             
+  (GTTGCTG)n#Si         48 TG 49
+
+Matrix = Unknown
+Transitions / transversions = 2.50 (5/2)
+Gap_init rate = 0.06 (3 / 51), avg. gap size = 1.00 (3 / 3)
+
+
+20 13.15 3.57 5.45 NC_000913.3 2033840 2033895 (2607757) (TTATAA)n#Simple_repeat 1 55 (0) m_b36s252i0 69
+
+  NC_000913.3      2033840 TTATAATTTTCATGAATATTTATATTTAGAATTCATAATTATGAATTAT- 2033888
+                                   v v  -v   v     v   v    -        -      -
+  (TTATAA)n#Sim          1 TTATAATTATAAT-TATAATTATAATTATAATT-ATAATTAT-AATTATA 47
+
+  NC_000913.3      2033889 ATTA-AAT 2033895
+                               -   
+  (TTATAA)n#Sim         48 ATTATAAT 55
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/6)
+Gap_init rate = 0.09 (5 / 55), avg. gap size = 1.00 (5 / 5)
+
+
+307 21.54 1.54 0.00 NC_000913.3 2044556 2044620 (2597032) tRNA-Tyr-TAC#tRNA 8 73 (1) m_b36s502i0 70
+
+  NC_000913.3      2044556 TAGTTCAGTCGGTAGAACGGCGGACTGTTAATCCGTATGTCACTGGTTCG 2044605
+                              i    ii      i   v       vi    v  v   i        
+  tRNA-Tyr-TAC#          8 TAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGGTTCG 57
+
+  NC_000913.3      2044606 AGTCCAG-TCAGAGGA 2044620
+                            v   i -  ii    
+  tRNA-Tyr-TAC#         58 ATTCCGGCTCGAAGGA 73
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 19.96
+Transitions / transversions = 1.80 (9/5)
+Gap_init rate = 0.02 (1 / 64), avg. gap size = 1.00 (1 / 1)
+
+
+188 11.46 18.18 4.84 NC_000913.3 2049901 2049955 (2591697) C Penelope1_Vert#LINE/Penelope (788) 291 230 m_b36s601i0 71
+
+  NC_000913.3      2049901 TGACTTTGATT-GCCGATGCT-----GGTACCGCAAAACTAGCCTCCTTA 2049944
+                                   v  -  v    ? -----      i  i---      i    
+C Penelope1_Ver        291 TGACTTTGTTTAGCAGATGNTTTCTGGGTACCACAG---TAGCCTTCTTA 245
+
+  NC_000913.3      2049945 A----CCTCTGTATA 2049955
+                            ----i         
+C Penelope1_Ver        244 ATTTGTCTCTGTATA 230
+
+Matrix = 25p47g.matrix
+Kimura (with divCpGMod) = 12.95
+Transitions / transversions = 2.00 (4/2)
+Gap_init rate = 0.11 (6 / 54), avg. gap size = 2.17 (13 / 6)
+
+
+12 21.58 0.00 0.00 NC_000913.3 2057300 2057331 (2584321) (TTGAAG)n#Simple_repeat 1 32 (0) m_b36s252i1 72
+
+  NC_000913.3      2057300 TTGAAATTTTACTTGAAGCTGAAGTTGATGTT 2057331
+                                i  vv v      i         v   
+  (TTGAAG)n#Sim          1 TTGAAGTTGAAGTTGAAGTTGAAGTTGAAGTT 32
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (2/4)
+Gap_init rate = 0.00 (0 / 31), avg. gap size = 0.0 (0 / 0)
+
+
+307 21.54 1.54 0.00 NC_000913.3 2058031 2058095 (2583557) C tRNA-Tyr-TAC#tRNA (1) 73 8 m_b36s502i1 73
+
+  NC_000913.3      2058031 TCCTCTGA-CTGGACTCGAACCAGTGACATACGGATTAACAGTCCGCCGT 2058079
+                               ii  - i   v         i   v  v    iv       v   i
+C tRNA-Tyr-TAC#         73 TCCTTCGAGCCGGAATCGAACCAGCGACCTAAGGATCTACAGTCCTCCGC 24
+
+  NC_000913.3      2058080 TCTACCGACTGAACTA 2058095
+                                 ii    i   
+C tRNA-Tyr-TAC#         23 TCTACCAGCTGAGCTA 8
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 19.96
+Transitions / transversions = 1.80 (9/5)
+Gap_init rate = 0.02 (1 / 64), avg. gap size = 1.00 (1 / 1)
+
+
+307 21.54 1.54 0.00 NC_000913.3 2059858 2059922 (2581730) tRNA-Tyr-TAC#tRNA 8 73 (1) m_b36s502i2 74
+
+  NC_000913.3      2059858 TAGTTCAGTCGGTAGAACGGCGGACTGTTAATCCGTATGTCACTGGTTCG 2059907
+                              i    ii      i   v       vi    v  v   i        
+  tRNA-Tyr-TAC#          8 TAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGGTTCG 57
+
+  NC_000913.3      2059908 AGTCCAG-TCAGAGGA 2059922
+                            v   i -  ii    
+  tRNA-Tyr-TAC#         58 ATTCCGGCTCGAAGGA 73
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 19.96
+Transitions / transversions = 1.80 (9/5)
+Gap_init rate = 0.02 (1 / 64), avg. gap size = 1.00 (1 / 1)
+
+
+307 21.54 1.54 0.00 NC_000913.3 2062267 2062331 (2579321) tRNA-Tyr-TAC#tRNA 8 73 (1) m_b36s502i3 75
+
+  NC_000913.3      2062267 TAGTTCAGTCGGTAGAACGGCGGACTGTTAATCCGTATGTCACTGGTTCG 2062316
+                              i    ii      i   v       vi    v  v   i        
+  tRNA-Tyr-TAC#          8 TAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGGTTCG 57
+
+  NC_000913.3      2062317 AGTCCAG-TCAGAGGA 2062331
+                            v   i -  ii    
+  tRNA-Tyr-TAC#         58 ATTCCGGCTCGAAGGA 73
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 19.96
+Transitions / transversions = 1.80 (9/5)
+Gap_init rate = 0.02 (1 / 64), avg. gap size = 1.00 (1 / 1)
+
+
+14 8.51 0.00 3.85 NC_000913.3 2092973 2092999 (2548653) (GCTG)n#Simple_repeat 1 26 (0) m_b37s252i0 76
+
+  NC_000913.3      2092973 GCAGGCATCGCTGGCTGGCTGGCTGGC 2092999
+                             v   - v                  
+  (GCTG)n#Simpl          1 GCTGGC-TGGCTGGCTGGCTGGCTGGC 26
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/2)
+Gap_init rate = 0.04 (1 / 26), avg. gap size = 1.00 (1 / 1)
+
+
+13 10.02 0.00 11.11 NC_000913.3 2106160 2106199 (2535453) (AAAAT)n#Simple_repeat 1 36 (0) m_b37s252i1 77
+
+  NC_000913.3      2106160 AAAATGAAAGAAAAGGTATAAATAAAATATGAATAAAATA 2106199
+                                i   v    --  -          -i         
+  (AAAAT)n#Simp          1 AAAATAAAATAAAA--TA-AAATAAAATA-AAATAAAATA 36
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (2/1)
+Gap_init rate = 0.10 (4 / 39), avg. gap size = 1.00 (4 / 4)
+
+
+15 25.32 0.00 0.00 NC_000913.3 2130479 2130520 (2511132) (CCA)n#Simple_repeat 1 42 (0) m_b37s252i2 78
+
+  NC_000913.3      2130479 CCATCTCCACCGCCGCCAGCGCCACCACCAGCCCGACCACCA 2130520
+                              i v     i  i   v i         v v v       
+  (CCA)n#Simple          1 CCACCACCACCACCACCACCACCACCACCACCACCACCACCA 42
+
+Matrix = Unknown
+Transitions / transversions = 0.80 (4/5)
+Gap_init rate = 0.00 (0 / 41), avg. gap size = 0.0 (0 / 0)
+
+
+11 17.30 7.69 0.00 NC_000913.3 2174114 2174152 (2467500) (GCCAAT)n#Simple_repeat 1 42 (0) m_b38s252i0 79
+
+  NC_000913.3      2174114 GCCAATCACAAGGCCAATGCCAA---CAAAGCCAATCCCGAT 2174152
+                                 vv   v           ---   v      v  i  
+  (GCCAAT)n#Sim          1 GCCAATGCCAATGCCAATGCCAATGCCAATGCCAATGCCAAT 42
+
+Matrix = Unknown
+Transitions / transversions = 0.20 (1/5)
+Gap_init rate = 0.03 (1 / 38), avg. gap size = 3.00 (3 / 1)
+
+
+17 32.38 0.00 0.00 NC_000913.3 2186283 2186347 (2455305) (CATCAT)n#Simple_repeat 1 65 (0) m_b38s252i1 80
+
+  NC_000913.3      2186283 CATGATTATGAGCATCATCATCACGATCACGAACATCACCACGACCATGG 2186332
+                              v  i  v v           iv    iv v     i  iv i   vi
+  (CATCAT)n#Sim          1 CATCATCATCATCATCATCATCATCATCATCATCATCATCATCATCATCA 50
+
+  NC_000913.3      2186333 ACATCATCACCATCA 2186347
+                           v        i     
+  (CATCAT)n#Sim         51 TCATCATCATCATCA 65
+
+Matrix = Unknown
+Transitions / transversions = 0.89 (8/9)
+Gap_init rate = 0.00 (0 / 64), avg. gap size = 0.0 (0 / 0)
+
+
+12 4.48 4.00 4.00 NC_000913.3 2200011 2200035 (2441617) (GGAT)n#Simple_repeat 1 25 (0) m_b38s252i2 81
+
+  NC_000913.3      2200011 GGATGGA-GGCTGGATCGGATGGATG 2200035
+                                  -  v     -         
+  (GGAT)n#Simpl          1 GGATGGATGGATGGAT-GGATGGATG 25
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/1)
+Gap_init rate = 0.08 (2 / 24), avg. gap size = 1.00 (2 / 2)
+
+
+13 27.85 0.00 0.00 NC_000913.3 2220316 2220358 (2421294) (CACCAG)n#Simple_repeat 1 43 (0) m_b39s252i0 82
+
+  NC_000913.3      2220316 CACCAGCGCCAGCGGACGCCCGTTCATCAGCACCAGCACCAGC 2220358
+                                  i     ivvv  v vvv  i                
+  (CACCAG)n#Sim          1 CACCAGCACCAGCACCAGCACCAGCACCAGCACCAGCACCAGC 43
+
+Matrix = Unknown
+Transitions / transversions = 0.43 (3/7)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+18 18.88 2.00 2.00 NC_000913.3 2341351 2341400 (2300252) (GGATCA)n#Simple_repeat 1 50 (0) m_b41s252i0 83
+
+  NC_000913.3      2341351 GGATCAGGATCCGGCGTGGGATCAGGATCGGGAGTC-GGGTCTGGATCAG 2341399
+                                      v  vvii           i   -  -  i  v       
+  (GGATCA)n#Sim          1 GGATCAGGATCAGGATCAGGATCAGGATCAGGA-TCAGGATCAGGATCAG 49
+
+  NC_000913.3      2341400 G 2341400
+                            
+  (GGATCA)n#Sim         50 G 50
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (4/4)
+Gap_init rate = 0.04 (2 / 49), avg. gap size = 1.00 (2 / 2)
+
+
+14 25.96 1.92 1.92 NC_000913.3 2391608 2391659 (2249993) (CAG)n#Simple_repeat 1 52 (0) m_b42s252i0 84
+
+  NC_000913.3      2391608 CAGCAGTACCAGCAGCACCACCAGCAACAGGATCATAAACAGC-TCACGC 2391656
+                                 i v        v  v     i   v v  vv i    -v  -  
+  (CAG)n#Simple          1 CAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCA-GC 49
+
+  NC_000913.3      2391657 AGC 2391659
+                              
+  (CAG)n#Simple         50 AGC 52
+
+Matrix = Unknown
+Transitions / transversions = 0.38 (3/8)
+Gap_init rate = 0.04 (2 / 51), avg. gap size = 1.00 (2 / 2)
+
+
+204 25.00 0.00 0.00 NC_000913.3 2398658 2398705 (2242947) C L3#LINE/CR1 (3510) 589 542 m_b42s601i0 85
+
+  NC_000913.3      2398658 TTCGTCCCGGAGATAATCAACGGTTTCTTCGCACCTGCCAGTGCCTGC 2398705
+                              v   i  i ?iii v vv  v   i          i         
+C L3#LINE/CR1          589 TTCCTCCTGGGGNCGGTAACAGGATTCCTCGCACCTGCTAGTGCCTGC 542
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 28.43
+Transitions / transversions = 1.40 (7/5)
+Gap_init rate = 0.00 (0 / 47), avg. gap size = 0.0 (0 / 0)
+
+
+12 32.88 0.00 0.00 NC_000913.3 2407061 2407109 (2234543) (TTATG)n#Simple_repeat 1 49 (0) m_b42s252i1 86
+
+  NC_000913.3      2407061 TTATCTGATGCAAAGTTATGTTATGTTAGGCAAAGTAATCTTCTATTAT 2407109
+                               v v   iv v              v iv v  v  v  v i    
+  (TTATG)n#Simp          1 TTATGTTATGTTATGTTATGTTATGTTATGTTATGTTATGTTATGTTAT 49
+
+Matrix = Unknown
+Transitions / transversions = 0.30 (3/10)
+Gap_init rate = 0.00 (0 / 48), avg. gap size = 0.0 (0 / 0)
+
+
+12 4.35 8.33 0.00 NC_000913.3 2460582 2460605 (2181047) (AGAAA)n#Simple_repeat 1 26 (0) m_b43s252i0 87
+
+  NC_000913.3      2460582 AGAAAAG--AAGAAGAGAAAAGAAAA 2460605
+                                  --     i           
+  (AGAAA)n#Simp          1 AGAAAAGAAAAGAAAAGAAAAGAAAA 26
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/0)
+Gap_init rate = 0.04 (1 / 23), avg. gap size = 2.00 (2 / 1)
+
+
+12 11.28 7.14 4.65 NC_000913.3 2469321 2469362 (2172290) (ATAGTTAT)n#Simple_repeat 1 43 (0) m_b43s252i1 88
+
+  NC_000913.3      2469321 ATAGCTAT-GAG-TATATAAGTTCATATAGTTATAT-TTTGTATA 2469362
+                               i   -v  -     -    -            -v  i    
+  (ATAGTTAT)n#S          1 ATAGTTATATAGTTATAT-AGTT-ATATAGTTATATAGTTATATA 43
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (2/2)
+Gap_init rate = 0.12 (5 / 41), avg. gap size = 1.00 (5 / 5)
+
+
+13 19.33 7.14 0.00 NC_000913.3 2470209 2470250 (2171402) (TTA)n#Simple_repeat 1 45 (0) m_b43s252i2 89
+
+  NC_000913.3      2470209 TTA-TATCATTGTTATTATT-TT-TTATTGCTTCTATTTTTATTA 2470250
+                              -   i   i        -  -     ii vi    v      
+  (TTA)n#Simple          1 TTATTATTATTATTATTATTATTATTATTATTATTATTATTATTA 45
+
+Matrix = Unknown
+Transitions / transversions = 2.50 (5/2)
+Gap_init rate = 0.07 (3 / 41), avg. gap size = 1.00 (3 / 3)
+
+
+311 21.33 0.00 1.33 NC_000913.3 2518041 2518116 (2123536) C tRNA-Ala-GCY_v#tRNA (0) 75 1 c_b44s401i0 90
+
+  NC_000913.3      2518041 TGGTGGAGCTAAGCGGGATCGAACCGCTGACCTCTTGCATGCCATGCAAG 2518090
+                                   v ivvv           vvv i    v       i v   v 
+C tRNA-Ala-GCY_         75 TGGTGGAGGTGCCGGGGATCGAACCCGGGGCCTCGTGCATGCTAAGCACG 26
+
+  NC_000913.3      2518091 CGCTCTCCCAGCTGAGCTATAGCCCC 2518116
+                                 v   -        i v    
+C tRNA-Ala-GCY_         25 CGCTCTACCA-CTGAGCTACACCCCC 1
+
+Matrix = 18p51g.matrix
+Kimura (with divCpGMod) = 25.15
+Transitions / transversions = 0.33 (4/12)
+Gap_init rate = 0.01 (1 / 75), avg. gap size = 1.00 (1 / 1)
+
+
+311 21.33 0.00 1.33 NC_000913.3 2518156 2518231 (2123421) C tRNA-Ala-GCY_v#tRNA (0) 75 1 c_b44s401i1 91
+
+  NC_000913.3      2518156 TGGTGGAGCTAAGCGGGATCGAACCGCTGACCTCTTGCATGCCATGCAAG 2518205
+                                   v ivvv           vvv i    v       i v   v 
+C tRNA-Ala-GCY_         75 TGGTGGAGGTGCCGGGGATCGAACCCGGGGCCTCGTGCATGCTAAGCACG 26
+
+  NC_000913.3      2518206 CGCTCTCCCAGCTGAGCTATAGCCCC 2518231
+                                 v   -        i v    
+C tRNA-Ala-GCY_         25 CGCTCTACCA-CTGAGCTACACCCCC 1
+
+Matrix = 18p51g.matrix
+Kimura (with divCpGMod) = 25.15
+Transitions / transversions = 0.33 (4/12)
+Gap_init rate = 0.01 (1 / 75), avg. gap size = 1.00 (1 / 1)
+
+
+187 28.12 1.56 0.00 NC_000913.3 2521049 2521112 (2120540) MamSINE1#SINE/tRNA-RTE 5 69 (221) m_b44s601i0 92
+
+  NC_000913.3      2521049 GTGGGTGATTAGCTCAGCTGG-GAGAGCACCTCCCTTACAAGGAGGGGGT 2521097
+                               v  i         i   -v       vviv  v ii   vvii   
+  MamSINE1#SINE          5 GTGGCTGGTTAGCTCAGTTGGTTAGAGCACGGTGCTAATGAGGCCAAGGT 54
+
+  NC_000913.3      2521098 CGGCGGTTCGATCCC 2521112
+                            ivv           
+  MamSINE1#SINE         55 CACGGGTTCGATCCC 69
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 35.43
+Transitions / transversions = 0.80 (8/10)
+Gap_init rate = 0.02 (1 / 63), avg. gap size = 1.00 (1 / 1)
+
+
+187 28.12 1.56 0.00 NC_000913.3 2521171 2521234 (2120418) MamSINE1#SINE/tRNA-RTE 5 69 (221) m_b44s601i1 93
+
+  NC_000913.3      2521171 GTGGGTGATTAGCTCAGCTGG-GAGAGCACCTCCCTTACAAGGAGGGGGT 2521219
+                               v  i         i   -v       vviv  v ii   vvii   
+  MamSINE1#SINE          5 GTGGCTGGTTAGCTCAGTTGGTTAGAGCACGGTGCTAATGAGGCCAAGGT 54
+
+  NC_000913.3      2521220 CGGCGGTTCGATCCC 2521234
+                            ivv           
+  MamSINE1#SINE         55 CACGGGTTCGATCCC 69
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 35.43
+Transitions / transversions = 0.80 (8/10)
+Gap_init rate = 0.02 (1 / 63), avg. gap size = 1.00 (1 / 1)
+
+
+273 22.73 0.00 0.00 NC_000913.3 2521256 2521321 (2120331) tRNA-Tyr-TAC#tRNA 4 69 (5) m_b44s502i0 94
+
+  NC_000913.3      2521256 TCGTTAGCTCAGTTGGTAGAGCAGTTGACTTTTAATCAATTGGTCGCAGG 2521305
+                              v        i         i vv    v vi   vv v      v  
+  tRNA-Tyr-TAC#          4 TCGATAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGG 53
+
+  NC_000913.3      2521306 TTCGAATCCTGCACGA 2521321
+                                v   v  v   
+  tRNA-Tyr-TAC#         54 TTCGATTCCGGCTCGA 69
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 25.38
+Transitions / transversions = 0.25 (3/12)
+Gap_init rate = 0.00 (0 / 65), avg. gap size = 0.0 (0 / 0)
+
+
+186 41.83 0.00 1.82 NC_000913.3 2578743 2578854 (2062798) C MamRTE1#LINE/RTE-BovB (2065) 1747 1638 m_b45s601i0 95
+
+  NC_000913.3      2578743 TCATCCCCAGGATGCCACCACCAATCCTTCGCTGTTACTCAAAGCTGCCG 2578792
+                              v  iii v  v       iii  v ?   -   v  i  vvivii v
+C MamRTE1#LINE/       1747 TCAGCCTTGGCATCCCACCACTGGTCATNCGC-GTTTCTTAACTTGATCT 1699
+
+  NC_000913.3      2578793 GATTATCACAATATGAGCATTTAATAGACGATGCTATCGCCTGGGGTAAA 2578842
+                            vv i   i    iii  -  ivi  ii  viv  v   i    ivi vi
+C MamRTE1#LINE/       1698 GCATGTCATAATACAGGC-TTCTGTAAGCGTCTCTTTCGTCTGGATCATG 1650
+
+  NC_000913.3      2578843 AAAAATGGCAAG 2578854
+                            ii iiv     
+C MamRTE1#LINE/       1649 AGGAGCTGCAAG 1638
+
+Matrix = 25p53g.matrix
+Kimura (with divCpGMod) = 66.82
+Transitions / transversions = 1.56 (28/18)
+Gap_init rate = 0.02 (2 / 111), avg. gap size = 1.00 (2 / 2)
+
+
+13 24.88 0.00 0.00 NC_000913.3 2581633 2581670 (2059982) (TGCCGGA)n#Simple_repeat 1 38 (0) m_b45s252i0 96
+
+  NC_000913.3      2581633 TGCCTGATGGTGATTGCCGGATGCTGATTGCCGGATGC 2581670
+                               v    vi iv          i iv          
+  (TGCCGGA)n#Si          1 TGCCGGATGCCGGATGCCGGATGCCGGATGCCGGATGC 38
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (4/4)
+Gap_init rate = 0.00 (0 / 37), avg. gap size = 0.0 (0 / 0)
+
+12 14.30 2.17 9.30 NC_000913.3 2581636 2581681 (2059971) (CTGATG)n#Simple_repeat 1 43 (0) m_b45s252i1 96
+
+  NC_000913.3      2581636 CTGATGGTGATTGCCGGATGCTGATTGCCGGATGC-GACGCTGACGC 2581681
+                                 v   -  - v        -  - v     -  i     i  
+  (CTGATG)n#Sim          1 CTGATGCTGA-TG-CTGATGCTGA-TG-CTGATGCTGATGCTGATGC 43
+
+Matrix = Unknown
+Transitions / transversions = 0.67 (2/3)
+Gap_init rate = 0.11 (5 / 45), avg. gap size = 1.00 (5 / 5)
+
+
+15 21.18 0.00 0.00 NC_000913.3 2636773 2636810 (2004842) (TCCTCT)n#Simple_repeat 1 38 (0) m_b46s252i1 97
+
+  NC_000913.3      2636773 TCGTCTTCCTCTTCTTCTTCGCCGTTCTCTTCCGCTTC 2636810
+                             v           i     vi v i       v    
+  (TCCTCT)n#Sim          1 TCCTCTTCCTCTTCCTCTTCCTCTTCCTCTTCCTCTTC 38
+
+Matrix = Unknown
+Transitions / transversions = 0.75 (3/4)
+Gap_init rate = 0.00 (0 / 37), avg. gap size = 0.0 (0 / 0)
+
+
+15 23.85 2.22 0.00 NC_000913.3 2672951 2672995 (1968657) (CCGCTA)n#Simple_repeat 1 46 (0) m_b47s252i0 98
+
+  NC_000913.3      2672951 CCGCTGCCGC-AATGTTAGGGCTACCGCTACCGCTACTGCCGCCGC 2672995
+                                i    - vi i  vv                 i  ii    
+  (CCGCTA)n#Sim          1 CCGCTACCGCTACCGCTACCGCTACCGCTACCGCTACCGCTACCGC 46
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (6/3)
+Gap_init rate = 0.02 (1 / 44), avg. gap size = 1.00 (1 / 1)
+
+
+184 20.00 0.00 0.00 NC_000913.3 2711442 2711481 (1930171) C OldhAT1#DNA/hAT-Ac (2359) 483 444 m_b47s601i0 99
+
+  NC_000913.3      2711442 AGAACCGGTACCGATTGTGCCTGCTGCACATTATACCTGC 2711481
+                               v        i           v v v  v vv    
+C OldhAT1#DNA/h        483 AGAAACGGTACCGGTTGTGCCTGCTCCTCCTTCTCACTGC 444
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 23.51
+Transitions / transversions = 0.14 (1/7)
+Gap_init rate = 0.00 (0 / 39), avg. gap size = 0.0 (0 / 0)
+
+
+12 18.86 7.14 0.00 NC_000913.3 2718486 2718527 (1923125) (TCACCTT)n#Simple_repeat 1 45 (0) m_b47s252i1 100
+
+  NC_000913.3      2718486 TCA-CTTTGACCTTGCCGCTTTTACCTTTCA--TTTCATCGTTCA 2718527
+                              -    v     v vv    i        --     i v    
+  (TCACCTT)n#Si          1 TCACCTTTCACCTTTCACCTTTCACCTTTCACCTTTCACCTTTCA 45
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.05 (2 / 41), avg. gap size = 1.50 (3 / 2)
+
+
+564 29.95 4.68 6.25 NC_000913.3 2726576 2726981 (1914671) C LSU-rRNA_Hsa#rRNA (510) 4525 4126 m_b47s551i0 101
+
+  NC_000913.3      2726576 ACCGAACTGTCTCACGACGTTCTAAACCCAGCTCGCGTACCACTTTAAAT 2726625
+                             ii v         i?? v      ?       i?? v  v v?  ivv
+C LSU-rRNA_Hsa#       4525 ACTAACCTGTCTCACANNGGTCTAAANCCAGCTCANNTTCCCCGNTAGTG 4476
+
+  NC_000913.3      2726626 GGCGAACAGCCATACCCTTGG-GA--CCTACTTCAGCCCCAGGATGTGAT 2726672
+                             i     ii v?  v     -  --i ii i   --- v v   iv  v
+C LSU-rRNA_Hsa#       4475 GGTGAACAATCCNACGCTTGGTGAANTCCGCCTCA---CAATGATAGGAA 4429
+
+  NC_000913.3      2726673 GAGCCGACATCGAGGTGCCAAACACCGCCGTCGATATGAACTCTTGGGCG 2726722
+                             i  ?   ? ? i vii    v v  v     v       v     v  
+C LSU-rRNA_Hsa#       4428 GAACCNACANCNAAGGATCAAAAAGCGACGTCGCTATGAACGCTTGGCCG 4379
+
+  NC_000913.3      2726723 GTATCAGCCTGTTATCCCCGGAGTACCTTTTATCCGTTGAGCGATGGCCC 2726772
+                           vi iv    v        i vi   v    --    vii---------  
+C LSU-rRNA_Hsa#       4378 CCACAAGCCAGTTATCCCTGTGGTAACTTT--TCCGACA---------CC 4340
+
+  NC_000913.3      2726773 TTCCATTCAGAACC------ACC----GGATCACTATGACCTGCTTTCGC 2726812
+                            i iii i i    ------ii ----     iiv v v  i      i 
+C LSU-rRNA_Hsa#       4339 TCCTGCTTAAAACCCAAAAGGTCAGAAGGATCGTGAGGCCCCGCTTTCAC 4290
+
+  NC_000913.3      2726813 -ACCTG--CTCGCGCCGTCACGCTCGCAGTCAAGCTGGCTTATGCCATTG 2726859
+                           -ii   --i   ii i -- viv  ivii      vi    v    v  v
+C LSU-rRNA_Hsa#       4289 GGTCTGTATTCGTACTG--AAAATCAAGATCAAGCGAGCTTTTGCCCTTC 4242
+
+  NC_000913.3      2726860 CACTAACCTCCTGA--TGTCCGACCAGGATTAGCCAACCTTCGTGCTCCT 2726907
+                           ii  --  v vv  -- v  i v  vvvv v   ivi    v vi v   
+C LSU-rRNA_Hsa#       4241 TGCT--CCACGGGAGGTTTCTGTCCTCCCTGAGCTCGCCTTAGGACACCT 4194
+
+  NC_000913.3      2726908 CCGTTACTCTTTAGGAGGAG-ACCGCCCCAGTCAAACTACCCACCAGACA 2726956
+                           v i    iv   iiv   v -                 v      v i  
+C LSU-rRNA_Hsa#       4193 GCATTACCGTTTGACAGGTGTACCGCCCCAGTCAAACTCCCCACCTGGCA 4144
+
+  NC_000913.3      2726957 CTGTCCGCAACCCGGATTACGGGTC 2726981
+                            i   -----      --       
+C LSU-rRNA_Hsa#       4143 CCGTC-----CCCGGA--ACGGGTC 4126
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 37.44
+Transitions / transversions = 1.04 (58/56)
+Gap_init rate = 0.08 (33 / 405), avg. gap size = 1.33 (44 / 33)
+
+
+434 29.90 4.74 9.62 NC_000913.3 2727056 2727414 (1914238) C LSU-rRNA_Hsa#rRNA (1081) 3954 3612 m_b48s551i2 101
+
+  NC_000913.3      2727056 GCCTCCCACCTATCCTACACATCAAGGCTCAATGTTCA--GTGTCAAGCT 2727103
+                                    i   i      v  vv vv  -- v    --   i  ii  
+C LSU-rRNA_Hsa#       3954 GCCTCCCACTTATTCTACACCTCTCGTGTC--TCTTCACCGTGCCAGACT 3907
+
+  NC_000913.3      2727104 ATAGTAAAGGTTCACGGGGTCTTTCCGTCTTGCCGCGGGTACACTGCATC 2727153
+                            v   v   v iv  i       -----   v  v  ------   vv  
+C LSU-rRNA_Hsa#       3906 AGAGTCAAGCTCAACAGGGTCTT-----CTTTCCCCG------CTGATTC 3868
+
+  NC_000913.3      2727154 TTCACAGCGAGTTC----------AATTTCACTGAGTCTCGGGTGGAGAC 2727193
+                           iv vv   vv    ----------ii    i   ii vvii   i i   
+C LSU-rRNA_Hsa#       3867 CGCCAAGCCCGTTCCCTTGGCTGTGGTTTCGCTGGATAGTAGGTAGGGAC 3818
+
+  NC_000913.3      2727194 AGCCTGGCCATC--ATTACGCCATTCGTGCAGGTCGGAACTTACCCGACA 2727241
+                             --   vv   --i  vvv      i   iv   ivv v   vvi   i
+C LSU-rRNA_Hsa#       3817 AG--TGGGAATCTCGTTCATCCATTCATGCGCGTCACTAATTAGATGACG 3770
+
+  NC_000913.3      2727242 AGGAATTTCGCTACCTTAGGACCGTTATAGTTACGGCCGCCGTTTACCGG 2727291
+                              v    v         i  vv  i        vv            v 
+C LSU-rRNA_Hsa#       3769 AGGCATTTGGCTACCTTAAGAGAGTCATAGTTACTCCCGCCGTTTACCCG 3720
+
+  NC_000913.3      2727292 GGCTTCGATCAAGAGCTTCGCTTGCGCTAACCCCATCAATTAACCTTCCG 2727341
+                           v     iv v  vvv    i  -----------------  i  v   v 
+C LSU-rRNA_Hsa#       3719 CGCTTCATTGAATTTCTTCACT-----------------TTGACATTCAG 3687
+
+  NC_000913.3      2727342 -GCACCGGGCAGGCGTCACACCGTAT--ACGTCCACTTTCGTGTTTGCAC 2727388
+                           -    i      ivi     i  ii --  ii  i -iv  v ii v i 
+C LSU-rRNA_Hsa#       3686 AGCACTGGGCAGAAATCACATCGCGTCAACACCCGC-CGCGGGCCTTCGC 3638
+
+  NC_000913.3      2727389 AGTGCTGTGTTTTTAATAAACAGTTG 2727414
+                           ii    v      ? v    ?   i 
+C LSU-rRNA_Hsa#       3637 GATGCTTTGTTTTNATTAAANAGTCG 3612
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 33.28
+Transitions / transversions = 0.83 (44/53)
+Gap_init rate = 0.11 (38 / 358), avg. gap size = 1.32 (50 / 38)
+
+
+244 29.25 3.31 2.63 NC_000913.3 2728366 2728516 (1913136) C LSU-rRNA_Hsa#rRNA (3380) 1655 1504 m_b48s551i3 101
+
+  NC_000913.3      2728366 TCGGGGAGAACCAGCTATCTCCCGGTTTGATTGGCCTTTCACCCCCAGCC 2728415
+                            i  i i          iivvvi    i    i i     i    i ?v 
+C LSU-rRNA_Hsa#       1655 TTGGAGGGAACCAGCTACTAGATGGTTCGATTAGTCTTTCGCCCCTANAC 1606
+
+  NC_000913.3      2728416 ACAAGTCATCCG-CTAATTTTTCAACATTAG--TCGGTTCGGTCCTCCAG 2728462
+                           v  i  iivv  - ii    vi--    i  --i  v v   v      -
+C LSU-rRNA_Hsa#       1605 CCAGGTTGGACGACCGATTTGC--ACATCAGGACCGCTACGGACCTCCA- 1559
+
+  NC_000913.3      2728463 TTAGTGTTACC-CAACCTTCAACCTGCCCATGGC-TAGATCACCGGGTTT 2728510
+                           ii? v   v  - viv    iv  i     -   -?  v     i?v   
+C LSU-rRNA_Hsa#       1558 CCNGAGTTTCCTCCGGCTTCGCCCCGCCCA-GGCANAGTTCACCANCTTT 1510
+
+  NC_000913.3      2728511 CGGGTC 2728516
+                                 
+C LSU-rRNA_Hsa#       1509 CGGGTC 1504
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 32.68
+Transitions / transversions = 1.39 (25/18)
+Gap_init rate = 0.05 (8 / 150), avg. gap size = 1.12 (9 / 8)
+
+
+331 22.45 1.98 3.00 NC_000913.3 2728666 2728766 (1912886) C LSU-rRNA_Hsa#rRNA (4620) 415 316 m_b48s551i4 101
+
+  NC_000913.3      2728666 ACGGTTTCAGGTTCTTTTTCACTCCCCTCGCCGGGGTTCTTTTCGCCTTT 2728715
+                                    v ii  i  vv    i -  vi iii         iv    
+C LSU-rRNA_Hsa#        415 ACGGTTTCACGCCCTCTTGAACTCTC-TCTTCAAAGTTCTTTTCAACTTT 367
+
+  NC_000913.3      2728716 CCCTCACGGTACTGGTTCACTATCGGTCAGTCAGG--AGTATTTAGCCTT 2728763
+                               i i      v   v          --  iv --i            
+C LSU-rRNA_Hsa#        366 CCCTTATGGTACTTGTTGACTATCGGTC--TCGTGCCGGTATTTAGCCTT 319
+
+  NC_000913.3      2728764 GGA 2728766
+                           i  
+C LSU-rRNA_Hsa#        318 AGA 316
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 24.53
+Transitions / transversions = 1.75 (14/8)
+Gap_init rate = 0.04 (4 / 100), avg. gap size = 1.25 (5 / 4)
+
+
+354 21.75 0.00 1.09 NC_000913.3 2728904 2728996 (1912656) C LSU-rRNA_Hsa#rRNA (4912) 123 32 m_b48s551i5 101
+
+  NC_000913.3      2728904 GATTCAGGCTCTGGGCTGCTCCCCGTTCGCTCGCCGCTACTGGGGGAATC 2728953
+                                -   v       vi    i    i       i     i       
+C LSU-rRNA_Hsa#        123 GATTC-GGCGCTGGGCTCTTCCCTGTTCACTCGCCGTTACTGAGGGAATC 75
+
+  NC_000913.3      2728954 TCGGTTGATTTCTTTTCCTCGGGGTACTTAGATGTTTCAGTTC 2728996
+                           ii    ii            v vvv   v v   i  v i   
+C LSU-rRNA_Hsa#         74 CTGGTTAGTTTCTTTTCCTCCGCTGACTAATATGCTTAAATTC 32
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 25.99
+Transitions / transversions = 1.22 (11/9)
+Gap_init rate = 0.01 (1 / 92), avg. gap size = 1.00 (1 / 1)
+
+
+253 11.63 0.00 0.00 NC_000913.3 2729624 2729666 (1911986) C SSU-rRNA_Hsa#rRNA (3) 1866 1824 m_b48s551i6 102
+
+  NC_000913.3      2729624 TGATCCAACCGCAGGTTCCCCTACGGTTACCTTGTTACGACTT 2729666
+                                 vv          v       vv               
+C SSU-rRNA_Hsa#       1866 TGATCCCTCCGCAGGTTCACCTACGGAAACCTTGTTACGACTT 1824
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 12.80
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+294 32.08 0.00 0.00 NC_000913.3 2729749 2729854 (1911798) C SSU-rRNA_Hsa#rRNA (159) 1710 1605 m_b48s551i7 103
+
+  NC_000913.3      2729749 GTGACGGGCGGTGTGTACAAGGCCCGGGAACGTATTCACCGTGGCATTCT 2729798
+                            i                  i vv i  i  v  v   v  iiivv  v 
+C SSU-rRNA_Hsa#       1710 GCGACGGGCGGTGTGTACAAAGGGCAGGGACTTAATCAACGCAAGCTTAT 1661
+
+  NC_000913.3      2729799 GATCCACGATTACTAGCGATTCCGACTTCATGGAGTCGAGTTGCAGACTC 2729848
+                             i  i iv     i vi     vvv       i vvv i     iv i 
+C SSU-rRNA_Hsa#       1660 GACCCGCACTTACTGGGAATTCCTCGTTCATGGGGAATAATTGCAATCCC 1611
+
+  NC_000913.3      2729849 CAATCC 2729854
+                            i    
+C SSU-rRNA_Hsa#       1610 CGATCC 1605
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 37.79
+Transitions / transversions = 1.00 (17/17)
+Gap_init rate = 0.00 (0 / 105), avg. gap size = 0.0 (0 / 0)
+
+
+201 20.59 0.00 0.00 NC_000913.3 2729893 2729926 (1911726) L2-2_Mam#LINE/L2 9 42 (330) m_b48s601i0 104
+
+  NC_000913.3      2729893 GAGGTCGCTTCTCTTTGTATGCGCCATTGTAGCA 2729926
+                              i    i     iiv          i  i   
+  L2-2_Mam#LINE          9 GAGATCGCCTCTCTCCCTATGCGCCATCGTGGCA 42
+
+Matrix = 25p47g.matrix
+Kimura (with divCpGMod) = 21.50
+Transitions / transversions = 6.00 (6/1)
+Gap_init rate = 0.00 (0 / 33), avg. gap size = 0.0 (0 / 0)
+
+
+587 29.66 5.85 3.26 NC_000913.3 2730043 2730401 (1911251) C SSU-rRNA_Hsa#rRNA (477) 1392 1025 m_b48s551i8 103
+
+  NC_000913.3      2730043 AGGGTTGCGCTCGTTGCGGGACTTAACCCAACATTTCACAACACGAGCTG 2730092
+                             i  iv  i     iiv   v      vi   vv  i vv   v i  i
+C SSU-rRNA_Hsa#       1392 AGAGTCTCGTTCGTTATCGGAATTAACCAGACAAATCGCTCCACCAACTA 1343
+
+  NC_000913.3      2730093 ACGACAGCCATGCAGCACCTGTCTCACGG-TTCCCGAAGGCACATTCTC- 2730140
+                            vi  i        v    --v i     -v  vv   i vi -- v  -
+C SSU-rRNA_Hsa#       1342 AGAACGGCCATGCACCACC--ACCCACGGAATCGAGAAAGAGC--TATCA 1297
+
+  NC_000913.3      2730141 ATCTCTGAAAACTTCCGTGGATGTCAAGACCAGGTAAGGTTCTTCGCGTT 2730190
+                               v v  --- i i  vvi    vi i  i   i     iii  i   
+C SSU-rRNA_Hsa#       1296 ATCTGTCAA---TCCTGTCCGTGTCCGGGCCGGGTGAGGTTTCCCGTGTT 1250
+
+  NC_000913.3      2730191 GCATCGAATTAAACCACATGCTCCACCGCTTGTGCGGGCCC--CCGTCAA 2730238
+                            vi  i      i  i  v       iv  v   - v    --       
+C SSU-rRNA_Hsa#       1249 GAGTCAAATTAAGCCGCAGGCTCCACTCCTGGTG-GTGCCCTTCCGTCAA 1201
+
+  NC_000913.3      2730239 TTCATTTGAGTTTTAACCTTGCGGCCGTACTCCCCAGGCGGTCGACTTAA 2730288
+                              v   i     i i i    ii  i        --v   --i  ii  
+C SSU-rRNA_Hsa#       1200 TTCCTTTAAGTTTCAGCTTTGCAACCATACTCCCC--CCGG--AACCCAA 1155
+
+  NC_000913.3      2730289 CG-CGTTAGCT--CCGGAAGC--CACGCC---TCAAGGGCACAACCTC-- 2730328
+                           v - v  i i --        -- v  v ---   v   v i   vi --
+C SSU-rRNA_Hsa#       1154 AGACTTTGGTTTCCCGGAAGCTGCCCGGCGGGTCATGGGAATAACGCCGC 1105
+
+  NC_000913.3      2730329 -------CAAGTCGACATCGTTTACGGCGTGGACTACCAGGGTATCTAAT 2730371
+                           ------- vi    i         i  ivv i     v v       i  
+C SSU-rRNA_Hsa#       1104 CGCATCGCCGGTCGGCATCGTTTATGGTCGGAACTACGACGGTATCTGAT 1055
+
+  NC_000913.3      2730372 CCTGTTTGCTCCCCACGCTTTCGCACCTGA 2730401
+                            v v  i vv  i vvi      iv i   
+C SSU-rRNA_Hsa#       1054 CGTCTTCGAACCTCCGACTTTCGTTCTTGA 1025
+
+Matrix = 20p47g.matrix
+Kimura (with divCpGMod) = 34.80
+Transitions / transversions = 1.15 (55/48)
+Gap_init rate = 0.06 (21 / 358), avg. gap size = 1.57 (33 / 21)
+
+
+186 14.29 0.00 0.00 NC_000913.3 2758687 2758714 (1882938) C LFSINE_Vert#SINE/tRNA (68) 391 364 m_b48s601i1 105
+
+  NC_000913.3      2758687 TTATCCAAAAAACAGGTATGGCACGGGC 2758714
+                                  v i        ii        
+C LFSINE_Vert#S        391 TTATCCACAGAACAGGTACAGCACGGGC 364
+
+Matrix = 25p47g.matrix
+Kimura (with divCpGMod) = 16.24
+Transitions / transversions = 3.00 (3/1)
+Gap_init rate = 0.00 (0 / 27), avg. gap size = 0.0 (0 / 0)
+
+
+58 0.00 0.00 0.00 NC_000913.3 2765412 2765463 (1876189) (GCACTATG)n#Simple_repeat 1 52 (0) c_b48s251i0 106
+
+  NC_000913.3      2765412 GCACTATGGCACTATGGCACTATGGCACTATGGCACTATGGCACTATGGC 2765461
+                                                                             
+  (GCACTATG)n#S          1 GCACTATGGCACTATGGCACTATGGCACTATGGCACTATGGCACTATGGC 50
+
+  NC_000913.3      2765462 AC 2765463
+                             
+  (GCACTATG)n#S         51 AC 52
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 51), avg. gap size = 0.0 (0 / 0)
+
+
+14 18.87 0.00 2.70 NC_000913.3 2774393 2774430 (1867222) (ATATAAA)n#Simple_repeat 1 37 (0) m_b48s252i0 107
+
+  NC_000913.3      2774393 ATATAATAATAAATGATAAAAAATATAAAATTGAAAAT 2774430
+                                 -    v vi   v            vv     
+  (ATATAAA)n#Si          1 ATATAA-AATATAAAATATAAAATATAAAATATAAAAT 37
+
+Matrix = Unknown
+Transitions / transversions = 0.20 (1/5)
+Gap_init rate = 0.03 (1 / 37), avg. gap size = 1.00 (1 / 1)
+
+
+35 22.22 1.19 0.00 NC_000913.3 2779098 2779181 (1862471) (GGGTTT)n#Simple_repeat 1 85 (0) m_b48s252i1 108
+
+  NC_000913.3      2779098 GGGTCTGGTTTTGGATTTGGGTCTGGCTTTGGATCGGGTTTTGGGTCTGG 2779147
+                               i   v     i       i   v     i iv  v       i   
+  (GGGTTT)n#Sim          1 GGGTTTGGGTTTGGGTTTGGGTTTGGGTTTGGGTTTGGGTTTGGGTTTGG 50
+
+  NC_000913.3      2779148 CTTTGGATTTGGGATGGGGTCCGGG-TTGGGTTTG 2779181
+                           v     i      v v    ii   -         
+  (GGGTTT)n#Sim         51 GTTTGGGTTTGGGTTTGGGTTTGGGTTTGGGTTTG 85
+
+Matrix = Unknown
+Transitions / transversions = 1.29 (9/7)
+Gap_init rate = 0.01 (1 / 83), avg. gap size = 1.00 (1 / 1)
+
+
+239 27.03 1.35 0.00 NC_000913.3 2785764 2785837 (1855815) C tRNA-Ile-ATT#tRNA (0) 75 1 m_b49s502i0 109
+
+  NC_000913.3      2785764 GTGGCCCTTGCTGGACTTGAACCAGCGACCAAGCGATTATGAGTCGCCTG 2785813
+                                  v i v  iv i     v      vv vvi    v  ivv vi 
+C tRNA-Ile-ATT#         75 GTGGCCCGTACGGGGATCGAACCCGCGACCTTGGCGTTATTAGCACCACG 26
+
+  NC_000913.3      2785814 CTCTAACC-ACTGAGCTAAAGGGCC 2785837
+                                   -          vv    
+C tRNA-Ile-ATT#         25 CTCTAACCAACTGAGCTAACCGGCC 1
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 28.20
+Transitions / transversions = 0.43 (6/14)
+Gap_init rate = 0.01 (1 / 73), avg. gap size = 1.00 (1 / 1)
+
+248 21.82 0.00 0.00 NC_000913.3 2785776 2785830 (1855822) C tRNA-Lys-AAG#tRNA (14) 62 8 m_b49s502i1 109
+
+  NC_000913.3      2785776 GGACTTGAACCAGCGACCAAGCGATTATGAGTCGCCTGCTCTAACCACTG 2785825
+                             i  i     vi     vv v     v     v v       v v    
+C tRNA-Lys-AAG#         62 GGGCTCGAACCCACGACCCTGAGATTAAGAGTCTCATGCTCTACCGACTG 13
+
+  NC_000913.3      2785826 AGCTA 2785830
+                                
+C tRNA-Lys-AAG#         12 AGCTA 8
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 23.63
+Transitions / transversions = 0.33 (3/9)
+Gap_init rate = 0.00 (0 / 54), avg. gap size = 0.0 (0 / 0)
+
+
+232 35.14 0.00 0.00 NC_000913.3 2817784 2817857 (1823795) C tRNA-Asn-AAC#tRNA (0) 77 4 m_b49s502i2 110
+
+  NC_000913.3      2817784 TGGTGCATCCGGGAGGATTCGAACCTCCGACCGCTCGGTTCGTAGCCGAG 2817833
+                              i ivi i   v  ii       v  i   vi      vii      i
+C tRNA-Asn-AAC#         77 TGGCGTCCCTGGGTGGGCTCGAACCACCAACCTTTCGGTTAACAGCCGAA 28
+
+  NC_000913.3      2817834 TACTCTATCCAGCTGAGCTACGGA 2817857
+                           ii v   v  iii  v  i  i  
+C tRNA-Asn-AAC#         27 CGCGCTAACCGATTGCGCCACAGA 4
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 42.68
+Transitions / transversions = 2.25 (18/8)
+Gap_init rate = 0.00 (0 / 73), avg. gap size = 0.0 (0 / 0)
+
+
+232 35.14 0.00 0.00 NC_000913.3 2818059 2818132 (1823520) C tRNA-Asn-AAC#tRNA (0) 77 4 m_b49s502i3 111
+
+  NC_000913.3      2818059 TGGTGCATCCGGGAGGATTCGAACCTCCGACCGCTCGGTTCGTAGCCGAG 2818108
+                              i ivi i   v  ii       v  i   vi      vii      i
+C tRNA-Asn-AAC#         77 TGGCGTCCCTGGGTGGGCTCGAACCACCAACCTTTCGGTTAACAGCCGAA 28
+
+  NC_000913.3      2818109 TACTCTATCCAGCTGAGCTACGGA 2818132
+                           ii v   v  iii  v  i  i  
+C tRNA-Asn-AAC#         27 CGCGCTAACCGATTGCGCCACAGA 4
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 42.68
+Transitions / transversions = 2.25 (18/8)
+Gap_init rate = 0.00 (0 / 73), avg. gap size = 0.0 (0 / 0)
+
+
+232 35.14 0.00 0.00 NC_000913.3 2818198 2818271 (1823381) C tRNA-Asn-AAC#tRNA (0) 77 4 m_b49s502i4 112
+
+  NC_000913.3      2818198 TGGTGCATCCGGGAGGATTCGAACCTCCGACCGCTCGGTTCGTAGCCGAG 2818247
+                              i ivi i   v  ii       v  i   vi      vii      i
+C tRNA-Asn-AAC#         77 TGGCGTCCCTGGGTGGGCTCGAACCACCAACCTTTCGGTTAACAGCCGAA 28
+
+  NC_000913.3      2818248 TACTCTATCCAGCTGAGCTACGGA 2818271
+                           ii v   v  iii  v  i  i  
+C tRNA-Asn-AAC#         27 CGCGCTAACCGATTGCGCCACAGA 4
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 42.68
+Transitions / transversions = 2.25 (18/8)
+Gap_init rate = 0.00 (0 / 73), avg. gap size = 0.0 (0 / 0)
+
+
+232 35.14 0.00 0.00 NC_000913.3 2818473 2818546 (1823106) C tRNA-Asn-AAC#tRNA (0) 77 4 m_b49s502i5 113
+
+  NC_000913.3      2818473 TGGTGCATCCGGGAGGATTCGAACCTCCGACCGCTCGGTTCGTAGCCGAG 2818522
+                              i ivi i   v  ii       v  i   vi      vii      i
+C tRNA-Asn-AAC#         77 TGGCGTCCCTGGGTGGGCTCGAACCACCAACCTTTCGGTTAACAGCCGAA 28
+
+  NC_000913.3      2818523 TACTCTATCCAGCTGAGCTACGGA 2818546
+                           ii v   v  iii  v  i  i  
+C tRNA-Asn-AAC#         27 CGCGCTAACCGATTGCGCCACAGA 4
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 42.68
+Transitions / transversions = 2.25 (18/8)
+Gap_init rate = 0.00 (0 / 73), avg. gap size = 0.0 (0 / 0)
+
+
+11 24.01 2.56 0.00 NC_000913.3 2834231 2834269 (1807383) (CCTGTG)n#Simple_repeat 1 40 (0) m_b49s252i0 114
+
+  NC_000913.3      2834231 CCGGTGCCAGTGCCTTTGTC-CCGCCTGTGCCTGGGCGTG 2834269
+                             v     v      v  i -vi           v  v  
+  (CCTGTG)n#Sim          1 CCTGTGCCTGTGCCTGTGCCTGTGCCTGTGCCTGTGCCTG 40
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (2/6)
+Gap_init rate = 0.03 (1 / 38), avg. gap size = 1.00 (1 / 1)
+
+
+13 24.75 6.25 1.49 NC_000913.3 2847760 2847823 (1793829) (AGCAGC)n#Simple_repeat 1 67 (0) m_b50s252i0 115
+
+  NC_000913.3      2847760 AGCAGGCTCCAGCGGCAG-AGGTACAGCAGCAG-AG-AGCATCGGCAGTA 2847806
+                               -  vv    i    -  vvi         -  -    v i    i 
+  (AGCAGC)n#Sim          1 AGCA-GCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCA 49
+
+  NC_000913.3      2847807 GCCACGGC-GCAGCAACA 2847823
+                             vi i  -      i  
+  (AGCAGC)n#Sim         50 GCAGCAGCAGCAGCAGCA 67
+
+Matrix = Unknown
+Transitions / transversions = 1.17 (7/6)
+Gap_init rate = 0.08 (5 / 63), avg. gap size = 1.00 (5 / 5)
+
+
+222 18.50 5.45 1.75 NC_000913.3 2859114 2859168 (1782484) C LFSINE_Vert#SINE/tRNA (300) 159 103 m_b50s601i0 116
+
+  NC_000913.3      2859114 GACTGAAACCGCCAA--TATTTTACATAACGCCACCGAATA-CAGTCTGG 2859160
+                                 i   i    --i    i     i-         i - v   v i
+C LFSINE_Vert#S        159 GACTGAGACCACCAACTCATTTCACATAG-GCCACCGAACAGCCGTCAGA 111
+
+  NC_000913.3      2859161 TGTTAATG 2859168
+                             v     
+C LFSINE_Vert#S        110 TGGTAATG 103
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 21.85
+Transitions / transversions = 2.33 (7/3)
+Gap_init rate = 0.06 (3 / 54), avg. gap size = 1.33 (4 / 3)
+
+
+12 21.70 0.00 0.00 NC_000913.3 2878348 2878379 (1763273) (TTCGGC)n#Simple_repeat 1 32 (0) m_b50s252i1 117
+
+  NC_000913.3      2878348 TTCGGCATCACCTTTGGCTTCGGCTGCGGTTT 2878379
+                                 v  iv   i          v   i  
+  (TTCGGC)n#Sim          1 TTCGGCTTCGGCTTCGGCTTCGGCTTCGGCTT 32
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (3/3)
+Gap_init rate = 0.00 (0 / 31), avg. gap size = 0.0 (0 / 0)
+
+
+198 29.16 2.74 1.35 NC_000913.3 2880303 2880375 (1761277) C X15_LINE#LINE/L2 (96) 265 192 m_b50s601i1 118
+
+  NC_000913.3      2880303 TTGGAAATAAATGCCATAATCCCTG-GTGAAGTTGGTAAAGATCCCTGCT 2880351
+                                 i     v   i    vvv - iiv     v i  iii  i    
+C X15_LINE#LINE        265 TTGGAAGTAAATTCCACAATCAGGGAGCATAGTTGCTGAAAGCCCTTGCT 216
+
+  NC_000913.3      2880352 CC-AGGCCCTGGCAATGATGACTTT 2880375
+                             -   vv  v vi  v  -     
+C X15_LINE#LINE        215 CCAAGGGACTCGAGATTAT-ACTTT 192
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 37.27
+Transitions / transversions = 0.91 (10/11)
+Gap_init rate = 0.04 (3 / 72), avg. gap size = 1.00 (3 / 3)
+
+
+12 25.56 0.00 0.00 NC_000913.3 2921078 2921114 (1720538) (CACCAT)n#Simple_repeat 1 37 (0) m_b51s252i0 119
+
+  NC_000913.3      2921078 CACCATCACCATCGACAGCAACATGCCCATTACGATC 2921114
+                                        iv  v  v   vv    i  v   
+  (CACCAT)n#Sim          1 CACCATCACCATCACCATCACCATCACCATCACCATC 37
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (2/6)
+Gap_init rate = 0.00 (0 / 36), avg. gap size = 0.0 (0 / 0)
+
+
+235 28.40 0.00 2.70 NC_000913.3 2947388 2947463 (1694189) tRNA-Met-i#tRNA 2 75 (0) m_b51s502i0 120
+
+  NC_000913.3      2947388 GCGGGGTGGAGCAGCCTGGTAGCTCGTCGGGCTCATAACCCGAAGGTCGT 2947437
+                             i i    v     --  v   vi ii    i        ii      v
+  tRNA-Met-i#tR          2 GCAGAGTGGCGCAGC--GGAAGCGTGCTGGGCCCATAACCCAGAGGTCGA 49
+
+  NC_000913.3      2947438 CGGTTCAAATCCGGCCCCCGCAACCA 2947463
+                           i  v  i  v  iv  i i  v    
+  tRNA-Met-i#tR         50 TGGATCGAAACCATCCTCTGCTACCA 75
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 34.65
+Transitions / transversions = 1.62 (13/8)
+Gap_init rate = 0.03 (2 / 75), avg. gap size = 1.00 (2 / 2)
+
+
+235 28.40 0.00 2.70 NC_000913.3 2947498 2947573 (1694079) tRNA-Met-i#tRNA 2 75 (0) m_b51s502i1 121
+
+  NC_000913.3      2947498 GCGGGGTGGAGCAGCCTGGTAGCTCGTCGGGCTCATAACCCGAAGGTCGT 2947547
+                             i i    v     --  v   vi ii    i        ii      v
+  tRNA-Met-i#tR          2 GCAGAGTGGCGCAGC--GGAAGCGTGCTGGGCCCATAACCCAGAGGTCGA 49
+
+  NC_000913.3      2947548 CGGTTCAAATCCGGCCCCCGCAACCA 2947573
+                           i  v  i  v  iv  i i  v    
+  tRNA-Met-i#tR         50 TGGATCGAAACCATCCTCTGCTACCA 75
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 34.65
+Transitions / transversions = 1.62 (13/8)
+Gap_init rate = 0.03 (2 / 75), avg. gap size = 1.00 (2 / 2)
+
+
+235 28.40 0.00 2.70 NC_000913.3 2947608 2947683 (1693969) tRNA-Met-i#tRNA 2 75 (0) m_b51s502i2 122
+
+  NC_000913.3      2947608 GCGGGGTGGAGCAGCCTGGTAGCTCGTCGGGCTCATAACCCGAAGGTCGT 2947657
+                             i i    v     --  v   vi ii    i        ii      v
+  tRNA-Met-i#tR          2 GCAGAGTGGCGCAGC--GGAAGCGTGCTGGGCCCATAACCCAGAGGTCGA 49
+
+  NC_000913.3      2947658 CGGTTCAAATCCGGCCCCCGCAACCA 2947683
+                           i  v  i  v  iv  i i  v    
+  tRNA-Met-i#tR         50 TGGATCGAAACCATCCTCTGCTACCA 75
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 34.65
+Transitions / transversions = 1.62 (13/8)
+Gap_init rate = 0.03 (2 / 75), avg. gap size = 1.00 (2 / 2)
+
+
+13 21.28 0.00 0.00 NC_000913.3 2971524 2971556 (1670096) (TTTCCC)n#Simple_repeat 1 33 (0) m_b52s252i1 123
+
+  NC_000913.3      2971524 TTTCTCTTTCCCTTTTCCCTTCCCTCTGCCATT 2971556
+                               i          i  i      i v  v  
+  (TTTCCC)n#Sim          1 TTTCCCTTTCCCTTTCCCTTTCCCTTTCCCTTT 33
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (4/2)
+Gap_init rate = 0.00 (0 / 32), avg. gap size = 0.0 (0 / 0)
+
+
+12 23.11 0.00 4.76 NC_000913.3 2983155 2983198 (1658454) (CAGCCC)n#Simple_repeat 1 42 (0) m_b52s252i2 124
+
+  NC_000913.3      2983155 CAGCCCGCTTGCGCCAGCCCCAACGCCATCCCCTGACCCAGTCC 2983198
+                                 - -v  v         i v   v    v v     i  
+  (CAGCCC)n#Sim          1 CAGCCC-C-AGCCCCAGCCCCAGCCCCAGCCCCAGCCCCAGCCC 42
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (2/6)
+Gap_init rate = 0.05 (2 / 43), avg. gap size = 1.00 (2 / 2)
+
+
+11 24.50 2.22 2.22 NC_000913.3 2988406 2988450 (1653202) (ATAAAT)n#Simple_repeat 1 45 (0) m_b52s252i3 125
+
+  NC_000913.3      2988406 ATAAATATAAA-ATTAATATATATTTATGCCGTAAATACCAATATA 2988450
+                                      -  v      v  v  -ivii      iv      
+  (ATAAAT)n#Sim          1 ATAAATATAAATATAAATATAAATATA-AATATAAATATAAATATA 45
+
+Matrix = Unknown
+Transitions / transversions = 0.80 (4/5)
+Gap_init rate = 0.05 (2 / 44), avg. gap size = 1.00 (2 / 2)
+
+
+12 21.98 2.70 0.00 NC_000913.3 2991175 2991211 (1650441) (TAAAAA)n#Simple_repeat 1 38 (0) m_b52s252i4 126
+
+  NC_000913.3      2991175 TAAAACTCATAATTTAAA-AAAGATAAATATAAAAATA 2991211
+                                v v v   vv   -   i     v         
+  (TAAAAA)n#Sim          1 TAAAAATAAAAATAAAAATAAAAATAAAAATAAAAATA 38
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.03 (1 / 36), avg. gap size = 1.00 (1 / 1)
+
+
+13 14.17 3.23 0.00 NC_000913.3 2995185 2995215 (1646437) (AAATAA)n#Simple_repeat 1 32 (0) m_b52s252i5 127
+
+  NC_000913.3      2995185 AAATAATAAT-GAAATATAATTAAAAATAAAA 2995215
+                                 v   -i     v  v           
+  (AAATAA)n#Sim          1 AAATAAAAATAAAAATAAAAATAAAAATAAAA 32
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.03 (1 / 30), avg. gap size = 1.00 (1 / 1)
+
+
+181 33.33 2.50 2.50 NC_000913.3 3021770 3021849 (1619803) Penelope1_Vert#LINE/Penelope 411 490 (589) m_b53s601i0 128
+
+  NC_000913.3      3021770 AAAATAATCCGCAGGCCACCATTGATATCGCTCCGAC--TTTCCGTGACG 3021817
+                              ii     vi ii  v   ?       vi      --ii   - i iv
+  Penelope1_Ver        411 AAAGCAATCCCTAAACCTCCANTGATATCTTTCCGACAACCTCC-TAATC 459
+
+  NC_000913.3      3021818 ACCTAGAAGTCATTGGTAAGCATTATCCTAAA 3021849
+                           v  -iv    ii        vii iivi    
+  Penelope1_Ver        460 TCC-GCAAGTTGTTGGTAAGAGCTGCATTAAA 490
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 45.53
+Transitions / transversions = 2.25 (18/8)
+Gap_init rate = 0.04 (3 / 79), avg. gap size = 1.33 (4 / 3)
+
+
+15 19.57 0.00 0.00 NC_000913.3 3027553 3027587 (1614065) (ATCGGT)n#Simple_repeat 1 35 (0) m_b53s252i0 129
+
+  NC_000913.3      3027553 ATGGGTATCGCTCACGGTACAGGTATCGGTATCGG 3027587
+                             v       v vv     iv              
+  (ATCGGT)n#Sim          1 ATCGGTATCGGTATCGGTATCGGTATCGGTATCGG 35
+
+Matrix = Unknown
+Transitions / transversions = 0.20 (1/5)
+Gap_init rate = 0.00 (0 / 34), avg. gap size = 0.0 (0 / 0)
+
+
+11 6.48 8.33 5.41 NC_000913.3 3053466 3053501 (1588151) (GCCAGC)n#Simple_repeat 1 37 (0) m_b53s252i1 130
+
+  NC_000913.3      3053466 GCCAGCGCCAGCGTC-GCGCC--CGCCATGCCGCCACCG 3053501
+                                        i -     --     - -     v  
+  (GCCAGC)n#Sim          1 GCCAGCGCCAGCGCCAGCGCCAGCGCCA-G-CGCCAGCG 37
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/1)
+Gap_init rate = 0.11 (4 / 35), avg. gap size = 1.25 (5 / 4)
+
+
+185 28.57 1.79 0.00 NC_000913.3 3078549 3078604 (1563048) MamRTE1#LINE/RTE-BovB 555 611 (3201) m_b54s601i0 131
+
+  NC_000913.3      3078549 ATGATCATTGAGCCAAGGAACATCGGGAT-CTCTGCGCCAACGATCACAC 3078597
+                             i i     v i  v        i   i-  v    vii    vv   v
+  MamRTE1#LINE/        555 ATAACCATTGCGTCATGGAACATCAGGACGCTATGCGATGACGAGAACAG 604
+
+  NC_000913.3      3078598 CAATAGT 3078604
+                             i v  
+  MamRTE1#LINE/        605 CAGTCGT 611
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 33.66
+Transitions / transversions = 1.00 (8/8)
+Gap_init rate = 0.02 (1 / 55), avg. gap size = 1.00 (1 / 1)
+
+
+295 25.00 0.00 0.00 NC_000913.3 3110366 3110441 (1531211) tRNA-Lys-AAA#tRNA 1 76 (0) m_b54s502i0 132
+
+  NC_000913.3      3110366 GCCCGGATAGCTCAGTCGGTAGAGCAGGGGATTGAAAATCCCCGTGTCCT 3110415
+                                                     vvi  i vvv    ivv v    v
+  tRNA-Lys-AAA#          1 GCCCGGATAGCTCAGTCGGTAGAGCATCAGACTTTTAATCTGAGGGTCCA 50
+
+  NC_000913.3      3110416 TGGTTCGATTCCGAGTCCGGGCACCA 3110441
+                           v     i v   vv  i     i   
+  tRNA-Lys-AAA#         51 GGGTTCAAGTCCCTGTTCGGGCGCCA 76
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 28.68
+Transitions / transversions = 0.46 (6/13)
+Gap_init rate = 0.00 (0 / 75), avg. gap size = 0.0 (0 / 0)
+
+315 24.19 0.00 0.00 NC_000913.3 3110371 3110432 (1531220) tRNA-Tyr-TAC#tRNA 6 67 (7) m_b54s502i1 132
+
+  NC_000913.3      3110371 GATAGCTCAGTCGGTAGAGCAGGGGATTGAAAATCCCCGTGTCCTTGGTT 3110420
+                                     ii        i i   i  v i    iiiv   vi     
+  tRNA-Tyr-TAC#          6 GATAGCTCAGCTGGTAGAGCGGAGGACTGTAGATCCTTAGGTCGCTGGTT 55
+
+  NC_000913.3      3110421 CGATTCCGAGTC 3110432
+                                   iv  
+  tRNA-Tyr-TAC#         56 CGATTCCGGCTC 67
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 28.20
+Transitions / transversions = 2.75 (11/4)
+Gap_init rate = 0.00 (0 / 61), avg. gap size = 0.0 (0 / 0)
+
+
+20 16.28 0.00 0.00 NC_000913.3 3213617 3213657 (1427995) (GACGAA)n#Simple_repeat 1 41 (0) m_b56s252i1 133
+
+  NC_000913.3      3213617 GACGATGACGAAGATGAAGACGAAGAAGATGGCGATGACGA 3213657
+                                v        i           v  v i   v     
+  (GACGAA)n#Sim          1 GACGAAGACGAAGACGAAGACGAAGACGAAGACGAAGACGA 41
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (2/4)
+Gap_init rate = 0.00 (0 / 40), avg. gap size = 0.0 (0 / 0)
+
+
+18 31.51 0.00 0.00 NC_000913.3 3213617 3213676 (1427976) (GAC)n#Simple_repeat 1 60 (0) m_b56s252i0 134
+
+  NC_000913.3      3213617 GACGATGACGAAGATGAAGACGAAGAAGATGGCGATGACGACAGCGCCGA 3213666
+                                i     v  i  v     v  v  i i   i      ii  v   
+  (GAC)n#Simple          1 GACGACGACGACGACGACGACGACGACGACGACGACGACGACGACGACGA 50
+
+  NC_000913.3      3213667 TGATGACAAC 3213676
+                           i  i   i  
+  (GAC)n#Simple         51 CGACGACGAC 60
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (10/5)
+Gap_init rate = 0.00 (0 / 59), avg. gap size = 0.0 (0 / 0)
+
+
+235 28.00 0.00 0.00 NC_000913.3 3215598 3215672 (1425980) tRNA-Thr-ACA#tRNA 1 75 (0) m_b56s502i0 135
+
+  NC_000913.3      3215598 GGCCCCTTAGCTCAGTGGTTAGAGCAGGCGACTCATAATCGCTTGGTCGC 3215647
+                              i  v        v          vvv v  ii   v vvvv      
+  tRNA-Thr-ACA#          1 GGCTCCATAGCTCAGGGGTTAGAGCACTGGTCTTGTAAACCAGGGGTCGC 50
+
+  NC_000913.3      3215648 TGGTTCAAGTCCAGCAGGGGCCACC 3215672
+                           vi      i  iv  v      v  
+  tRNA-Thr-ACA#         51 GAGTTCAAATCTCGCTGGGGCCTCC 75
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 35.08
+Transitions / transversions = 0.40 (6/15)
+Gap_init rate = 0.00 (0 / 74), avg. gap size = 0.0 (0 / 0)
+
+248 21.82 0.00 0.00 NC_000913.3 3215605 3215659 (1425993) tRNA-Lys-AAG#tRNA 8 62 (14) m_b56s502i1 135
+
+  NC_000913.3      3215605 TAGCTCAGTGGTTAGAGCAGGCGACTCATAATCGCTTGGTCGCTGGTTCA 3215654
+                                    v v       v v     v     v vv     iv     i
+  tRNA-Lys-AAG#          8 TAGCTCAGTCGGTAGAGCATGAGACTCTTAATCTCAGGGTCGTGGGTTCG 57
+
+  NC_000913.3      3215655 AGTCC 3215659
+                             i  
+  tRNA-Lys-AAG#         58 AGCCC 62
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 23.63
+Transitions / transversions = 0.33 (3/9)
+Gap_init rate = 0.00 (0 / 54), avg. gap size = 0.0 (0 / 0)
+
+
+12 13.57 0.00 8.57 NC_000913.3 3315443 3315480 (1326172) (GCTTCA)n#Simple_repeat 1 35 (0) m_b58s252i0 136
+
+  NC_000913.3      3315443 GCTTCTTCTTCAGCTTTACGCTTGAGCTCTGCAGCTTC 3315480
+                                vv         i -    v    - -       
+  (GCTTCA)n#Sim          1 GCTTCAGCTTCAGCTTCA-GCTTCAGCT-T-CAGCTTC 35
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.08 (3 / 37), avg. gap size = 1.00 (3 / 3)
+
+
+15 15.08 2.56 2.56 NC_000913.3 3315668 3315706 (1325946) (GCTTCC)n#Simple_repeat 1 39 (0) m_b58s252i1 137
+
+  NC_000913.3      3315668 GCTTGCTCTTCCGCTTCACGC-TGCGCTTGCTCTTCCGCT 3315706
+                               v v          -   - v     v v        
+  (GCTTCC)n#Sim          1 GCTTCCGCTTCCGCTTC-CGCTTCCGCTTCCGCTTCCGCT 39
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.05 (2 / 38), avg. gap size = 1.00 (2 / 2)
+
+
+227 29.75 0.00 2.70 NC_000913.3 3318213 3318288 (1323364) C tRNA-Met-i#tRNA (0) 75 2 m_b58s502i0 138
+
+  NC_000913.3      3318213 TGGTTGCGGGGGCCGGATTTGAACCGACGATCTTCGGGTTATGAGCCCGA 3318262
+                               v  i i  vi  v  i  v  iv   i  ii        i    ii
+C tRNA-Met-i#tR         75 TGGTAGCAGAGGATGGTTTCGATCCATCGACCTCTGGGTTATGGGCCCAG 26
+
+  NC_000913.3      3318263 CGAGCTACCAGGCTGCTCCACCCCGC 3318288
+                            iv   v  --     v    i i  
+C tRNA-Met-i#tR         25 CACGCTTCC--GCTGCGCCACTCTGC 2
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 37.10
+Transitions / transversions = 1.75 (14/8)
+Gap_init rate = 0.03 (2 / 75), avg. gap size = 1.00 (2 / 2)
+
+240 23.53 0.00 0.00 NC_000913.3 3318222 3318272 (1323380) C tRNA-Thr-ACG#tRNA (6) 66 16 m_b58s502i1 138
+
+  NC_000913.3      3318222 GGGCCGGATTTGAACCGACGATCTTCGGGTTATGAGCCCGACGAGCTACC 3318271
+                             i v  i  i     vi          v   i   v      vvi    
+C tRNA-Thr-ACG#         66 GGACGGGGTTCGAACCCGCGATCTTCGGTTTACGAGACCGACGCCTTACC 17
+
+  NC_000913.3      3318272 A 3318272
+                            
+C tRNA-Thr-ACG#         16 A 16
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 20.90
+Transitions / transversions = 1.00 (6/6)
+Gap_init rate = 0.00 (0 / 50), avg. gap size = 0.0 (0 / 0)
+
+
+14 12.13 0.00 3.57 NC_000913.3 3331274 3331302 (1310350) (CAG)n#Simple_repeat 1 28 (0) m_b58s252i2 139
+
+  NC_000913.3      3331274 CAGCCAGCAGCATCAGCTCCAGCAGCAGC 3331302
+                              -        v    vv          
+  (CAG)n#Simple          1 CAG-CAGCAGCAGCAGCAGCAGCAGCAGC 28
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/3)
+Gap_init rate = 0.04 (1 / 28), avg. gap size = 1.00 (1 / 1)
+
+
+186 30.68 1.28 20.61 NC_000913.3 3368062 3368217 (1273435) L3#LINE/CR1 2850 2980 (1119) m_b59s601i0 140
+
+  NC_000913.3      3368062 AGCGTGGGTTCTCTGCAAAAAACTTACGCCAAATGAGGCTTTTTTACCTC 3368111
+                              i       v  ivi  v  v i i      iv iv  iv   ---i 
+  L3#LINE/CR1         2850 AGCATGGGTTCACTAAGAACAAGTCATGCCAAACTAACCTCATTT---CC 2896
+
+  NC_000913.3      3368112 TTTTTTCAACATGTTGAAATTCACCAGACAATGTCTGGCGAATTAACACC 3368161
+                                 v ------ iiii  -  i   ------    iii  i i----
+  L3#LINE/CR1         2897 TTTTTTGA------TAGGGTT-ACTAGA------CTGGTAGATCAG---- 2929
+
+  NC_000913.3      3368162 ATTGGGAATTCCGCAGACACCGTCTG-CAGAATTCCCATCGGCAAAG-AT 3368209
+                           ---      v   i     ?v  v i- v i   ----  i    i -  
+  L3#LINE/CR1         2930 ---GGGAATGCCGTAGACANAGTGTATCTGGATT----TCAGCAAGGCAT 2972
+
+  NC_000913.3      3368210 TTGGCAGA 3368217
+                              i  i 
+  L3#LINE/CR1         2973 TTGACAAA 2980
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 39.85
+Transitions / transversions = 2.17 (26/12)
+Gap_init rate = 0.19 (29 / 155), avg. gap size = 1.00 (29 / 29)
+
+
+12 18.86 2.63 2.63 NC_000913.3 3391097 3391134 (1250518) (ATCGACC)n#Simple_repeat 1 38 (0) m_b59s252i0 141
+
+  NC_000913.3      3391097 ATCG-CCACCGAACCTCGGCGATCGACCATCGTGCCATC 3391134
+                               -   i   v v   i v           -i     
+  (ATCGACC)n#Si          1 ATCGACCATCGACCATCGACCATCGACCATCG-ACCATC 38
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (3/3)
+Gap_init rate = 0.05 (2 / 37), avg. gap size = 1.00 (2 / 2)
+
+
+180 22.78 6.90 1.64 NC_000913.3 3410363 3410420 (1231232) C LFSINE_Vert#SINE/tRNA (17) 442 382 m_b59s601i1 142
+
+  NC_000913.3      3410363 GTGCTACGAGATGGGAGCCGGATTGACAGTATCCGAGA-TGATGTCTTCT 3410411
+                                -  v  vi  v             iviiv    -   v   i   
+C LFSINE_Vert#S        442 GTGCT-CGTGAAAGGTGCCGGATTGACAGCCCTGGAGACTGAAGTCCTCT 394
+
+  NC_000913.3      3410412 A---ACCCACAG 3410420
+                           i--- i      
+C LFSINE_Vert#S        393 GTTTATCCACAG 382
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 27.52
+Transitions / transversions = 1.17 (7/6)
+Gap_init rate = 0.05 (3 / 57), avg. gap size = 1.67 (5 / 3)
+
+
+228 23.19 6.76 6.76 NC_000913.3 3423582 3423655 (1217997) C tRNA-Phe-TTY#tRNA (0) 74 1 m_b60s502i0 143
+
+  NC_000913.3      3423582 GTGCTGATACCCAGAGTCGAACTGGGGACCTC---ACCCTTA--CCAAGG 3423626
+                               i  v    i ii      ii       i--- i i i -- i  --
+C tRNA-Phe-TTY#         74 GTGCCGAAACCCGGGATCGAACCAGGGACCTTTAGATCTTCAGTCTAA-- 27
+
+  NC_000913.3      3423627 GTGCGCTCTACCAACTGAGCCATATCAGC 3423655
+                           ---      v          i  v  i  
+C tRNA-Phe-TTY#         26 ---CGCTCTCCCAACTGAGCTATTTCGGC 1
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 23.20
+Transitions / transversions = 4.33 (13/3)
+Gap_init rate = 0.10 (7 / 73), avg. gap size = 1.43 (10 / 7)
+
+263 26.16 0.00 1.54 NC_000913.3 3423587 3423652 (1218000) C tRNA-Ala-GCG#tRNA (4) 68 4 m_b60s502i1 143
+
+  NC_000913.3      3423587 GATACCCAGAGTCGAACTGGGGACCTCACCCTTACCAAGGGTGCGCTCTA 3423636
+                              i  vi ii      iv   i     iv v i v   vi         
+C tRNA-Ala-GCG#         68 GATGCCGGGGATCGAACCCGGGGCCTCATACATGCGAAGCATGCGCTCTA 19
+
+  NC_000913.3      3423637 CCAACTGAGCCATATC 3423652
+                             -       i i   
+C tRNA-Ala-GCG#         18 CC-ACTGAGCTACATC 4
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 33.28
+Transitions / transversions = 1.83 (11/6)
+Gap_init rate = 0.02 (1 / 65), avg. gap size = 1.00 (1 / 1)
+
+
+552 30.22 4.68 6.25 NC_000913.3 3424175 3424580 (1217072) C LSU-rRNA_Hsa#rRNA (510) 4525 4126 m_b60s551i0 144
+
+  NC_000913.3      3424175 ACCGAACTGTCTCACGACGTTCTAAACCCAGCTCGCGTACCACTTTAAAT 3424224
+                             ii v         i?? v      ?       i?? v  v v?  ivv
+C LSU-rRNA_Hsa#       4525 ACTAACCTGTCTCACANNGGTCTAAANCCAGCTCANNTTCCCCGNTAGTG 4476
+
+  NC_000913.3      3424225 GGCGAACAGCATCACCCTTGG-GA--CCTACTTCAGCCCCAGGATGTGAT 3424271
+                             i     iivi?  v     -  --i ii i   --- v v   iv  v
+C LSU-rRNA_Hsa#       4475 GGTGAACAATCCNACGCTTGGTGAANTCCGCCTCA---CAATGATAGGAA 4429
+
+  NC_000913.3      3424272 GAGCCGACATCGAGGTGCCAAACACCGCCGTCGATATGAACTCTTGGGCG 3424321
+                             i  ?   ? ? i vii    v v  v     v       v     v  
+C LSU-rRNA_Hsa#       4428 GAACCNACANCNAAGGATCAAAAAGCGACGTCGCTATGAACGCTTGGCCG 4379
+
+  NC_000913.3      3424322 GTATCAGCCTGTTATCCCCGGAGTACCTTTTATCCGTTGAGCGATGGCCC 3424371
+                           vi iv    v        i vi   v    --    vii---------  
+C LSU-rRNA_Hsa#       4378 CCACAAGCCAGTTATCCCTGTGGTAACTTT--TCCGACA---------CC 4340
+
+  NC_000913.3      3424372 TTCCATTCAGAACC------ACC----GGATCACTATGACCTGCTTTCGC 3424411
+                            i iii i i    ------ii ----     iiv v v  i      i 
+C LSU-rRNA_Hsa#       4339 TCCTGCTTAAAACCCAAAAGGTCAGAAGGATCGTGAGGCCCCGCTTTCAC 4290
+
+  NC_000913.3      3424412 -ACCTG--CTCGCGCCGTCACGCTCGCAGTCAAGCTGGCTTATGCCATTG 3424458
+                           -ii   --i   ii i -- viv  ivii      vi    v    v  v
+C LSU-rRNA_Hsa#       4289 GGTCTGTATTCGTACTG--AAAATCAAGATCAAGCGAGCTTTTGCCCTTC 4242
+
+  NC_000913.3      3424459 CACTAACCTCCTGA--TGTCCGACCAGGATTAGCCAACCTTCGTGCTCCT 3424506
+                           ii  --  v vv  -- v  i v  vvvv v   ivi    v vi v   
+C LSU-rRNA_Hsa#       4241 TGCT--CCACGGGAGGTTTCTGTCCTCCCTGAGCTCGCCTTAGGACACCT 4194
+
+  NC_000913.3      3424507 CCGTTACTCTTTAGGAGGAG-ACCGCCCCAGTCAAACTACCCACCAGACA 3424555
+                           v i    iv   iiv   v -                 v      v i  
+C LSU-rRNA_Hsa#       4193 GCATTACCGTTTGACAGGTGTACCGCCCCAGTCAAACTCCCCACCTGGCA 4144
+
+  NC_000913.3      3424556 CTGTCCGCAACCCGGATTACGGGTC 3424580
+                            i   -----      --       
+C LSU-rRNA_Hsa#       4143 CCGTC-----CCCGGA--ACGGGTC 4126
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 37.92
+Transitions / transversions = 1.05 (59/56)
+Gap_init rate = 0.08 (33 / 405), avg. gap size = 1.33 (44 / 33)
+
+
+549 33.15 2.79 7.58 NC_000913.3 3424655 3425013 (1216639) C LSU-rRNA_Hsa#rRNA (1081) 3954 3612 m_b60s551i1 144
+
+  NC_000913.3      3424655 GCCTCCCACCTATCCTACACATCAAGGCTCAATGTTCA--GTGTCAAGCT 3424702
+                                    i   i      v  vv vv  -- v    --   i  ii  
+C LSU-rRNA_Hsa#       3954 GCCTCCCACTTATTCTACACCTCTCGTGTC--TCTTCACCGTGCCAGACT 3907
+
+  NC_000913.3      3424703 ATAGTAAAGGTTCACGGGGTCTTTCCGTCTTGCCG---CGGGTACACTGC 3424749
+                            v   v   v iv  i       iiivi ii  i --- v vi vi i- 
+C LSU-rRNA_Hsa#       3906 AGAGTCAAGCTCAACAGGGTCTTCTTTCCCCGCTGATTCCGCCAAGCC-C 3858
+
+  NC_000913.3      3424750 ATCTTCACAGCGAGTTCAATTTCACTGAGTCTCGGGTGGAGACAGCCTGG 3424799
+                           i iii vii  --- viii    i   ii vvii   i i     --   
+C LSU-rRNA_Hsa#       3857 GTTCCCTTGGC---TGTGGTTTCGCTGGATAGTAGGTAGGGACAG--TGG 3813
+
+  NC_000913.3      3424800 CCATC--ATTACGCCATTCGTGCAGGTCGGAACTTACCCGACAAGGAATT 3424847
+                           vv   --i  vvv      i   iv   ivv v   vvi   i   v   
+C LSU-rRNA_Hsa#       3812 GAATCTCGTTCATCCATTCATGCGCGTCACTAATTAGATGACGAGGCATT 3763
+
+  NC_000913.3      3424848 TCGCTACCTTAGGACCGTTATAGTTACGGCCGCCGTTTACCGGGGCTTCG 3424897
+                            v         i  vv  i        vv            v v     i
+C LSU-rRNA_Hsa#       3762 TGGCTACCTTAAGAGAGTCATAGTTACTCCCGCCGTTTACCCGCGCTTCA 3713
+
+  NC_000913.3      3424898 ATCAAGAGCTTCGCTTGCGCTAACCCCATCAATTAACCTTCCG-GCACCG 3424946
+                           v v  vvv    i  -----------------  i  v   v -    i 
+C LSU-rRNA_Hsa#       3712 TTGAATTTCTTCACT-----------------TTGACATTCAGAGCACTG 3680
+
+  NC_000913.3      3424947 GGCAGGCGTCACACCGTAT--ACGTCCACTTTCGTGTTTGCACAGTGCTG 3424994
+                                ivi     i  ii --  ii  i -iv  v ii v i ii    v
+C LSU-rRNA_Hsa#       3679 GGCAGAAATCACATCGCGTCAACACCCGC-CGCGGGCCTTCGCGATGCTT 3631
+
+  NC_000913.3      3424995 TGTTTTTAATAAACAGTTG 3425013
+                                 ? v    ?   i 
+C LSU-rRNA_Hsa#       3630 TGTTTTNATTAAANAGTCG 3612
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 38.68
+Transitions / transversions = 1.20 (60/50)
+Gap_init rate = 0.09 (31 / 358), avg. gap size = 1.16 (36 / 31)
+
+
+299 31.07 2.65 1.97 NC_000913.3 3425965 3426115 (1215537) C LSU-rRNA_Hsa#rRNA (3380) 1655 1504 m_b60s551i2 144
+
+  NC_000913.3      3425965 TCGGGGAGAACCAGCTATCTCCCGGTTTGATTGGCCTTTCACCCCCAGCC 3426014
+                            i  i i          iivvvi    i    i i     i    i ?v 
+C LSU-rRNA_Hsa#       1655 TTGGAGGGAACCAGCTACTAGATGGTTCGATTAGTCTTTCGCCCCTANAC 1606
+
+  NC_000913.3      3426015 ACAAGTCATCCG-CTAATTTTTCAACATTAG--TCGGTTCGGTCCTCCAG 3426061
+                           v  i  iivv  - ii    vi--    i  --i  v v   v      -
+C LSU-rRNA_Hsa#       1605 CCAGGTTGGACGACCGATTTGC--ACATCAGGACCGCTACGGACCTCCA- 1559
+
+  NC_000913.3      3426062 TTAGTGTTACC-CAACCTTCAACCTGCCCATGGCTAGATCACCGGGTTTC 3426110
+                           ii? v   v  - viv    iv  i     v vv?  v     i?v    
+C LSU-rRNA_Hsa#       1558 CCNGAGTTTCCTCCGGCTTCGCCCCGCCCAGGCANAGTTCACCANCTTTC 1509
+
+  NC_000913.3      3426111 GGGTC 3426115
+                                
+C LSU-rRNA_Hsa#       1508 GGGTC 1504
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 35.57
+Transitions / transversions = 1.19 (25/21)
+Gap_init rate = 0.04 (6 / 150), avg. gap size = 1.17 (7 / 6)
+
+
+353 22.45 1.98 3.00 NC_000913.3 3426265 3426365 (1215287) C LSU-rRNA_Hsa#rRNA (4620) 415 316 m_b60s551i3 145
+
+  NC_000913.3      3426265 ACGGTTTCAGGTTCTTTTTCACTCCCCTCGCCGGGGTTCTTTTCGCCTTT 3426314
+                                    v ii  i  vv    i -  vi iii         iv    
+C LSU-rRNA_Hsa#        415 ACGGTTTCACGCCCTCTTGAACTCTC-TCTTCAAAGTTCTTTTCAACTTT 367
+
+  NC_000913.3      3426315 CCCTCACGGTACTGGTTCACTATCGGTCAGTCAGG--AGTATTTAGCCTT 3426362
+                               i i      v   v          --  iv --i            
+C LSU-rRNA_Hsa#        366 CCCTTATGGTACTTGTTGACTATCGGTC--TCGTGCCGGTATTTAGCCTT 319
+
+  NC_000913.3      3426363 GGA 3426365
+                           i  
+C LSU-rRNA_Hsa#        318 AGA 316
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 24.53
+Transitions / transversions = 1.75 (14/8)
+Gap_init rate = 0.04 (4 / 100), avg. gap size = 1.25 (5 / 4)
+
+
+371 23.38 0.00 1.87 NC_000913.3 3426503 3426611 (1215041) C LSU-rRNA_Hsa#rRNA (4912) 123 17 m_b60s551i4 145
+
+  NC_000913.3      3426503 GATTCAGGCTCTGGGCTGCTCCCCGTTCGCTCGCCGCTACTGGGGGAATC 3426552
+                                -   v       vi    i    i       i     i       
+C LSU-rRNA_Hsa#        123 GATTC-GGCGCTGGGCTCTTCCCTGTTCACTCGCCGTTACTGAGGGAATC 75
+
+  NC_000913.3      3426553 TCGGTTGATTTCTTTTCCTCGGGGTACTTAGATGTTTCAGTTCCCCCGGT 3426602
+                           ii    ii            v vvv   v v   i  v i  - vv   v
+C LSU-rRNA_Hsa#         74 CTGGTTAGTTTCTTTTCCTCCGCTGACTAATATGCTTAAATT-CAGCGGG 26
+
+  NC_000913.3      3426603 TCGCCTCAT 3426611
+                                v i 
+C LSU-rRNA_Hsa#         25 TCGCCACGT 17
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 26.91
+Transitions / transversions = 0.92 (12/13)
+Gap_init rate = 0.02 (2 / 108), avg. gap size = 1.00 (2 / 2)
+
+
+327 21.33 0.00 1.33 NC_000913.3 3426958 3427033 (1214619) C tRNA-Ala-GCY_v#tRNA (0) 75 1 c_b60s401i0 146
+
+  NC_000913.3      3426958 TGGTGGAGCTATGCGGGATCGAACCGCAGACCTCCTGCGTGCAAAGCAGG 3427007
+                                   v iivv           vvi i    v   i   v     v 
+C tRNA-Ala-GCY_         75 TGGTGGAGGTGCCGGGGATCGAACCCGGGGCCTCGTGCATGCTAAGCACG 26
+
+  NC_000913.3      3427008 CGCTCTCCCAGCTGAGCTATAGCCCC 3427033
+                                 v   -        i v    
+C tRNA-Ala-GCY_         25 CGCTCTACCA-CTGAGCTACACCCCC 1
+
+Matrix = 18p51g.matrix
+Kimura (with divCpGMod) = 25.11
+Transitions / transversions = 0.60 (6/10)
+Gap_init rate = 0.01 (1 / 75), avg. gap size = 1.00 (1 / 1)
+
+
+197 29.03 1.61 0.00 NC_000913.3 3427090 3427151 (1214501) C MamSINE1#SINE/tRNA-RTE (221) 69 7 m_b60s601i0 147
+
+  NC_000913.3      3427090 GGACTTGAACCACCGACCTCACCCTTATCAGGGGTGCGCTCTAACCACCT 3427139
+                             iv i     vvi     iiv   i  i  vivi i          v  
+C MamSINE1#SINE         69 GGGATCGAACCCGTGACCTTGGCCTCATTAGCACCGTGCTCTAACCAACT 20
+
+  NC_000913.3      3427140 GAGCT-ACAAGCC 3427151
+                                -  v    
+C MamSINE1#SINE         19 GAGCTAACCAGCC 7
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 32.47
+Transitions / transversions = 1.25 (10/8)
+Gap_init rate = 0.02 (1 / 61), avg. gap size = 1.00 (1 / 1)
+
+
+262 11.63 0.00 0.00 NC_000913.3 3427229 3427271 (1214381) C SSU-rRNA_Hsa#rRNA (3) 1866 1824 m_b60s551i5 148
+
+  NC_000913.3      3427229 TGATCCAACCGCAGGTTCCCCTACGGTTACCTTGTTACGACTT 3427271
+                                 vv          v       vv               
+C SSU-rRNA_Hsa#       1866 TGATCCCTCCGCAGGTTCACCTACGGAAACCTTGTTACGACTT 1824
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 12.80
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+866 33.30 7.66 2.48 NC_000913.3 3427354 3428006 (1213646) C SSU-rRNA_Hsa#rRNA (159) 1710 1025 m_b60s551i6 149
+
+  NC_000913.3      3427354 GTGACGGGCGGTGTGTACAAGGCCCGGGAACGTATTCACCGTGGCATTCT 3427403
+                            i                  i vv i  i  v  v   v  iiivv  v 
+C SSU-rRNA_Hsa#       1710 GCGACGGGCGGTGTGTACAAAGGGCAGGGACTTAATCAACGCAAGCTTAT 1661
+
+  NC_000913.3      3427404 GATCCACGATTACTAGCGATTCCGACTTCATGGAGTCGAGTTGCAGACTC 3427453
+                             i  i iv     i vi     vvv       i vvv i     iv i 
+C SSU-rRNA_Hsa#       1660 GACCCGCACTTACTGGGAATTCCTCGTTCATGGGGAATAATTGCAATCCC 1611
+
+  NC_000913.3      3427454 CAATCCGGACTACGA-CGCACTTTATGAGGTC-----CGCTTGCTCTCGC 3427497
+                            i    vv iii   -i viv  i vvi   i-----   i   ivv  i
+C SSU-rRNA_Hsa#       1610 CGATCCCCATCGCGAATGGGGTTCAACGGGTTACCCGCGCCTGCCGGCGT 1561
+
+  NC_000913.3      3427498 GAGGTCGCTTCTCTTTGTATGCGCCATTGTAGCACGTGTGTAGCCCTGGT 3427547
+                           ii   v viv v vi  viivv i  v      i  i   i     i  v
+C SSU-rRNA_Hsa#       1560 AGGGTAGGCACACGCTGAGCCAGTCAGTGTAGCGCGCGTGCAGCCCCGGA 1511
+
+  NC_000913.3      3427548 CGT--AAGGGCCATGAT-GACTTGACGTCATC-CCCACCTTCCTCCAGTT 3427593
+                            i --     -   v i-   i  --- i  i- i  vii  vvvii i 
+C SSU-rRNA_Hsa#       1510 CATCTAAGGG-CATCACAGACCTG---TTATTGCTCAATCTCGGGTGGCT 1465
+
+  NC_000913.3      3427594 TATCACTGGCAGTCTCCTTTGAG---TTCCCGGCCG--GACCGCTGG--- 3427635
+                           v v i iiviv   -   i i  ---  vvv  v  --       v ---
+C SSU-rRNA_Hsa#       1464 GAACGCCACTTGTC-CCTCTAAGAAGTTGGGGGACGCCGACCGCTCGGGG 1416
+
+  NC_000913.3      3427636 ------CAACAA---AGGATA--AGGGTTGCGCTCGTTGCGGGACTTAAC 3427674
+                           ------i   v ---  v  i--  i  iv  i     iiv   v     
+C SSU-rRNA_Hsa#       1415 GTCGCGTAACTAGTTAGCATGCCAGAGTCTCGTTCGTTATCGGAATTAAC 1366
+
+  NC_000913.3      3427675 CCAACATTTCACAACACGAGCTGACGACAGCCATGCAGCACCTGTCTCAC 3427724
+                            vi   vv  i vv   v i  i vi  i        v    v-- i   
+C SSU-rRNA_Hsa#       1365 CAGACAAATCGCTCCACCAACTAAGAACGGCCATGCACCACCA--CCCAC 1318
+
+  NC_000913.3      3427725 GGT-TCCCGAAGGCACATTCTCA-TCTCTGAAAACTTCCGTGGATGTCAA 3427772
+                             v-  vv   i vi -- v   -   v v  --- i i  vvi    vi
+C SSU-rRNA_Hsa#       1317 GGAATCGAGAAAGAGC--TATCAATCTGTCAA---TCCTGTCCGTGTCCG 1273
+
+  NC_000913.3      3427773 GACCAGGTAAGGTTCTTCGCGTTGCATCGAATTAAACCACATGCTCCACC 3427822
+                            i  i   i     iii  i    vi  i      i  i  v       i
+C SSU-rRNA_Hsa#       1272 GGCCGGGTGAGGTTTCCCGTGTTGAGTCAAATTAAGCCGCAGGCTCCACT 1223
+
+  NC_000913.3      3427823 GCTTGTGCGGGCCC--CCGTCAATTCATTTGAGTTTTAACCTTGCGGCCG 3427870
+                           v  v   - v    --          v   i     i i i    ii  i
+C SSU-rRNA_Hsa#       1222 CCTGGTG-GTGCCCTTCCGTCAATTCCTTTAAGTTTCAGCTTTGCAACCA 1174
+
+  NC_000913.3      3427871 TACTCCCCAGGCGGTCGACTTAACG-CGTTAGCT--CCGGAAGC--CACG 3427915
+                                   v--   --i  ii  v - v  i i --        -- v  
+C SSU-rRNA_Hsa#       1173 TACTCCCCC--CGG--AACCCAAAGACTTTGGTTTCCCGGAAGCTGCCCG 1128
+
+  NC_000913.3      3427916 CC---TCAAGGGCACAACCTC---------CAAGTCGACATCGTTTACGG 3427953
+                           v ---   v   v i   vi --------- vi    i         i  
+C SSU-rRNA_Hsa#       1127 GCGGGTCATGGGAATAACGCCGCCGCATCGCCGGTCGGCATCGTTTATGG 1078
+
+  NC_000913.3      3427954 CGTGGACTACCAGGGTATCTAATCCTGTTTGCTCCCCACGCTTTCGCACC 3428003
+                           ivv i     v v       i   v v  i vv  i vvi      iv i
+C SSU-rRNA_Hsa#       1077 TCGGAACTACGACGGTATCTGATCGTCTTCGAACCTCCGACTTTCGTTCT 1028
+
+  NC_000913.3      3428004 TGA 3428006
+                              
+C SSU-rRNA_Hsa#       1027 TGA 1025
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 40.11
+Transitions / transversions = 1.14 (113/99)
+Gap_init rate = 0.06 (36 / 652), avg. gap size = 1.86 (67 / 36)
+
+
+12 24.08 0.00 0.00 NC_000913.3 3429087 3429120 (1212532) (TTT)n#Simple_repeat 1 34 (0) m_b60s252i0 150
+
+  NC_000913.3      3429087 TTTTTTTGATCTTTTTTTCTGTTTGTTGTTTTTT 3429120
+                                  vv i       i v   v  v      
+  (TTT)n#Simple          1 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 34
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.00 (0 / 33), avg. gap size = 0.0 (0 / 0)
+
+
+13 17.64 0.00 3.03 NC_000913.3 3461494 3461527 (1180125) (GCTGGC)n#Simple_repeat 1 33 (0) m_b60s252i1 151
+
+  NC_000913.3      3461494 GCTGGAGATGATGCTGGTGCTGGCGCTGGTCGCT 3461527
+                                v v  ii     i           -    
+  (GCTGGC)n#Sim          1 GCTGGCGCTGGCGCTGGCGCTGGCGCTGG-CGCT 33
+
+Matrix = Unknown
+Transitions / transversions = 1.50 (3/2)
+Gap_init rate = 0.03 (1 / 33), avg. gap size = 1.00 (1 / 1)
+
+
+21 28.43 6.19 0.00 NC_000913.3 3477958 3478054 (1163598) (ACCGTG)n#Simple_repeat 1 103 (0) m_b60s252i2 152
+
+  NC_000913.3      3477958 ACCGTGTTCATGACCGTGATCGTGGCCATGACCGCCGCAGCAACCGT--- 3478004
+                                 vi i         i    i  i      ivi v ii     ---
+  (ACCGTG)n#Sim          1 ACCGTGACCGTGACCGTGACCGTGACCGTGACCGTGACCGTGACCGTGAC 50
+
+  NC_000913.3      3478005 CGTGGTCGTGATCGTGGTGGTGATCGTG--CGCG-CCGTGAACGTGACCA 3478051
+                               ii     i    iiv    i    --  i -      v       i
+  (ACCGTG)n#Sim         51 CGTGACCGTGACCGTGACCGTGACCGTGACCGTGACCGTGACCGTGACCG 100
+
+  NC_000913.3      3478052 TGA 3478054
+                              
+  (ACCGTG)n#Sim        101 TGA 103
+
+Matrix = Unknown
+Transitions / transversions = 3.40 (17/5)
+Gap_init rate = 0.03 (3 / 96), avg. gap size = 2.00 (6 / 3)
+
+
+18 14.91 0.00 0.00 NC_000913.3 3496960 3496989 (1144663) (T)n#Simple_repeat 1 30 (0) m_b61s252i0 153
+
+  NC_000913.3      3496960 TTTTTGTTTTATTTTTTGTTTTTATTTTTT 3496989
+                                v    v      v     v      
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 30
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/4)
+Gap_init rate = 0.00 (0 / 29), avg. gap size = 0.0 (0 / 0)
+
+
+12 20.30 4.08 4.08 NC_000913.3 3505774 3505822 (1135830) (GCCCAGC)n#Simple_repeat 1 49 (0) m_b61s252i1 154
+
+  NC_000913.3      3505774 GCCCGGCGCGAATCGCGCCAG-TCCCCGCGCCCTGC-ACCAGCGCCGCAG 3505821
+                               i    vv v   -    -v   v      v  -v        -   
+  (GCCCAGC)n#Si          1 GCCCAGCGCCCAGCGC-CCAGCGCCCAGCGCCCAGCGCCCAGCGCC-CAG 48
+
+  NC_000913.3      3505822 C 3505822
+                            
+  (GCCCAGC)n#Si         49 C 49
+
+Matrix = Unknown
+Transitions / transversions = 0.14 (1/7)
+Gap_init rate = 0.08 (4 / 48), avg. gap size = 1.00 (4 / 4)
+
+
+15 21.30 2.22 2.22 NC_000913.3 3584719 3584763 (1056889) (AAT)n#Simple_repeat 1 45 (0) m_b62s252i0 155
+
+  NC_000913.3      3584719 AATAATAAT-ATAACACTCAACAATAATATTTATTATAATTATGAT 3584763
+                                    -    i v -  i       v v  v     v  i  
+  (AAT)n#Simple          1 AATAATAATAATAATAAT-AATAATAATAATAATAATAATAATAAT 45
+
+Matrix = Unknown
+Transitions / transversions = 0.60 (3/5)
+Gap_init rate = 0.05 (2 / 44), avg. gap size = 1.00 (2 / 2)
+
+
+13 12.17 3.70 0.00 NC_000913.3 3586732 3586758 (1054894) (GGC)n#Simple_repeat 1 28 (0) m_b62s252i1 156
+
+  NC_000913.3      3586732 GGCGGCGCAGGAGGC-GCGGCGGCGGCG 3586758
+                                  vv  v   -            
+  (GGC)n#Simple          1 GGCGGCGGCGGCGGCGGCGGCGGCGGCG 28
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/3)
+Gap_init rate = 0.04 (1 / 26), avg. gap size = 1.00 (1 / 1)
+
+
+16 26.36 0.00 0.00 NC_000913.3 3625909 3625953 (1015699) (GCA)n#Simple_repeat 1 45 (0) m_b63s252i0 157
+
+  NC_000913.3      3625909 GCAGCGGCAGCAGCACCAGAATCACCAGCAGCCCCAGTTGCGGCA 3625953
+                                i         v   v v  v       vv   iv  i   
+  (GCA)n#Simple          1 GCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCA 45
+
+Matrix = Unknown
+Transitions / transversions = 0.43 (3/7)
+Gap_init rate = 0.00 (0 / 44), avg. gap size = 0.0 (0 / 0)
+
+
+11 27.97 0.00 0.00 NC_000913.3 3627818 3627856 (1013796) (ATCAGC)n#Simple_repeat 1 39 (0) m_b63s252i1 158
+
+  NC_000913.3      3627818 ATCAGCATCAGGATCACCGTTCCCATCAGCGCCAGCGTC 3627856
+                                      v    v i ivv       ii    i  
+  (ATCAGC)n#Sim          1 ATCAGCATCAGCATCAGCATCAGCATCAGCATCAGCATC 39
+
+Matrix = Unknown
+Transitions / transversions = 1.25 (5/4)
+Gap_init rate = 0.00 (0 / 38), avg. gap size = 0.0 (0 / 0)
+
+
+16 16.54 0.00 0.00 NC_000913.3 3666852 3666885 (974767) (GTCGAT)n#Simple_repeat 1 34 (0) m_b64s252i0 159
+
+  NC_000913.3      3666852 GTCGATGTGCATGTCGATGTCGATACCGGTGTCG 3666885
+                                   vv              ii  i     
+  (GTCGAT)n#Sim          1 GTCGATGTCGATGTCGATGTCGATGTCGATGTCG 34
+
+Matrix = Unknown
+Transitions / transversions = 1.50 (3/2)
+Gap_init rate = 0.00 (0 / 33), avg. gap size = 0.0 (0 / 0)
+
+
+12 13.61 0.00 8.57 NC_000913.3 3704302 3704339 (937313) (CCAGCG)n#Simple_repeat 1 35 (0) m_b64s252i1 160
+
+  NC_000913.3      3704302 CCAGCACCAGCGCCAGCAGCAGACTTGGCAGCGCCAGC 3704339
+                                i           iv   - -- v          
+  (CCAGCG)n#Sim          1 CCAGCGCCAGCGCCAGCGCCAG-C--GCCAGCGCCAGC 35
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (2/2)
+Gap_init rate = 0.08 (3 / 37), avg. gap size = 1.00 (3 / 3)
+
+
+15 14.30 3.03 3.03 NC_000913.3 3751945 3751977 (889675) (AT)n#Simple_repeat 1 33 (0) m_b65s252i0 161
+
+  NC_000913.3      3751945 ATATTTATATAGTA-ATATATAAAATTATATATA 3751977
+                               v      -  -       v vv        
+  (AT)n#Simple_          1 ATATATATATA-TATATATATATATATATATATA 33
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/4)
+Gap_init rate = 0.06 (2 / 32), avg. gap size = 1.00 (2 / 2)
+
+
+13 0.00 3.23 10.34 NC_000913.3 3769644 3769674 (871978) (AAATA)n#Simple_repeat 1 29 (0) m_b65s252i1 162
+
+  NC_000913.3      3769644 AAATAAAATAAAAGATAAGAATAAAA-AAAAT 3769674
+                                    -   -    -       -     
+  (AAATA)n#Simp          1 AAATAAAAT-AAA-ATAA-AATAAAATAAAAT 29
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.13 (4 / 30), avg. gap size = 1.00 (4 / 4)
+
+
+11 20.02 1.89 8.00 NC_000913.3 3843920 3843972 (797680) (ATGAAA)n#Simple_repeat 1 50 (0) m_b67s252i0 163
+
+  NC_000913.3      3843920 ATGATAAATAATAATCAAATTGATAAAATCAAAATGAGAA-AAATATGAA 3843968
+                               -    i v   v   v  --     v       i  -i  v     
+  (ATGAAA)n#Sim          1 ATGA-AAATGAAAATGAAAATG--AAAATGAAAATGAAAATGAAAATGAA 47
+
+  NC_000913.3      3843969 TAAT 3843972
+                           -   
+  (ATGAAA)n#Sim         48 -AAT 50
+
+Matrix = Unknown
+Transitions / transversions = 0.60 (3/5)
+Gap_init rate = 0.10 (5 / 52), avg. gap size = 1.00 (5 / 5)
+
+
+12 4.35 8.33 0.00 NC_000913.3 3920827 3920850 (720802) (CAGAA)n#Simple_repeat 1 26 (0) m_b68s252i0 164
+
+  NC_000913.3      3920827 CAGAACAGAAC-GAACAGGACA-AAC 3920850
+                                      -      i   -   
+  (CAGAA)n#Simp          1 CAGAACAGAACAGAACAGAACAGAAC 26
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/0)
+Gap_init rate = 0.09 (2 / 23), avg. gap size = 1.00 (2 / 2)
+
+
+866 33.30 7.66 2.48 NC_000913.3 3942564 3943216 (698436) SSU-rRNA_Hsa#rRNA 1025 1710 (159) m_b68s551i0 165
+
+  NC_000913.3      3942564 TCAGGTGCGAAAGCGTGGGGAGCAAACAGGATTAGATACCCTGGTAGTCC 3942613
+                              i vi      ivv i  vv i  v v   i       v v     i 
+  SSU-rRNA_Hsa#       1025 TCAAGAACGAAAGTCGGAGGTTCGAAGACGATCAGATACCGTCGTAGTTC 1074
+
+  NC_000913.3      3942614 ACGCCGTAAACGATGTCGACTTG---------GAGGTTGTGCCCTTGA-- 3942652
+                           vvi  i         i    iv --------- iv   i v   v   --
+  SSU-rRNA_Hsa#       1075 CGACCATAAACGATGCCGACCGGCGATGCGGCGGCGTTATTCCCATGACC 1124
+
+  NC_000913.3      3942653 -GGCGTG--GCTTCCGG--AGCTAACG-CGTTAAGTCGACCGCCTGGGGA 3942696
+                           - v  v --        -- i i  v - v  ii  i--   --v     
+  SSU-rRNA_Hsa#       1125 CGCCGGGCAGCTTCCGGGAAACCAAAGTCTTTGGGTT--CCG--GGGGGA 1170
+
+  NC_000913.3      3942697 GTACGGCCGCAAGGTTAAAACTCAAATGAATTGACGG--GGGCCCGCACA 3942744
+                              i  ii    i i i     i   v          --    v -   v
+  SSU-rRNA_Hsa#       1171 GTATGGTTGCAAAGCTGAAACTTAAAGGAATTGACGGAAGGGCAC-CACC 1219
+
+  NC_000913.3      3942745 AGCGGTGGAGCATGTGGTTTAATTCGATGCAACGCGAAGAACCTTACCTG 3942794
+                             vi       v  i  i      i  iv    i  iii     i   i 
+  SSU-rRNA_Hsa#       1220 AGGAGTGGAGCCTGCGGCTTAATTTGACTCAACACGGGAAACCTCACCCG 1269
+
+  NC_000913.3      3942795 GTCTTGACATCCACGGAAGTTTTCAGAGA-TGAGAATGTGCCTTCGGGA- 3942842
+                            i iv    ivv  i i ---  v v   -   v -- iv i   vv  -
+  SSU-rRNA_Hsa#       1270 GCCCGGACACGGACAGGA---TTGACAGATTGATA--GCTCTTTCTCGAT 1314
+
+  NC_000913.3      3942843 ACCGTGAGACAGGTGCTGCATGGCTGTCGTCAGCTCGTGTTGTGAAATGT 3942892
+                           v     i --v    v        i  iv i  i v   vv i  vv   
+  SSU-rRNA_Hsa#       1315 TCCGTGGG--TGGTGGTGCATGGCCGTTCTTAGTTGGTGGAGCGATTTGT 1362
+
+  NC_000913.3      3942893 TGGGTTAAGTCCCGCAACGAGCGCAACCCT--TATCCT---TTGTTG--- 3942934
+                           iv      v   vii     i  vi  i  --i  v  --- v   i---
+  SSU-rRNA_Hsa#       1363 CTGGTTAATTCCGATAACGAACGAGACTCTGGCATGCTAACTAGTTACGC 1412
+
+  NC_000913.3      3942935 ------CCAGCGGTC--CGGCCGGGAA---CTCAAAGGAGACTGCCAGTG 3942973
+                           ------ v       --  v  vvv  ---  i i   -   vivii i 
+  SSU-rRNA_Hsa#       1413 GACCCCCGAGCGGTCGGCGTCCCCCAACTTCTTAGAGG-GACAAGTGGCG 1461
+
+  NC_000913.3      3942974 ATAAACTGGAGGAAGGTGGG-GATGACGTCAAGTC-ATCATGGCCCTT-- 3943019
+                           v v i iivvv  iiv  i -i  i ---  i   -i v   -     --
+  SSU-rRNA_Hsa#       1462 TTCAGCCACCCGAGATTGAGCAATAA---CAGGTCTGTGATG-CCCTTAG 1507
+
+  NC_000913.3      3943020 ACGACCAGGGCTACACACGTGCTACAATGGCGCATACAAAGAGAAGCGAC 3943069
+                            i v  i     i   i  i      v  i vviiv  iv v viv v  
+  SSU-rRNA_Hsa#       1508 ATGTCCGGGGCTGCACGCGCGCTACACTGACTGGCTCAGCGTGTGCCTAC 1557
+
+  NC_000913.3      3943070 CTCGCGAGAGCAAGCG-----GACCTCATAAAGTGCG-TCGTAGTCCGGA 3943113
+                            iii  vvi   i   -----i   ivv i  viv i-   iii vv   
+  SSU-rRNA_Hsa#       1558 CCTACGCCGGCAGGCGCGGGTAACCCGTTGAACCCCATTCGCGATGGGGA 1607
+
+  NC_000913.3      3943114 TTGGAGTCTGCAACTCGACTCCATGAAGTCGGAATCGCTAGTAATCGTGG 3943163
+                            i  i vi     i vvv i       vvv     iv i     vi i  
+  SSU-rRNA_Hsa#       1608 TCGGGGATTGCAATTATTCCCCATGAACGAGGAATTCCCAGTAAGTGCGG 1657
+
+  NC_000913.3      3943164 ATCAGAATGCCACGGTGAATACGTTCCCGGGCCTTGTACACACCGCCCGT 3943213
+                           i   v  vviii  v   v  v  i  i vv i                 
+  SSU-rRNA_Hsa#       1658 GTCATAAGCTTGCGTTGATTAAGTCCCTGCCCTTTGTACACACCGCCCGT 1707
+
+  NC_000913.3      3943214 CAC 3943216
+                            i 
+  SSU-rRNA_Hsa#       1708 CGC 1710
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 40.11
+Transitions / transversions = 1.14 (113/99)
+Gap_init rate = 0.06 (37 / 652), avg. gap size = 1.81 (67 / 37)
+
+
+262 11.63 0.00 0.00 NC_000913.3 3943299 3943341 (698311) SSU-rRNA_Hsa#rRNA 1824 1866 (3) m_b68s551i1 166
+
+  NC_000913.3      3943299 AAGTCGTAACAAGGTAACCGTAGGGGAACCTGCGGTTGGATCA 3943341
+                                          vv       v          vv      
+  SSU-rRNA_Hsa#       1824 AAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAGGGATCA 1866
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 12.80
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+371 23.38 0.00 1.87 NC_000913.3 3943876 3943984 (697668) LSU-rRNA_Hsa#rRNA 17 123 (4912) m_b68s551i2 167
+
+  NC_000913.3      3943876 ATGAGGCGAACCGGGGGAACTGAAACATCTAAGTACCCCGAGGAAAAGAA 3943925
+                            i v     v   vv -  i v  i   v v   vvv v           
+  LSU-rRNA_Hsa#         17 ACGTGGCGACCCGCTG-AATTTAAGCATATTAGTCAGCGGAGGAAAAGAA 65
+
+  NC_000913.3      3943926 ATCAACCGAGATTCCCCCAGTAGCGGCGAGCGAACGGGGAGCAGCCCAGA 3943975
+                            ii    ii       i     i       i    i    iv       v
+  LSU-rRNA_Hsa#         66 ACTAACCAGGATTCCCTCAGTAACGGCGAGTGAACAGGGAAGAGCCCAGC 115
+
+  NC_000913.3      3943976 GCCTGAATC 3943984
+                              -     
+  LSU-rRNA_Hsa#        116 GCC-GAATC 123
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 26.91
+Transitions / transversions = 0.92 (12/13)
+Gap_init rate = 0.02 (2 / 108), avg. gap size = 1.00 (2 / 2)
+
+
+353 22.45 1.98 3.00 NC_000913.3 3944122 3944222 (697430) LSU-rRNA_Hsa#rRNA 316 415 (4620) m_b68s551i3 167
+
+  NC_000913.3      3944122 TCCAAGGCTAAATACT--CCTGACTGACCGATAGTGAACCAGTACCGTGA 3944169
+                             i            i-- vi  --          v   v      i i 
+  LSU-rRNA_Hsa#        316 TCTAAGGCTAAATACCGGCACGA--GACCGATAGTCAACAAGTACCATAA 363
+
+  NC_000913.3      3944170 GGGAAAGGCGAAAAGAACCCCGGCGAGGGGAGTGAAAAAGAACCTGAAAC 3944219
+                                  vi         iii iv  - i    vv  i  ii v      
+  LSU-rRNA_Hsa#        364 GGGAAAGTTGAAAAGAACTTTGAAGA-GAGAGTTCAAGAGGGCGTGAAAC 412
+
+  NC_000913.3      3944220 CGT 3944222
+                              
+  LSU-rRNA_Hsa#        413 CGT 415
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 24.53
+Transitions / transversions = 1.75 (14/8)
+Gap_init rate = 0.04 (4 / 100), avg. gap size = 1.25 (5 / 4)
+
+
+299 31.07 2.65 1.97 NC_000913.3 3944372 3944522 (697130) LSU-rRNA_Hsa#rRNA 1504 1655 (3380) m_b68s551i4 168
+
+  NC_000913.3      3944372 GACCCGAAACCCGGTGATCTAGCCATGGGCAGGTTGAAGGTTG-GGTAAC 3944420
+                                    v?i     v  ?vv v     i  vi    viv -  v   
+  LSU-rRNA_Hsa#       1504 GACCCGAAAGNTGGTGAACTNTGCCTGGGCGGGGCGAAGCCGGAGGAAAC 1553
+
+  NC_000913.3      3944421 ACTAACTGGAGGACCGAACCGA--CTAATGTTGAAAAATTAG-CGGATGA 3944467
+                           v ?ii-      v   v v  i--  i    --iv    ii -  vvii 
+  LSU-rRNA_Hsa#       1554 TCNGG-TGGAGGTCCGTAGCGGTCCTGATGT--GCAAATCGGTCGTCCAA 1600
+
+  NC_000913.3      3944468 CTTGTGGCTGGGGGTGAAAGGCCAATCAAACCGGGAGATAGCTGGTTCTC 3944517
+                            i  v v? i    i     i i    i    ivvvii          i 
+  LSU-rRNA_Hsa#       1601 CCTGGGTNTAGGGGCGAAAGACTAATCGAACCATCTAGTAGCTGGTTCCC 1650
+
+  NC_000913.3      3944518 CCCGA 3944522
+                           i  i 
+  LSU-rRNA_Hsa#       1651 TCCAA 1655
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 35.57
+Transitions / transversions = 1.19 (25/21)
+Gap_init rate = 0.04 (6 / 150), avg. gap size = 1.17 (7 / 6)
+
+
+549 33.15 2.79 7.58 NC_000913.3 3945474 3945832 (695820) LSU-rRNA_Hsa#rRNA 3612 3954 (1081) m_b69s551i3 168
+
+  NC_000913.3      3945474 CAACTGTTTATTAAAAACACAGCACTGTGCAAACACGAAAGTGGACGT-- 3945521
+                            i   ?    v ?      v    ii i v ii v  vi- i  ii  --
+  LSU-rRNA_Hsa#       3612 CGACTNTTTAATNAAAACAAAGCATCGCGAAGGCCCGCG-GCGGGTGTTG 3660
+
+  NC_000913.3      3945522 ATACGGTGTGACGCCTGCCCGGTGC-CGGAAGGTTAATTGATGGGGTCAG 3945570
+                            ii  i     ivi      i    - v   v  i  -------------
+  LSU-rRNA_Hsa#       3661 ACGCGATGTGATTTCTGCCCAGTGCTCTGAATGTCAA------------- 3697
+
+  NC_000913.3      3945571 CGCAAGCGAAGCTCTTGATCGAAGCCCCGGTAAACGGCGGCCGTAACTAT 3945620
+                           ----  i    vvv  v vi     v v            vv        
+  LSU-rRNA_Hsa#       3698 ----AGTGAAGAAATTCAATGAAGCGCGGGTAAACGGCGGGAGTAACTAT 3743
+
+  NC_000913.3      3945621 AACGGTCCTAAGGTAGCGAAATTCCTTGTCGGGTAAGTTCCGACCTGCAC 3945670
+                           i  vv  i         v    v   i   ivv   v vvi   vi   i
+  LSU-rRNA_Hsa#       3744 GACTCTCTTAAGGTAGCCAAATGCCTCGTCATCTAATTAGTGACGCGCAT 3793
+
+  NC_000913.3      3945671 GAATGGCGTAAT--GATGGCCAGGCTGTCTCCACCCGAGACTCAGTGAAA 3945718
+                                 vvv  i--   vv   --     i i   iivv ii   i    
+  LSU-rRNA_Hsa#       3794 GAATGGATGAACGAGATTCCCA--CTGTCCCTACCTACTATCCAGCGAAA 3841
+
+  NC_000913.3      3945719 TTGAACTCGCTGTGAAGATGCAGTGTACCCG---CGGCAAGACGGAAAGA 3945765
+                           iiiv ---  iiv iii i -i iv iv v --- i  ii iviii    
+  LSU-rRNA_Hsa#       3842 CCACA---GCCAAGGGAACG-GGCTTGGCGGAATCAGCGGGGAAAGAAGA 3887
+
+  NC_000913.3      3945766 CCCCGTGAACCTTTACTATAGCTTGACAC--TGAACATTGAGCCTTGATG 3945813
+                              i  vi v   v   v   ii  i   --    v --  vv vv  v 
+  LSU-rRNA_Hsa#       3888 CCCTGTTGAGCTTGACTCTAGTCTGGCACGGTGAAGA--GACACGAGAGG 3935
+
+  NC_000913.3      3945814 TGTAGGATAGGTGGGAGGC 3945832
+                                i   i         
+  LSU-rRNA_Hsa#       3936 TGTAGAATAAGTGGGAGGC 3954
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 38.68
+Transitions / transversions = 1.20 (60/50)
+Gap_init rate = 0.09 (31 / 358), avg. gap size = 1.16 (36 / 31)
+
+
+565 31.51 4.73 4.47 NC_000913.3 3945911 3946312 (695340) LSU-rRNA_Hsa#rRNA 4123 4525 (510) m_b69s551i4 168
+
+  NC_000913.3      3945911 CGTGATCCGGGTTGCGGACAGTGTCTGGTGGGTAGTTTGACTGGGGCGGT 3945960
+                             i  i   vvii v    i   i v      v                 
+  LSU-rRNA_Hsa#       4123 CGCGACCCGTTCCGGGGACGGTGCCAGGTGGGGAGTTTGACTGGGGCGGT 4172
+
+  NC_000913.3      3945961 -CTCCTCCTAAAGAGTAACGGAGGAGCACGAAGGTTGGCTAATCCTGGTC 3946009
+                           - v   vii   vi    i v   v iv v    ivi   v vvvv  v 
+  LSU-rRNA_Hsa#       4173 ACACCTGTCAAACGGTAATGCAGGTGTCCTAAGGCGAGCTCAGGGAGGAC 4222
+
+  NC_000913.3      3946010 GGACA--TCAGGAGGTTAGTGCAATGGCATAAGCCAGCTTGACTGCGAGC 3946057
+                           i  v --  vv v  --  iiv  v    v    iv      iivi  vi
+  LSU-rRNA_Hsa#       4223 AGAAACCTCCCGTGG--AGCAGAAGGGCAAAAGCTCGCTTGATCTTGATT 4270
+
+  NC_000913.3      3946058 GTGACGGCGCGA--GCAGG-TGCGAAAGCAGGTCATAGTGATCC----GG 3946100
+                           v -- i ii   --i   i-i i      i  v v vii     ---- i
+  LSU-rRNA_Hsa#       4271 TT--CAGTACGAATACAGACCGTGAAAGCGGGGCCTCACGATCCTTCTGA 4318
+
+  NC_000913.3      3946101 T------GGTTCTGAATGGAAGGGCCATCGCTCAACGGATAAAAGGTACT 3946144
+                           i------    i i iii i   --ii   ---------v     v   i
+  LSU-rRNA_Hsa#       4319 CCTTTTGGGTTTTAAGCAGGAGG--TGTCG---------GAAAAGTTACC 4357
+
+  NC_000913.3      3946145 CCGGGGATAACAGGCTGATACCGCCCAAGAGTTCATATCGACGGCGGTGT 3946194
+                           v i        v    vi iv  v     v       v     v  v v 
+  LSU-rRNA_Hsa#       4358 ACAGGGATAACTGGCTTGTGGCGGCCAAGCGTTCATAGCGACGTCGCTTT 4407
+
+  NC_000913.3      3946195 TTGGCACCTCGATGTCGGCTCATCACATCCTGGAGCTGAAGTAGG--TC- 3946241
+                              iiv i ? ?   ?  i  v  vi   v v ---   i ii i--  -
+  LSU-rRNA_Hsa#       4408 TTGATCCTTNGNTGTNGGTTCTTCCTATCATTG---TGAGGCGGANTTCA 4454
+
+  NC_000913.3      3946242 CCAAGGGTATGGCTGTTCGCCATTTAAAGTGGTACGCGAGCTGGGTTTAG 3946291
+                                v  ?v ii     i  vvi  ?v v  v ??i       ?     
+  LSU-rRNA_Hsa#       4455 CCAAGCGTNGGATTGTTCACCCACTANCGGGGAANNTGAGCTGGNTTTAG 4504
+
+  NC_000913.3      3946292 AACGTCGTGAGACAGTTCGGT 3946312
+                            v ??i         v ii  
+  LSU-rRNA_Hsa#       4505 ACCNNTGTGAGACAGGTTAGT 4525
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 38.96
+Transitions / transversions = 1.05 (62/59)
+Gap_init rate = 0.06 (26 / 401), avg. gap size = 1.42 (37 / 26)
+
+
+277 18.38 0.00 5.00 NC_000913.3 3946877 3946939 (694713) tRNA-Gly-GGY#tRNA 6 65 (9) m_b69s502i0 169
+
+  NC_000913.3      3946877 GGTAGTTCAGTCGGTTAGAATACCTGCCTGTCACGCAGGGGGTCGCGGGT 3946926
+                              i       v --      v ii     i     i  i  i -     
+  tRNA-Gly-GGY#          6 GGTGGTTCAGTGG--TAGAATTCTCGCCTGCCACGCGGGAGGCC-CGGGT 52
+
+  NC_000913.3      3946927 TCGAGTCCCGTCC 3946939
+                               v     v  
+  tRNA-Gly-GGY#         53 TCGATTCCCGGCC 65
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 17.30
+Transitions / transversions = 1.75 (7/4)
+Gap_init rate = 0.05 (3 / 62), avg. gap size = 1.00 (3 / 3)
+
+
+236 31.67 0.00 0.00 NC_000913.3 3946963 3947022 (694630) tRNA-Arg-AGG#tRNA 7 66 (10) m_b69s502i1 170
+
+  NC_000913.3      3946963 GTAGTTCAATTGGTAGAGCACCGGTCTCCAAAACCGGGTGTTGGGAGTTC 3947012
+                             i iii   v i  ii    i  i    v  i  i  vi   v i    
+  tRNA-Arg-AGG#          7 GTGGCCTAATGGATAAGGCACTGGCCTCCTAAGCCAGGGATTGTGGGTTC 56
+
+  NC_000913.3      3947013 GAGTCTCTCC 3947022
+                                i v  
+  tRNA-Arg-AGG#         57 GAGTCCCACC 66
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 44.48
+Transitions / transversions = 2.80 (14/5)
+Gap_init rate = 0.00 (0 / 59), avg. gap size = 0.0 (0 / 0)
+
+
+234 26.43 0.00 4.17 NC_000913.3 3982382 3982456 (659196) MamSINE1#SINE/tRNA-RTE 14 85 (205) m_b69s502i2 171
+
+  NC_000913.3      3982382 TAGCTCAGCTGGATAGAGCGCTGCCCTCCGGAGGCAGAGGTCTCAGGTTC 3982431
+                                   i   v      i v iv  vvv     vi     v i     
+  MamSINE1#SINE         14 TAGCTCAGTTGGTTAGAGCACGGTGCTAATGAGGCCAAGGTCACGGGTTC 63
+
+  NC_000913.3      3982432 GAATCCTGTCGGGCGCGCCATTTAG 3982456
+                             vi  i  --- i v    v    
+  MamSINE1#SINE         64 GATCCCCGT---GTGGGCCAGTTAG 85
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 28.77
+Transitions / transversions = 0.73 (8/11)
+Gap_init rate = 0.04 (3 / 74), avg. gap size = 1.00 (3 / 3)
+
+
+200 31.33 4.82 0.00 NC_000913.3 3993969 3994051 (647601) X6B_LINE#LINE/CR1 98 184 (888) m_b69s601i0 172
+
+  NC_000913.3      3993969 CGATATCGCTGTCGCCATCCCAGTCGTCC-AGGCGTTCTTCAATGGTC-- 3994015
+                             iv    v i   vv i vvi  i  i - viii   v      i  --
+  X6B_LINE#LINE         98 CGGGATCGATATCGGGACCGGGGTTGTTCTATATATTCATCAATGATCTG 147
+
+  NC_000913.3      3994016 -AGCCAGAGTTGATCAGCCAGGCGATGAAATTCACTG 3994051
+                           - iv?  i?i   vi   v             i?   
+  X6B_LINE#LINE        148 GAAGNAGGNCTGAATAGCGAGGCGATGAAATTTNCTG 184
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 43.96
+Transitions / transversions = 1.36 (15/11)
+Gap_init rate = 0.04 (3 / 82), avg. gap size = 1.33 (4 / 3)
+
+
+866 33.30 7.66 2.48 NC_000913.3 4036287 4036939 (604713) SSU-rRNA_Hsa#rRNA 1025 1710 (159) m_b70s551i0 173
+
+  NC_000913.3      4036287 TCAGGTGCGAAAGCGTGGGGAGCAAACAGGATTAGATACCCTGGTAGTCC 4036336
+                              i vi      ivv i  vv i  v v   i       v v     i 
+  SSU-rRNA_Hsa#       1025 TCAAGAACGAAAGTCGGAGGTTCGAAGACGATCAGATACCGTCGTAGTTC 1074
+
+  NC_000913.3      4036337 ACGCCGTAAACGATGTCGACTTG---------GAGGTTGTGCCCTTGA-- 4036375
+                           vvi  i         i    iv --------- iv   i v   v   --
+  SSU-rRNA_Hsa#       1075 CGACCATAAACGATGCCGACCGGCGATGCGGCGGCGTTATTCCCATGACC 1124
+
+  NC_000913.3      4036376 -GGCGTG--GCTTCCGG--AGCTAACG-CGTTAAGTCGACCGCCTGGGGA 4036419
+                           - v  v --        -- i i  v - v  ii  i--   --v     
+  SSU-rRNA_Hsa#       1125 CGCCGGGCAGCTTCCGGGAAACCAAAGTCTTTGGGTT--CCG--GGGGGA 1170
+
+  NC_000913.3      4036420 GTACGGCCGCAAGGTTAAAACTCAAATGAATTGACGG--GGGCCCGCACA 4036467
+                              i  ii    i i i     i   v          --    v -   v
+  SSU-rRNA_Hsa#       1171 GTATGGTTGCAAAGCTGAAACTTAAAGGAATTGACGGAAGGGCAC-CACC 1219
+
+  NC_000913.3      4036468 AGCGGTGGAGCATGTGGTTTAATTCGATGCAACGCGAAGAACCTTACCTG 4036517
+                             vi       v  i  i      i  iv    i  iii     i   i 
+  SSU-rRNA_Hsa#       1220 AGGAGTGGAGCCTGCGGCTTAATTTGACTCAACACGGGAAACCTCACCCG 1269
+
+  NC_000913.3      4036518 GTCTTGACATCCACGGAAGTTTTCAGAGA-TGAGAATGTGCCTTCGGGA- 4036565
+                            i iv    ivv  i i ---  v v   -   v -- iv i   vv  -
+  SSU-rRNA_Hsa#       1270 GCCCGGACACGGACAGGA---TTGACAGATTGATA--GCTCTTTCTCGAT 1314
+
+  NC_000913.3      4036566 ACCGTGAGACAGGTGCTGCATGGCTGTCGTCAGCTCGTGTTGTGAAATGT 4036615
+                           v     i --v    v        i  iv i  i v   vv i  vv   
+  SSU-rRNA_Hsa#       1315 TCCGTGGG--TGGTGGTGCATGGCCGTTCTTAGTTGGTGGAGCGATTTGT 1362
+
+  NC_000913.3      4036616 TGGGTTAAGTCCCGCAACGAGCGCAACCCT--TATCCT---TTGTTG--- 4036657
+                           iv      v   vii     i  vi  i  --i  v  --- v   i---
+  SSU-rRNA_Hsa#       1363 CTGGTTAATTCCGATAACGAACGAGACTCTGGCATGCTAACTAGTTACGC 1412
+
+  NC_000913.3      4036658 ------CCAGCGGTC--CGGCCGGGAA---CTCAAAGGAGACTGCCAGTG 4036696
+                           ------ v       --  v  vvv  ---  i i   -   vivii i 
+  SSU-rRNA_Hsa#       1413 GACCCCCGAGCGGTCGGCGTCCCCCAACTTCTTAGAGG-GACAAGTGGCG 1461
+
+  NC_000913.3      4036697 ATAAACTGGAGGAAGGTGGG-GATGACGTCAAGTC-ATCATGGCCCTT-- 4036742
+                           v v i iivvv  iiv  i -i  i ---  i   -i v   -     --
+  SSU-rRNA_Hsa#       1462 TTCAGCCACCCGAGATTGAGCAATAA---CAGGTCTGTGATG-CCCTTAG 1507
+
+  NC_000913.3      4036743 ACGACCAGGGCTACACACGTGCTACAATGGCGCATACAAAGAGAAGCGAC 4036792
+                            i v  i     i   i  i      v  i vviiv  iv v viv v  
+  SSU-rRNA_Hsa#       1508 ATGTCCGGGGCTGCACGCGCGCTACACTGACTGGCTCAGCGTGTGCCTAC 1557
+
+  NC_000913.3      4036793 CTCGCGAGAGCAAGCG-----GACCTCATAAAGTGCG-TCGTAGTCCGGA 4036836
+                            iii  vvi   i   -----i   ivv i  viv i-   iii vv   
+  SSU-rRNA_Hsa#       1558 CCTACGCCGGCAGGCGCGGGTAACCCGTTGAACCCCATTCGCGATGGGGA 1607
+
+  NC_000913.3      4036837 TTGGAGTCTGCAACTCGACTCCATGAAGTCGGAATCGCTAGTAATCGTGG 4036886
+                            i  i vi     i vvv i       vvv     iv i     vi i  
+  SSU-rRNA_Hsa#       1608 TCGGGGATTGCAATTATTCCCCATGAACGAGGAATTCCCAGTAAGTGCGG 1657
+
+  NC_000913.3      4036887 ATCAGAATGCCACGGTGAATACGTTCCCGGGCCTTGTACACACCGCCCGT 4036936
+                           i   v  vviii  v   v  v  i  i vv i                 
+  SSU-rRNA_Hsa#       1658 GTCATAAGCTTGCGTTGATTAAGTCCCTGCCCTTTGTACACACCGCCCGT 1707
+
+  NC_000913.3      4036937 CAC 4036939
+                            i 
+  SSU-rRNA_Hsa#       1708 CGC 1710
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 40.11
+Transitions / transversions = 1.14 (113/99)
+Gap_init rate = 0.06 (37 / 652), avg. gap size = 1.81 (67 / 37)
+
+
+262 11.63 0.00 0.00 NC_000913.3 4037022 4037064 (604588) SSU-rRNA_Hsa#rRNA 1824 1866 (3) m_b70s551i1 174
+
+  NC_000913.3      4037022 AAGTCGTAACAAGGTAACCGTAGGGGAACCTGCGGTTGGATCA 4037064
+                                          vv       v          vv      
+  SSU-rRNA_Hsa#       1824 AAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAGGGATCA 1866
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 12.80
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+197 29.03 1.61 0.00 NC_000913.3 4037142 4037203 (604449) MamSINE1#SINE/tRNA-RTE 7 69 (221) m_b70s601i0 175
+
+  NC_000913.3      4037142 GGCTTGT-AGCTCAGGTGGTTAGAGCGCACCCCTGATAAGGGTGAGGTCG 4037190
+                               v  -       v          i iviv  i  i   vii     i
+  MamSINE1#SINE          7 GGCTGGTTAGCTCAGTTGGTTAGAGCACGGTGCTAATGAGGCCAAGGTCA 56
+
+  NC_000913.3      4037191 GTGGTTCAAGTCC 4037203
+                           vv     i vi  
+  MamSINE1#SINE         57 CGGGTTCGATCCC 69
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 32.47
+Transitions / transversions = 1.25 (10/8)
+Gap_init rate = 0.02 (1 / 61), avg. gap size = 1.00 (1 / 1)
+
+
+327 21.33 0.00 1.33 NC_000913.3 4037260 4037335 (604317) tRNA-Ala-GCY_v#tRNA 1 75 (0) c_b70s401i0 176
+
+  NC_000913.3      4037260 GGGGCTATAGCTCAGCTGGGAGAGCGCCTGCTTTGCACGCAGGAGGTCTG 4037309
+                               v i        -   v       v     v   i   v    i iv
+  tRNA-Ala-GCY_          1 GGGGGTGTAGCTCAG-TGGTAGAGCGCGTGCTTAGCATGCACGAGGCCCC 49
+
+  NC_000913.3      4037310 CGGTTCGATCCCGCATAGCTCCACCA 4037335
+                           v           vvii v        
+  tRNA-Ala-GCY_         50 GGGTTCGATCCCCGGCACCTCCACCA 75
+
+Matrix = 18p51g.matrix
+Kimura (with divCpGMod) = 25.11
+Transitions / transversions = 0.60 (6/10)
+Gap_init rate = 0.01 (1 / 75), avg. gap size = 1.00 (1 / 1)
+
+
+371 23.38 0.00 1.87 NC_000913.3 4037691 4037799 (603853) LSU-rRNA_Hsa#rRNA 17 123 (4912) m_b70s551i2 177
+
+  NC_000913.3      4037691 ATGAGGCGAACCGGGGGAACTGAAACATCTAAGTACCCCGAGGAAAAGAA 4037740
+                            i v     v   vv -  i v  i   v v   vvv v           
+  LSU-rRNA_Hsa#         17 ACGTGGCGACCCGCTG-AATTTAAGCATATTAGTCAGCGGAGGAAAAGAA 65
+
+  NC_000913.3      4037741 ATCAACCGAGATTCCCCCAGTAGCGGCGAGCGAACGGGGAGCAGCCCAGA 4037790
+                            ii    ii       i     i       i    i    iv       v
+  LSU-rRNA_Hsa#         66 ACTAACCAGGATTCCCTCAGTAACGGCGAGTGAACAGGGAAGAGCCCAGC 115
+
+  NC_000913.3      4037791 GCCTGAATC 4037799
+                              -     
+  LSU-rRNA_Hsa#        116 GCC-GAATC 123
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 26.91
+Transitions / transversions = 0.92 (12/13)
+Gap_init rate = 0.02 (2 / 108), avg. gap size = 1.00 (2 / 2)
+
+
+353 22.45 1.98 3.00 NC_000913.3 4037937 4038037 (603615) LSU-rRNA_Hsa#rRNA 316 415 (4620) m_b70s551i3 177
+
+  NC_000913.3      4037937 TCCAAGGCTAAATACT--CCTGACTGACCGATAGTGAACCAGTACCGTGA 4037984
+                             i            i-- vi  --          v   v      i i 
+  LSU-rRNA_Hsa#        316 TCTAAGGCTAAATACCGGCACGA--GACCGATAGTCAACAAGTACCATAA 363
+
+  NC_000913.3      4037985 GGGAAAGGCGAAAAGAACCCCGGCGAGGGGAGTGAAAAAGAACCTGAAAC 4038034
+                                  vi         iii iv  - i    vv  i  ii v      
+  LSU-rRNA_Hsa#        364 GGGAAAGTTGAAAAGAACTTTGAAGA-GAGAGTTCAAGAGGGCGTGAAAC 412
+
+  NC_000913.3      4038035 CGT 4038037
+                              
+  LSU-rRNA_Hsa#        413 CGT 415
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 24.53
+Transitions / transversions = 1.75 (14/8)
+Gap_init rate = 0.04 (4 / 100), avg. gap size = 1.25 (5 / 4)
+
+
+299 31.07 2.65 1.97 NC_000913.3 4038187 4038337 (603315) LSU-rRNA_Hsa#rRNA 1504 1655 (3380) m_b70s551i4 178
+
+  NC_000913.3      4038187 GACCCGAAACCCGGTGATCTAGCCATGGGCAGGTTGAAGGTTG-GGTAAC 4038235
+                                    v?i     v  ?vv v     i  vi    viv -  v   
+  LSU-rRNA_Hsa#       1504 GACCCGAAAGNTGGTGAACTNTGCCTGGGCGGGGCGAAGCCGGAGGAAAC 1553
+
+  NC_000913.3      4038236 ACTAACTGGAGGACCGAACCGA--CTAATGTTGAAAAATTAG-CGGATGA 4038282
+                           v ?ii-      v   v v  i--  i    --iv    ii -  vvii 
+  LSU-rRNA_Hsa#       1554 TCNGG-TGGAGGTCCGTAGCGGTCCTGATGT--GCAAATCGGTCGTCCAA 1600
+
+  NC_000913.3      4038283 CTTGTGGCTGGGGGTGAAAGGCCAATCAAACCGGGAGATAGCTGGTTCTC 4038332
+                            i  v v? i    i     i i    i    ivvvii          i 
+  LSU-rRNA_Hsa#       1601 CCTGGGTNTAGGGGCGAAAGACTAATCGAACCATCTAGTAGCTGGTTCCC 1650
+
+  NC_000913.3      4038333 CCCGA 4038337
+                           i  i 
+  LSU-rRNA_Hsa#       1651 TCCAA 1655
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 35.57
+Transitions / transversions = 1.19 (25/21)
+Gap_init rate = 0.04 (6 / 150), avg. gap size = 1.17 (7 / 6)
+
+
+533 33.18 2.77 8.16 NC_000913.3 4039288 4039648 (602004) LSU-rRNA_Hsa#rRNA 3612 3954 (1081) m_b70s551i5 178
+
+  NC_000913.3      4039288 CAACTGTTTATTAAAAACACAGCACTGTGCAAACACGAAAGTGGACGT-- 4039335
+                            i   ?    v ?      v    ii i v ii v  vi- i  ii  --
+  LSU-rRNA_Hsa#       3612 CGACTNTTTAATNAAAACAAAGCATCGCGAAGGCCCGCG-GCGGGTGTTG 3660
+
+  NC_000913.3      4039336 ATACGGTGTGACGCCTGCCCGGTGC-CGGAAGGTTAATTGATGGGGTTAG 4039384
+                            ii  i     ivi      i    - v   v  ----------------
+  LSU-rRNA_Hsa#       3661 ACGCGATGTGATTTCTGCCCAGTGCTCTGAATGT---------------- 3694
+
+  NC_000913.3      4039385 CCGCAAGGCGAAGCTCTTGATCGAAGCCCCGGTAAACGGCGGCCGTAACT 4039434
+                           ---   i i    vvv  v vi     v v            vv      
+  LSU-rRNA_Hsa#       3695 ---CAAAGTGAAGAAATTCAATGAAGCGCGGGTAAACGGCGGGAGTAACT 3741
+
+  NC_000913.3      4039435 ATAACGGTCCTAAGGTAGCGAAATTCCTTGTCGGGTAAGTTCCGACCTGC 4039484
+                             i  vv  i         v    v   i   ivv   v vvi   vi  
+  LSU-rRNA_Hsa#       3742 ATGACTCTCTTAAGGTAGCCAAATGCCTCGTCATCTAATTAGTGACGCGC 3791
+
+  NC_000913.3      4039485 ACGAATGGCGTAAT--GATGGCCAGGCTGTCTCCACCCGAGACTCAGTGA 4039532
+                            i      vvv  i--   vv   --     i i   iivv ii   i  
+  LSU-rRNA_Hsa#       3792 ATGAATGGATGAACGAGATTCCCA--CTGTCCCTACCTACTATCCAGCGA 3839
+
+  NC_000913.3      4039533 AATTGAACTCGCTGTGAAGATGCAGTGTACCCG---CGGCAAGACGGAAA 4039579
+                             iiiv ---  iiv iii i -i iv iv v --- i  ii iviii  
+  LSU-rRNA_Hsa#       3840 AACCACA---GCCAAGGGAACG-GGCTTGGCGGAATCAGCGGGGAAAGAA 3885
+
+  NC_000913.3      4039580 GACCCCGTGAACCTTTACTATAGCTTGACAC--TGAACATTGAGCCTTGA 4039627
+                                i  vi v   v   v   ii  i   --    v --  vv vv  
+  LSU-rRNA_Hsa#       3886 GACCCTGTTGAGCTTGACTCTAGTCTGGCACGGTGAAGA--GACACGAGA 3933
+
+  NC_000913.3      4039628 TGTGTAGGATAGGTGGGAGGC 4039648
+                           v      i   i         
+  LSU-rRNA_Hsa#       3934 GGTGTAGAATAAGTGGGAGGC 3954
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 38.68
+Transitions / transversions = 1.20 (60/50)
+Gap_init rate = 0.09 (33 / 360), avg. gap size = 1.15 (38 / 33)
+
+
+564 29.95 4.68 6.25 NC_000913.3 4039723 4040128 (601524) LSU-rRNA_Hsa#rRNA 4126 4525 (510) m_b70s551i6 178
+
+  NC_000913.3      4039723 GACCCGTAATCCGGGTTGCGGACAGTGTCTGGTGGGTAGTTTGACTGGGG 4039772
+                                  --      -----   i   i v      v             
+  LSU-rRNA_Hsa#       4126 GACCCGT--TCCGGG-----GACGGTGCCAGGTGGGGAGTTTGACTGGGG 4168
+
+  NC_000913.3      4039773 CGGT-CTCCTCCTAAAGAGTAACGGAGGAGCACGAAGGTTGGCTAATCCT 4039821
+                               - v   vii   vi    i v   v iv v    ivi   v vvvv
+  LSU-rRNA_Hsa#       4169 CGGTACACCTGTCAAACGGTAATGCAGGTGTCCTAAGGCGAGCTCAGGGA 4218
+
+  NC_000913.3      4039822 GGTCGGACA--TCAGGAGGTTAGTGCAATGGCATAAGCCAGCTTGACTGC 4039869
+                             v i  v --  vv v  --  iiv  v    v    iv      iivi
+  LSU-rRNA_Hsa#       4219 GGACAGAAACCTCCCGTGG--AGCAGAAGGGCAAAAGCTCGCTTGATCTT 4266
+
+  NC_000913.3      4039870 GAGCGTGACGGCGCGAG--CAGGT-GCGAAAGCAGGTCATAGTGATCC-- 4039914
+                             viv -- i ii   i--   ii- i      i  v v vii     --
+  LSU-rRNA_Hsa#       4267 GATTTT--CAGTACGAATACAGACCGTGAAAGCGGGGCCTCACGATCCTT 4314
+
+  NC_000913.3      4039915 --GGT------GGTTCTGAATGGAAGGGCCATCGCTCAACGGATAAAAGG 4039956
+                           -- ii------    i i iii i   ---------iiv    --    v
+  LSU-rRNA_Hsa#       4315 CTGACCTTTTGGGTTTTAAGCAGGAGG---------TGTCGGA--AAAGT 4353
+
+  NC_000913.3      4039957 TACTCCGGGGATAACAGGCTGATACCGCCCAAGAGTTCATATCGACGGCG 4040006
+                              iv i        v    vi iv  v     v       v     v  
+  LSU-rRNA_Hsa#       4354 TACCACAGGGATAACTGGCTTGTGGCGGCCAAGCGTTCATAGCGACGTCG 4403
+
+  NC_000913.3      4040007 GTGTTTGGCACCTCGATGTCGGCTCATCACATCCTGGGGCTGAAGTAGG- 4040055
+                           v v    iiv i ? ?   ?  i  v  vi   v v ---   i ii i-
+  LSU-rRNA_Hsa#       4404 CTTTTTGATCCTTNGNTGTNGGTTCTTCCTATCATTG---TGAGGCGGAN 4450
+
+  NC_000913.3      4040056 -TC-CCAAGGGTATGGCTGTTCGCCATTTAAAGTGGTACGCGAGCTGGGT 4040103
+                           -  -     v  ?v ii     i  vvi  ?v v  v ??i       ? 
+  LSU-rRNA_Hsa#       4451 TTCACCAAGCGTNGGATTGTTCACCCACTANCGGGGAANNTGAGCTGGNT 4500
+
+  NC_000913.3      4040104 TTAGAACGTCGTGAGACAGTTCGGT 4040128
+                                v ??i         v ii  
+  LSU-rRNA_Hsa#       4501 TTAGACCNNTGTGAGACAGGTTAGT 4525
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 37.44
+Transitions / transversions = 1.04 (58/56)
+Gap_init rate = 0.09 (35 / 405), avg. gap size = 1.26 (44 / 35)
+
+
+18 14.04 2.44 2.44 NC_000913.3 4051788 4051828 (589824) (GAA)n#Simple_repeat 1 41 (0) m_b70s252i0 179
+
+  NC_000913.3      4051788 GACGATGACGAAGAAGAGGAAGAAGACG-AGAAGCAAGAAGA 4051828
+                             v  v  v        i        v -     -       
+  (GAA)n#Simple          1 GAAGAAGAAGAAGAAGAAGAAGAAGAAGAAGAAG-AAGAAGA 41
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.05 (2 / 40), avg. gap size = 1.00 (2 / 2)
+
+
+14 21.76 2.63 0.00 NC_000913.3 4073847 4073884 (567768) (GGC)n#Simple_repeat 1 39 (0) m_b71s252i0 180
+
+  NC_000913.3      4073847 GGTGGCGG-GCCAGCGGCGACGGCAGCGGTTGCGGCGGC 4073884
+                             i     - v i      i    i    iv        
+  (GGC)n#Simple          1 GGCGGCGGCGGCGGCGGCGGCGGCGGCGGCGGCGGCGGC 39
+
+Matrix = Unknown
+Transitions / transversions = 2.50 (5/2)
+Gap_init rate = 0.03 (1 / 37), avg. gap size = 1.00 (1 / 1)
+
+
+12 16.34 2.78 2.78 NC_000913.3 4100199 4100234 (541418) (AATGCC)n#Simple_repeat 1 36 (0) m_b71s252i1 181
+
+  NC_000913.3      4100199 AATGCCAATGGCGATGCCAATTCCCAT-CGACATGCC 4100234
+                                     v i        v  v  - v -     
+  (AATGCC)n#Sim          1 AATGCCAATGCCAATGCCAATGCCAATGCCA-ATGCC 36
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.06 (2 / 35), avg. gap size = 1.00 (2 / 2)
+
+
+13 18.81 0.00 0.00 NC_000913.3 4104896 4104926 (536726) (AACACC)n#Simple_repeat 1 31 (0) m_b71s252i2 182
+
+  NC_000913.3      4104896 AACATCAAAACCAACATCAACACCAGCGCCA 4104926
+                               i   v       i        i i   
+  (AACACC)n#Sim          1 AACACCAACACCAACACCAACACCAACACCA 31
+
+Matrix = Unknown
+Transitions / transversions = 4.00 (4/1)
+Gap_init rate = 0.00 (0 / 30), avg. gap size = 0.0 (0 / 0)
+
+
+866 33.30 7.66 2.48 NC_000913.3 4167415 4168067 (473585) SSU-rRNA_Hsa#rRNA 1025 1710 (159) m_b72s551i0 183
+
+  NC_000913.3      4167415 TCAGGTGCGAAAGCGTGGGGAGCAAACAGGATTAGATACCCTGGTAGTCC 4167464
+                              i vi      ivv i  vv i  v v   i       v v     i 
+  SSU-rRNA_Hsa#       1025 TCAAGAACGAAAGTCGGAGGTTCGAAGACGATCAGATACCGTCGTAGTTC 1074
+
+  NC_000913.3      4167465 ACGCCGTAAACGATGTCGACTTG---------GAGGTTGTGCCCTTGA-- 4167503
+                           vvi  i         i    iv --------- iv   i v   v   --
+  SSU-rRNA_Hsa#       1075 CGACCATAAACGATGCCGACCGGCGATGCGGCGGCGTTATTCCCATGACC 1124
+
+  NC_000913.3      4167504 -GGCGTG--GCTTCCGG--AGCTAACG-CGTTAAGTCGACCGCCTGGGGA 4167547
+                           - v  v --        -- i i  v - v  ii  i--   --v     
+  SSU-rRNA_Hsa#       1125 CGCCGGGCAGCTTCCGGGAAACCAAAGTCTTTGGGTT--CCG--GGGGGA 1170
+
+  NC_000913.3      4167548 GTACGGCCGCAAGGTTAAAACTCAAATGAATTGACGG--GGGCCCGCACA 4167595
+                              i  ii    i i i     i   v          --    v -   v
+  SSU-rRNA_Hsa#       1171 GTATGGTTGCAAAGCTGAAACTTAAAGGAATTGACGGAAGGGCAC-CACC 1219
+
+  NC_000913.3      4167596 AGCGGTGGAGCATGTGGTTTAATTCGATGCAACGCGAAGAACCTTACCTG 4167645
+                             vi       v  i  i      i  iv    i  iii     i   i 
+  SSU-rRNA_Hsa#       1220 AGGAGTGGAGCCTGCGGCTTAATTTGACTCAACACGGGAAACCTCACCCG 1269
+
+  NC_000913.3      4167646 GTCTTGACATCCACGGAAGTTTTCAGAGA-TGAGAATGTGCCTTCGGGA- 4167693
+                            i iv    ivv  i i ---  v v   -   v -- iv i   vv  -
+  SSU-rRNA_Hsa#       1270 GCCCGGACACGGACAGGA---TTGACAGATTGATA--GCTCTTTCTCGAT 1314
+
+  NC_000913.3      4167694 ACCGTGAGACAGGTGCTGCATGGCTGTCGTCAGCTCGTGTTGTGAAATGT 4167743
+                           v     i --v    v        i  iv i  i v   vv i  vv   
+  SSU-rRNA_Hsa#       1315 TCCGTGGG--TGGTGGTGCATGGCCGTTCTTAGTTGGTGGAGCGATTTGT 1362
+
+  NC_000913.3      4167744 TGGGTTAAGTCCCGCAACGAGCGCAACCCT--TATCCT---TTGTTG--- 4167785
+                           iv      v   vii     i  vi  i  --i  v  --- v   i---
+  SSU-rRNA_Hsa#       1363 CTGGTTAATTCCGATAACGAACGAGACTCTGGCATGCTAACTAGTTACGC 1412
+
+  NC_000913.3      4167786 ------CCAGCGGTC--CGGCCGGGAA---CTCAAAGGAGACTGCCAGTG 4167824
+                           ------ v       --  v  vvv  ---  i i   -   vivii i 
+  SSU-rRNA_Hsa#       1413 GACCCCCGAGCGGTCGGCGTCCCCCAACTTCTTAGAGG-GACAAGTGGCG 1461
+
+  NC_000913.3      4167825 ATAAACTGGAGGAAGGTGGG-GATGACGTCAAGTC-ATCATGGCCCTT-- 4167870
+                           v v i iivvv  iiv  i -i  i ---  i   -i v   -     --
+  SSU-rRNA_Hsa#       1462 TTCAGCCACCCGAGATTGAGCAATAA---CAGGTCTGTGATG-CCCTTAG 1507
+
+  NC_000913.3      4167871 ACGACCAGGGCTACACACGTGCTACAATGGCGCATACAAAGAGAAGCGAC 4167920
+                            i v  i     i   i  i      v  i vviiv  iv v viv v  
+  SSU-rRNA_Hsa#       1508 ATGTCCGGGGCTGCACGCGCGCTACACTGACTGGCTCAGCGTGTGCCTAC 1557
+
+  NC_000913.3      4167921 CTCGCGAGAGCAAGCG-----GACCTCATAAAGTGCG-TCGTAGTCCGGA 4167964
+                            iii  vvi   i   -----i   ivv i  viv i-   iii vv   
+  SSU-rRNA_Hsa#       1558 CCTACGCCGGCAGGCGCGGGTAACCCGTTGAACCCCATTCGCGATGGGGA 1607
+
+  NC_000913.3      4167965 TTGGAGTCTGCAACTCGACTCCATGAAGTCGGAATCGCTAGTAATCGTGG 4168014
+                            i  i vi     i vvv i       vvv     iv i     vi i  
+  SSU-rRNA_Hsa#       1608 TCGGGGATTGCAATTATTCCCCATGAACGAGGAATTCCCAGTAAGTGCGG 1657
+
+  NC_000913.3      4168015 ATCAGAATGCCACGGTGAATACGTTCCCGGGCCTTGTACACACCGCCCGT 4168064
+                           i   v  vviii  v   v  v  i  i vv i                 
+  SSU-rRNA_Hsa#       1658 GTCATAAGCTTGCGTTGATTAAGTCCCTGCCCTTTGTACACACCGCCCGT 1707
+
+  NC_000913.3      4168065 CAC 4168067
+                            i 
+  SSU-rRNA_Hsa#       1708 CGC 1710
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 40.11
+Transitions / transversions = 1.14 (113/99)
+Gap_init rate = 0.06 (37 / 652), avg. gap size = 1.81 (67 / 37)
+
+
+262 11.63 0.00 0.00 NC_000913.3 4168150 4168192 (473460) SSU-rRNA_Hsa#rRNA 1824 1866 (3) m_b72s551i1 184
+
+  NC_000913.3      4168150 AAGTCGTAACAAGGTAACCGTAGGGGAACCTGCGGTTGGATCA 4168192
+                                          vv       v          vv      
+  SSU-rRNA_Hsa#       1824 AAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAGGGATCA 1866
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 12.80
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+371 23.38 0.00 1.87 NC_000913.3 4168813 4168921 (472731) LSU-rRNA_Hsa#rRNA 17 123 (4912) m_b72s551i2 185
+
+  NC_000913.3      4168813 ATGAGGCGAACCGGGGGAACTGAAACATCTAAGTACCCCGAGGAAAAGAA 4168862
+                            i v     v   vv -  i v  i   v v   vvv v           
+  LSU-rRNA_Hsa#         17 ACGTGGCGACCCGCTG-AATTTAAGCATATTAGTCAGCGGAGGAAAAGAA 65
+
+  NC_000913.3      4168863 ATCAACCGAGATTCCCCCAGTAGCGGCGAGCGAACGGGGAGCAGCCCAGA 4168912
+                            ii    ii       i     i       i    i    iv       v
+  LSU-rRNA_Hsa#         66 ACTAACCAGGATTCCCTCAGTAACGGCGAGTGAACAGGGAAGAGCCCAGC 115
+
+  NC_000913.3      4168913 GCCTGAATC 4168921
+                              -     
+  LSU-rRNA_Hsa#        116 GCC-GAATC 123
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 26.91
+Transitions / transversions = 0.92 (12/13)
+Gap_init rate = 0.02 (2 / 108), avg. gap size = 1.00 (2 / 2)
+
+
+353 22.45 1.98 3.00 NC_000913.3 4169059 4169159 (472493) LSU-rRNA_Hsa#rRNA 316 415 (4620) m_b72s551i3 185
+
+  NC_000913.3      4169059 TCCAAGGCTAAATACT--CCTGACTGACCGATAGTGAACCAGTACCGTGA 4169106
+                             i            i-- vi  --          v   v      i i 
+  LSU-rRNA_Hsa#        316 TCTAAGGCTAAATACCGGCACGA--GACCGATAGTCAACAAGTACCATAA 363
+
+  NC_000913.3      4169107 GGGAAAGGCGAAAAGAACCCCGGCGAGGGGAGTGAAAAAGAACCTGAAAC 4169156
+                                  vi         iii iv  - i    vv  i  ii v      
+  LSU-rRNA_Hsa#        364 GGGAAAGTTGAAAAGAACTTTGAAGA-GAGAGTTCAAGAGGGCGTGAAAC 412
+
+  NC_000913.3      4169157 CGT 4169159
+                              
+  LSU-rRNA_Hsa#        413 CGT 415
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 24.53
+Transitions / transversions = 1.75 (14/8)
+Gap_init rate = 0.04 (4 / 100), avg. gap size = 1.25 (5 / 4)
+
+
+299 31.07 2.65 1.97 NC_000913.3 4169309 4169459 (472193) LSU-rRNA_Hsa#rRNA 1504 1655 (3380) m_b72s551i4 186
+
+  NC_000913.3      4169309 GACCCGAAACCCGGTGATCTAGCCATGGGCAGGTTGAAGGTTG-GGTAAC 4169357
+                                    v?i     v  ?vv v     i  vi    viv -  v   
+  LSU-rRNA_Hsa#       1504 GACCCGAAAGNTGGTGAACTNTGCCTGGGCGGGGCGAAGCCGGAGGAAAC 1553
+
+  NC_000913.3      4169358 ACTAACTGGAGGACCGAACCGA--CTAATGTTGAAAAATTAG-CGGATGA 4169404
+                           v ?ii-      v   v v  i--  i    --iv    ii -  vvii 
+  LSU-rRNA_Hsa#       1554 TCNGG-TGGAGGTCCGTAGCGGTCCTGATGT--GCAAATCGGTCGTCCAA 1600
+
+  NC_000913.3      4169405 CTTGTGGCTGGGGGTGAAAGGCCAATCAAACCGGGAGATAGCTGGTTCTC 4169454
+                            i  v v? i    i     i i    i    ivvvii          i 
+  LSU-rRNA_Hsa#       1601 CCTGGGTNTAGGGGCGAAAGACTAATCGAACCATCTAGTAGCTGGTTCCC 1650
+
+  NC_000913.3      4169455 CCCGA 4169459
+                           i  i 
+  LSU-rRNA_Hsa#       1651 TCCAA 1655
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 35.57
+Transitions / transversions = 1.19 (25/21)
+Gap_init rate = 0.04 (6 / 150), avg. gap size = 1.17 (7 / 6)
+
+
+549 33.15 2.79 7.58 NC_000913.3 4170411 4170769 (470883) LSU-rRNA_Hsa#rRNA 3612 3954 (1081) m_b72s551i5 186
+
+  NC_000913.3      4170411 CAACTGTTTATTAAAAACACAGCACTGTGCAAACACGAAAGTGGACGT-- 4170458
+                            i   ?    v ?      v    ii i v ii v  vi- i  ii  --
+  LSU-rRNA_Hsa#       3612 CGACTNTTTAATNAAAACAAAGCATCGCGAAGGCCCGCG-GCGGGTGTTG 3660
+
+  NC_000913.3      4170459 ATACGGTGTGACGCCTGCCCGGTGC-CGGAAGGTTAATTGATGGGGTTAG 4170507
+                            ii  i     ivi      i    - v   v  i  -------------
+  LSU-rRNA_Hsa#       3661 ACGCGATGTGATTTCTGCCCAGTGCTCTGAATGTCAA------------- 3697
+
+  NC_000913.3      4170508 CGCAAGCGAAGCTCTTGATCGAAGCCCCGGTAAACGGCGGCCGTAACTAT 4170557
+                           ----  i    vvv  v vi     v v            vv        
+  LSU-rRNA_Hsa#       3698 ----AGTGAAGAAATTCAATGAAGCGCGGGTAAACGGCGGGAGTAACTAT 3743
+
+  NC_000913.3      4170558 AACGGTCCTAAGGTAGCGAAATTCCTTGTCGGGTAAGTTCCGACCTGCAC 4170607
+                           i  vv  i         v    v   i   ivv   v vvi   vi   i
+  LSU-rRNA_Hsa#       3744 GACTCTCTTAAGGTAGCCAAATGCCTCGTCATCTAATTAGTGACGCGCAT 3793
+
+  NC_000913.3      4170608 GAATGGCGTAAT--GATGGCCAGGCTGTCTCCACCCGAGACTCAGTGAAA 4170655
+                                 vvv  i--   vv   --     i i   iivv ii   i    
+  LSU-rRNA_Hsa#       3794 GAATGGATGAACGAGATTCCCA--CTGTCCCTACCTACTATCCAGCGAAA 3841
+
+  NC_000913.3      4170656 TTGAACTCGCTGTGAAGATGCAGTGTACCCG---CGGCAAGACGGAAAGA 4170702
+                           iiiv ---  iiv iii i -i iv iv v --- i  ii iviii    
+  LSU-rRNA_Hsa#       3842 CCACA---GCCAAGGGAACG-GGCTTGGCGGAATCAGCGGGGAAAGAAGA 3887
+
+  NC_000913.3      4170703 CCCCGTGAACCTTTACTATAGCTTGACAC--TGAACATTGAGCCTTGATG 4170750
+                              i  vi v   v   v   ii  i   --    v --  vv vv  v 
+  LSU-rRNA_Hsa#       3888 CCCTGTTGAGCTTGACTCTAGTCTGGCACGGTGAAGA--GACACGAGAGG 3935
+
+  NC_000913.3      4170751 TGTAGGATAGGTGGGAGGC 4170769
+                                i   i         
+  LSU-rRNA_Hsa#       3936 TGTAGAATAAGTGGGAGGC 3954
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 38.68
+Transitions / transversions = 1.20 (60/50)
+Gap_init rate = 0.09 (31 / 358), avg. gap size = 1.16 (36 / 31)
+
+
+564 29.95 4.68 6.25 NC_000913.3 4170844 4171249 (470403) LSU-rRNA_Hsa#rRNA 4126 4525 (510) m_b72s551i6 186
+
+  NC_000913.3      4170844 GACCCGTAATCCGGGTTGCGGACAGTGTCTGGTGGGTAGTTTGACTGGGG 4170893
+                                  --      -----   i   i v      v             
+  LSU-rRNA_Hsa#       4126 GACCCGT--TCCGGG-----GACGGTGCCAGGTGGGGAGTTTGACTGGGG 4168
+
+  NC_000913.3      4170894 CGGT-CTCCTCCTAAAGAGTAACGGAGGAGCACGAAGGTTGGCTAATCCT 4170942
+                               - v   vii   vi    i v   v iv v    ivi   v vvvv
+  LSU-rRNA_Hsa#       4169 CGGTACACCTGTCAAACGGTAATGCAGGTGTCCTAAGGCGAGCTCAGGGA 4218
+
+  NC_000913.3      4170943 GGTCGGACA--TCAGGAGGTTAGTGCAATGGCATAAGCCAGCTTGACTGC 4170990
+                             v i  v --  vv v  --  iiv  v    v    iv      iivi
+  LSU-rRNA_Hsa#       4219 GGACAGAAACCTCCCGTGG--AGCAGAAGGGCAAAAGCTCGCTTGATCTT 4266
+
+  NC_000913.3      4170991 GAGCGTGACGGCGCGAG--CAGGT-GCGAAAGCAGGTCATAGTGATCC-- 4171035
+                             viv -- i ii   i--   ii- i      i  v v vii     --
+  LSU-rRNA_Hsa#       4267 GATTTT--CAGTACGAATACAGACCGTGAAAGCGGGGCCTCACGATCCTT 4314
+
+  NC_000913.3      4171036 --GGT------GGTTCTGAATGGAAGGGCCATCGCTCAACGGATAAAAGG 4171077
+                           -- ii------    i i iii i   ---------iiv    --    v
+  LSU-rRNA_Hsa#       4315 CTGACCTTTTGGGTTTTAAGCAGGAGG---------TGTCGGA--AAAGT 4353
+
+  NC_000913.3      4171078 TACTCCGGGGATAACAGGCTGATACCGCCCAAGAGTTCATATCGACGGCG 4171127
+                              iv i        v    vi iv  v     v       v     v  
+  LSU-rRNA_Hsa#       4354 TACCACAGGGATAACTGGCTTGTGGCGGCCAAGCGTTCATAGCGACGTCG 4403
+
+  NC_000913.3      4171128 GTGTTTGGCACCTCGATGTCGGCTCATCACATCCTGGGGCTGAAGTAGG- 4171176
+                           v v    iiv i ? ?   ?  i  v  vi   v v ---   i ii i-
+  LSU-rRNA_Hsa#       4404 CTTTTTGATCCTTNGNTGTNGGTTCTTCCTATCATTG---TGAGGCGGAN 4450
+
+  NC_000913.3      4171177 -TC-CCAAGGGTATGGCTGTTCGCCATTTAAAGTGGTACGCGAGCTGGGT 4171224
+                           -  -     v  ?v ii     i  vvi  ?v v  v ??i       ? 
+  LSU-rRNA_Hsa#       4451 TTCACCAAGCGTNGGATTGTTCACCCACTANCGGGGAANNTGAGCTGGNT 4500
+
+  NC_000913.3      4171225 TTAGAACGTCGTGAGACAGTTCGGT 4171249
+                                v ??i         v ii  
+  LSU-rRNA_Hsa#       4501 TTAGACCNNTGTGAGACAGGTTAGT 4525
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 37.44
+Transitions / transversions = 1.04 (58/56)
+Gap_init rate = 0.09 (35 / 405), avg. gap size = 1.26 (44 / 35)
+
+
+238 29.73 0.00 0.00 NC_000913.3 4175388 4175461 (466191) tRNA-Phe-TTY#tRNA 1 74 (0) m_b72s502i0 187
+
+  NC_000913.3      4175388 GCCGACTTAGCTCAGTAGGTAGAGCAACTGACTTGTAATCAGTAGGTCAC 4175437
+                                vv         v  v     iviv    vivi   viv     v 
+  tRNA-Phe-TTY#          1 GCCGAAATAGCTCAGTTGGGAGAGCGTTAGACTGAAGATCTAAAGGTCCC 50
+
+  NC_000913.3      4175438 CAGTTCGATTCCGGTAGTCGGCAC 4175461
+                           ii       i    vvv       
+  tRNA-Phe-TTY#         51 TGGTTCGATCCCGGGTTTCGGCAC 74
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 35.87
+Transitions / transversions = 0.57 (8/14)
+Gap_init rate = 0.00 (0 / 73), avg. gap size = 0.0 (0 / 0)
+
+254 19.64 1.75 1.75 NC_000913.3 4175395 4175451 (466201) tRNA-Tyr-TAC#tRNA 8 64 (10) m_b72s502i1 187
+
+  NC_000913.3      4175395 TAGCTCAGTAGGTAGAGCAACTGACTTGTA-ATCAGTAGGTCACCAGTTC 4175443
+                                   iv        iivv    -   -   vv      i ii    
+  tRNA-Tyr-TAC#          8 TAGCTCAGCTGGTAGAGCGGAGGACT-GTAGATCCTTAGGTCGCTGGTTC 56
+
+  NC_000913.3      4175444 GATTCCGG 4175451
+                                   
+  tRNA-Tyr-TAC#         57 GATTCCGG 64
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 18.59
+Transitions / transversions = 1.20 (6/5)
+Gap_init rate = 0.04 (2 / 56), avg. gap size = 1.00 (2 / 2)
+
+
+234 24.07 0.00 0.00 NC_000913.3 4175682 4175735 (465917) tRNA-Gly-GGA#tRNA 10 63 (12) m_b72s502i2 188
+
+  NC_000913.3      4175682 GTATAATGGCTATTACCTCAGCCTTCCAAGCTGATGATGCGGGTTCGATT 4175731
+                                i   iv vi ivv v           v v   iv           
+  tRNA-Gly-GGA#         10 GTATAGTGGTGAGCATAGCTGCCTTCCAAGCAGTTGACCCGGGTTCGATT 59
+
+  NC_000913.3      4175732 CCCG 4175735
+                               
+  tRNA-Gly-GGA#         60 CCCG 63
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 29.06
+Transitions / transversions = 0.62 (5/8)
+Gap_init rate = 0.00 (0 / 53), avg. gap size = 0.0 (0 / 0)
+
+
+14 28.81 0.00 0.00 NC_000913.3 4180662 4180707 (460945) (GCT)n#Simple_repeat 1 46 (0) m_b73s252i0 189
+
+  NC_000913.3      4180662 GCTGCTGCTGCTGTAGCTGTAGCTGCTGGCCCGGTTGAAGCTGCTG 4180707
+                                        iv    iv       viv v i  vv       
+  (GCT)n#Simple          1 GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG 46
+
+Matrix = Unknown
+Transitions / transversions = 0.57 (4/7)
+Gap_init rate = 0.00 (0 / 45), avg. gap size = 0.0 (0 / 0)
+
+
+12 15.00 8.77 5.08 NC_000913.3 4182166 4182222 (459430) (GAGCT)n#Simple_repeat 1 59 (0) m_b73s252i1 190
+
+  NC_000913.3      4182166 GAGCTGATCTGCGC--AGC-GAACATGGAGCTGAGCCTG-GATCTGCTG- 4182210
+                                  v   v  --   -  i - -        -   - v vv    -
+  (GAGCT)n#Simp          1 GAGCTGAGCTGAGCTGAGCTGAGC-T-GAGCTGAG-CTGAGCTGAGCTGA 47
+
+  NC_000913.3      4182211 GCTAAGCTGAGC 4182222
+                              i        
+  (GAGCT)n#Simp         48 GCTGAGCTGAGC 59
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.12 (7 / 56), avg. gap size = 1.14 (8 / 7)
+
+
+12 15.32 6.38 4.17 NC_000913.3 4193404 4193450 (448202) (GCCAGC)n#Simple_repeat 1 48 (0) m_b73s252i2 191
+
+  NC_000913.3      4193404 GCCAGTACCAGCGTCCCGACGCCAGCGCC--CGCCAGGTACAGCG-CAGC 4193450
+                                ii      -  v -          --      vvv     -    
+  (GCCAGC)n#Sim          1 GCCAGCGCCAGCG-CCAG-CGCCAGCGCCAGCGCCAGCGCCAGCGCCAGC 48
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (2/4)
+Gap_init rate = 0.09 (4 / 46), avg. gap size = 1.25 (5 / 4)
+
+
+866 33.30 7.66 2.48 NC_000913.3 4208903 4209555 (432097) SSU-rRNA_Hsa#rRNA 1025 1710 (159) m_b73s551i0 192
+
+  NC_000913.3      4208903 TCAGGTGCGAAAGCGTGGGGAGCAAACAGGATTAGATACCCTGGTAGTCC 4208952
+                              i vi      ivv i  vv i  v v   i       v v     i 
+  SSU-rRNA_Hsa#       1025 TCAAGAACGAAAGTCGGAGGTTCGAAGACGATCAGATACCGTCGTAGTTC 1074
+
+  NC_000913.3      4208953 ACGCCGTAAACGATGTCGACTTG---------GAGGTTGTGCCCTTGA-- 4208991
+                           vvi  i         i    iv --------- iv   i v   v   --
+  SSU-rRNA_Hsa#       1075 CGACCATAAACGATGCCGACCGGCGATGCGGCGGCGTTATTCCCATGACC 1124
+
+  NC_000913.3      4208992 -GGCGTG--GCTTCCGG--AGCTAACG-CGTTAAGTCGACCGCCTGGGGA 4209035
+                           - v  v --        -- i i  v - v  ii  i--   --v     
+  SSU-rRNA_Hsa#       1125 CGCCGGGCAGCTTCCGGGAAACCAAAGTCTTTGGGTT--CCG--GGGGGA 1170
+
+  NC_000913.3      4209036 GTACGGCCGCAAGGTTAAAACTCAAATGAATTGACGG--GGGCCCGCACA 4209083
+                              i  ii    i i i     i   v          --    v -   v
+  SSU-rRNA_Hsa#       1171 GTATGGTTGCAAAGCTGAAACTTAAAGGAATTGACGGAAGGGCAC-CACC 1219
+
+  NC_000913.3      4209084 AGCGGTGGAGCATGTGGTTTAATTCGATGCAACGCGAAGAACCTTACCTG 4209133
+                             vi       v  i  i      i  iv    i  iii     i   i 
+  SSU-rRNA_Hsa#       1220 AGGAGTGGAGCCTGCGGCTTAATTTGACTCAACACGGGAAACCTCACCCG 1269
+
+  NC_000913.3      4209134 GTCTTGACATCCACGGAAGTTTTCAGAGA-TGAGAATGTGCCTTCGGGA- 4209181
+                            i iv    ivv  i i ---  v v   -   v -- iv i   vv  -
+  SSU-rRNA_Hsa#       1270 GCCCGGACACGGACAGGA---TTGACAGATTGATA--GCTCTTTCTCGAT 1314
+
+  NC_000913.3      4209182 ACCGTGAGACAGGTGCTGCATGGCTGTCGTCAGCTCGTGTTGTGAAATGT 4209231
+                           v     i --v    v        i  iv i  i v   vv i  vv   
+  SSU-rRNA_Hsa#       1315 TCCGTGGG--TGGTGGTGCATGGCCGTTCTTAGTTGGTGGAGCGATTTGT 1362
+
+  NC_000913.3      4209232 TGGGTTAAGTCCCGCAACGAGCGCAACCCT--TATCCT---TTGTTG--- 4209273
+                           iv      v   vii     i  vi  i  --i  v  --- v   i---
+  SSU-rRNA_Hsa#       1363 CTGGTTAATTCCGATAACGAACGAGACTCTGGCATGCTAACTAGTTACGC 1412
+
+  NC_000913.3      4209274 ------CCAGCGGTC--CGGCCGGGAA---CTCAAAGGAGACTGCCAGTG 4209312
+                           ------ v       --  v  vvv  ---  i i   -   vivii i 
+  SSU-rRNA_Hsa#       1413 GACCCCCGAGCGGTCGGCGTCCCCCAACTTCTTAGAGG-GACAAGTGGCG 1461
+
+  NC_000913.3      4209313 ATAAACTGGAGGAAGGTGGG-GATGACGTCAAGTC-ATCATGGCCCTT-- 4209358
+                           v v i iivvv  iiv  i -i  i ---  i   -i v   -     --
+  SSU-rRNA_Hsa#       1462 TTCAGCCACCCGAGATTGAGCAATAA---CAGGTCTGTGATG-CCCTTAG 1507
+
+  NC_000913.3      4209359 ACGACCAGGGCTACACACGTGCTACAATGGCGCATACAAAGAGAAGCGAC 4209408
+                            i v  i     i   i  i      v  i vviiv  iv v viv v  
+  SSU-rRNA_Hsa#       1508 ATGTCCGGGGCTGCACGCGCGCTACACTGACTGGCTCAGCGTGTGCCTAC 1557
+
+  NC_000913.3      4209409 CTCGCGAGAGCAAGCG-----GACCTCATAAAGTGCG-TCGTAGTCCGGA 4209452
+                            iii  vvi   i   -----i   ivv i  viv i-   iii vv   
+  SSU-rRNA_Hsa#       1558 CCTACGCCGGCAGGCGCGGGTAACCCGTTGAACCCCATTCGCGATGGGGA 1607
+
+  NC_000913.3      4209453 TTGGAGTCTGCAACTCGACTCCATGAAGTCGGAATCGCTAGTAATCGTGG 4209502
+                            i  i vi     i vvv i       vvv     iv i     vi i  
+  SSU-rRNA_Hsa#       1608 TCGGGGATTGCAATTATTCCCCATGAACGAGGAATTCCCAGTAAGTGCGG 1657
+
+  NC_000913.3      4209503 ATCAGAATGCCACGGTGAATACGTTCCCGGGCCTTGTACACACCGCCCGT 4209552
+                           i   v  vviii  v   v  v  i  i vv i                 
+  SSU-rRNA_Hsa#       1658 GTCATAAGCTTGCGTTGATTAAGTCCCTGCCCTTTGTACACACCGCCCGT 1707
+
+  NC_000913.3      4209553 CAC 4209555
+                            i 
+  SSU-rRNA_Hsa#       1708 CGC 1710
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 40.11
+Transitions / transversions = 1.14 (113/99)
+Gap_init rate = 0.06 (37 / 652), avg. gap size = 1.81 (67 / 37)
+
+
+262 11.63 0.00 0.00 NC_000913.3 4209638 4209680 (431972) SSU-rRNA_Hsa#rRNA 1824 1866 (3) m_b73s551i1 193
+
+  NC_000913.3      4209638 AAGTCGTAACAAGGTAACCGTAGGGGAACCTGCGGTTGGATCA 4209680
+                                          vv       v          vv      
+  SSU-rRNA_Hsa#       1824 AAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAGGGATCA 1866
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 12.80
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.00 (0 / 42), avg. gap size = 0.0 (0 / 0)
+
+
+371 23.38 0.00 1.87 NC_000913.3 4210215 4210323 (431329) LSU-rRNA_Hsa#rRNA 17 123 (4912) m_b73s551i2 194
+
+  NC_000913.3      4210215 ATGAGGCGAACCGGGGGAACTGAAACATCTAAGTACCCCGAGGAAAAGAA 4210264
+                            i v     v   vv -  i v  i   v v   vvv v           
+  LSU-rRNA_Hsa#         17 ACGTGGCGACCCGCTG-AATTTAAGCATATTAGTCAGCGGAGGAAAAGAA 65
+
+  NC_000913.3      4210265 ATCAACCGAGATTCCCCCAGTAGCGGCGAGCGAACGGGGAGCAGCCCAGA 4210314
+                            ii    ii       i     i       i    i    iv       v
+  LSU-rRNA_Hsa#         66 ACTAACCAGGATTCCCTCAGTAACGGCGAGTGAACAGGGAAGAGCCCAGC 115
+
+  NC_000913.3      4210315 GCCTGAATC 4210323
+                              -     
+  LSU-rRNA_Hsa#        116 GCC-GAATC 123
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 26.91
+Transitions / transversions = 0.92 (12/13)
+Gap_init rate = 0.02 (2 / 108), avg. gap size = 1.00 (2 / 2)
+
+
+353 22.45 1.98 3.00 NC_000913.3 4210461 4210561 (431091) LSU-rRNA_Hsa#rRNA 316 415 (4620) m_b73s551i3 194
+
+  NC_000913.3      4210461 TCCAAGGCTAAATACT--CCTGACTGACCGATAGTGAACCAGTACCGTGA 4210508
+                             i            i-- vi  --          v   v      i i 
+  LSU-rRNA_Hsa#        316 TCTAAGGCTAAATACCGGCACGA--GACCGATAGTCAACAAGTACCATAA 363
+
+  NC_000913.3      4210509 GGGAAAGGCGAAAAGAACCCCGGCGAGGGGAGTGAAAAAGAACCTGAAAC 4210558
+                                  vi         iii iv  - i    vv  i  ii v      
+  LSU-rRNA_Hsa#        364 GGGAAAGTTGAAAAGAACTTTGAAGA-GAGAGTTCAAGAGGGCGTGAAAC 412
+
+  NC_000913.3      4210559 CGT 4210561
+                              
+  LSU-rRNA_Hsa#        413 CGT 415
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 24.53
+Transitions / transversions = 1.75 (14/8)
+Gap_init rate = 0.04 (4 / 100), avg. gap size = 1.25 (5 / 4)
+
+
+299 31.07 2.65 1.97 NC_000913.3 4210711 4210861 (430791) LSU-rRNA_Hsa#rRNA 1504 1655 (3380) m_b73s551i4 195
+
+  NC_000913.3      4210711 GACCCGAAACCCGGTGATCTAGCCATGGGCAGGTTGAAGGTTG-GGTAAC 4210759
+                                    v?i     v  ?vv v     i  vi    viv -  v   
+  LSU-rRNA_Hsa#       1504 GACCCGAAAGNTGGTGAACTNTGCCTGGGCGGGGCGAAGCCGGAGGAAAC 1553
+
+  NC_000913.3      4210760 ACTAACTGGAGGACCGAACCGA--CTAATGTTGAAAAATTAG-CGGATGA 4210806
+                           v ?ii-      v   v v  i--  i    --iv    ii -  vvii 
+  LSU-rRNA_Hsa#       1554 TCNGG-TGGAGGTCCGTAGCGGTCCTGATGT--GCAAATCGGTCGTCCAA 1600
+
+  NC_000913.3      4210807 CTTGTGGCTGGGGGTGAAAGGCCAATCAAACCGGGAGATAGCTGGTTCTC 4210856
+                            i  v v? i    i     i i    i    ivvvii          i 
+  LSU-rRNA_Hsa#       1601 CCTGGGTNTAGGGGCGAAAGACTAATCGAACCATCTAGTAGCTGGTTCCC 1650
+
+  NC_000913.3      4210857 CCCGA 4210861
+                           i  i 
+  LSU-rRNA_Hsa#       1651 TCCAA 1655
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 35.57
+Transitions / transversions = 1.19 (25/21)
+Gap_init rate = 0.04 (6 / 150), avg. gap size = 1.17 (7 / 6)
+
+
+549 33.15 2.79 7.58 NC_000913.3 4211813 4212171 (429481) LSU-rRNA_Hsa#rRNA 3612 3954 (1081) m_b73s551i5 195
+
+  NC_000913.3      4211813 CAACTGTTTATTAAAAACACAGCACTGTGCAAACACGAAAGTGGACGT-- 4211860
+                            i   ?    v ?      v    ii i v ii v  vi- i  ii  --
+  LSU-rRNA_Hsa#       3612 CGACTNTTTAATNAAAACAAAGCATCGCGAAGGCCCGCG-GCGGGTGTTG 3660
+
+  NC_000913.3      4211861 ATACGGTGTGACGCCTGCCCGGTGC-CGGAAGGTTAATTGATGGGGTTAG 4211909
+                            ii  i     ivi      i    - v   v  i  -------------
+  LSU-rRNA_Hsa#       3661 ACGCGATGTGATTTCTGCCCAGTGCTCTGAATGTCAA------------- 3697
+
+  NC_000913.3      4211910 CGCAAGCGAAGCTCTTGATCGAAGCCCCGGTAAACGGCGGCCGTAACTAT 4211959
+                           ----  i    vvv  v vi     v v            vv        
+  LSU-rRNA_Hsa#       3698 ----AGTGAAGAAATTCAATGAAGCGCGGGTAAACGGCGGGAGTAACTAT 3743
+
+  NC_000913.3      4211960 AACGGTCCTAAGGTAGCGAAATTCCTTGTCGGGTAAGTTCCGACCTGCAC 4212009
+                           i  vv  i         v    v   i   ivv   v vvi   vi   i
+  LSU-rRNA_Hsa#       3744 GACTCTCTTAAGGTAGCCAAATGCCTCGTCATCTAATTAGTGACGCGCAT 3793
+
+  NC_000913.3      4212010 GAATGGCGTAAT--GATGGCCAGGCTGTCTCCACCCGAGACTCAGTGAAA 4212057
+                                 vvv  i--   vv   --     i i   iivv ii   i    
+  LSU-rRNA_Hsa#       3794 GAATGGATGAACGAGATTCCCA--CTGTCCCTACCTACTATCCAGCGAAA 3841
+
+  NC_000913.3      4212058 TTGAACTCGCTGTGAAGATGCAGTGTACCCG---CGGCAAGACGGAAAGA 4212104
+                           iiiv ---  iiv iii i -i iv iv v --- i  ii iviii    
+  LSU-rRNA_Hsa#       3842 CCACA---GCCAAGGGAACG-GGCTTGGCGGAATCAGCGGGGAAAGAAGA 3887
+
+  NC_000913.3      4212105 CCCCGTGAACCTTTACTATAGCTTGACAC--TGAACATTGAGCCTTGATG 4212152
+                              i  vi v   v   v   ii  i   --    v --  vv vv  v 
+  LSU-rRNA_Hsa#       3888 CCCTGTTGAGCTTGACTCTAGTCTGGCACGGTGAAGA--GACACGAGAGG 3935
+
+  NC_000913.3      4212153 TGTAGGATAGGTGGGAGGC 4212171
+                                i   i         
+  LSU-rRNA_Hsa#       3936 TGTAGAATAAGTGGGAGGC 3954
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 38.68
+Transitions / transversions = 1.20 (60/50)
+Gap_init rate = 0.09 (31 / 358), avg. gap size = 1.16 (36 / 31)
+
+
+564 29.95 4.68 6.25 NC_000913.3 4212246 4212651 (429001) LSU-rRNA_Hsa#rRNA 4126 4525 (510) m_b73s551i6 195
+
+  NC_000913.3      4212246 GACCCGTAATCCGGGTTGCGGACAGTGTCTGGTGGGTAGTTTGACTGGGG 4212295
+                                  --      -----   i   i v      v             
+  LSU-rRNA_Hsa#       4126 GACCCGT--TCCGGG-----GACGGTGCCAGGTGGGGAGTTTGACTGGGG 4168
+
+  NC_000913.3      4212296 CGGT-CTCCTCCTAAAGAGTAACGGAGGAGCACGAAGGTTGGCTAATCCT 4212344
+                               - v   vii   vi    i v   v iv v    ivi   v vvvv
+  LSU-rRNA_Hsa#       4169 CGGTACACCTGTCAAACGGTAATGCAGGTGTCCTAAGGCGAGCTCAGGGA 4218
+
+  NC_000913.3      4212345 GGTCGGACA--TCAGGAGGTTAGTGCAATGGCATAAGCCAGCTTGACTGC 4212392
+                             v i  v --  vv v  --  iiv  v    v    iv      iivi
+  LSU-rRNA_Hsa#       4219 GGACAGAAACCTCCCGTGG--AGCAGAAGGGCAAAAGCTCGCTTGATCTT 4266
+
+  NC_000913.3      4212393 GAGCGTGACGGCGCGAG--CAGGT-GCGAAAGCAGGTCATAGTGATCC-- 4212437
+                             viv -- i ii   i--   ii- i      i  v v vii     --
+  LSU-rRNA_Hsa#       4267 GATTTT--CAGTACGAATACAGACCGTGAAAGCGGGGCCTCACGATCCTT 4314
+
+  NC_000913.3      4212438 --GGT------GGTTCTGAATGGAAGGGCCATCGCTCAACGGATAAAAGG 4212479
+                           -- ii------    i i iii i   ---------iiv    --    v
+  LSU-rRNA_Hsa#       4315 CTGACCTTTTGGGTTTTAAGCAGGAGG---------TGTCGGA--AAAGT 4353
+
+  NC_000913.3      4212480 TACTCCGGGGATAACAGGCTGATACCGCCCAAGAGTTCATATCGACGGCG 4212529
+                              iv i        v    vi iv  v     v       v     v  
+  LSU-rRNA_Hsa#       4354 TACCACAGGGATAACTGGCTTGTGGCGGCCAAGCGTTCATAGCGACGTCG 4403
+
+  NC_000913.3      4212530 GTGTTTGGCACCTCGATGTCGGCTCATCACATCCTGGGGCTGAAGTAGG- 4212578
+                           v v    iiv i ? ?   ?  i  v  vi   v v ---   i ii i-
+  LSU-rRNA_Hsa#       4404 CTTTTTGATCCTTNGNTGTNGGTTCTTCCTATCATTG---TGAGGCGGAN 4450
+
+  NC_000913.3      4212579 -TC-CCAAGGGTATGGCTGTTCGCCATTTAAAGTGGTACGCGAGCTGGGT 4212626
+                           -  -     v  ?v ii     i  vvi  ?v v  v ??i       ? 
+  LSU-rRNA_Hsa#       4451 TTCACCAAGCGTNGGATTGTTCACCCACTANCGGGGAANNTGAGCTGGNT 4500
+
+  NC_000913.3      4212627 TTAGAACGTCGTGAGACAGTTCGGT 4212651
+                                v ??i         v ii  
+  LSU-rRNA_Hsa#       4501 TTAGACCNNTGTGAGACAGGTTAGT 4525
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 37.44
+Transitions / transversions = 1.04 (58/56)
+Gap_init rate = 0.09 (35 / 405), avg. gap size = 1.26 (44 / 35)
+
+
+14 19.99 0.00 4.76 NC_000913.3 4235702 4235745 (405907) (TTGTTT)n#Simple_repeat 1 42 (0) m_b74s252i0 196
+
+  NC_000913.3      4235702 TTGCTTTTGTTTTTATTTTAAGTTTATGATTTTTATTGTTATTT 4235745
+                              i          i    -v    v  -     i  v  i   
+  (TTGTTT)n#Sim          1 TTGTTTTTGTTTTTGTTTT-TGTTTTTG-TTTTTGTTTTTGTTT 42
+
+Matrix = Unknown
+Transitions / transversions = 1.33 (4/3)
+Gap_init rate = 0.05 (2 / 43), avg. gap size = 1.00 (2 / 2)
+
+
+13 9.78 0.00 0.00 NC_000913.3 4236116 4236137 (405515) (ACC)n#Simple_repeat 1 22 (0) m_b74s252i1 197
+
+  NC_000913.3      4236116 ACCACCACAACCACGACCACCA 4236137
+                                   v     v       
+  (ACC)n#Simple          1 ACCACCACCACCACCACCACCA 22
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/2)
+Gap_init rate = 0.00 (0 / 21), avg. gap size = 0.0 (0 / 0)
+
+
+17 22.29 5.17 0.00 NC_000913.3 4314154 4314211 (327441) (TGGAGGA)n#Simple_repeat 1 61 (0) m_b75s252i0 198
+
+  NC_000913.3      4314154 TGGAGGATGAAGAGCGGAGAATGGAAGAT-GAGTATGGGCGAT-GAGGTT 4314201
+                                    i  iii    i     i   -   v    iv   -    v 
+  (TGGAGGA)n#Si          1 TGGAGGATGGAGGATGGAGGATGGAGGATGGAGGATGGAGGATGGAGGAT 50
+
+  NC_000913.3      4314202 GG-GTATGGAG 4314211
+                             - v      
+  (TGGAGGA)n#Si         51 GGAGGATGGAG 61
+
+Matrix = Unknown
+Transitions / transversions = 1.75 (7/4)
+Gap_init rate = 0.05 (3 / 57), avg. gap size = 1.00 (3 / 3)
+
+
+190 33.81 0.00 7.56 NC_000913.3 4349325 4349452 (292200) C MamRTE1#LINE/RTE-BovB (3255) 557 439 m_b75s601i0 199
+
+  NC_000913.3      4349325 TATTGTTTCAGTAGTGAGTAGTGTTCTGCCTGAATACGGTAACGGTAAAC 4349374
+                               v i iv  i? ?i     v    iii  ?v -iv i v  vv i ?
+C MamRTE1#LINE/        557 TATTTTCTTTGTGNTNGGTAGTTTTCTATTTGNTT-TTGCACCGCAAGAN 509
+
+  NC_000913.3      4349375 TGGACGCCCCGTGACGCCATAATGGATACTGGTGAACAAGATGTGGCAGT 4349424
+                           i i vv  v vv     v     -----       i v  ? v  i-?v 
+C MamRTE1#LINE/        508 CGAAACCCACCAGACGCGATAAT-----CTGGTGAGCCAGNTTTGA-NTT 465
+
+  NC_000913.3      4349425 TGACCAGCCAGATGAGGTATTTACGGCA 4349452
+                             i v  v   iii --ii    v    
+C MamRTE1#LINE/        464 TGGCGAGGCAGGCAA--CGTTTAGGGCA 439
+
+Matrix = 25p53g.matrix
+Kimura (with divCpGMod) = 45.32
+Transitions / transversions = 1.00 (20/20)
+Gap_init rate = 0.07 (9 / 127), avg. gap size = 1.00 (9 / 9)
+
+
+13 15.80 2.70 2.70 NC_000913.3 4355341 4355377 (286275) (CATAAGC)n#Simple_repeat 1 37 (0) m_b76s252i0 200
+
+  NC_000913.3      4355341 CATAAAGCCACAAGCCATCAGCAGTAAGCCA-AAGGCA 4355377
+                              -      i       v   vi       -   v  
+  (CATAAGC)n#Si          1 CAT-AAGCCATAAGCCATAAGCCATAAGCCATAAGCCA 37
+
+Matrix = Unknown
+Transitions / transversions = 0.67 (2/3)
+Gap_init rate = 0.06 (2 / 36), avg. gap size = 1.00 (2 / 2)
+
+
+295 25.00 0.00 0.00 NC_000913.3 4362551 4362626 (279026) C tRNA-Lys-AAA#tRNA (0) 76 1 m_b76s502i0 201
+
+  NC_000913.3      4362551 TGGTGCCCGGACTCGGAATCGAACCAAGGACACGGGGATTTTCAATCCCC 4362600
+                              i     i  vv   v i     vv    v vvi    vvv i  ivv
+C tRNA-Lys-AAA#         76 TGGCGCCCGAACAGGGACTTGAACCCTGGACCCTCAGATTAAAAGTCTGA 27
+
+  NC_000913.3      4362601 TGCTCTACCGACTGAGCTATCCGGGC 4362626
+                                                     
+C tRNA-Lys-AAA#         26 TGCTCTACCGACTGAGCTATCCGGGC 1
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 28.68
+Transitions / transversions = 0.46 (6/13)
+Gap_init rate = 0.00 (0 / 75), avg. gap size = 0.0 (0 / 0)
+
+315 24.19 0.00 0.00 NC_000913.3 4362560 4362621 (279031) C tRNA-Tyr-TAC#tRNA (7) 67 6 m_b76s502i1 201
+
+  NC_000913.3      4362560 GACTCGGAATCGAACCAAGGACACGGGGATTTTCAATCCCCTGCTCTACC 4362609
+                             vi             iv   viii    i v  i   i i        
+C tRNA-Tyr-TAC#         67 GAGCCGGAATCGAACCAGCGACCTAAGGATCTACAGTCCTCCGCTCTACC 18
+
+  NC_000913.3      4362610 GACTGAGCTATC 4362621
+                           ii          
+C tRNA-Tyr-TAC#         17 AGCTGAGCTATC 6
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 28.20
+Transitions / transversions = 2.75 (11/4)
+Gap_init rate = 0.00 (0 / 61), avg. gap size = 0.0 (0 / 0)
+
+
+200 32.68 4.76 0.92 NC_000913.3 4371899 4372003 (269649) C OldhAT1#DNA/hAT-Ac (1771) 1071 963 m_b76s601i0 202
+
+  NC_000913.3      4371899 TCGCAACCCTGACTG-GCGGTACCG--TGATCTCTGAAGAGA-TCGGTAT 4371944
+                             iv    i v v  -i i  i i --  v ii    v  v - i   v 
+C OldhAT1#DNA/h       1071 TCAAAACCTTTAATGCACAGTGCTGCATGTTTCCTGATGACACTTGGTTT 1022
+
+  NC_000913.3      4371945 GGAGCTGGAAAAAGCAACCCTGGAAGACCTGGGTCA-GGCTAAACGTGTT 4371993
+                                   iv ii   ivv    v   -    iv? -v  iv  i   i 
+C OldhAT1#DNA/h       1021 GGAGCTGGGCAGGGCAGAGCTGGCAGA-CTGGAANATTGCCCAATGTGCT 973
+
+  NC_000913.3      4371994 GTGATCAACA 4372003
+                               iii   
+C OldhAT1#DNA/h        972 GTGACTGACA 963
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 45.08
+Transitions / transversions = 1.43 (20/14)
+Gap_init rate = 0.05 (5 / 104), avg. gap size = 1.20 (6 / 5)
+
+
+246 26.79 0.00 0.00 NC_000913.3 4392367 4392422 (249230) tRNA-Lys-AAG#tRNA 8 63 (13) m_b76s502i2 203
+
+  NC_000913.3      4392367 TAGCTCAGTTGGTAGAGCACGACCTTGCCAAGGTCGGGGTCGCGAGTTCG 4392416
+                                    i         i  vvi vii  vv  i      i i     
+  tRNA-Lys-AAG#          8 TAGCTCAGTCGGTAGAGCATGAGACTCTTAATCTCAGGGTCGTGGGTTCG 57
+
+  NC_000913.3      4392417 AGTCTC 4392422
+                             i i 
+  tRNA-Lys-AAG#         58 AGCCCC 63
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 31.66
+Transitions / transversions = 2.00 (10/5)
+Gap_init rate = 0.00 (0 / 55), avg. gap size = 0.0 (0 / 0)
+
+
+246 26.79 0.00 0.00 NC_000913.3 4392479 4392534 (249118) tRNA-Lys-AAG#tRNA 8 63 (13) m_b76s502i3 204
+
+  NC_000913.3      4392479 TAGCTCAGTTGGTAGAGCACGACCTTGCCAAGGTCGGGGTCGCGAGTTCG 4392528
+                                    i         i  vvi vii  vv  i      i i     
+  tRNA-Lys-AAG#          8 TAGCTCAGTCGGTAGAGCATGAGACTCTTAATCTCAGGGTCGTGGGTTCG 57
+
+  NC_000913.3      4392529 AGTCTC 4392534
+                             i i 
+  tRNA-Lys-AAG#         58 AGCCCC 63
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 31.66
+Transitions / transversions = 2.00 (10/5)
+Gap_init rate = 0.00 (0 / 55), avg. gap size = 0.0 (0 / 0)
+
+
+246 26.79 0.00 0.00 NC_000913.3 4392590 4392645 (249007) tRNA-Lys-AAG#tRNA 8 63 (13) m_b76s502i4 205
+
+  NC_000913.3      4392590 TAGCTCAGTTGGTAGAGCACGACCTTGCCAAGGTCGGGGTCGCGAGTTCG 4392639
+                                    i         i  vvi vii  vv  i      i i     
+  tRNA-Lys-AAG#          8 TAGCTCAGTCGGTAGAGCATGAGACTCTTAATCTCAGGGTCGTGGGTTCG 57
+
+  NC_000913.3      4392640 AGTCTC 4392645
+                             i i 
+  tRNA-Lys-AAG#         58 AGCCCC 63
+
+Matrix = 20p51g.matrix
+Kimura (with divCpGMod) = 31.66
+Transitions / transversions = 2.00 (10/5)
+Gap_init rate = 0.00 (0 / 55), avg. gap size = 0.0 (0 / 0)
+
+
+12 13.67 0.00 0.00 NC_000913.3 4396451 4396474 (245178) (GCC)n#Simple_repeat 1 24 (0) m_b76s252i1 206
+
+  NC_000913.3      4396451 GCCGCCACCGCCTCCTCCGCCGCC 4396474
+                                 i     v  v        
+  (GCC)n#Simple          1 GCCGCCGCCGCCGCCGCCGCCGCC 24
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.00 (0 / 23), avg. gap size = 0.0 (0 / 0)
+
+
+187 27.63 7.89 0.00 NC_000913.3 4400537 4400612 (241040) X6A_LINE#LINE/CR1 397 478 (600) m_b76s601i1 207
+
+  NC_000913.3      4400537 CATCATGGTAG-CAGCGCGCAGAATACTTCCGCGCAA----CAG-GACAG 4400580
+                            i    v  i -    v ivv   v  v  i  v   ----   - i   
+  X6A_LINE#LINE        397 CGTCATCGTGGACAGCTCAATGAAGACGTCTGCTCAATGCGCAGCGGCAG 446
+
+  NC_000913.3      4400581 CGAAGAAACCGAATAAGGTTTCGGGCTGTTTT 4400612
+                           iv  i   v        iiv i?      v  
+  X6A_LINE#LINE        447 TCAAAAAAGCGAATAAGACGTTNGGCTGTATT 478
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 31.41
+Transitions / transversions = 0.91 (10/11)
+Gap_init rate = 0.04 (3 / 75), avg. gap size = 2.00 (6 / 3)
+
+
+13 22.79 0.00 0.00 NC_000913.3 4470137 4470172 (171480) (TGATCG)n#Simple_repeat 1 36 (0) m_b78s252i0 208
+
+  NC_000913.3      4470137 TGATCATGACCGTGATCGTGATGATTGTCGGGATCG 4470172
+                                i   i            vi vi   v     
+  (TGATCG)n#Sim          1 TGATCGTGATCGTGATCGTGATCGTGATCGTGATCG 36
+
+Matrix = Unknown
+Transitions / transversions = 1.33 (4/3)
+Gap_init rate = 0.00 (0 / 35), avg. gap size = 0.0 (0 / 0)
+
+
+182 17.95 2.56 0.00 NC_000913.3 4608751 4608789 (32863) MamRTE1#LINE/RTE-BovB 1743 1782 (2030) m_b80s601i0 209
+
+  NC_000913.3      4608751 GCTGAAGATTTTCAGGACTAT-CAGGCCGTTAACAAGCCA 4608789
+                                   vv i         -   i   ?i v   i   
+  MamRTE1#LINE/       1743 GCTGAAGAGATCCAGGACTATGCAGACCGNCACCAAACCA 1782
+
+Matrix = 25p51g.matrix
+Kimura (with divCpGMod) = 21.38
+Transitions / transversions = 1.33 (4/3)
+Gap_init rate = 0.03 (1 / 38), avg. gap size = 1.00 (1 / 1)
+
+

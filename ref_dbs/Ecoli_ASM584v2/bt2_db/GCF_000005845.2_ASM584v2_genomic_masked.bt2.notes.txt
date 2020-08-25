@@ -1,0 +1,35 @@
+
+  -- GCF_000005845.2_ASM584v2_genomic.fna.gz --
+    Sequences acquired from:
+    ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz
+    on: 2020-08-10 11:01:56.295972
+    Operation performed by seq_manip_v10.py
+
+
+  -- GCF_000005845.2_ASM584v2_genomic.fna --
+    Fasta Sequences were Unzipped
+    On: 2020-08-10 11:01:58.751500
+    using command:
+      gunzip \
+      -f GCF_000005845.2_ASM584v2_genomic.fna.gz
+
+
+  -- GCF_000005845.2_ASM584v2_genomic_masked.fasta --
+    Genomic repeat sequences were then masked
+    Operation performed by: "repeatmasker/4.0.9"
+    On: 2020-08-10 11:05:58.126736
+    using command:
+      RepeatMasker \
+      -s -a -html -gff -dir RepeatMasker_Output \
+      -pa 8 GCF_000005845.2_ASM584v2_genomic.fna
+
+
+  -- GCF_000005845.2_ASM584v2_genomic_masked.bt2 --
+    A Bowtie2 Database was then created.
+    Operation performed by: "bowtie2/2.3.5.1"
+    On: 2020-08-10 11:06:23.325903
+    using command:
+      bowtie2-build \
+      --threads 8 GCF_000005845.2_ASM584v2_genomic_masked.fasta \
+      GCF_000005845.2_ASM584v2_genomic_masked
+
