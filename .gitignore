@@ -1,4 +1,3 @@
-CUT-RUN-Tools/*
-SEACR/*
-kents_tools/*
+CUTRUNTools/*
 private/*
+conda-envs/*

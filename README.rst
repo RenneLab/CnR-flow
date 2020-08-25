@@ -8,6 +8,9 @@ CnR-flow
    image:: https://img.shields.io/github/v/release/RenneLab/hybkit?include_prereleases
    :target: https://github.com/RenneLab/hybkit/releases
    :alt: GitHub release (latest by date including pre-releases)
+.. image:: https://travis-ci.com/dstrib/CnR-flow.svg?branch=master
+   :target: https://travis-ci.com/dstrib/CnR-flow
+   :alt: Travis-CI Build Status
 .. image:: https://readthedocs.org/projects/CnR-flow/badge/?version=latest
    :target: https://CnR-flow.readthedocs.io/en/latest/?badge=latest
    :alt: ReadTheDocs Documentation Status

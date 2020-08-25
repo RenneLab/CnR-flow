@@ -4,6 +4,22 @@
 //
 //Pipeline Created/Updated: 2020-07-30
 
+//This file is part of CnR-Flow.
+
+//CnR-Flow is free software: you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
+
+//CnR-Flow is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+
+//You should have received a copy of the GNU General Public License
+//along with CnR-Flow.  If not, see <https://www.gnu.org/licenses/>.
+
+
 // Step Settings:
 params.do_merge_lanes = true
 params.do_fastqc      = true
@@ -44,12 +60,12 @@ params.publish_mode  = 'copy'    // Options: "symlink", "copy"
 params.java_call           = "java"
 params.bowtie2_build_call  = "bowtie2-build"
 params.samtools_call       = "samtools"
-params.faCount_call        = "${workflow.projectDir}/kents_tools/faCount"
+params.faCount_call        = "${workflow.projectDir}/kent_utils/faCount"
 params.fastqc_call         = "fastqc"
 params.trimmomatic_call    = "trimmomatic"
-params.kseqtest_call       = "${workflow.projectDir}/CUT-RUN-Tools/kseq_test"
+params.kseqtest_call       = "kseq_test"
 params.bowtie2_call        = "bowtie2"
-params.filter_below_script = "${workflow.projectDir}/CUT-RUN-Tools/filter_below.awk"
+params.filter_below_script = "${workflow.projectDir}/CUTRUNTools/filter_below.awk"
 params.picard_call         = "picard"
 params.bedtools_call      = "bedtools"
 params.macs2_call         = "macs2"
@@ -116,11 +132,10 @@ params.trim_name_prefix = '' // Example: ~/^myprefix./ removes "myprefix." prefi
 params.trim_name_suffix = '' // Example: ~/_mysuffix$/ removes "_mysuffix" suffix.   
 
 // CnR Naming Scheme:
-params.out_dir          = 'cnr_output'
-params.refs_dir         = 'cnr_references'
-params.log_dir          = 'logs'
-params.prep_bt2db_suf   = 'bt2_db'
-params.merge_fastqs_dir = 'S0_A__merged_reads'
+params.out_dir           = "${launchDir}/cnr_output"
+params.refs_dir          = "${launchDir}/cnr_references"
+params.log_dirn          = 'logs'
+params.merge_fastqs_dirn = 'S0_A__merged_reads'
 params.fastqc_pre_dir   = 'S0_B__FastQC_pre'
 params.trim_dir         = 'S1_A__fastq_trimomatic'
 params.retrim_dir       = 'S1_B__fastq_kseqtest'
@@ -132,6 +147,7 @@ params.aln_dir_bdg      = 'S2_C__aln_bdg'
 params.aln_dir_norm     = 'S2_D__aln_norm'
 params.peaks_dir_macs   = 'S3_A1_peaks_macs'
 params.peaks_dir_seacr  = 'S3_A2_peaks_seacr'
+params.prep_bt2db_suf   = 'bt2_db'
 
 // --------------- Setup Default Pipe Variables: ---------------
 params.verbose = false
@@ -228,8 +244,8 @@ if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
         'faCount_call',
         'fastqc_call', 'trimmomatic_call', 'kseqtest_call', 'bowtie2_call', 
         'picard_call', 'filter_below_script', 'bedtools_call', 'macs2_call', 
-        'seacr_call', 'out_dir', 'refs_dir', 'log_dir', 'prep_bt2db_suf',
-        'merge_fastqs_dir', 'fastqc_pre_dir', 'trim_dir', 'retrim_dir',
+        'seacr_call', 'out_dir', 'refs_dir', 'log_dirn', 'prep_bt2db_suf',
+        'merge_fastqs_dirn', 'fastqc_pre_dir', 'trim_dir', 'retrim_dir',
         'fastqc_post_dir', 'aln_dir_ref', 'aln_dir_spike', 'aln_dir_mod',
         'aln_dir_norm', 'peaks_dir_macs', 'peaks_dir_seacr',
         'verbose', 'help', 'h', 'version', 'v', 'out_front_pad', 'out_prop_pad', 
@@ -532,7 +548,7 @@ if( params.mode == 'prep_fasta' ) {
         publishDir "${params.refs_dir}/logs", mode: params.publish_mode, 
                    pattern: ".command.log", saveAs: { out_log_name }
         publishDir "${params.refs_dir}", mode: params.publish_mode, 
-                   pattern: "${use_fasta}*"
+                   overwrite: false, pattern: "${use_fasta}*"
     
         script:
         run_id         = "${task.tag}.${task.process}"
@@ -692,7 +708,7 @@ if( params.mode == 'dry_run' ) {
         path "${test_out_file_name}" into dryRun_outs
         path '.command.log' into dryRun_log_outs
     
-        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+        publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                    pattern: ".command.log", saveAs: { out_log_name } 
         publishDir "${params.out_dir}", mode: params.publish_mode, 
                    pattern: "${test_out_file_name}"
@@ -826,7 +842,7 @@ if( params.mode == 'run' ) {
             tuple val(name), val(cond), val(group), path("${merge_fastqs_dir}/${name}_R{1,2}_001.fastq.gz") into use_fastqs
             path '.command.log' into mergeFastqs_log_outs
         
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name } 
             // Publish merged fastq files only when publish_files == all
             publishDir "${params.out_dir}", mode: params.publish_mode,
@@ -837,11 +853,11 @@ if( params.mode == 'run' ) {
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
             task_details = task_details(task)
-            merge_fastqs_dir = "${params.merge_fastqs_dir}"
+            merge_fastqs_dir = "${params.merge_fastqs_dirn}"
             R1_files = fastq.findAll {fn -> "${fn}".contains("_R1_") }
             R2_files = fastq.findAll {fn -> "${fn}".contains("_R2_") }
-            R1_out_file = "${params.merge_fastqs_dir}/${name}_R1_001.fastq.gz"
-            R2_out_file = "${params.merge_fastqs_dir}/${name}_R2_001.fastq.gz" 
+            R1_out_file = "${params.merge_fastqs_dirn}/${name}_R1_001.fastq.gz"
+            R2_out_file = "${params.merge_fastqs_dirn}/${name}_R2_001.fastq.gz" 
 
             if( R1_files.size() == 1 && R2_files.size() == 1 ) {
                 command = '''
@@ -903,7 +919,7 @@ if( params.mode == 'run' ) {
             path "${fastqc_out_dir}/*.{html,zip}" into fastqcPre_all_outs
             path '.command.log' into fastqcPre_log_outs
         
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name } 
             publishDir "${params.out_dir}", mode: params.publish_mode, 
                        pattern: "${fastqc_out_dir}/*"
@@ -945,7 +961,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into trim_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish if publish_mode == 'all', or == 'default' and not last trim step.
             publishDir "${params.out_dir}", mode: params.publish_mode,
@@ -1003,7 +1019,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into retrim_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish if publish_files == "all" or "default"
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1059,7 +1075,7 @@ if( params.mode == 'run' ) {
             path "${fastqc_out_dir}/*.{html,zip}" into fastqcPost_all_outs
             path '.command.log' into fastqcPost_log_outs
         
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name } 
             publishDir "${params.out_dir}", mode: params.publish_mode, 
                        pattern: "${fastqc_out_dir}/*"
@@ -1098,7 +1114,7 @@ if( params.mode == 'run' ) {
         path '.command.log' into aln_log_outs
     
         // Publish Log
-        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+        publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                    pattern: '.command.log', saveAs: { out_log_name }
         // Publish unsorted alignments only when publish_files == all
         publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1151,7 +1167,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into aln_spike_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish count file if publish_file == "minimal" or "default"
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1302,7 +1318,7 @@ if( params.mode == 'run' ) {
         path '.command.log' into sort_aln_log_outs
     
         // Publish Log
-        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+        publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                    pattern: '.command.log', saveAs: { out_log_name }
         // If publish raw alingments only if publish_files == "all",
         publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1460,7 +1476,7 @@ if( params.mode == 'run' ) {
         path '.command.log' into bdg_aln_log_outs
     
         // Publish Log
-        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+        publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                    pattern: '.command.log', saveAs: { out_log_name }
         // Publish Bedgraph if publish_files == "default" or "minimal" and no normalization.
         publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1527,7 +1543,7 @@ if( params.mode == 'run' ) {
         echo ""
         echo "Creating Bedgraph using bedtools genomecov."
         set -v -H -o history
-        !{params.bedtools_call} genomecov -bg -i !{aln_bed}.clean.frag -g !{genome_sizes} > !{aln_bdg}
+        !{params.bedtools_call} genomecov -bg -i !{aln_bed}.clean.frag -g !{chrom_sizes} > !{aln_bdg}
         set +v +H +o history
 
         echo "Step 02, Part C, Convert (BAM -> BED -> BDG) Alignments, Complete."
@@ -1564,7 +1580,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into norm_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish bedgraph if publish_files == "minimal" or "default"
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1603,7 +1619,7 @@ if( params.mode == 'run' ) {
             echo ""
             echo "Creating normalized bedgraph using bedtools genomecov."
             set -v -H -o history
-            !{params.bedtools_call} genomecov -bg -i !{bed_frag} -g !{genome_sizes} -scale ${SCALE} > !{norm_bdg}
+            !{params.bedtools_call} genomecov -bg -i !{bed_frag} -g !{chrom_sizes} -scale ${SCALE} > !{norm_bdg}
             set +v +H +o history
 
             echo "Step 02, Part D, Create Normalized Bedgraph, Complete."
@@ -1668,7 +1684,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into macs_peak_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish Only Minimal Outputs
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1737,7 +1753,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into seacr_peak_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish All Outputs
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1824,7 +1840,6 @@ def return_as_list(item) {
 }
 
 def get_resource_item(params, item_name, use_suffix, join_char, def_val="") {
-    println item_name
     if( item_name instanceof List 
         && item_name.every {use_item -> params.containsKey(use_item + use_suffix) } ) {
         use_items = []
