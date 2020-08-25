@@ -14,6 +14,9 @@ CnR-flow
 .. image:: https://readthedocs.org/projects/CnR-flow/badge/?version=latest
    :target: https://CnR-flow.readthedocs.io/en/latest/?badge=latest
    :alt: ReadTheDocs Documentation Status
+.. image:: https://img.shields.io/badge/License-GPLv3-blue
+   :target: https://www.gnu.org/licenses/gpl-3.0.en.html
+   :alt: GNU GPLv3 License
 
 
 | Welcome to CUT&Run-Flow (CnR-flow), a Nextflow pipeline for QC, tag trimming, normalization, and peak calling for data from CUT&RUN experiments.
