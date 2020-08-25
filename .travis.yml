@@ -6,7 +6,6 @@ branches:
   only:
   - master  
 install:
-- bash install_cutruntools.sh
 - curl -fsSL https://get.nextflow.io | bash
 - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 - bash miniconda.sh -b -p $HOME/miniconda
@@ -16,4 +15,5 @@ install:
 - conda update -q conda
 - conda info -a
 script:
+- ./install_cutruntools.sh
 - ./nextflow run . --mode validate_all
