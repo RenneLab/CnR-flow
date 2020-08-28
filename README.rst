@@ -55,6 +55,7 @@ CnR-flow
   or `Environment Modules <http://modules.sourceforge.net/>`_. 
   **CnR-Flow is pre-configured to acquire and utilize dependencies
   using conda environments with no additional required dependency setup.**
+|
 | For a full list of required dependencies and tested versions, see 
   the |Dependencies| section of |docs_link|_, and for dependency 
   configuration options see the |Dependency Config| section.
@@ -79,18 +80,23 @@ Install Nextflow (if necessary):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Download the nextflow executable to your current directory.
-| (can move and add to path for future usage)
+| (You can move the nextflow executable and add to $PATH for 
+  future usage)
 
 .. code-block:: bash
 
     curl -s https://get.nextflow.io | bash
+
+    # For the following steps, use:
+    nextflow    # If nextflow executable on $PATH (assumed)
+    ./nextflow  # If running from local directory
 
 Install Conda (if necessary):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | If using Nextflow's builtin Conda dependency handling (recommended),
   install miniconda. 
- `Installation instructions <https://docs.conda.io/en/latest/miniconda.html>`_
+| `Installation instructions <https://docs.conda.io/en/latest/miniconda.html>`_
 
 Download and Install CnR-Flow:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,11 +106,7 @@ Download and Install CnR-Flow:
 
 .. code-block:: bash
 
-    #If nextflow in task directory:
-    ./nextflow run dstrib/CnR-flow --mode initiate    
-
-    #If nextflow on path:
-    nextflow run dstrib/CnR-flow --mode initiate
+    nextflow run dstrib/CnR-flow --mode initiate    
 
 Validate, Configure, and Test:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
