@@ -26,33 +26,33 @@ CnR-flow
 | Full project documentation is available at
   `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
 
-| CUT&RUN-Flow is built using `Nextflow <www.nextflow.io>`, a powerful 
+| CUT&RUN-Flow is built using `Nextflow <www.nextflow.io>`_, a powerful 
   domain-specific workflow language built to creat flexible and 
   efficient bioinformatics pipelines. 
   Nextflow provides extensive flexibility in utilizing cluster 
-  computing environments such as `PBS <https://www.openpbs.org/>` 
-  and `SLURM <https://slurm.schedmd.com/>`, 
+  computing environments such as `PBS <https://www.openpbs.org/>`_ 
+  and `SLURM <https://slurm.schedmd.com/>`_, 
   and in automated and compartmentalized handling of dependencies using 
-  `Conda <https://docs.conda.io/en/latest/>` 
-  and `Environment Modules <http://modules.sourceforge.net/>`.
+  `Conda <https://docs.conda.io/en/latest/>`_ 
+  and `Environment Modules <http://modules.sourceforge.net/>`_.
 
-| CUT&RUN-Flow utilizes `Trimmomatic <http://www.usadellab.org/cms/?page=trimmomatic>`
-  and `CUT&RUN-Tools:kseq_test <https://bitbucket.org/qzhudfci/cutruntools/src>` 
+| CUT&RUN-Flow utilizes `Trimmomatic <http://www.usadellab.org/cms/?page=trimmomatic>`_
+  and `CUT&RUN-Tools:kseq_test <https://bitbucket.org/qzhudfci/cutruntools/src>`_ 
   for tag trimming,
-  `Bowtie2 <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`
+  `Bowtie2 <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_
   for tag alignment
-  `Samtools <http://www.htslib.org/>`, 
-  `Picard <https://broadinstitute.github.io/picard/>`,
-  and `CUT&RUN-Tools <https://bitbucket.org/qzhudfci/cutruntools/src>`
+  `Samtools <http://www.htslib.org/>`_, 
+  `Picard <https://broadinstitute.github.io/picard/>`_,
+  and `CUT&RUN-Tools <https://bitbucket.org/qzhudfci/cutruntools/src>`_
   for alignment manipulation, and 
-  `MACS2 <https://github.com/macs3-project/MACS>` 
-  and/or `SEACR <https://github.com/FredHutch/SEACR>`
+  `MACS2 <https://github.com/macs3-project/MACS>`_ 
+  and/or `SEACR <https://github.com/FredHutch/SEACR>`_
   for peak calling, as well as their associated language subdependencies of
   Java, Python2/3, R, and C++.
 | In addition to standard local configurations, Nextflow allows handling of 
   dependencies in separated working environments within the same pipeline 
-  using `Conda <https://docs.conda.io/en/latest/>`
-  or `Environment Modules <http://modules.sourceforge.net/>`. 
+  using `Conda <https://docs.conda.io/en/latest/>`_
+  or `Environment Modules <http://modules.sourceforge.net/>`_. 
 | CnR-Flow is pre-configured to acquire and utilize dependencies
   using conda environments with no required dependency setup.
 | For a full list of required dependencies and tested versions, see 
@@ -66,6 +66,7 @@ Here is a brief introduction on how to install and get started using the pipelin
 For full details visit  `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
 
 Install nextflow (if necessary):
+
 .. code-block:: bash
 
     curl -s https://get.nextflow.io | bash
@@ -75,7 +76,7 @@ install miniconda (if necessary):
 
     Installation instructions at: https://docs.conda.io/en/latest/miniconda.html
 
-Create a task directory, and navigate to it.
+| Create a task directory, and navigate to it.
 
 .. code-block:: bash
 
@@ -83,6 +84,7 @@ Create a task directory, and navigate to it.
     cd    /path/to/my_task
 
 | Download and Install CnR-Flow:
+|
 | (Nextflow will download and store the pipeline in the 
   user's nextflow information directory, default: "~/.nextflow/" )
 
@@ -94,10 +96,10 @@ Create a task directory, and navigate to it.
     #If nextflow on path:
     nextflow run dstrib/CnR-flow --mode initiate
 
-If using an alternative configuration to conda, see the |Dependency Config|
-section of |docs_link|_ for dependency configuration options.
-
-Validate setup of dependencies using the command:
+| If using an alternative configuration to conda, see the |Dependency Config|
+  section of |docs_link|_ for dependency configuration options.
+| 
+| Validate setup of dependencies using the command:
 
 .. code-block:: bash
 
@@ -115,7 +117,7 @@ Validate setup of dependencies using the command:
 | Configure your system executor, time, and memory settings in either the 
   .../CnR-Flow/nextflow.config or .../my_task/nextflow.config 
   to use cluster-based job submssion like SLURM, PBS, etc. (if applicable).
-
+|
 | Prepare your reference databse (and normalization reference) from .fasta[.gz]
   file(s): 
 
