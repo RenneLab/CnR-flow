@@ -25,7 +25,7 @@ CnR-flow
   http://www.github.com/dstrib/cnr-flow .
 | Full project documentation is available at
   `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
-
+|
 | CUT&RUN-Flow is built using `Nextflow <www.nextflow.io>`_, a powerful 
   domain-specific workflow language built to creat flexible and 
   efficient bioinformatics pipelines. 
@@ -35,7 +35,7 @@ CnR-flow
   and in automated and compartmentalized handling of dependencies using 
   `Conda <https://docs.conda.io/en/latest/>`_ 
   and `Environment Modules <http://modules.sourceforge.net/>`_.
-
+|
 | CUT&RUN-Flow utilizes `Trimmomatic <http://www.usadellab.org/cms/?page=trimmomatic>`_
   and `CUT&RUN-Tools:kseq_test <https://bitbucket.org/qzhudfci/cutruntools/src>`_ 
   for tag trimming,
@@ -65,16 +65,27 @@ Quickstart
 Here is a brief introduction on how to install and get started using the pipeline. 
 For full details visit  `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
 
-Install nextflow (if necessary):
+Install Dependencies
+---------------------
+
+Install Nextflow (if necessary):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
     curl -s https://get.nextflow.io | bash
 
+Install Conda (if necessary):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 If using Nextflow's builtin Conda dependency handling (recommended),
 install miniconda (if necessary):
 
     Installation instructions at: https://docs.conda.io/en/latest/miniconda.html
+
+
+Prepare Task Directory:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Create a task directory, and navigate to it.
 
@@ -83,8 +94,9 @@ install miniconda (if necessary):
     mkdir /path/to/my_task
     cd    /path/to/my_task
 
-| Download and Install CnR-Flow:
-|
+Download and Install CnR-Flow:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 | (Nextflow will download and store the pipeline in the 
   user's nextflow information directory, default: "~/.nextflow/" )
 
@@ -96,18 +108,22 @@ install miniconda (if necessary):
     #If nextflow on path:
     nextflow run dstrib/CnR-flow --mode initiate
 
+Validate Dependency Setup:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 | If using an alternative configuration to conda, see the |Dependency Config|
   section of |docs_link|_ for dependency configuration options.
-| 
-| Validate setup of dependencies using the command:
 
 .. code-block:: bash
 
     nextflow run CnR-flow --mode validate_all
 
+Configure and Test:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 | Fill the required task paramater variables in .../my_task/nextflow.config
 | For detailed setup instructions, see the  |Task Setup| 
-  section of |docs_link|_  ::
+  section of |docs_link|_::
 
     //REQUIRED values to enter (all others *should* work as default):
     // ref_fasta               (or some other ref-mode/location)
@@ -130,6 +146,9 @@ Perform a test run to check inputs, paramater setup, and process execution:
 .. code-block:: bash
 
     nextflow run CnR-flow --mode dry_run
+
+Execute Pipeline:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If satisifed with the pipeline setup, execute the pipeline.
 
