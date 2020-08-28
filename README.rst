@@ -26,7 +26,7 @@ CnR-flow
 | Full project documentation is available at
   `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
 |
-| CUT&RUN-Flow is built using `Nextflow <www.nextflow.io>`_, a powerful 
+| CUT&RUN-Flow is built using `Nextflow <http://www.nextflow.io>`_, a powerful 
   domain-specific workflow language built to creat flexible and 
   efficient bioinformatics pipelines. 
   Nextflow provides extensive flexibility in utilizing cluster 

@@ -15,5 +15,5 @@ install:
 script:
 - mkdir ./test_dir
 - cd    ./test_dir
-- ../nextflow run . --mode initiate
-- ../nextflow run . --mode validate_all
+- ../nextflow run ../CnR-flow.nf --mode initiate
+- ../nextflow run ../CnR-flow.nf --mode validate_all
