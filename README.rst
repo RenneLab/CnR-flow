@@ -130,7 +130,7 @@ Configure, Validate, and Test:
     #REQUIRED values to enter (all others *should* work as default):
     # ref_fasta               (or some other ref-mode/location)
     # treat_fastqs            (input paired-end fastq[.gz] file paths)
-    # [OR fastq_groups]       (mutli-group input paired-end .fastq[.gz] file paths)
+    #   [OR fastq_groups]     (mutli-group input paired-end .fastq[.gz] file paths)
 
 | Configure your system executor, time, and memory settings in the pipe
   configuration file, if necessary
