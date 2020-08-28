@@ -60,29 +60,10 @@ CnR-flow
   configuration options see the |Dependency Config| section.
 
 Quickstart
-==========
+------------
 
 Here is a brief introduction on how to install and get started using the pipeline. 
 For full details visit  `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
-
-Install Dependencies
----------------------
-
-Install Nextflow (if necessary):
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: bash
-
-    curl -s https://get.nextflow.io | bash
-
-Install Conda (if necessary):
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If using Nextflow's builtin Conda dependency handling (recommended),
-install miniconda (if necessary):
-
-    Installation instructions at: https://docs.conda.io/en/latest/miniconda.html
-
 
 Prepare Task Directory:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,13 +73,30 @@ Prepare Task Directory:
 .. code-block:: bash
 
     mkdir /path/to/my_task
-    cd    /path/to/my_task
+    cd /path/to/my_task
+
+Install Nextflow (if necessary):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| Download the nextflow executable to your current directory.
+| (can move and add to path for future usage)
+
+.. code-block:: bash
+
+    curl -s https://get.nextflow.io | bash
+
+Install Conda (if necessary):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| If using Nextflow's builtin Conda dependency handling (recommended),
+  install miniconda. 
+  `Installation instructions <https://docs.conda.io/en/latest/miniconda.html`_
 
 Download and Install CnR-Flow:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | (Nextflow will download and store the pipeline in the 
-  user's nextflow information directory, default: "~/.nextflow/" )
+  user's Nextflow info, default: "~/.nextflow/" )
 
 .. code-block:: bash
 
@@ -108,7 +106,7 @@ Download and Install CnR-Flow:
     #If nextflow on path:
     nextflow run dstrib/CnR-flow --mode initiate
 
-Validate Dependency Setup:
+Validate, Configure, and Test:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | If using an alternative configuration to conda, see the |Dependency Config|
@@ -117,9 +115,6 @@ Validate Dependency Setup:
 .. code-block:: bash
 
     nextflow run CnR-flow --mode validate_all
-
-Configure and Test:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Fill the required task paramater variables in .../my_task/nextflow.config
 | For detailed setup instructions, see the  |Task Setup| 
@@ -133,7 +128,10 @@ Configure and Test:
 | Configure your system executor, time, and memory settings in either the 
   .../CnR-Flow/nextflow.config or .../my_task/nextflow.config 
   to use cluster-based job submssion like SLURM, PBS, etc. (if applicable).
-|
+
+Prepare and Execute Pipeline:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 | Prepare your reference databse (and normalization reference) from .fasta[.gz]
   file(s): 
 
@@ -141,16 +139,13 @@ Configure and Test:
 
     nextflow run CnR-flow --mode prep_fasta
 
-Perform a test run to check inputs, paramater setup, and process execution:
+| Perform a test run to check inputs, paramater setup, and process execution:
 
 .. code-block:: bash
 
     nextflow run CnR-flow --mode dry_run
 
-Execute Pipeline:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If satisifed with the pipeline setup, execute the pipeline.
+| If satisifed with the pipeline setup, execute the pipeline.
 
 .. code-block:: bash
 
