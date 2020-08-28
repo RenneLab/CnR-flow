@@ -1,7 +1,7 @@
 
 CnR-flow
 ==================================
-.. image:: https://img.shields.io/badge/nextflow-%3E%3D20.07.01-brightgreen
+.. image:: https://img.shields.io/badge/nextflow-%3E%3D20.07.01-green
    :target: https://www.nextflow.io/
    :alt: Nextflow Version Required >= 20.07.01
 .. COMMENT
@@ -18,7 +18,7 @@ CnR-flow
    :target: https://www.gnu.org/licenses/gpl-3.0.en.html
    :alt: GNU GPLv3+ License
 
-| Welcome to CUT&RUN-Flow (CnR-flow), a Nextflow pipeline for QC, tag 
+| Welcome to *CUT&RUN-Flow* (*CnR-flow*), a Nextflow pipeline for QC, tag 
   trimming, normalization, and peak calling for paired-end sequencing 
   data from CUT&RUN experiments.
 | This software is available via GitHub, at 
@@ -40,7 +40,7 @@ CnR-flow
   and `CUT&RUN-Tools:kseq_test <https://bitbucket.org/qzhudfci/cutruntools/src>`_ 
   for tag trimming,
   `Bowtie2 <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_
-  for tag alignment
+  for tag alignment,
   `Samtools <http://www.htslib.org/>`_, 
   `Picard <https://broadinstitute.github.io/picard/>`_,
   and `CUT&RUN-Tools <https://bitbucket.org/qzhudfci/cutruntools/src>`_
@@ -53,8 +53,8 @@ CnR-flow
   dependencies in separated working environments within the same pipeline 
   using `Conda <https://docs.conda.io/en/latest/>`_
   or `Environment Modules <http://modules.sourceforge.net/>`_. 
-| CnR-Flow is pre-configured to acquire and utilize dependencies
-  using conda environments with no required dependency setup.
+  **CnR-Flow is pre-configured to acquire and utilize dependencies
+  using conda environments with no additional required dependency setup.**
 | For a full list of required dependencies and tested versions, see 
   the |Dependencies| section of |docs_link|_, and for dependency 
   configuration options see the |Dependency Config| section.
@@ -90,7 +90,7 @@ Install Conda (if necessary):
 
 | If using Nextflow's builtin Conda dependency handling (recommended),
   install miniconda. 
-  `Installation instructions <https://docs.conda.io/en/latest/miniconda.html`_
+ `Installation instructions <https://docs.conda.io/en/latest/miniconda.html>`_
 
 Download and Install CnR-Flow:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -118,15 +118,17 @@ Validate, Configure, and Test:
 
 | Fill the required task paramater variables in .../my_task/nextflow.config
 | For detailed setup instructions, see the  |Task Setup| 
-  section of |docs_link|_::
+  section of |docs_link|_
+
+::
 
     //REQUIRED values to enter (all others *should* work as default):
     // ref_fasta               (or some other ref-mode/location)
     // treat_fastqs            (input paired-end fastq[.gz] file paths)
     // [OR fastq_groups]       (mutli-group input paired-end .fastq[.gz] file paths)
 
-| Configure your system executor, time, and memory settings in either the 
-  .../CnR-Flow/nextflow.config or .../my_task/nextflow.config 
+| Configure your system executor, time, and memory settings in either 
+  ".../CnR-Flow/nextflow.config" or ".../my_task/nextflow.config"
   to use cluster-based job submssion like SLURM, PBS, etc. (if applicable).
 
 Prepare and Execute Pipeline:
