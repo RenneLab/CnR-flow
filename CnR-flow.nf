@@ -401,6 +401,10 @@ if( ['run', 'dry_run'].contains( params.mode) ) {
     //If utilizing retrimming, autodetect or confirm tag size:
     if( params.do_retrim ) {
         if( params.input_seq_len == "auto" ) {
+            log.error "params.input_seq_len = 'auto' is not currently supported."
+            log.error "Please supply a numeric value to this argument."
+            exit 1
+             
             if( params.verbose ) {
                 log.info "Auto-detecting Tag Sequence Length:"
                 log.info "Using first provided file:"
