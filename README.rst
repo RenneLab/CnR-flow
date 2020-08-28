@@ -27,7 +27,7 @@ CnR-flow
   `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
 |
 | CUT&RUN-Flow is built using `Nextflow <http://www.nextflow.io>`_, a powerful 
-  domain-specific workflow language built to creat flexible and 
+  domain-specific workflow language built to create flexible and 
   efficient bioinformatics pipelines. 
   Nextflow provides extensive flexibility in utilizing cluster 
   computing environments such as `PBS <https://www.openpbs.org/>`_ 
@@ -36,7 +36,9 @@ CnR-flow
   `Conda <https://docs.conda.io/en/latest/>`_ 
   and `Environment Modules <http://modules.sourceforge.net/>`_.
 |
-| CUT&RUN-Flow utilizes `Trimmomatic <http://www.usadellab.org/cms/?page=trimmomatic>`_
+| CUT&RUN-Flow utilizes `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
+  for quality control,
+  `Trimmomatic <http://www.usadellab.org/cms/?page=trimmomatic>`_
   and `CUT&RUN-Tools:kseq_test <https://bitbucket.org/qzhudfci/cutruntools/src>`_ 
   for tag trimming,
   `Bowtie2 <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_
