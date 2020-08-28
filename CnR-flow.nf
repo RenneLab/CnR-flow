@@ -401,26 +401,25 @@ if( ['run', 'dry_run'].contains( params.mode) ) {
     //If utilizing retrimming, autodetect or confirm tag size:
     if( params.do_retrim ) {
         if( params.input_seq_len == "auto" ) {
-            log.error "params.input_seq_len = 'auto' is not currently supported."
-            log.error "Please supply a numeric value to this argument."
-            exit 1
-             
             if( params.verbose ) {
+                println  ""
                 log.info "Auto-detecting Tag Sequence Length:"
                 log.info "Using first provided file:"
                 log.info "-   ${print_in_files[0]}"
             }
-            Channel.fromPath(print_in_files[0])
+            Channel
+                  .fromPath(print_in_files[0])
                   .splitFastq(record: true, by: 1)
                   .first()
-                  .subscribe {record ->
-                      println record.readString
-                      use_input_seq_len = record.readString.size()
+                  .map {record ->
+                      record.readString.size()
                   }
-            sleep(1000)
-            log.info "Autodetected Tag Size: ${use_input_seq_len}"
+                  .view { "Autodetected Tag Length: ${it}" }
+                  .set { input_seq_len }
         } else if( params.input_seq_len ) {
-            use_input_seq_len = params.input_seq_len
+            Channel
+                  .value(params.input_seq_len)
+                  .set { input_seq_len }
         } else {
             log.error "Invalid Value for Paramater 'input_seq_len' provided:"
             log.error "-   '${input_seq_len}'"
@@ -1127,7 +1126,8 @@ if( params.mode == 'run' ) {
      
             input:
             tuple val(name), val(cond), val(group), path(fastq) from trim_outs
-        
+            val(seq_len) from input_seq_len        
+
             output:
             tuple val(name), val(cond), val(group), path("${params.retrim_dir}/*") into trim_final
             path '.command.log' into retrim_log_outs
@@ -1147,7 +1147,6 @@ if( params.mode == 'run' ) {
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
             task_details = task_details(task)
-            seq_len = use_input_seq_len
         
             shell:
             task_details + '''

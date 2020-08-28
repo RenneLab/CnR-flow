@@ -22,7 +22,7 @@ CnR-flow
   trimming, normalization, and peak calling for paired-end sequencing 
   data from CUT&RUN experiments.
 | This software is available via GitHub, at 
-  http://www.github.com/dstrib/cnr-flow .
+  http://www.github.com/dstrib/CnR-flow .
 | Full project documentation is available at
   `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
 |
