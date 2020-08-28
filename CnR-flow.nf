@@ -401,6 +401,34 @@ if( ['run', 'dry_run'].contains( params.mode) ) {
     //If utilizing retrimming, autodetect or confirm tag size:
     if( params.do_retrim ) {
         if( params.input_seq_len == "auto" ) {
+            process CR_GetSeqLen {
+                executor 'local'
+                cpus      1
+                time      '1h'
+                echo      params.verbose
+        
+                input:
+                path(test_fastq) from Channel.fromPath(print_in_files[0])
+                
+                output:
+                env SIZE into detect_input_seq_len
+        
+                shell:
+                '''
+                echo -e "Auto-detecting Tag Sequence Length:"
+                echo -e "Using first provided file:"
+                echo -e "    !{test_fastq}"
+
+                head -c 10000 !{test_fastq} | zcat 2>/dev/null  | head -n 2 | tail -n 1 > seq.txt
+                SIZE=$(cat seq.txt | head -c -1 | wc -c )
+        
+                echo "Read Size: ${SIZE}"
+                '''
+            }
+            detect_input_seq_len
+                               .first() //Convert to Value Channel
+                               .set { input_seq_len }
+            /*
             if( params.verbose ) {
                 println  ""
                 log.info "Auto-detecting Tag Sequence Length:"
@@ -416,6 +444,7 @@ if( ['run', 'dry_run'].contains( params.mode) ) {
                   }
                   .view { "Autodetected Tag Length: ${it}" }
                   .set { input_seq_len }
+            */
         } else if( params.input_seq_len ) {
             Channel
                   .value(params.input_seq_len)
