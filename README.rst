@@ -118,25 +118,27 @@ Validate, Configure, and Test:
 
     nextflow run CnR-flow --mode validate_all
 
-| Fill the required task paramater variables in .../my_task/nextflow.config
+| Fill the required task input paramaters in ".../my_task/nextflow.config"
 | For detailed setup instructions, see the  |Task Setup| 
   section of |docs_link|_
 
-::
+.. code-block:: bash
 
-    //REQUIRED values to enter (all others *should* work as default):
-    // ref_fasta               (or some other ref-mode/location)
-    // treat_fastqs            (input paired-end fastq[.gz] file paths)
-    // [OR fastq_groups]       (mutli-group input paired-end .fastq[.gz] file paths)
+    # Configure:
+    .../my_task/nextflow.config   # Task Input, Steps, etc. Configuration
+    
+    #REQUIRED values to enter (all others *should* work as default):
+    # ref_fasta               (or some other ref-mode/location)
+    # treat_fastqs            (input paired-end fastq[.gz] file paths)
+    # [OR fastq_groups]       (mutli-group input paired-end .fastq[.gz] file paths)
 
-| Configure your system executor, time, and memory settings; and the task input 
-  and step settings in the appropriate respective configuration file.
+| Configure your system executor, time, and memory settings in the pipe
+  configuration file, if necessary
 
 .. code-block:: bash
    
   # Configure:
   .../CnR-Flow/nextflow.config  # Pipe Executor, Dependency, Resource, etc. Configuration
-  .../my_task/nextflow.config   # Task Input, Steps, etc. Configuration
 
 
 Prepare and Execute Pipeline:
