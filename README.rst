@@ -89,7 +89,7 @@ Install Nextflow (if necessary):
 
     # For the following steps, use:
     nextflow    # If nextflow executable on $PATH (assumed)
-    ./nextflow  # If running from local directory
+    ./nextflow  # If running nextflow executable from local directory
 
 Install Conda (if necessary):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -129,9 +129,15 @@ Validate, Configure, and Test:
     // treat_fastqs            (input paired-end fastq[.gz] file paths)
     // [OR fastq_groups]       (mutli-group input paired-end .fastq[.gz] file paths)
 
-| Configure your system executor, time, and memory settings in either 
-  ".../CnR-Flow/nextflow.config" or ".../my_task/nextflow.config"
-  to use cluster-based job submssion like SLURM, PBS, etc. (if applicable).
+| Configure your system executor, time, and memory settings; and the task input 
+  and step settings in the appropriate respective configuration file.
+
+.. code-block:: bash
+   
+  # Configure:
+  .../CnR-Flow/nextflow.config  # Pipe Executor, Dependency, Resource, etc. Configuration
+  .../my_task/nextflow.config   # Task Input, Steps, etc. Configuration
+
 
 Prepare and Execute Pipeline:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
