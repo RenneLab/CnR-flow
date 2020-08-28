@@ -1,0 +1,21 @@
+//Daniel Stribling
+//Renne Lab, University of Florida
+//CnR-Flow Configuration File
+//
+// Config syntax:
+// This config file uses the syntax described here:
+//   https://www.nextflow.io/docs/latest/config.html
+// Primarily, "//" acts as a comment and allows removal/deactivation of lines.
+//
+// Settings within scopes, Ex:
+//   params {
+//     setting = value
+//     ...
+//   }
+// are equivalent to:
+//   params.setting = value"
+//
+// Configuration Hierarchy:
+//   Different Nextflow configuration files have the precedence order:
+//     task-dir  >  pipe-dir  >  user-default  >  pipe-default
+//

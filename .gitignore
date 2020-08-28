@@ -1,3 +1,7 @@
-CUTRUNTools
+CUTRUNTools/*kseq*
+CUTRUNTools/*filter_below*
+kent_utils/faCount
+ref_dbs/trimmomatic_adapters
 private
 conda_envs
+docs/_build

@@ -1,0 +1,16 @@
+    //   Subdirectory Settigns:
+    log_dir          = 'logs'
+    merge_fastqs_dir = 'S0_A_merged_reads'
+    fastqc_pre_dir   = 'S0_B_FastQC_pre'
+    trim_dir         = 'S1_A_fastq_trimomatic'
+    retrim_dir       = 'S1_B_fastq_kseqtest'
+    fastqc_post_dir  = 'S1_C_FastQC_post'
+    aln_dir_ref      = 'S2_A_aln_ref'
+    aln_dir_mod      = 'S2_B_aln_mod'
+    aln_dir_bdg      = 'S2_C_aln_bdg'
+    aln_dir_spike    = 'S2_D_aln_spikein'
+    aln_dir_norm     = 'S2_E_aln_norm'
+    peaks_dir_macs   = 'S3_A_peaks_macs'
+    peaks_dir_seacr  = 'S3_B_peaks_seacr'
+    prep_bt2db_suf   = 'bt2_db'
+

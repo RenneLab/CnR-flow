@@ -1,0 +1,149 @@
+//Daniel Stribling
+//Renne Lab, University of Florida
+//CnR-Flow Configuration File
+//
+// Config syntax:
+// This config file uses the syntax described here:
+//   https://www.nextflow.io/docs/latest/config.html
+// Primarily, "//" acts as a comment and allows removal/deactivation of lines.
+//
+// Settings within scopes, Ex:
+//   params {
+//     setting = value
+//     ...
+//   }
+// are equivalent to:
+//   params.setting = value"
+//
+// Configuration Hierarchy:
+//   Different Nextflow configuration files have the precedence order:
+//     task-dir  >  pipe-dir  >  user-default  >  pipe-default
+//
+//   This configruation is (presumably) in the task directory:
+//   (after running "nextflow CnR-flow --mode initiate" )
+//   and will therefore superceed pipe-setup, user, and pipe hardcoded defaults.
+//   For more detail visit: https://www.nextflow.io/docs/latest/config.html
+//
+//   This configuration only includes task-specific paramaters and paramaters 
+//   designed to be modified at runtime. Other parameters are provided in the 
+//   pipe configuration, at CnR-Flow/nextflow.config. Parameters
+//   provided here will override system defaults.
+//
+
+// Process Settings (For use of PBS, SLURM, etc)
+process {
+    // --Executor, see: https://www.nextflow.io/docs/latest/executor.html 
+    //executor = 'slurm'  // for running processes using SLURM (Default: 'local')
+    // Process Walltime, See https://www.nextflow.io/docs/latest/process.html#process-time
+    //time = '12h'
+    // Process Memory, See https://www.nextflow.io/docs/latest/process.html#process-memory
+    //memory = "16 GB"
+    // Process CPUs, See https://www.nextflow.io/docs/latest/process.html#cpus
+    //cpus = 8
+
+    ext.ph = null //Placeholder to prevent errors.
+}
+
+params {
+    //REQUIRED values to enter (all others should work as default):
+    // ref_fasta               (or some other ref-mode/location)
+    // treat_fastqs            (input paired-end fastq[.gz] file paths)
+    // [OR fastq_groups]       (mutli-group input paired-end .fastq[.gz] file paths)
+    
+    // Automatic alignment reference preparation/usage settings:
+    ref_mode       = 'fasta'  // Options: ['name', 'fasta', 'manual']
+    ref_fasta      = ''       // REQUIRED: Ex: '/path/to/my/reference.fasta[.gz]'
+    // Default Pre-Supplied Normalization library is Ecoli:
+    norm_ref_fasta = "${projectDir}/ref_dbs/gcf_000005845.2_asm584v2_genomic.fasta.gz"
+
+    // CnR Input Files:
+    //   Provided fastqs must be in glob pattern matching pairs.
+    //     Example: ['./relpath/to/base*R{1,2}*.fastq']
+    //     Example: ['/abs/path/to/other*R{1,2}*.fastq']
+    //
+    treat_fastqs = []  // REQUIRED, Single-group Treatment fastq Pattern
+    ctrl_fastqs  = []  //           Single-group Control   fastq pattern
+    
+    // Can specify multiple treat/control groups as Groovy mapping.
+    //   Specified INSTEAD of treat_fasts/ctrl_fastqs paramaters.
+    //   Note: There should be only one ctrl sample per group 
+    //     (after optional lane combination)
+    //Example:
+    //fastq_groups = [
+    //  'group_1_name': ['treat': 'relpath/to/treat1*R{1,2}*',
+    //                   'ctrl':  'relpath/to/ctrl1*R{1,2}*',
+    //                  ]
+    //  'group_2_name': ['treat': ['relpath/to/g2_treat1*R{1,2}*'
+    //                             '/abs/path/to/g2_treat2*R{1,2}*'
+    //                            ],
+    //                   'ctrl':  'relpath/to/g2_ctrl1*R{1,2}*'
+    //                  ]
+    //]
+    //fastq_groups = []    
+
+    // ------- Step-Specific Pipeline Paramaters --------
+    // Step Settings:
+    do_merge_lanes = true  // Merge sample names differing only by lane-ID (Ex: L001, L002)
+    do_fastqc      = true  // Perform FastQC Analysis
+    do_trim        = true  // Trim tags using Trimmomatic
+    do_retrim      = true  // Retrim tags using kseq_test (CUTRUNTools)
+    do_norm_spike  = true  // Normalize using aligment count to a spike-in reference
+    
+    // Alignment Mode Options (params.use_aln_modes) :
+    //   "all"            : Use all reads
+    //   "all_dedup"      : Use all reads, and remove duplicates.
+    //   "less_120"       : Use trimmed reads <= 120 bp 
+    //   "less_120_dedup" : Use trimmed reads <= 120 bp and remove duplicates.
+    //   (Multiple modes can be performed in parallel. Ex: ['all', 'less_120'])
+
+    use_aln_modes  = ["all"]  // Options: ["all", "all_dedup", "less_120", "less_120_dedup"]
+                                   
+    // Peak Caller Options (params.peak_callers):
+    //   "macs2" : Call Peaks with Macs2
+    //   "seacr" : Call Peaks with SEACR
+    //   (Multiple callers can be used in parallel. Ex: ['macs2', 'seacr'])
+
+    peak_callers   = ['macs', 'seacr']  // Options: ['macs', 'seacr']
+    
+    //Trimmomatic Trim Settings
+    
+    //--Trimmomatic Adapter Path, Downloaded after "nextflow CnR-Flow --mode initiate"
+    trimmomatic_adapterpath = "${projectDir}/ref_dbs/trimmomatic_adapters/TruSeq3-PE-2.fa'
+    
+    //kseq_test (CUTRUNTools) Retrim Settings
+    input_seq_len = 'auto'  // Length of untrimmed sequence reads (Ex: '150') or 'auto'
+    
+    //Bowtie2 Alignment Settings
+    aln_ref_flags  = ("--local --very-sensitive-local --phred33 -I 10 -X 700 "
+                              + "--dovetail --no-unal --no-mixed --no-discordant")
+    
+    //Normalization Settings
+    aln_norm_flags = params.aln_ref_flags
+    norm_scale     = 1000  // Arbitrary value for scaling of normalized counts.
+    norm_mode      = 'adj' // Options: ['adj', 'all']
+    
+    //Macs2 Settings
+    macs_qval  = "0.01"
+    
+    //SEACR Settings
+    seacr_fdr_threshhold = "0.01"
+    seacr_norm_mode      = "auto" // Options: "auto", "norm", "non"
+    seacr_call_stringent = true
+    seacr_call_relaxed   = true
+    
+    // ------- General Pipeline Output Paramaters --------
+    publish_files    = 'default' // Options: ["minimal", "default", "all"]
+    publish_mode     = 'copy'    // Options: ["symlink", "copy"]
+
+    //Name trim guide: ( regex-based )
+    //   ~/groovy-slashy-string/  ;  "~" denotes groovy pattern type.
+    //   ~/^/ matches beginning   ;   ~/$/ matches end    
+    trim_name_prefix = ''        // Example: ~/^myprefix./ removes "myprefix." prefix.
+    trim_name_suffix = ''        // Example: ~/_mysuffix$/ removes "_mysuffix" suffix.   
+
+    // Workflow Output Default Naming Scheme:
+    //   Absolute paths for output:
+    out_dir          = "${launchDir}/cnr_output"
+    refs_dir         = "${launchDir}/cnr_references"
+}
+

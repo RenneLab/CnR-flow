@@ -1,0 +1,14 @@
+// Process Settings (For use of PBS, SLURM, etc)
+process {
+    // --Executor, see: https://www.nextflow.io/docs/latest/executor.html 
+    //executor = 'slurm'  // for running processes using SLURM (Default: 'local')
+    // Process Walltime, See https://www.nextflow.io/docs/latest/process.html#process-time
+    //time = '12h'
+    // Process Memory, See https://www.nextflow.io/docs/latest/process.html#process-memory
+    //memory = "16 GB"
+    // Process CPUs, See https://www.nextflow.io/docs/latest/process.html#cpus
+    //cpus = 8
+
+    ext.ph = null //Placeholder to prevent errors.
+}
+

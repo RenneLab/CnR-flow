@@ -1,0 +1,11 @@
+//   This configruation is (presumably) in the task directory:
+//   (after running "nextflow CnR-flow --mode initiate" )
+//   and will therefore superceed pipe-setup, user, and pipe hardcoded defaults.
+//   For more detail visit: https://www.nextflow.io/docs/latest/config.html
+//
+//   This configuration only includes task-specific paramaters and paramaters 
+//   designed to be modified at runtime. Other parameters are provided in the 
+//   pipe configuration, at CnR-Flow/nextflow.config. Parameters
+//   provided here will override system defaults.
+//
+

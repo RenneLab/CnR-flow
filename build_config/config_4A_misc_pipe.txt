@@ -1,0 +1,3 @@
+// Location to store conda environments for reuse.
+conda.cacheDir = "${projectDir}/conda_envs/"    
+

@@ -2,152 +2,21 @@
 //Daniel Stribling
 //Renne Lab, University of Florida
 //
-//Pipeline Created/Updated: 2020-07-30
-
 //This file is part of CnR-Flow.
-
 //CnR-Flow is free software: you can redistribute it and/or modify
 //it under the terms of the GNU General Public License as published by
 //the Free Software Foundation, either version 3 of the License, or
 //(at your option) any later version.
-
 //CnR-Flow is distributed in the hope that it will be useful,
 //but WITHOUT ANY WARRANTY; without even the implied warranty of
 //MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //GNU General Public License for more details.
-
 //You should have received a copy of the GNU General Public License
 //along with CnR-Flow.  If not, see <https://www.gnu.org/licenses/>.
 
-
-// Step Settings:
-params.do_merge_lanes = true
-params.do_fastqc      = true
-params.do_trim        = true
-params.do_retrim      = true
-params.do_norm_spike  = true
-params.use_aln_modes  = ["all"] // Options: "all", "all_dedup", "less_120", "less_120_dedup"
-params.peak_callers   = ['macs', 'seacr'] // Options: 'macs', 'seacr'
-
-// Run Settings:
-params.publish_files = 'default' // Options: "minimal", "default", "all"
-params.publish_mode  = 'copy'    // Options: "symlink", "copy"
-
-// Tool & Module Execution Settings:
-// -- External Tools:
-//params.bowtie2_module     = "bowtie2/2.3.5.1"
-//params.fastqc_module      = "fastqc/0.11.7"
-//params.trimmomatic_module = "trimmomatic/0.39"
-//params.picard_module      = "picard/2.21.2"
-//params.bedtools_module    = "bedtools/2.29.2"
-//params.macs2_module       = "macs/2.2.7.1"
-//params.R_module           = "R/4.0"
-
-// -- Packaged Tools (Should not need additional dependencies):
-//params.cutruntools_module  = ""
-//params.kseqtest_module     = params.cutruntools_module //Should not be needed.
-//params.filter_below_module = params.cutruntools_module //Should not be needed.
-//params.seacr_module        = "${params.R_module}:${params.bedtools_module}"
-
-// -- Comprehensive (If provided, is used for all execution)
-//params.all_module         = ""
-
-// System Call Settings
-//   Can replace with direct path as desired:
-//   Ex:
-//        params.samtools_call = "samtools"
-//     or params.samtools_call = "/path/to/samtools/dir/samtools" 
-params.java_call           = "java"
-params.bowtie2_build_call  = "bowtie2-build"
-params.samtools_call       = "samtools"
-params.faCount_call        = "${workflow.projectDir}/kent_utils/faCount"
-params.fastqc_call         = "fastqc"
-params.trimmomatic_call    = "trimmomatic"
-params.kseqtest_call       = "${workflow.projectDir}/CUTRUNTools/kseq_test"
-params.bowtie2_call        = "bowtie2"
-params.filter_below_script = "${workflow.projectDir}/CUTRUNTools/filter_below.awk"
-params.picard_call         = "picard"
-params.bedtools_call      = "bedtools"
-params.macs2_call         = "macs2"
-params.seacr_call         = "${workflow.projectDir}/SEACR/SEACR_1.3.sh"
-params.seacr_R_script     = "${workflow.projectDir}/SEACR/SEACR_1.3.R"
-// -- Options with Explicit Java Usage:
-//params.fastqc_call        = "fastqc --java ${params.java_call}"
-//params.trimmomatic_call   = "${params.java_call} -jar /path/to/trimmomatic-0.??.jar"
-//params.picard_call        = "${params.java_call} -jar /path/to/picard.jar"
-
-
-// Step-Specific Analysis Parameters:
-//params.trim_adapterpath = ''
-
-//params.retrim_seq_len = ''
-
-params.aln_ref_flags   = ("--local --very-sensitive-local --phred33 -I 10 -X 700 "
-                          + "--dovetail --no-unal --no-mixed --no-discordant")
-//params.aln_ref = ""
-//params.aln_ref_name    = file(params.aln_ref, checkIfExists: false).getSimpleName()
-
-params.aln_norm_flags  = params.aln_ref_flags
-//params.aln_norm_flags = "--phred33 -I 10 -X 700 --no-dovetail --no-unal --no-mixed --no-discordant --no-overlap"
-params.norm_scale      = 1000
-params.norm_ref        = "${workflow.projectDir}/ref_dbs/ecoli_asm584v2/bt2_db/gcf_000005845.2_asm584v2_genomic"
-params.norm_ref_name   = "ecoli_gcf_000005845"
-params.norm_mode       = 'adj' // Options: 'adj' (default), 'all'
-
-//params.macs_genome_size     = 3200000
-params.macs_qval            = "0.01"
-
-params.seacr_fdr_threshhold = "0.01"
-params.seacr_norm_mode      = "auto" // Options: "auto", "norm", "non"
-params.seacr_call_stringent = true
-params.seacr_call_relaxed   = true
-
-// CnR Input Files:
-//Provided fastqs must be in glob pattern matching pairs.
-// Example: ./my/base*R{1,2}*.fastq
-//params.treat_fastqs = [] // Single-group Treatment fastq Pattern
-//params.ctrl_fastqs  = [] // Single-group Control fastq pattern
-
-//Can specify multiple treat/control groups as Groovy mapping.
-//Note: There should be only one ctrl sample per group (after optional lane combination)
-//Example:
-//params.fastq_groups = [
-//  'group_1_name': ['treat': 'path/to/treat1*R{1,2}*',
-//                   'ctrl':  'path/to/ctrl1*R{1,2}*',
-//                  ]
-//  'group_2_name': ['treat': ['path/to/g2_treat1*R{1,2}*'
-//                             '/other/path/to/g2_treat2*R{1,2}*'
-//                            ],
-//                   'ctrl':  'path/to/g2_ctrl1*R{1,2}*'
-//                  ]
-//]
-
-
-//Name trim guide: 
-//   ~/groovy-slashy-string/ 
-//   "~" denotes groovy pattern type.
-//   ~/^/ matches beginning
-//   ~/$/ matches end
-params.trim_name_prefix = '' // Example: ~/^myprefix./ removes "myprefix." prefix.
-params.trim_name_suffix = '' // Example: ~/_mysuffix$/ removes "_mysuffix" suffix.   
-
-// CnR Naming Scheme:
-params.out_dir           = "${launchDir}/cnr_output"
-params.refs_dir          = "${launchDir}/cnr_references"
-params.log_dirn          = 'logs'
-params.merge_fastqs_dirn = 'S0_A__merged_reads'
-params.fastqc_pre_dir   = 'S0_B__FastQC_pre'
-params.trim_dir         = 'S1_A__fastq_trimomatic'
-params.retrim_dir       = 'S1_B__fastq_kseqtest'
-params.fastqc_post_dir  = 'S1_C__FastQC_post'
-params.aln_dir_ref      = 'S2_A1_aln_ref'
-params.aln_dir_spike    = 'S2_A2_aln_spikein'
-params.aln_dir_mod      = 'S2_B__aln_mod'
-params.aln_dir_bdg      = 'S2_C__aln_bdg'
-params.aln_dir_norm     = 'S2_D__aln_norm'
-params.peaks_dir_macs   = 'S3_A1_peaks_macs'
-params.peaks_dir_seacr  = 'S3_A2_peaks_seacr'
-params.prep_bt2db_suf   = 'bt2_db'
+// To prevent duplication, all required paramaters are listed in the bundled files:
+//   /CnR-flow/nextflow.config
+//   /CnR-flow/templates/nextflow.config.master (backup)
 
 // --------------- Setup Default Pipe Variables: ---------------
 params.verbose = false
@@ -171,7 +40,7 @@ params.out_prop_pad = 17
         initiate     : Copy configuration templates to current directory
         validate     : Validate current dependency configuration
         validate_all : Validate all dependencies
-        prep_fasta   : Prepare alignment reference from <genome>.fa[sta]
+        prep_fasta   : Prepare alignment reference(s) from <genome>.fa[sta]
         list_refs    : List prepared alignment references
         dry_run      : Check configruation and all inputs, but don't run pipeline
         run          : Run pipeline
@@ -224,19 +93,23 @@ if( params.help || params.h ) {
 
 print_in_files = []
 
+
 // If mode is 'prep_fasta', ensure "ref_fasta" has been provided.
 if( ['prep_fasta'].contains(params.mode) ) {
+    test_params_key(params, 'ref_fasta')
     if( !file("${params.ref_fasta}", checkIfExists: false).exists() ) {
         message = "File for reference preparation does not exist:\n"
-        message += "    gnome_sequence: ${params['ref_fasta']}\n"
+        message += "    genome_sequence: ${params['ref_fasta']}\n"
         message += check_full_file_path(params['ref_fasta'])
         log.error message
         exit 1
     }
-}
-
+// If 'list_refs' mode, ensure refs dir is defined.
+} else if(['list_refs'].contains(params.mode)) {
+    test_params_key(params, 'refs_dir')
+     
 // If a run or validate mode, ensure all required keys have been provided correctly.
-if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
+} else if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
     // Check to ensure required keys have been provided correctly.
     first_test_keys = [
         'do_merge_lanes', 'do_fastqc', 'do_trim', 'do_retrim', 'do_norm_spike', 
@@ -244,8 +117,8 @@ if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
         'faCount_call',
         'fastqc_call', 'trimmomatic_call', 'kseqtest_call', 'bowtie2_call', 
         'picard_call', 'filter_below_script', 'bedtools_call', 'macs2_call', 
-        'seacr_call', 'out_dir', 'refs_dir', 'log_dirn', 'prep_bt2db_suf',
-        'merge_fastqs_dirn', 'fastqc_pre_dir', 'trim_dir', 'retrim_dir',
+        'seacr_call', 'out_dir', 'refs_dir', 'log_dir', 'prep_bt2db_suf',
+        'merge_fastqs_dir', 'fastqc_pre_dir', 'trim_dir', 'retrim_dir',
         'fastqc_post_dir', 'aln_dir_ref', 'aln_dir_spike', 'aln_dir_mod',
         'aln_dir_norm', 'peaks_dir_macs', 'peaks_dir_seacr',
         'verbose', 'help', 'h', 'version', 'v', 'out_front_pad', 'out_prop_pad', 
@@ -253,8 +126,77 @@ if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
     ]
     first_test_keys.each { test_params_key(params, it) } 
     use_tests = []
-    req_keys = []
+    req_keys  = []
     req_files = []
+    
+    // If Run mode, automatically set reference keys based on reference mode.
+    if (['run', 'dry_run'].contains(params.mode) ) {
+        if( !params.containsKey('ref_mode') ) {
+            log.warn "No --ref_mode (params.ref_mode) paramater provided."
+            log.warn "Defaulting to 'fasta'"
+            log.warn ""
+            params.ref_mode = 'fasta'
+        }
+        test_params_key(params, 'ref_mode', ['manual', 'name', 'fasta'])
+        ref_key = ''
+        norm_ref_key = ''
+        // If an automatic mode is enabled, get details.
+        if( ['name', 'fasta'].contains(params.ref_mode) ) {
+            if( params.verbose ) {
+                log.info ""
+                log.info "Using Automatic Reference Location Mode: ${params.ref_mode}"
+                log.info ""
+            }
+            ref_info = get_ref_details(params, 'ref')
+            if( params.verbose ) { 
+                log.info "Identified Reference Database Details:"
+                ref_info.each {detail ->
+                    log.info "- ref_${detail.key}".padRight(21) + " : ${detail.value}"
+                }
+            }
+            // Set database details.
+            ref_info.each {detail -> 
+                if( !params.containsKey(detail.key) ) {
+                    params["ref_${detail.key}".toString()] = detail.value
+                } else if (!(['name', 'fasta'].contains(detail) ) ) {
+                    log.warn "Key: ref_${detail.key} already exists in params."
+                    log.warn "-   Skipping auto-setting of this params value."
+                    println ""
+                }
+            }
+            params.ref_eff_genome_size = file(params.ref_eff_genome_path).text.trim()
+            if( params.verbose ) {
+                log.info 'Setting --ref_eff_genome_size (params.ref_eff_genome_size)'
+                log.info "-  to identified value: ${params.ref_eff_genome_size}"
+            }
+            if( params.do_norm_spike ) {
+                ref_info = get_ref_details(params, 'norm_ref')
+                if( params.verbose ) { 
+                    log.info ""
+                    log.info "Identified Normalization Reference Database Details:"
+                    ref_info.each {detail ->
+                        log.info "- norm_ref_${detail.key}".padRight(21) + " : ${detail.value}"
+                    }
+                }
+                // Set database details.
+                ref_info.each {detail -> 
+                    if( !params.containsKey(detail.key) ) {
+                        params["norm_ref_${detail.key}".toString()] = detail.value
+                    } else if (!(['name', 'fasta'].contains(detail) ) ) {
+                        log.warn "Key: norm_ref_${detail.key} already exists in params."
+                        log.warn "-   Skipping auto-setting of this params value."
+                        println ""
+                    }
+                }
+            }
+        } else {
+            if( params.verbose ) {
+                log.info "Using Manual Reference File Location Paramaters."
+                log.info ""
+            }
+            req_keys = []
+        }
+    }
 
     test_commands = [
         "Java": ["${params.java_call} -version", 0, *get_resources(params, 'java')],
@@ -287,12 +229,12 @@ if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
     // Keys and Params for Trimmomatic trimming
     if( params.do_trim ) {
         use_tests.add(["Trimmomatic", *test_commands["Trimmomatic"]])
-        req_files.add(['trim_adapterpath'])
+        req_files.add(['trimmomatic_adapterpath'])
     }
     // Keys and Params for Trimmomatic trimming
     if( params.do_retrim ) {
         use_tests.add(["kseqtest", *test_commands["kseqtest"]])
-        req_keys.add(['retrim_seq_len'])
+        req_keys.add(['input_seq_len'])
     }
     // keys and params for alignment steps
     if( true ) {
@@ -301,17 +243,18 @@ if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
         use_tests.add(["Picard", *test_commands["Picard"]])
         use_tests.add(["filter_below", *test_commands["filter_below"]])
         use_tests.add(["bedtools", *test_commands["bedtools"]])
-        req_keys.add(['aln_ref'])
-        req_keys.add(['aln_ref_name'])
+        req_keys.add(['ref_bt2db_path'])
+        req_keys.add(['ref_name'])
         req_keys.add(['aln_ref_flags'])
         req_keys.add(['use_aln_modes',
             ['all', 'all_dedup', 'less_120', 'less_120_dedup']])
-        req_files.add(['chrom_sizes'])
+        req_files.add(['ref_chrom_sizes_path'])
     }
     // keys and params for normalization
     if( params.do_norm_spike ) {
         req_keys.add(['norm_scale'])
-        req_keys.add(['norm_ref'])
+        req_keys.add(['aln_norm_flags'])
+        req_keys.add(['norm_ref_bt2db_path'])
         req_keys.add(['norm_ref_name'])
         req_keys.add(['norm_mode', ['adj', 'all']])
     }
@@ -320,7 +263,7 @@ if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
     if( params.peak_callers.contains('macs') ) {
         use_tests.add(["MACS2", *test_commands["MACS2"]])
         req_keys.add(['macs_qval'])
-        req_keys.add(['macs_genome_size'])
+        req_keys.add(['ref_eff_genome_size'])
     }
     if( params.peak_callers.contains('seacr') ) {
         use_tests.add(["SEACR", *test_commands["SEACR"]])
@@ -454,7 +397,34 @@ if( ['run', 'dry_run'].contains( params.mode) ) {
     } else {
         log.info "${print_in_files.size()} Input Files Detected. "
     }
-}
+
+    //If utilizing retrimming, autodetect or confirm tag size:
+    if( params.do_retrim ) {
+        if( params.input_seq_len == "auto" ) {
+            if( params.verbose ) {
+                log.info "Auto-detecting Tag Sequence Length:"
+                log.info "Using first provided file:"
+                log.info "-   ${print_in_files[0]}"
+            }
+            Channel.fromPath(print_in_files[0])
+                  .splitFastq(record: true, by: 1)
+                  .first()
+                  .subscribe {record ->
+                      println record.readString
+                      use_input_seq_len = record.readString.size()
+                  }
+            sleep(1000)
+            log.info "Autodetected Tag Size: ${use_input_seq_len}"
+        } else if( params.input_seq_len ) {
+            use_input_seq_len = params.input_seq_len
+        } else {
+            log.error "Invalid Value for Paramater 'input_seq_len' provided:"
+            log.error "-   '${input_seq_len}'"
+            log.error ""
+            exit 1
+        }   
+    }
+}    
 
 // --------------- Execute Workflow ---------------
 
@@ -462,6 +432,46 @@ log.info ''
 log.info ' -- Executing Workflow -- '
 log.info ''
 System.out.flush(); System.err.flush()
+
+// -- Run Mode: validate
+if( ['initiate'].contains( params.mode ) ) { 
+    kseq_test_exe = file("${projectDir}/CUTRUNTools/kseq_test")
+    if( !(kseq_test_exe.exists()) ) {
+        log.info "Downloading and Compiling Utilized CUTRUNTools Utilities"
+        println "${projectDir}/CUTRUNTools/install_cutruntools.sh".execute().text
+    }
+    faCount_exe = file("${projectDir}/kent_utils/faCount")
+    if( !(faCount_exe.exists()) ) {
+        log.info "Downloading and Kent-Utils Binary faCount"
+        println "${projectDir}/kent_utils/install_faCount.sh".execute().text
+    }
+    trimmomatic_dir = file("${projectDir}/ref_dbs/trimmomatic_adapters")
+    if( !(trimmomatic_dir.exists()) ) {
+        log.info "Downloading Trimmomatic Sequence Adapter Files"
+        println "${projectDir}/ref_dbs/get_trimmomatic_adapters.sh".execute().text
+    }
+    log.info "Copying CnR-flow nextflow task configuration into launch directory"
+    task_default_config = file("${projectDir}/nextflow.config.task_default")
+    config_target = file("${launchDir}/nextflow.config")
+    if( config_target.exists() ) {
+        message =  "Cannot overwrite existing task config file:\n"
+        message += "    ${config_target}\n"
+        message += "Please remove and retry.\n"
+        log.error message
+        exit 1
+    }
+    task_default_config.copyTo("${config_target}")
+    log.info ""
+    log.info "Initialization Complete."
+    log.info "Please configure pipeline cluster / dependency settings (if necessary) at:"
+    log.info "-   ${projectDir}/nextflow.config"
+    log.info ""
+    log.info "Please modify task configuration file:"
+    log.info "-   ${config_target}"
+    log.info "Then check using 'validate' or 'dry_run' modes to test setup."
+    println ""
+}
+
 
 // -- Run Mode: validate
 if( ['validate', 'validate_all'].contains( params.mode ) ) { 
@@ -520,16 +530,108 @@ if( ['validate', 'validate_all'].contains( params.mode ) ) {
 
 }
 
+
+def get_refs_locations(params) {
+    refs_locations = [
+        'refs_dir': params.refs_dir,
+        'pipe_refs_dir': "${projectDir}/ref_dbs"
+    ]
+    if( params.containsKey('shared_refs_dir') ) {
+        refs_locations['shared_refs_dir'] = params.shared_refs_dir
+    }
+    refs_locations
+}
+
+def search_refs (params, only_ref_name=null) {
+    refs = [:]
+    refs_locations = get_refs_locations(params)
+    refs_locations.each {ref ->
+        loc_name = ref.key
+        loc_path = ref.value
+        ref_dir = file(loc_path)
+        //if( !ref_dir.exists() || !ref_dir.isDirectory() ) {
+        //    log.error "Provided References Directory: '${loc_name}'"
+        //    log.error "Cannot be found at location:"
+        //    log.error "    ${loc_path}"
+        //    log.error ""
+        //    exit 1
+        //}
+        if( ref_dir.exists() && ref_dir.isDirectory() ) {
+            ref_dir.eachFileMatch(~/.*\.refinfo\.txt$/) {ref_info_path ->
+                ref_info_name = ref_info_path.getName()
+                ref_name = ref_info_name - ~/\.refinfo\.txt$/
+                refs[ref_name] = ref_info_path
+            }
+        }
+    }
+    if( only_ref_name ) {
+        if( refs.containsKey(only_ref_name) ) {
+            refs = [(only_ref_name): refs[only_ref_name]]
+        } else {
+            log.error "Reference: '${only_ref_name}' Cannot be located."
+            println ''
+            exit 1
+        }
+    }
+    refs
+}
+
+// -- Run Mode: list_refs
+if( params.mode == 'list_refs' ) { 
+    ref_locations = get_refs_locations(params)
+    refs = search_refs(params)
+    if( refs.size() < 1 ) {
+        log.info 'No Prepared References Found at Locations:'
+        ref_locations.each{loc ->
+            use_name = loc.value - ~/\.refinfo\.txt$/
+            log.info '-' + "${loc.key}".padRight(15) + " : ${use_name}"
+        }
+        println ''
+    } else {
+        println ''
+        log.info 'Prepared References: (name : location)'
+        
+        max_name_len = 0
+        refs.each {ref -> 
+            max_name_len = (ref.key.size() > max_name_len) ? ref.key.size() : max_name_len
+        }
+        refs.each {ref ->
+            log.info "-- " + ref.key.padRight(max_name_len ) + " : ${ref.value}"
+        }
+        println ''
+    }
+}
+
 // -- Run Mode: prep_fasta
 if( params.mode == 'prep_fasta' ) { 
-    if( "${params.ref_fasta}".endsWith('.gz') ) {
-        temp_name = file("${params.ref_fasta}").getBaseName()
-        db_name = file("${temp_name}").getBaseName()
-    } else {
-        db_name = file("${params.ref_fasta}").getBaseName()
+    if( !file("${params.refs_dir}").exists() ) {
+        log.info "Creating Prep Directory: ${params.refs_dir}"
+        println ""
+        file("${params.refs_dir}").mkdir()
     }
-    Channel.fromPath("${params.ref_fasta}")
-          .map {full_fn -> [db_name, full_fn] }
+    use_prep_sources = []
+    prep_sources = [params.ref_fasta]
+    if( params.containsKey('norm_ref_fasta') ) {
+        prep_sources.add(params.norm_ref_fasta)
+    }
+    prep_sources.each {source_fasta ->
+        if( "${source_fasta}".endsWith('.gz') ) {
+            temp_name = file("${source_fasta}").getBaseName()
+            db_name = file("${temp_name}").getBaseName()
+        } else {
+            db_name = file("${source_fasta}").getBaseName()
+        }
+        use_prep_sources.add([db_name, "${source_fasta}"])
+    }
+    Channel.fromList(use_prep_sources)
+          .map {db_name, full_fn -> 
+              use_full_fn = full_fn
+              if( !("${full_fn}".contains('://')) 
+                    && !("${full_fn}".startsWith('/') ) ) {
+                  use_full_fn = "${launchDir}/${full_fn}"
+              }
+              [db_name, full_fn, file(full_fn)] 
+          }
           .set {source_fasta}
 
     process CR_getFasta {
@@ -538,11 +640,11 @@ if( params.mode == 'prep_fasta' ) {
         echo        true
 
         input:
-        tuple val(name), path(fasta) from source_fasta
+        tuple val(name), val(fasta_source), path(fasta) from source_fasta
     
         output:
         tuple val(name), path(use_fasta) into get_fasta_outs
-        val get_fasta_details into get_fasta_detail_outs
+        tuple val(name), val(get_fasta_details) into get_fasta_detail_outs
         path '.command.log' into get_fasta_log_outs
     
         publishDir "${params.refs_dir}/logs", mode: params.publish_mode, 
@@ -555,6 +657,7 @@ if( params.mode == 'prep_fasta' ) {
         out_log_name   = "${run_id}.nf.log.txt"
         task_details   = task_details(task)
         full_refs_dir  = "${params.refs_dir}"
+        acq_datetime   = new Date().format("yyyy-MM-dd_HH:mm:ss")
         if( !(full_refs_dir.startsWith("/")) ) {
             full_refs_dir = "${workflow.launchDir}/${params.refs_dir}"
         }
@@ -567,7 +670,9 @@ if( params.mode == 'prep_fasta' ) {
         }
         get_fasta_details  = "name,${name}\n"
         get_fasta_details += "title,${name}\n"
-        get_fasta_details += "fasta_path,${full_refs_dir}/${use_fasta}"
+        get_fasta_details += "fasta_source,${fasta_source}\n"
+        get_fasta_details += "fastq_acq,${acq_datetime}\n"
+        get_fasta_details += "fasta_path,./${use_fasta}"
 
         shell:
         task_details + '''
@@ -599,7 +704,7 @@ if( params.mode == 'prep_fasta' ) {
     
         output:
         path "${bt2db_dir_name}/*" into prep_bt2db_outs
-        val bt2db_details into prep_bt2db_detail_outs
+        tuple val(name), val(bt2db_details) into prep_bt2db_detail_outs
         path '.command.log' into prep_bt2db_log_outs
     
         publishDir "${params.refs_dir}/logs", mode: params.publish_mode, 
@@ -626,7 +731,7 @@ if( params.mode == 'prep_fasta' ) {
 
         mkdir -v !{bt2db_dir_name}
         set -v -H -o history
-        !{params.bowtie2_build_call} --threads !{task.cpus} !{fasta} !{full_out_base}
+        !{params.bowtie2_build_call} --quiet --threads !{task.cpus} !{fasta} !{full_out_base}
         set +v +H +o history
 
         echo "Publishing Bowtie2 Database to References Directory:"
@@ -651,7 +756,7 @@ if( params.mode == 'prep_fasta' ) {
         output:
         tuple path(faidx_name), path(chrom_sizes_name), path(fa_count_name),
               path(eff_size_name) into prep_sizes_outs
-        val prep_sizes_details into prep_sizes_detail_outs
+        tuple val(name), val(prep_sizes_details) into prep_sizes_detail_outs
         path '.command.log' into prep_sizes_log_outs
     
         publishDir "${params.refs_dir}/logs", mode: params.publish_mode, 
@@ -670,13 +775,13 @@ if( params.mode == 'prep_fasta' ) {
         prep_sizes_details  = "faidx_path,./${faidx_name}\n"
         prep_sizes_details += "chrom_sizes_path,./${chrom_sizes_name}\n"
         prep_sizes_details += "fa_count_path,./${fa_count_name}\n"
-        prep_sizes_details += "effective_genome_path,./${eff_size_name}"
+        prep_sizes_details += "eff_genome_path,./${eff_size_name}"
         shell:
         task_details + '''
         echo -e "\\nPreparing genome size information for Input Fasta: !{fasta}"
         echo -e "Indexing Fasta..."
         !{params.samtools_call} faidx !{fasta}
-        echo -e "Preparing '.chrom.sizes' File..."
+        echo -e "Preparing chrom.sizes File..."
         cut -f1,2 !{faidx_name} > !{chrom_sizes_name}
         echo -e "Counting Reference Nucleotides..."
         !{params.faCount_call} !{fasta} > !{fa_count_name}
@@ -693,8 +798,13 @@ if( params.mode == 'prep_fasta' ) {
     get_fasta_detail_outs
                         .concat(prep_sizes_detail_outs)
                         .concat(prep_bt2db_detail_outs)
-                        .collectFile(name: "${params.refs_dir}/${db_name}.refinfo.txt", newLine: true, sort: false)
-                        .view { "Database Prepared and published in:\n    ${params.refs_dir}\n\nDetails:\n${it.text}" }
+                        .collectFile(
+                            sort: false, newLine: true, 
+                            storeDir: "${params.refs_dir}"
+                        ) {name, details -> 
+                            ["${name}.refinfo.txt", details]
+                        }
+                        .view { "Database Prepared and published in:\n    ${params.refs_dir}/${it}\nDetails:\n${it.text}" }
 
 }
 
@@ -708,7 +818,7 @@ if( params.mode == 'dry_run' ) {
         path "${test_out_file_name}" into dryRun_outs
         path '.command.log' into dryRun_log_outs
     
-        publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                    pattern: ".command.log", saveAs: { out_log_name } 
         publishDir "${params.out_dir}", mode: params.publish_mode, 
                    pattern: "${test_out_file_name}"
@@ -831,7 +941,7 @@ if( params.mode == 'run' ) {
                   .set { merge_fastqs } 
         
         // Step 0, Part A, Merge Lanes (If Enabled)
-        process CR_S0_A__MergeFastqs {
+        process CR_S0_A_MergeFastqs {
             tag  { name }
             cpus 1
            
@@ -842,7 +952,7 @@ if( params.mode == 'run' ) {
             tuple val(name), val(cond), val(group), path("${merge_fastqs_dir}/${name}_R{1,2}_001.fastq.gz") into use_fastqs
             path '.command.log' into mergeFastqs_log_outs
         
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name } 
             // Publish merged fastq files only when publish_files == all
             publishDir "${params.out_dir}", mode: params.publish_mode,
@@ -853,11 +963,11 @@ if( params.mode == 'run' ) {
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
             task_details = task_details(task)
-            merge_fastqs_dir = "${params.merge_fastqs_dirn}"
+            merge_fastqs_dir = "${params.merge_fastqs_dir}"
             R1_files = fastq.findAll {fn -> "${fn}".contains("_R1_") }
             R2_files = fastq.findAll {fn -> "${fn}".contains("_R2_") }
-            R1_out_file = "${params.merge_fastqs_dirn}/${name}_R1_001.fastq.gz"
-            R2_out_file = "${params.merge_fastqs_dirn}/${name}_R2_001.fastq.gz" 
+            R1_out_file = "${params.merge_fastqs_dir}/${name}_R1_001.fastq.gz"
+            R2_out_file = "${params.merge_fastqs_dir}/${name}_R2_001.fastq.gz" 
 
             if( R1_files.size() == 1 && R2_files.size() == 1 ) {
                 command = '''
@@ -904,7 +1014,7 @@ if( params.mode == 'run' ) {
     
     // Step 0, Part B, FastQC Analysis (If Enabled)
     if( params.do_fastqc ) {
-        process CR_S0_B__FastQCPre {
+        process CR_S0_B_FastQCPre {
             if( has_module(params, 'fastqc') ) {
                 module get_module(params, 'fastqc')
             } else if( has_conda(params, 'fastqc') ) {
@@ -919,7 +1029,7 @@ if( params.mode == 'run' ) {
             path "${fastqc_out_dir}/*.{html,zip}" into fastqcPre_all_outs
             path '.command.log' into fastqcPre_log_outs
         
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name } 
             publishDir "${params.out_dir}", mode: params.publish_mode, 
                        pattern: "${fastqc_out_dir}/*"
@@ -944,7 +1054,7 @@ if( params.mode == 'run' ) {
 
     // Step 01, Part A, Trim Reads using Trimmomatic (if_enabled)
     if( params.do_trim ) {
-        process CR_S1_A__Trim { 
+        process CR_S1_A_Trim { 
             if( has_module(params, 'trimmomatic') ) {
                 module get_module(params, 'trimmomatic')
             } else if( has_conda(params, 'trimmomatic') ) {
@@ -961,7 +1071,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into trim_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish if publish_mode == 'all', or == 'default' and not last trim step.
             publishDir "${params.out_dir}", mode: params.publish_mode,
@@ -988,7 +1098,7 @@ if( params.mode == 'run' ) {
                           !{fastq} \\
                           !{params.trim_dir}/!{name}_1.paired.fastq.gz !{params.trim_dir}/!{name}_1.unpaired.fastq.gz \\
                           !{params.trim_dir}/!{name}_2.paired.fastq.gz !{params.trim_dir}/!{name}_2.unpaired.fastq.gz \\
-                          ILLUMINACLIP:!{params.trim_adapterpath}/Truseq3.PE.fa:2:15:4:4:true \\
+                          ILLUMINACLIP:!{params.trimmomatic_adapterpath}/Truseq3.PE.fa:2:15:4:4:true \\
                           LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25
             set +v +H +o history
 
@@ -1002,7 +1112,7 @@ if( params.mode == 'run' ) {
 
     // Step 01, Part B, Retrim Sequences Using Cut&RunTools kseq_test (If Enabled)
     if( params.do_retrim ) {
-        process CR_S1_B__Retrim { 
+        process CR_S1_B_Retrim { 
             if( has_module(params, 'kseqtest') ) {
                 module get_module(params, 'kseqtest')
             } else if( has_conda(params, 'kseqtest') ) {
@@ -1019,7 +1129,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into retrim_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish if publish_files == "all" or "default"
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1033,7 +1143,7 @@ if( params.mode == 'run' ) {
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
             task_details = task_details(task)
-            seq_len = params.retrim_seq_len
+            seq_len = use_input_seq_len
         
             shell:
             task_details + '''
@@ -1060,7 +1170,7 @@ if( params.mode == 'run' ) {
 
     // Step 01, Part C, Evaluate Final Trimmed Sequences With FastQC (If Enabled)
     if( params.do_fastqc ) {
-        process CR_S1_C__FastQCPost {
+        process CR_S1_C_FastQCPost {
             if( has_module(params, 'fastqc') ) {
                 module get_module(params, 'fastqc')
             } else if( has_conda(params, 'fastqc') ) {
@@ -1075,7 +1185,7 @@ if( params.mode == 'run' ) {
             path "${fastqc_out_dir}/*.{html,zip}" into fastqcPost_all_outs
             path '.command.log' into fastqcPost_log_outs
         
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name } 
             publishDir "${params.out_dir}", mode: params.publish_mode, 
                        pattern: "${fastqc_out_dir}/*"
@@ -1097,8 +1207,8 @@ if( params.mode == 'run' ) {
         }
     }
 
-    // Step 02, Part A1, Align Reads to Reference Genome(s)
-    process CR_S2_A1_Aln_Ref {
+    // Step 02, Part A, Align Reads to Reference Genome(s)
+    process CR_S2_A_Aln_Ref {
         if( has_module(params, ['bowtie2', 'samtools']) ) {
             module get_module(params, ['bowtie2', 'samtools'])
         } else if( has_conda(params, ['bowtie2', 'samtools']) ) {
@@ -1114,7 +1224,7 @@ if( params.mode == 'run' ) {
         path '.command.log' into aln_log_outs
     
         // Publish Log
-        publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                    pattern: '.command.log', saveAs: { out_log_name }
         // Publish unsorted alignments only when publish_files == all
         publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1126,7 +1236,7 @@ if( params.mode == 'run' ) {
         out_log_name = "${run_id}.nf.log.txt"
         task_details = task_details(task)
         aln_ref_flags = params.aln_ref_flags
-        aln_ref = params.aln_ref
+        ref_bt2db_path = params.ref_bt2db_path
     
         shell:
         task_details + '''
@@ -1137,7 +1247,7 @@ if( params.mode == 'run' ) {
         set -v -H -o history
         !{params.bowtie2_call} -p !{task.cpus} \\
                                !{aln_ref_flags} \\
-                               -x !{aln_ref} \\
+                               -x !{ref_bt2db_path} \\
                                -1 !{fastq[0]} \\
                                -2 !{fastq[1]} \\
                                  | !{params.samtools_call} view -bS - \\
@@ -1147,9 +1257,16 @@ if( params.mode == 'run' ) {
         echo "Step 02, Part A, Alignment, Complete."
         '''.stripIndent()
     }
-    // Step 02, Part A2, Align Reads to Spike-In Genome (If Enabled)
+    // Step 02, Part D, Align Reads to Spike-In Genome (If Enabled)
     if( params.do_norm_spike ) {
-        process CR_S2_A2_Aln_Spike {
+
+        use_name = params.norm_ref_name
+        if( params.containsKey('norm_ref_title') ) {
+            use_name = params.norm_ref_title 
+        }
+        spike_ref_dbs = [[use_name, params.norm_ref_bt2db_path]]
+
+        process CR_S2_D_Aln_Spike {
             if( has_module(params, ['bowtie2', 'samtools']) ) {
                 module get_module(params, ['bowtie2', 'samtools'])
             } else if( has_conda(params, ['bowtie2', 'samtools']) ) {
@@ -1159,6 +1276,8 @@ if( params.mode == 'run' ) {
         
             input:
             tuple val(name), val(cond), val(group), path(fastq) from aln_spike_inputs
+            tuple val(spike_ref_name), val(spike_ref) from Channel.fromList(spike_ref_dbs)
+
         
             output:
             path "${params.aln_dir_spike}/*" into aln_spike_all_outs
@@ -1167,7 +1286,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into aln_spike_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish count file if publish_file == "minimal" or "default"
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1186,16 +1305,18 @@ if( params.mode == 'run' ) {
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
             task_details = task_details(task)
-            spike_ref        = params.norm_ref
-            spike_ref_name   = params.norm_ref_name
-            aln_ref          = params.aln_ref
-            aln_ref_name     = params.aln_ref_name
+            ref_bt2db_path          = params.ref_bt2db_path
+            if( params.containsKey('ref_title') ) {
+                ref_name     = params.ref_title
+            } else {
+                ref_name     = params.ref_name
+            }
             aln_norm_flags   = params.aln_norm_flags
             aln_spike_sam    = "${params.aln_dir_spike}/${name}.${spike_ref_name}.sam"
             aln_spike_fq     = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.gz"
             aln_spike_fq_1   = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.1.gz"
             aln_spike_fq_2   = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.2.gz"
-            aln_cross_sam    = "${params.aln_dir_spike}/${name}.cross.${aln_ref_name}.sam"
+            aln_cross_sam    = "${params.aln_dir_spike}/${name}.cross.${ref_name}.sam"
             aln_count        = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report"
             aln_count_report = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report.txt" 
             aln_count_csv    = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report.csv" 
@@ -1250,7 +1371,7 @@ if( params.mode == 'run' ) {
             set -v -H -o history
             !{params.bowtie2_call} -p !{task.cpus} \\
                                    !{aln_norm_flags} \\
-                                   -x !{aln_ref} \\
+                                   -x !{ref_bt2db_path} \\
                                    -1 !{aln_spike_fq_1} \\
                                    -2 !{aln_spike_fq_2} \\
                                    -S !{aln_cross_sam}
@@ -1294,7 +1415,7 @@ if( params.mode == 'run' ) {
     }
 
     // Step 02, Part B, Sort and Process Alignments
-    process CR_S2_B__Modify_Aln {
+    process CR_S2_B_Modify_Aln {
         if( has_module(params, ['picard', 'samtools']) ) {
             module get_module(params, ['picard', 'samtools'])
         } else if( has_conda(params, ['picard', 'samtools']) ) {
@@ -1318,7 +1439,7 @@ if( params.mode == 'run' ) {
         path '.command.log' into sort_aln_log_outs
     
         // Publish Log
-        publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                    pattern: '.command.log', saveAs: { out_log_name }
         // If publish raw alingments only if publish_files == "all",
         publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1457,7 +1578,7 @@ if( params.mode == 'run' ) {
     //      .set { use_mod_alns }
 
     // Step 02, Part C, Create Paired-end Bedgraphs
-    process CR_S2_C__Make_Bdg {
+    process CR_S2_C_Make_Bdg {
         if( has_module(params, ['samtools', 'bedtools']) ) {
             module get_module(params, ['samtools', 'bedtools'])
         } else if( has_conda(params, ['samtools', 'bedtools']) ) {
@@ -1476,7 +1597,7 @@ if( params.mode == 'run' ) {
         path '.command.log' into bdg_aln_log_outs
     
         // Publish Log
-        publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                    pattern: '.command.log', saveAs: { out_log_name }
         // Publish Bedgraph if publish_files == "default" or "minimal" and no normalization.
         publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1504,7 +1625,7 @@ if( params.mode == 'run' ) {
         aln_by_name  = "${aln_dir_bdg}/${aln_in_base}_byname.bam"
         aln_bed      = "${aln_dir_bdg}/${aln_in_base + ".bed"}"
         aln_bdg      = "${aln_dir_bdg}/${aln_in_base + ".bdg"}"
-        chrom_sizes  = "${params.chrom_sizes}"
+        chrom_sizes  = "${params.ref_chrom_sizes_path}"
         task_details = task_details(task)
         add_threads = (task.cpus ? (task.cpus - 1) : 0) 
     
@@ -1560,7 +1681,7 @@ if( params.mode == 'run' ) {
                   }
                   .set { norm_bdg_input }
 
-        process CR_S2_D__Norm_Bdg {
+        process CR_S2_E_Norm_Bdg {
             if( has_module(params, 'bedtools') ) {
                 module get_module(params, 'bedtools')
             } else if( has_conda(params, 'bedtools') ) {
@@ -1580,7 +1701,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into norm_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish bedgraph if publish_files == "minimal" or "default"
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1594,7 +1715,7 @@ if( params.mode == 'run' ) {
             script:
             run_id        = "${task.tag}.${task.process}.${aln_type}"
             out_log_name  = "${run_id}.nf.log.txt"
-            chrom_sizes   = "${params.chrom_sizes}"
+            chrom_sizes   = "${params.ref_chrom_sizes_path}"
             task_details = task_details(task)
             aln_dir_norm  = "${params.aln_dir_norm}.${aln_type}"
             bed_frag      = "${aln[2]}"
@@ -1656,7 +1777,7 @@ if( params.mode == 'run' ) {
     } else {
         final_alns
                  .map {name, cond, group, aln_set, alns ->
-                       [name, group, aln_set, alns, null, file("${workflow.projectDir}/templates/no_ctrl.txt")]
+                       [name, group, aln_set, alns, null, file("${projectDir}/templates/no_ctrl.txt")]
                  }
                  .into { macs_alns; seacr_alns }
     }
@@ -1666,14 +1787,15 @@ if( params.mode == 'run' ) {
  
     // Step 03, Part A, option 1, Utilize MACS for Peak Calling
     if( peak_callers.contains("macs") ) {
-        process CR_S3_A__Peaks_MACS {
+        process CR_S3_A_Peaks_MACS {
             if( has_module(params, 'macs2') ) {
                 module get_module(params, 'macs2')
             } else if( has_conda(params, 'macs2') ) {
                 conda get_conda(params, 'macs2')
             }
             tag { name }
-        
+            errorStrategy 'ignore' // DEBUG
+               
             input:
             tuple val(name), val(cond), val(group), val(aln_type), path(aln) from macs_alns
         
@@ -1684,7 +1806,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into macs_peak_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish Only Minimal Outputs
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1693,17 +1815,20 @@ if( params.mode == 'run' ) {
             // Publish All Outputs
             publishDir "${params.out_dir}", mode: params.publish_mode, 
                        pattern: "${peaks_dir}/*",
-                       enabled: (params.publish_files!="all") 
+                       enabled: (params.publish_files=="all") 
             
             script:
             run_id        = "${task.tag}.${task.process}.${aln_type}"
             out_log_name  = "${run_id}.nf.log.txt"
+            use_name      = "${name}.${aln_type}"
             peaks_dir     = "${params.peaks_macs_dir}.${aln_type}"
             treat_bam     = "treat.bam"
             ctrl_bam      = "ctrl.bam"
-            ctrl_flag     = "-c ${ctrl_bam}"
+            ctrl_flag     = "--control ${ctrl_bam}"
             qval          = "${params.macs_qval}"
-            genome_size   = "${params.macs_genome_size}"
+            genome_size   = "${params.ref_eff_genome_size}"
+            bedgraph_flag = ""
+            //bedgraph_flag = "-B --SPMR"
             keep_dup_flag = aln_type.contains('_dedup') ? "" : "--keep-dup all " 
             task_details = task_details(task)
             //add_threads = (task.cpus ? (task.cpus - 1) : 0) 
@@ -1712,20 +1837,26 @@ if( params.mode == 'run' ) {
             task_details + '''
         
             echo ""
+            ls *
+         
             mkdir -v !{peaks_dir}
-           
+
             echo "Calling Peaks for base name: !{name} ... utilizing macs2 callpeak"
              
-            set -v -H -o history
-            !{params.macs2_call} callpeak -f BAMPE -B --SPMR \\
-                                              -t !{treat_bam} \\
-                                              !{ctrl_flag} \\
-                                              -g ${genome_size} \\
-                                              -n !{name} \\
-                                              --outdir !{peaks_dir} \\
-                                              -q !{qval} \\
-                                              !{keep_dup_flag}
+            # -B     Saves input treatment track as bedgraph
+            # --SPMR Saves bedgraph normalized to counts per million
 
+            set -v -H -o history
+            !{params.macs2_call} callpeak
+                -f BAMPE \\
+                --treatment !{treat_bam} \\
+                !{ctrl_flag} \\
+                --gsize  !{genome_size} \\
+                --name   !{use_name} \\
+                --outdir !{peaks_dir} \\
+                --qvalue !{qval} \\
+                !{bedgraph_flag} \\
+                !{keep_dup_flag}
             set +v +H +o history
     
             echo "Step 03, Part A, Call Peaks Using MACS, Complete."
@@ -1735,7 +1866,7 @@ if( params.mode == 'run' ) {
 
     // Step 03, Part A, option 2, Utilize MACS for Peak Calling
     if( peak_callers.contains("seacr") ) {
-        process CR_S3_A__Peaks_SEACR {
+        process CR_S3_B_Peaks_SEACR {
             if( has_module(params, 'seacr') ) {
                 module get_module(params, 'seacr')
             } else if( has_conda(params, 'seacr') ) {
@@ -1753,7 +1884,7 @@ if( params.mode == 'run' ) {
             path '.command.log' into seacr_peak_log_outs
         
             // Publish Log
-            publishDir "${params.out_dir}/${params.log_dirn}", mode: params.publish_mode, 
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
                        pattern: '.command.log', saveAs: { out_log_name }
             // Publish All Outputs
             publishDir "${params.out_dir}", mode: params.publish_mode, 
@@ -1837,6 +1968,53 @@ def return_as_list(item) {
     } else {
         [item]
     }
+}
+
+def get_ref_details (params, ref_type ) {
+    if( params.ref_mode == 'name' ) {
+        check_type = "${ref_type}_name".toString()
+        if( !params.containsKey(check_type) ) {
+            log.error "Using --ref_mode=name"
+            log.error "Parameter --${ref_type}_name (params.${ref_type}_name) required for this mode."
+            log.error ""
+            exit 1
+        }
+        ref_key = params["${ref_type}_name"]
+    } else if( params.ref_mode == 'fasta' ) {
+        check_type = "${ref_type}_fasta".toString()
+        if( !params.containsKey(check_type) ) {
+            log.error "Using --ref_mode=fasta"
+            log.error "Parameter --${ref_type}_fasta (params.${ref_type}_fasta) required for this mode."
+            log.error ""
+            exit 1
+        }
+        use_name = file( params["${ref_type}_fasta"]).getName()
+        if( use_name.endsWith('.gz') ) {
+            use_name = file(use_name).getBaseName()
+        }
+        use_name = file(use_name).getBaseName()
+        ref_key = use_name
+    }
+    if( ref_key ) { 
+        ref_info = [:]
+        ref_info_file = search_refs(params, ref_key)[ref_key]
+        ref_info_file_location = file(ref_info_file).getParent()
+        file(ref_info_file).readLines().each {line ->
+            split_line = line.trim().split(',')
+            if( split_line.size() != 2 ) {
+                log.error "Formating Error for Database Line:"
+                log.error "'${line}'\n"
+                exit 1
+            }
+            (item_key, item_val) = split_line
+            use_val = item_val
+            if(item_key.endsWith('path') && !(item_val.startsWith('/')) ) {
+                use_val = "${ref_info_file_location}/${item_val}"
+            }
+            ref_info[(item_key)] = use_val
+        }        
+    }
+    ref_info
 }
 
 def get_resource_item(params, item_name, use_suffix, join_char, def_val="") {
@@ -2055,4 +2233,4 @@ def task_details(task, run_id='') {
     '''.stripIndent()
 }
 
-sleep(4000)
+sleep(1500)

@@ -1,0 +1,26 @@
+//   (presumably) This configruation is in the CnR-flow/nextflow.config, 
+//   and will therefore superceed user and pipe defaults, 
+//   but be overridden by the task-specific configuration file 
+//   in the case of conflicting settings.
+//   For more detail visit: https://www.nextflow.io/docs/latest/config.html
+//
+//   Users wishing to modify dependency configuration should specifically 
+//   direct attention to the conda/module section. 
+//   Other default paramaters are provided below. 
+
+// Pipeline Details
+manifest {
+    author = 'Daniel Stribling, Rolf Renne'
+    defaultBranch = 'master'
+    description = """\
+    CUT&RUN-Flow, A Nextflow pipeline for QC, tag trimming, normalization, and peak
+    calling for paired-end sequence data from CUT&RUN experiments.
+    """.stripIndent()
+    //doi
+    homePage = 'http://www.rennelab.com'
+    mainScript = 'CnR-flow.nf'
+    name = 'CUT&RUN-Flow'
+    nextflowVersion = '20.07.1'
+    version = '0.09'
+}
+

@@ -1,0 +1,74 @@
+params {
+    // ------- Dependency Configuration --------
+    // Configuration using conda is recommended for most systems.
+    // Each dependency can only have one type of resource configured:
+    // (Ex: bowtie2_module OR bowtie2_conda)
+    
+    // Dependency Configuration Using Anaconda
+    // Miniconda Install Instructions:
+    //     https://docs.conda.io/en/latest/miniconda.html
+    //
+    // -- External Conda Environments:
+    bowtie2_conda     = 'bioconda::bowtie2=2.4.1'
+    fastqc_conda      = 'bioconda::fastqc=0.11.9'
+    trimmomatic_conda = 'bioconda::trimmomatic=0.39'
+    picard_conda      = 'bioconda::picard=2.23.3'
+    bedtools_conda    = 'bioconda::bedtools=2.29.2'
+    macs2_conda       = 'bioconda::macs2=2.2.6'
+    R_conda           = 'r=3.6.0'
+    samtools_conda    = 'bioconda::samtools=1.9=*_11'
+    
+    // -- Packaged/Installed Tool Conda Environments (Changes should not be necessary):
+    seacr_conda         = "${params.R_conda} ${params.bedtools_conda}"
+    //kseqtest_module     = ""  // (uses binary, should not be needed)
+    //filter_below_module = ""  // (uses awk, should not be needed)
+    
+    // -- Comprehensive Conda Environment (If provided, is used for all execution)
+    //all_conda           = ""
+    
+    // Dependency Configuration Using Environment Modules
+    // (values will vary depending on system)
+    // To enable, comment ("//") the conda-configuration and uncomment this configuration.
+    // -- External Tool Modules:
+    //bowtie2_module     = ""  // Ex: "bowtie2/2.3.5.1"
+    //fastqc_module      = ""  // Ex: "fastqc/0.11.7"
+    //trimmomatic_module = ""  // Ex: "trimmomatic/0.39"
+    //picard_module      = ""  // Ex: "picard/2.21.2"
+    //bedtools_module    = ""  // Ex: "bedtools/2.29.2"
+    //macs2_module       = ""  // Ex: "macs/2.2.7.1"
+    //R_module           = ""  // Ex: "R/4.0"
+    
+    // -- Packaged/Installed Tool Modules (Changes should not be necessary):
+    //seacr_module         = "${params.R_module}:${params.bedtools_module}"
+    //kseqtest_module      = ""  // (uses binary, should not be needed)
+    //filter_below_module  = ""  // (uses awk, should not be needed)
+    
+    // -- Comprehensive Tool Modules (If provided, is used for all execution)
+    //all_module           = ""  // Ex: "cutruntools/20200104"
+    
+    // System Call Settings
+    //   Call executed onthe system, defaults assume that each tool is available
+    //     on the system PATH (as with conda setup)
+    //   Can replace with direct path as desired:
+    //   Ex:
+    //        samtools_call = "samtools"
+    //     or samtools_call = "/path/to/samtools/dir/samtools" 
+    java_call           = "java"
+    bowtie2_build_call  = "bowtie2-build"
+    samtools_call       = "samtools"
+    fastqc_call         = "fastqc"
+    trimmomatic_call    = "trimmomatic"
+    bowtie2_call        = "bowtie2"
+    picard_call         = "picard"
+    bedtools_call       = "bedtools"
+    macs2_call          = "macs2"
+    kseqtest_call       = "${projectDir}/CUTRUNTools/kseq_test"         //Works after install
+    filter_below_script = "${projectDir}/CUTRUNTools/filter_below.awk"  //Works after install
+    faCount_call        = "${projectDir}/kent_utils/faCount"            //Packaged with download
+    seacr_call          = "${projectDir}/SEACR/SEACR_1.3.sh"            //Packaged with download
+    seacr_R_script      = "${projectDir}/SEACR/SEACR_1.3.R"             //Packaged with download
+    // -- Options with Explicit Java Usage:
+    //fastqc_call         = "fastqc --java ${params.java_call}"
+    //trimmomatic_call    = "${params.java_call} -jar /path/to/trimmomatic-0.??.jar"
+    //picard_call         = "${params.java_call} -jar /path/to/picard.jar"
+    
