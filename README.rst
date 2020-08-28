@@ -93,13 +93,6 @@ Install Nextflow (if necessary):
     nextflow    # If nextflow executable on $PATH (assumed)
     ./nextflow  # If running nextflow executable from local directory
 
-Install Conda (if necessary):
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-| If using Nextflow's builtin Conda dependency handling (recommended),
-  install miniconda. 
-| `Installation instructions <https://docs.conda.io/en/latest/miniconda.html>`_
-
 Download and Install CnR-Flow:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -110,11 +103,16 @@ Download and Install CnR-Flow:
 
     nextflow run dstrib/CnR-flow --mode initiate    
 
-Validate, Configure, and Test:
+Configure, Validate, and Test:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-| If using an alternative configuration to conda, see the |Dependency Config|
+| If using Nextflow's builtin Conda dependency handling (recommended),
+  install miniconda (if necessary).
+| `Installation instructions <https://docs.conda.io/en/latest/miniconda.html>`_
+| The CnR-flow configuration with Conda should then work "out-of-the-box."
+|
+| If using an alternative configuration, see the |Dependency Config|
   section of |docs_link|_ for dependency configuration options.
+| Once dependencies have been configured, validate all dependencies:
 
 .. code-block:: bash
 
@@ -139,9 +137,9 @@ Validate, Configure, and Test:
 
 .. code-block:: bash
    
-  # Configure:
-  .../CnR-Flow/nextflow.config  # Pipe Executor, Dependency, Resource, etc. Configuration
-
+  # Advanced Configuration:
+  $NXF_HOME/assets/dstrib/CnR-Flow/nextflow.config  # Pipe Executor, Dependency, Resource, etc. Configuration
+  #Default: $HOME/.nextflow/assets/dstrib/CnR-Flow/nextflow.config
 
 Prepare and Execute Pipeline:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
