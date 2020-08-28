@@ -13,6 +13,6 @@ This nextflow.config file is copied to the task directory by the command:
 This configuration file contains paramaters for input file and task 
 workflow setup.
 
-.. literalinclude:: ../../nextflow.config.task_default.backup
+.. literalinclude:: ../../templates/nextflow.config.task_default.backup
    :caption: .../my_task_dir/nextflow.config (Task Settings)
    :name: task_config_file
