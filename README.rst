@@ -11,7 +11,7 @@ CnR-flow
 .. image:: https://travis-ci.com/dstrib/CnR-flow.svg?branch=master
    :target: https://travis-ci.com/dstrib/CnR-flow
    :alt: Travis-CI Build Status
-.. image:: https://readthedocs.org/projects/CnR-flow/badge/?version=latest
+.. image:: https://readthedocs.org/projects/cnr-flow/badge/?version=latest
    :target: https://CnR-flow.readthedocs.io/en/latest/?badge=latest
    :alt: ReadTheDocs Documentation Status
 .. image:: https://img.shields.io/badge/License-GPLv3+-blue
