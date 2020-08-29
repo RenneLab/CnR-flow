@@ -1,3 +1,4 @@
+.. |References| replace:: :ref:`References`
 .. |Dependencies| replace:: :ref:`Dependencies`
 .. |Dependency Config| replace:: :ref:`Dependency Config`
 .. |Task Config| replace:: :ref:`Task Config`

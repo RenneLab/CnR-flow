@@ -401,7 +401,7 @@ if( ['run', 'dry_run'].contains( params.mode) ) {
     //If utilizing retrimming, autodetect or confirm tag size:
     if( params.do_retrim ) {
         if( params.input_seq_len == "auto" ) {
-            process CR_GetSeqLen {
+            process CR_S0_C_GetSeqLen {
                 executor 'local'
                 cpus      1
                 time      '1h'

@@ -58,6 +58,17 @@ CnR-flow
   **CnR-Flow is pre-configured to acquire and utilize dependencies
   using conda environments with no additional required dependency setup.**
 |
+| A notable feature of CnR-flow pipeline is the ability to specify groups
+  of samples containing both treatment and control (Ex: IgG) antibody
+  groups, with automated association of each control sample with the 
+  respective treatment samples during the peak calling step.
+| Additionally, this pipeline includes an (optional) built-in normalization
+  protocol to normalize to a sequence library of the user's choice
+  when spike-in DNA is used in the CUT&RUN Protocol. Additionally, an 
+  *E. coli* reference genome is also included for utiliziation of 
+  *E. coli* as a spike-in control as recently described by Meers et. al. (eLife 2019)
+  (see the |References| section of |docs_link|_).
+|
 | For a full list of required dependencies and tested versions, see 
   the |Dependencies| section of |docs_link|_, and for dependency 
   configuration options see the |Dependency Config| section.
@@ -166,6 +177,7 @@ Prepare and Execute Pipeline:
 | Further documentation on CUT&RUN-Flow components, setup, and usage can
   be found in |docs_link|_.
 
+.. |References| replace:: *References*
 .. |Dependency Config| replace:: *Dependency Configuration*
 .. |Dependencies| replace:: *Dependencies*
 .. |Task Setup| replace:: *Task Setup*
