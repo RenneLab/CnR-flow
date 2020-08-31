@@ -33,8 +33,7 @@ params.out_prop_pad = 17
              'list_refs', 'dry_run', 'run', 'help', 'version']
     usage = """\
     USAGE:
-        nextflow [NF_OPTIONS] run /rennelab/CnR-flow --mode <run-mode> [PIPE_OPTIONS]
-        /path/to/${workflow.manifest.mainScript} [NF_OPTIONS] --mode <run-mode> [PIPE_OPTIONS]
+        nextflow [NF_OPTIONS] run CnR-flow --mode <run-mode> [PIPE_OPTIONS]
 
     Run Modes:
         initiate     : Copy configuration templates to current directory
@@ -54,7 +53,7 @@ params.out_prop_pad = 17
     created from CUT&RUN Experiments.
 
     """.stripIndent()
-    full_help = help_description + "\n" + usage    
+    full_help = "\n" + help_description + usage    
     full_version = " -- ${workflow.manifest.name} : ${workflow.manifest.mainScript} "
     full_version += ": ${workflow.manifest.version}"  
 
@@ -397,65 +396,6 @@ if( ['run', 'dry_run'].contains( params.mode) ) {
     } else {
         log.info "${print_in_files.size()} Input Files Detected. "
     }
-
-    //If utilizing retrimming, autodetect or confirm tag size:
-    if( params.do_retrim ) {
-        if( params.input_seq_len == "auto" ) {
-            process CR_S0_C_GetSeqLen {
-                executor 'local'
-                cpus      1
-                time      '1h'
-                echo      params.verbose
-        
-                input:
-                path(test_fastq) from Channel.fromPath(print_in_files[0])
-                
-                output:
-                env SIZE into detect_input_seq_len
-        
-                shell:
-                '''
-                echo -e "Auto-detecting Tag Sequence Length:"
-                echo -e "Using first provided file:"
-                echo -e "    !{test_fastq}"
-
-                head -c 10000 !{test_fastq} | zcat 2>/dev/null  | head -n 2 | tail -n 1 > seq.txt
-                SIZE=$(cat seq.txt | head -c -1 | wc -c )
-        
-                echo "Read Size: ${SIZE}"
-                '''
-            }
-            detect_input_seq_len
-                               .first() //Convert to Value Channel
-                               .set { input_seq_len }
-            /*
-            if( params.verbose ) {
-                println  ""
-                log.info "Auto-detecting Tag Sequence Length:"
-                log.info "Using first provided file:"
-                log.info "-   ${print_in_files[0]}"
-            }
-            Channel
-                  .fromPath(print_in_files[0])
-                  .splitFastq(record: true, by: 1)
-                  .first()
-                  .map {record ->
-                      record.readString.size()
-                  }
-                  .view { "Autodetected Tag Length: ${it}" }
-                  .set { input_seq_len }
-            */
-        } else if( params.input_seq_len ) {
-            Channel
-                  .value(params.input_seq_len)
-                  .set { input_seq_len }
-        } else {
-            log.error "Invalid Value for Paramater 'input_seq_len' provided:"
-            log.error "-   '${input_seq_len}'"
-            log.error ""
-            exit 1
-        }   
-    }
 }    
 
 // --------------- Execute Workflow ---------------
@@ -507,7 +447,7 @@ if( ['initiate'].contains( params.mode ) ) {
 
 // -- Run Mode: validate
 if( ['validate', 'validate_all'].contains( params.mode ) ) { 
-    process CR_ValidateCall {
+    process CnR_Validate {
         tag             { title }
         // Previous step ensures only one or another (non-null) resource is provided:
         module          { "${test_module}" }
@@ -666,10 +606,11 @@ if( params.mode == 'prep_fasta' ) {
           }
           .set {source_fasta}
 
-    process CR_getFasta {
-        tag         { name }
-        stageInMode 'copy'    
-        echo        true
+    process CnR_Prep_GetFasta {
+        tag          { name }
+        beforeScript { task_details(task) }
+        stageInMode  'copy'    
+        echo         true
 
         input:
         tuple val(name), val(fasta_source), path(fasta) from source_fasta
@@ -687,7 +628,6 @@ if( params.mode == 'prep_fasta' ) {
         script:
         run_id         = "${task.tag}.${task.process}"
         out_log_name   = "${run_id}.nf.log.txt"
-        task_details   = task_details(task)
         full_refs_dir  = "${params.refs_dir}"
         acq_datetime   = new Date().format("yyyy-MM-dd_HH:mm:ss")
         if( !(full_refs_dir.startsWith("/")) ) {
@@ -707,8 +647,7 @@ if( params.mode == 'prep_fasta' ) {
         get_fasta_details += "fasta_path,./${use_fasta}"
 
         shell:
-        task_details + '''
-    
+        '''
         echo "Acquiring Fasta from Source:"
         echo "    !{fasta}"
         echo ""
@@ -722,14 +661,15 @@ if( params.mode == 'prep_fasta' ) {
 
     get_fasta_outs.into{prep_bt2db_inputs; prep_sizes_inputs}
 
-    process CR_PrepBt2db {
+    process CnR_Prep_Bt2db {
         if( has_module(params, 'bowtie2') ) {
             module get_module(params, 'bowtie2')
         } else if( has_conda(params, 'bowtie2') ) {
             conda get_conda(params, 'bowtie2')
         }
-        tag  { name }
-        echo true
+        tag          { name }
+        beforeScript { task_details(task) }
+        echo         true
     
         input:
         tuple val(name), path(fasta) from prep_bt2db_inputs
@@ -747,13 +687,12 @@ if( params.mode == 'prep_fasta' ) {
         script:
         run_id         = "${task.tag}.${task.process}"
         out_log_name   = "${run_id}.nf.log.txt"
-        task_details   = task_details(task)
         bt2db_dir_name = "${name}_${params.prep_bt2db_suf}"
         refs_dir       = "${params.refs_dir}"
         full_out_base  = "${bt2db_dir_name}/${name}"
         bt2db_details  = "bt2db_path,./${full_out_base}"
         shell:
-        task_details + '''
+        '''
     
         echo "Preparing Bowtie2 Database for fasta file:"
         echo "    !{fasta}"
@@ -772,15 +711,16 @@ if( params.mode == 'prep_fasta' ) {
         '''
     }
     
-    process CR_PrepSizes {
+    process CnR_Prep_Sizes {
         if( has_module(params, 'samtools') ) {
             module get_module(params, 'samtools')
         } else if( has_conda(params, 'samtools') ) {
             conda get_conda(params, 'samtools')
         }
-        tag  { name }
-        cpus 1
-        echo true
+        tag          { name }
+        beforeScript { task_details(task) }
+        cpus         1
+        echo         true
     
         input:
         tuple val(name), path(fasta) from prep_sizes_inputs
@@ -799,7 +739,6 @@ if( params.mode == 'prep_fasta' ) {
         script:
         run_id = "${task.tag}.${task.process}"
         out_log_name = "${run_id}.nf.log.txt"
-        task_details = task_details(task)
         faidx_name = "${fasta}.fai"
         chrom_sizes_name = "${name}.chrom.sizes"
         fa_count_name = "${name}.faCount"
@@ -809,7 +748,7 @@ if( params.mode == 'prep_fasta' ) {
         prep_sizes_details += "fa_count_path,./${fa_count_name}\n"
         prep_sizes_details += "eff_genome_path,./${eff_size_name}"
         shell:
-        task_details + '''
+        '''
         echo -e "\\nPreparing genome size information for Input Fasta: !{fasta}"
         echo -e "Indexing Fasta..."
         !{params.samtools_call} faidx !{fasta}
@@ -842,9 +781,10 @@ if( params.mode == 'prep_fasta' ) {
 
 // -- Run Mode: 'dry_run'
 if( params.mode == 'dry_run' ) {
-    process CRDryRun {
-        tag  { "my_input" }
-        echo true
+    process CnR_DryRun {
+        tag          { "my_input" }
+        beforeScript { task_details(task) }
+        echo         true
     
         output:
         path "${test_out_file_name}" into dryRun_outs
@@ -855,18 +795,14 @@ if( params.mode == 'dry_run' ) {
         publishDir "${params.out_dir}", mode: params.publish_mode, 
                    pattern: "${test_out_file_name}"
     
-        when:
-        params.mode == 'dry_run'
-    
         script:
         run_id = "${task.tag}.${task.process}"
         out_log_name = "${run_id}.nf.log.txt"
         test_out_file_name = "test_out_file.txt"
-        task_details = task_details(task)
         shell:
         '''
         echo -e "\\Current parameters for a \\"!{(task.label ?: ['non-labeled']).join(', ')}\\" job:"
-        ''' + task_details + '''
+
         echo "Performing 'Dry Run' Test:"
     
         echo "Would Execute Pipeline now."
@@ -954,6 +890,56 @@ if( params.mode == 'run' ) {
                }
           .set { prep_fastqs }
 
+    //If utilizing retrimming, autodetect or confirm tag size:
+    if( params.do_retrim ) {
+        if( params.input_seq_len == "auto" ) {
+            process CnR_S0_A_GetSeqLen {
+                executor    'local'
+                cpus        1
+                time        '1h'
+                echo        params.verbose
+                stageInMode 'copy'
+        
+                input:
+                path(test_fastq) from Channel.fromPath(print_in_files[0])
+                
+                output:
+                env SIZE into detect_input_seq_len
+        
+                script:
+                if( "${test_fastq}".endsWith('.gz') ) {
+                    first_command = "head -c 10000 ${test_fastq} | zcat 2>/dev/null"
+                } else {
+                    first_command = "cat ${test_fastq}"
+                }
+                shell:
+                '''
+                echo -e "Auto-detecting Tag Sequence Length:"
+                echo -e "Using first provided file:"
+                echo -e "    !{test_fastq}"
+
+                !{first_command} | head -n 2 | tail -n 1 > seq.txt
+                SIZE=$(cat seq.txt | head -c -1 | wc -c )
+        
+                echo "Read Size: ${SIZE}"
+                '''
+            }
+            detect_input_seq_len
+                               .first() //Convert to Value Channel
+                               .set { input_seq_len }
+
+        } else if( params.input_seq_len ) {
+            Channel
+                  .value(params.input_seq_len)
+                  .set { input_seq_len }
+        } else {
+            log.error "Invalid Value for Paramater 'input_seq_len' provided:"
+            log.error "-   '${input_seq_len}'"
+            log.error ""
+            exit 1
+        }   
+    }
+
     // If Merge, combine sample prefix-duplicates and catenate files.
     if( params.do_merge_lanes ) {
         prep_fastqs
@@ -973,9 +959,10 @@ if( params.mode == 'run' ) {
                   .set { merge_fastqs } 
         
         // Step 0, Part A, Merge Lanes (If Enabled)
-        process CR_S0_A_MergeFastqs {
-            tag  { name }
-            cpus 1
+        process CnR_S0_B_MergeFastqs {
+            tag          { name }
+            beforeScript { task_details(task) }
+            cpus         1
            
             input:
             tuple val(name), val(cond), val(group), path(fastq) from merge_fastqs
@@ -994,7 +981,6 @@ if( params.mode == 'run' ) {
             script:
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
-            task_details = task_details(task)
             merge_fastqs_dir = "${params.merge_fastqs_dir}"
             R1_files = fastq.findAll {fn -> "${fn}".contains("_R1_") }
             R2_files = fastq.findAll {fn -> "${fn}".contains("_R2_") }
@@ -1008,7 +994,7 @@ if( params.mode == 'run' ) {
                 mv -v "!{R1_files[0]}" "!{R1_out_file}"
                 mv -v "!{R2_files[0]}" "!{R2_out_file}"
                 set +v +H +o history
-                '''.stripIndent()
+                '''
             } else {
                 command = '''
                 mkdir !{merge_fastqs_dir}
@@ -1023,11 +1009,10 @@ if( params.mode == 'run' ) {
                 set -v -H -o history
                 cat '!{R2_files.join("' '")}' > '!{R2_out_file}'
                 set +v +H +o history
-                '''.stripIndent()
+                '''
             }
             shell:
-            task_details + command
-
+            command
         }
     // If Not Merge, Rename and Passthrough fastq files.
     } else {
@@ -1046,13 +1031,14 @@ if( params.mode == 'run' ) {
     
     // Step 0, Part B, FastQC Analysis (If Enabled)
     if( params.do_fastqc ) {
-        process CR_S0_B_FastQCPre {
+        process CnR_S0_C_FastQCPre {
             if( has_module(params, 'fastqc') ) {
                 module get_module(params, 'fastqc')
             } else if( has_conda(params, 'fastqc') ) {
                 conda get_conda(params, 'fastqc')
             }
-            tag { name }
+            tag          { name }
+            beforeScript { task_details(task) }
         
             input:
             tuple val(name), val(cond), val(group), path(fastq) from fastqcPre_inputs
@@ -1069,30 +1055,29 @@ if( params.mode == 'run' ) {
             script:
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
-            task_details = task_details(task)
             fastqc_out_dir = params.fastqc_pre_dir
             shell:
-            task_details + '''
-        
+            '''
             set -v -H -o history
             mkdir -v !{fastqc_out_dir}
             cat !{fastq} > !{name}_all.fastq.gz
             !{params.fastqc_call} -t !{task.cpus} -o !{fastqc_out_dir} !{name}_all.fastq.gz
             set +v +H +o history
-            '''.stripIndent()
+            '''
         }
     }
 
 
     // Step 01, Part A, Trim Reads using Trimmomatic (if_enabled)
     if( params.do_trim ) {
-        process CR_S1_A_Trim { 
+        process CnR_S1_A_Trim { 
             if( has_module(params, 'trimmomatic') ) {
                 module get_module(params, 'trimmomatic')
             } else if( has_conda(params, 'trimmomatic') ) {
                 conda get_conda(params, 'trimmomatic')
             }
-            tag { name }
+            tag          { name }
+            beforeScript { task_details(task) }
         
             input:
             tuple val(name), val(cond), val(group), path(fastq) from trim_inputs
@@ -1116,10 +1101,9 @@ if( params.mode == 'run' ) {
             script:
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
-            task_details = task_details(task)
         
             shell:
-            task_details + '''
+            '''
             mkdir !{params.trim_dir}
             echo "Trimming file name base: !{name} ... utilizing Trimmomatic"
 
@@ -1135,7 +1119,7 @@ if( params.mode == 'run' ) {
             set +v +H +o history
 
             echo "Step 01, Part A, Trimmomatic Trimming, Complete."
-            '''.stripIndent()
+            '''
         }
     // If not performing trimming, pass trim output to retrim channel.
     } else {
@@ -1144,14 +1128,15 @@ if( params.mode == 'run' ) {
 
     // Step 01, Part B, Retrim Sequences Using Cut&RunTools kseq_test (If Enabled)
     if( params.do_retrim ) {
-        process CR_S1_B_Retrim { 
+        process CnR_S1_B_Retrim { 
             if( has_module(params, 'kseqtest') ) {
                 module get_module(params, 'kseqtest')
             } else if( has_conda(params, 'kseqtest') ) {
                 conda get_conda(params, 'kseqtest')
             }
-            tag  { name }
-            cpus 1   
+            tag          { name }
+            beforeScript { task_details(task) }
+            cpus         1   
      
             input:
             tuple val(name), val(cond), val(group), path(fastq) from trim_outs
@@ -1175,10 +1160,9 @@ if( params.mode == 'run' ) {
             script:
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
-            task_details = task_details(task)
         
             shell:
-            task_details + '''
+            '''
             mkdir !{params.retrim_dir}
             echo "Second stage (retrimming) name base: !{name} ... utilizing kseq_test ..."
 
@@ -1191,7 +1175,7 @@ if( params.mode == 'run' ) {
             set +v +H +o history        
 
             echo "Step 01, Part B, kseq_test Trimming, Complete."
-            '''.stripIndent()
+            '''
         }
     // If not performing retrimming, pass trim output onto alignments.
     } else {
@@ -1202,13 +1186,14 @@ if( params.mode == 'run' ) {
 
     // Step 01, Part C, Evaluate Final Trimmed Sequences With FastQC (If Enabled)
     if( params.do_fastqc ) {
-        process CR_S1_C_FastQCPost {
+        process CnR_S1_C_FastQCPost {
             if( has_module(params, 'fastqc') ) {
                 module get_module(params, 'fastqc')
             } else if( has_conda(params, 'fastqc') ) {
                 conda get_conda(params, 'fastqc')
             }
-            tag { name }
+            tag          { name }
+            beforeScript { task_details(task) }
            
             input:
             tuple val(name), val(cond), val(group), path(fastq) from fastqcPost_inputs
@@ -1225,28 +1210,27 @@ if( params.mode == 'run' ) {
             script:
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
-            task_details = task_details(task)
             fastqc_out_dir = params.fastqc_post_dir 
             shell:
-            task_details + '''
-        
+            '''
             set -v -H -o history
             mkdir -v !{fastqc_out_dir}
             cat !{fastq} > !{name}_all.fastq.gz
             fastqc -t !{task.cpus} -o !{fastqc_out_dir} !{name}_all.fastq.gz
             set +v +H +o history
-            '''.stripIndent()
+            '''
         }
     }
 
     // Step 02, Part A, Align Reads to Reference Genome(s)
-    process CR_S2_A_Aln_Ref {
+    process CnR_S2_A_Aln_Ref {
         if( has_module(params, ['bowtie2', 'samtools']) ) {
             module get_module(params, ['bowtie2', 'samtools'])
         } else if( has_conda(params, ['bowtie2', 'samtools']) ) {
             conda get_conda(params, ['bowtie2', 'samtools'])
         }
-        tag { name }
+        tag          { name }
+        beforeScript { task_details(task) }
     
         input:
         tuple val(name), val(cond), val(group), path(fastq) from aln_ref_inputs
@@ -1266,12 +1250,11 @@ if( params.mode == 'run' ) {
         script:
         run_id = "${task.tag}.${task.process}"
         out_log_name = "${run_id}.nf.log.txt"
-        task_details = task_details(task)
         aln_ref_flags = params.aln_ref_flags
         ref_bt2db_path = params.ref_bt2db_path
     
         shell:
-        task_details + '''
+        '''
         set -o pipefail
         mkdir !{params.aln_dir_ref}
         echo "Aligning file name base: !{name} ... utilizing Bowtie2"
@@ -1287,173 +1270,18 @@ if( params.mode == 'run' ) {
         set +v +H +o history
 
         echo "Step 02, Part A, Alignment, Complete."
-        '''.stripIndent()
-    }
-    // Step 02, Part D, Align Reads to Spike-In Genome (If Enabled)
-    if( params.do_norm_spike ) {
-
-        use_name = params.norm_ref_name
-        if( params.containsKey('norm_ref_title') ) {
-            use_name = params.norm_ref_title 
-        }
-        spike_ref_dbs = [[use_name, params.norm_ref_bt2db_path]]
-
-        process CR_S2_D_Aln_Spike {
-            if( has_module(params, ['bowtie2', 'samtools']) ) {
-                module get_module(params, ['bowtie2', 'samtools'])
-            } else if( has_conda(params, ['bowtie2', 'samtools']) ) {
-                conda get_conda(params, ['bowtie2', 'samtools'])
-            }
-            tag { name }
-        
-            input:
-            tuple val(name), val(cond), val(group), path(fastq) from aln_spike_inputs
-            tuple val(spike_ref_name), val(spike_ref) from Channel.fromList(spike_ref_dbs)
-
-        
-            output:
-            path "${params.aln_dir_spike}/*" into aln_spike_all_outs
-            tuple val(name), path(aln_count_csv) into aln_spike_csv_outs
-            tuple val(name), path(aln_spike_count) into aln_spike_outs
-            path '.command.log' into aln_spike_log_outs
-        
-            // Publish Log
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
-                       pattern: '.command.log', saveAs: { out_log_name }
-            // Publish count file if publish_file == "minimal" or "default"
-            publishDir "${params.out_dir}", mode: params.publish_mode, 
-                       pattern: "${aln_use_count}",
-                       enabled:  (params.publish_files != "all") 
-            // Publish report if publish_file == "default"
-            publishDir "${params.out_dir}", mode: params.publish_mode, 
-                       pattern: "${aln_count_report}",
-                       enabled: (params.publish_files == "default")
-            // Publish all files when publish_files == all
-            publishDir "${params.out_dir}", mode: params.publish_mode, 
-                       pattern: "${params.aln_dir_spike}/*",
-                       enabled: (params.publish_files == "all")
-        
-            script:
-            run_id = "${task.tag}.${task.process}"
-            out_log_name = "${run_id}.nf.log.txt"
-            task_details = task_details(task)
-            ref_bt2db_path          = params.ref_bt2db_path
-            if( params.containsKey('ref_title') ) {
-                ref_name     = params.ref_title
-            } else {
-                ref_name     = params.ref_name
-            }
-            aln_norm_flags   = params.aln_norm_flags
-            aln_spike_sam    = "${params.aln_dir_spike}/${name}.${spike_ref_name}.sam"
-            aln_spike_fq     = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.gz"
-            aln_spike_fq_1   = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.1.gz"
-            aln_spike_fq_2   = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.2.gz"
-            aln_cross_sam    = "${params.aln_dir_spike}/${name}.cross.${ref_name}.sam"
-            aln_count        = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report"
-            aln_count_report = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report.txt" 
-            aln_count_csv    = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report.csv" 
-            aln_spike_count  = "${params.aln_dir_spike}/${name}.${spike_ref_name}.01.all.count.txt"
-            aln_cross_count  = "${params.aln_dir_spike}/${name}.${spike_ref_name}.02.cross.count.txt"
-            aln_adj_count    = "${params.aln_dir_spike}/${name}.${spike_ref_name}.03.adj.count.txt"
-            if( params.norm_mode == 'adj') { 
-                aln_use_count = aln_adj_count
-            } else if( params.norm_mode == 'all' ) {
-                aln_use_count = aln_spike_count
-            }
-
-            if( fastq[0].toString().endsWith('.gz') ) {
-                count_command = 'echo "$(zcat ' + "${fastq[0]}" + ' | wc -l)/4" | bc'
-            } else {
-                count_command = 'echo "$(wc -l ' + "${fastq[0]}" + ')/4" | bc'
-            }
-            shell:
-            task_details + '''
-            set -o pipefail
-            mkdir !{params.aln_dir_spike}
-            echo "Aligning file name base: !{name} ... utilizing Bowtie2"
-
-            # Count Total Read Pairs
-            PAIR_NUM="$(!{count_command})"
-            MESSAGE="Counted ${PAIR_NUM} Fastq Read Pairs."
-            echo -e "\\n${MESSAGE}\\n"
-            echo    "${MESSAGE}" > !{aln_count_report}
-
-            # Align Reads to Spike-in Genome
-            set -v -H -o history
-            !{params.bowtie2_call} -p !{task.cpus} \\
-                                   !{aln_norm_flags} \\
-                                   -x !{spike_ref} \\
-                                   -1 !{fastq[0]} \\
-                                   -2 !{fastq[1]} \\
-                                   -S !{aln_spike_sam} \\
-                                   --al-conc-gz !{aln_spike_fq}
-                                          
-            RAW_SPIKE_COUNT="$(!{params.samtools_call} view -Sc !{aln_spike_sam})"
-            bc <<< "${RAW_SPIKE_COUNT}/2" > !{aln_spike_count}
-            SPIKE_COUNT=$(cat !{aln_spike_count})
-            SPIKE_PERCENT=$(bc -l <<< "scale=8; (${SPIKE_COUNT}/${PAIR_NUM})*100")
-          
-            set +v +H +o history
-
-            MESSAGE="${SPIKE_COUNT} ( ${SPIKE_PERCENT}% ) Total Spike-In Read Pairs Detected"
-            echo -e "\\n${MESSAGE}\\n"
-            echo    "${MESSAGE}" >> !{aln_count_report}
-
-            # Realign Spike-in Alignments to Reference Genome to Check Cross-Mapping
-            set -v -H -o history
-            !{params.bowtie2_call} -p !{task.cpus} \\
-                                   !{aln_norm_flags} \\
-                                   -x !{ref_bt2db_path} \\
-                                   -1 !{aln_spike_fq_1} \\
-                                   -2 !{aln_spike_fq_2} \\
-                                   -S !{aln_cross_sam}
-
-            RAW_CROSS_COUNT="$(!{params.samtools_call} view -Sc !{aln_cross_sam})"
-            bc <<< "${RAW_CROSS_COUNT}/2" > !{aln_cross_count}
-            CROSS_COUNT=$(cat !{aln_cross_count})
-            set +v +H +o history
-
-            MESSAGE="${CROSS_COUNT} Read Pairs Detected that Cross-Map to Reference Genome"
-            echo -e "\\n${MESSAGE}\\n"
-            echo    "${MESSAGE}" >> !{aln_count_report}
-         
-            # Get Difference Between All Spike-In and Cross-Mapped Reads
-            OPERATION="${SPIKE_COUNT} - ${CROSS_COUNT}"
-            bc <<< "${OPERATION}" > !{aln_adj_count}  
-            ADJ_COUNT=$(cat !{aln_adj_count})
-            ADJ_PERCENT=$(bc -l <<< "scale=8; (${ADJ+COUNT}/${PAIR_NUM})*100")
-
-            MESSAGE="$(cat !{aln_adj_count}) (${OPERATION}, ${ADJ_PERCENT}) Adjusted Spike-in Reads Detected."
-            echo -e "\\n${MESSAGE}\\n"
-            echo    "${MESSAGE}" >> !{aln_count_report}
-
-            MESSAGE="\\nNormalization Mode: !{params.norm_mode}\\n"
-            MESSAGE+="Selecting file for use in sample normalization:\\n"
-            MESSAGE+="    !{aln_use_count}"
-            echo -e "\\n${MESSAGE}\\n"
-            echo -e "${MESSAGE}" >> !{aln_count_report}
-
-            echo -e "name,fq_pairs,spike_aln_pairs,spike_aln_pct,cross_aln_pairs,cross_aln_pct,adj_aln_pairs,adj_aln_pct" > !{aln_count_csv}
-            echo -e "!{name},${PAIR_NUM},${SPIKE_COUNT},${SPIKE_PERCENT},${CROSS_COUNT},CROSS_PCT,${ADJ_COUNT},${ADJ_PERCENT}" >> !{aln_count_csv}
- 
-
-            echo "Step 02, Part A2, Spike-In Alignment, Complete."
-            '''.stripIndent()
-        }
-
-    //aln_spike_csv_outs
-
-
+        '''
     }
 
     // Step 02, Part B, Sort and Process Alignments
-    process CR_S2_B_Modify_Aln {
+    process CnR_S2_B_Modify_Aln {
         if( has_module(params, ['picard', 'samtools']) ) {
             module get_module(params, ['picard', 'samtools'])
         } else if( has_conda(params, ['picard', 'samtools']) ) {
             conda get_conda(params, ['picard', 'samtools'])
         }
-        tag { name }
+        tag          { name }
+        beforeScript { task_details(task) }
     
         input:
         tuple val(name), val(cond), val(group), path(aln) from aln_outs
@@ -1478,9 +1306,6 @@ if( params.mode == 'run' ) {
                    pattern: "${params.aln_dir_mod}/*",
                    enabled: (params.publish_files=="all")
     
-        //when:
-        //params.mode == 'run'
-        
         script:
         run_id              = "${task.tag}.${task.process}"
         out_log_name        = "${run_id}.nf.log.txt"
@@ -1491,13 +1316,10 @@ if( params.mode == 'run' ) {
         aln_sort_120        = "${aln_dir_mod}/${name}_sort_dm_120.bam"
         aln_sort_dedup_120  = "${aln_dir_mod}/${name}_sort_dm_dedup_120.bam"
         dedup_metrics       = "${aln_dir_mod}/${name}.dedup_metrics.txt"
-        task_details = task_details(task)
         add_threads = (task.cpus ? (task.cpus - 1) : 0) 
     
         shell:
-        task_details + '''
-    
-        echo ""
+        '''
         set -o pipefail
         mkdir -v !{aln_dir_mod}
         
@@ -1571,7 +1393,7 @@ if( params.mode == 'run' ) {
         set +v +H +o history
 
         echo "Step 02, Part B, (Sort -> Dedup -> Filter) Alignments, Complete."
-        '''.stripIndent()
+        '''
     }
       
     use_aln_channels = []
@@ -1610,13 +1432,14 @@ if( params.mode == 'run' ) {
     //      .set { use_mod_alns }
 
     // Step 02, Part C, Create Paired-end Bedgraphs
-    process CR_S2_C_Make_Bdg {
+    process CnR_S2_C_Make_Bdg {
         if( has_module(params, ['samtools', 'bedtools']) ) {
             module get_module(params, ['samtools', 'bedtools'])
         } else if( has_conda(params, ['samtools', 'bedtools']) ) {
             conda get_conda(params, ['samtools', 'bedtools'])
         }
-        tag { name }
+        tag          { name }
+        beforeScript { task_details(task) }
     
         input:
         tuple val(name), val(cond), val(group), val(aln_type), path(aln) from use_mod_alns
@@ -1658,12 +1481,10 @@ if( params.mode == 'run' ) {
         aln_bed      = "${aln_dir_bdg}/${aln_in_base + ".bed"}"
         aln_bdg      = "${aln_dir_bdg}/${aln_in_base + ".bdg"}"
         chrom_sizes  = "${params.ref_chrom_sizes_path}"
-        task_details = task_details(task)
         add_threads = (task.cpus ? (task.cpus - 1) : 0) 
     
         shell:
-        task_details + '''
-    
+        '''
         echo ""
         mkdir -v !{aln_dir_bdg}
         cp -v !{aln_in} !{aln_dir_bdg}/!{aln_in}       
@@ -1700,11 +1521,159 @@ if( params.mode == 'run' ) {
         set +v +H +o history
 
         echo "Step 02, Part C, Convert (BAM -> BED -> BDG) Alignments, Complete."
-        '''.stripIndent()
+        '''
     }
     
-    // Step 02, Part D, Normalize to Spike-in (If Enabled) Create Paired-end Bedgraphs
+    // Step 02, Part D, Align Reads to Spike-In Genome (If Enabled)
     if( params.do_norm_spike ) {
+
+        use_name = params.norm_ref_name
+        if( params.containsKey('norm_ref_title') ) {
+            use_name = params.norm_ref_title 
+        }
+        spike_ref_dbs = [[use_name, params.norm_ref_bt2db_path]]
+
+        process CnR_S2_D_Aln_Spike {
+            if( has_module(params, ['bowtie2', 'samtools']) ) {
+                module get_module(params, ['bowtie2', 'samtools'])
+            } else if( has_conda(params, ['bowtie2', 'samtools']) ) {
+                conda get_conda(params, ['bowtie2', 'samtools'])
+            }
+            tag          { name }
+            beforeScript { task_details(task) }
+        
+            input:
+            tuple val(name), val(cond), val(group), path(fastq) from aln_spike_inputs
+            tuple val(spike_ref_name), val(spike_ref) from Channel.fromList(spike_ref_dbs).first()
+        
+            output:
+            path "${params.aln_dir_spike}/*" into aln_spike_all_outs
+            tuple val(name), path(aln_count_csv) into aln_spike_csv_outs
+            tuple val(name), path(aln_spike_count) into aln_spike_outs
+            path '.command.log' into aln_spike_log_outs
+        
+            // Publish Log
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+                       pattern: '.command.log', saveAs: { out_log_name }
+            // Publish count file if publish_file == "minimal" or "default"
+            publishDir "${params.out_dir}", mode: params.publish_mode, 
+                       pattern: "${aln_use_count}",
+                       enabled:  (params.publish_files != "all") 
+            // Publish report if publish_file == "default"
+            publishDir "${params.out_dir}", mode: params.publish_mode, 
+                       pattern: "${aln_count_report}",
+                       enabled: (params.publish_files == "default")
+            // Publish all files when publish_files == all
+            publishDir "${params.out_dir}", mode: params.publish_mode, 
+                       pattern: "${params.aln_dir_spike}/*",
+                       enabled: (params.publish_files == "all")
+        
+            script:
+            run_id           = "${task.tag}.${task.process}"
+            out_log_name     = "${run_id}.nf.log.txt"
+            ref_bt2db_path   = params.ref_bt2db_path
+            if( params.containsKey('ref_title') ) {
+                ref_name     = params.ref_title
+            } else {
+                ref_name     = params.ref_name
+            }
+            aln_norm_flags   = params.aln_norm_flags
+            aln_spike_sam    = "${params.aln_dir_spike}/${name}.${spike_ref_name}.sam"
+            aln_spike_fq     = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.gz"
+            aln_spike_fq_1   = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.1.gz"
+            aln_spike_fq_2   = "${params.aln_dir_spike}/${name}.${spike_ref_name}.fastq.2.gz"
+            aln_cross_sam    = "${params.aln_dir_spike}/${name}.cross.${ref_name}.sam"
+            aln_count        = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report"
+            aln_count_report = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report.txt" 
+            aln_count_csv    = "${params.aln_dir_spike}/${name}.${spike_ref_name}.count_report.csv" 
+            aln_spike_count  = "${params.aln_dir_spike}/${name}.${spike_ref_name}.01.all.count.txt"
+            aln_cross_count  = "${params.aln_dir_spike}/${name}.${spike_ref_name}.02.cross.count.txt"
+            aln_adj_count    = "${params.aln_dir_spike}/${name}.${spike_ref_name}.03.adj.count.txt"
+            if( params.norm_mode == 'adj') { 
+                aln_use_count = aln_adj_count
+            } else if( params.norm_mode == 'all' ) {
+                aln_use_count = aln_spike_count
+            }
+
+            if( fastq[0].toString().endsWith('.gz') ) {
+                count_command = 'echo "$(zcat ' + "${fastq[0]}" + ' | wc -l)/4" | bc'
+            } else {
+                count_command = 'echo "$(wc -l ' + "${fastq[0]}" + ')/4" | bc'
+            }
+            shell:
+            '''
+            set -o pipefail
+            mkdir !{params.aln_dir_spike}
+            echo "Aligning file name base: !{name} ... utilizing Bowtie2"
+
+            # Count Total Read Pairs
+            PAIR_NUM="$(!{count_command})"
+            MESSAGE="Counted ${PAIR_NUM} Fastq Read Pairs."
+            echo -e "\\n${MESSAGE}\\n"
+            echo    "${MESSAGE}" > !{aln_count_report}
+
+            # Align Reads to Spike-in Genome
+            set -v -H -o history
+            !{params.bowtie2_call} -p !{task.cpus} \\
+                                   !{aln_norm_flags} \\
+                                   -x !{spike_ref} \\
+                                   -1 !{fastq[0]} \\
+                                   -2 !{fastq[1]} \\
+                                   -S !{aln_spike_sam} \\
+                                   --al-conc-gz !{aln_spike_fq}
+                                          
+            RAW_SPIKE_COUNT="$(!{params.samtools_call} view -Sc !{aln_spike_sam})"
+            bc <<< "${RAW_SPIKE_COUNT}/2" > !{aln_spike_count}
+            SPIKE_COUNT=$(cat !{aln_spike_count})
+            SPIKE_PERCENT=$(bc -l <<< "scale=8; (${SPIKE_COUNT}/${PAIR_NUM})*100")
+          
+            set +v +H +o history
+
+            MESSAGE="${SPIKE_COUNT} ( ${SPIKE_PERCENT}% ) Total Spike-In Read Pairs Detected"
+            echo -e "\\n${MESSAGE}\\n"
+            echo    "${MESSAGE}" >> !{aln_count_report}
+
+            # Realign Spike-in Alignments to Reference Genome to Check Cross-Mapping
+            set -v -H -o history
+            !{params.bowtie2_call} -p !{task.cpus} \\
+                                   !{aln_norm_flags} \\
+                                   -x !{ref_bt2db_path} \\
+                                   -1 !{aln_spike_fq_1} \\
+                                   -2 !{aln_spike_fq_2} \\
+                                   -S !{aln_cross_sam}
+
+            RAW_CROSS_COUNT="$(!{params.samtools_call} view -Sc !{aln_cross_sam})"
+            bc <<< "${RAW_CROSS_COUNT}/2" > !{aln_cross_count}
+            CROSS_COUNT=$(cat !{aln_cross_count})
+            set +v +H +o history
+
+            MESSAGE="${CROSS_COUNT} Read Pairs Detected that Cross-Map to Reference Genome"
+            echo -e "\\n${MESSAGE}\\n"
+            echo    "${MESSAGE}" >> !{aln_count_report}
+         
+            # Get Difference Between All Spike-In and Cross-Mapped Reads
+            OPERATION="${SPIKE_COUNT} - ${CROSS_COUNT}"
+            bc <<< "${OPERATION}" > !{aln_adj_count}  
+            ADJ_COUNT=$(cat !{aln_adj_count})
+            ADJ_PERCENT=$(bc -l <<< "scale=8; (${ADJ+COUNT}/${PAIR_NUM})*100")
+
+            MESSAGE="$(cat !{aln_adj_count}) (${OPERATION}, ${ADJ_PERCENT}) Adjusted Spike-in Reads Detected."
+            echo -e "\\n${MESSAGE}\\n"
+            echo    "${MESSAGE}" >> !{aln_count_report}
+
+            MESSAGE="\\nNormalization Mode: !{params.norm_mode}\\n"
+            MESSAGE+="Selecting file for use in sample normalization:\\n"
+            MESSAGE+="    !{aln_use_count}"
+            echo -e "\\n${MESSAGE}\\n"
+            echo -e "${MESSAGE}" >> !{aln_count_report}
+
+            echo -e "name,fq_pairs,spike_aln_pairs,spike_aln_pct,cross_aln_pairs,cross_aln_pct,adj_aln_pairs,adj_aln_pct" > !{aln_count_csv}
+            echo -e "!{name},${PAIR_NUM},${SPIKE_COUNT},${SPIKE_PERCENT},${CROSS_COUNT},CROSS_PCT,${ADJ_COUNT},${ADJ_PERCENT}" >> !{aln_count_csv}
+ 
+
+            echo "Step 02, Part A2, Spike-In Alignment, Complete."
+            '''
+        }
 
         aln_spike_outs
                   .cross(bdg_aln_outs)
@@ -1713,14 +1682,16 @@ if( params.mode == 'run' ) {
                   }
                   .set { norm_bdg_input }
 
-        process CR_S2_E_Norm_Bdg {
+        // Step 02, Part E, Normalize to Spike-in (If Enabled)
+        process CnR_S2_E_Norm_Bdg {
             if( has_module(params, 'bedtools') ) {
                 module get_module(params, 'bedtools')
             } else if( has_conda(params, 'bedtools') ) {
                 conda get_conda(params, 'bedtools')
             }
-            tag  { name }
-            cpus 1        
+            tag          { name }
+            beforeScript { task_details(task) }
+            cpus         1        
 
             input:
             tuple val(name), val(cond), val(group), val(aln_type), path(aln), path(norm) from norm_bdg_input
@@ -1748,17 +1719,13 @@ if( params.mode == 'run' ) {
             run_id        = "${task.tag}.${task.process}.${aln_type}"
             out_log_name  = "${run_id}.nf.log.txt"
             chrom_sizes   = "${params.ref_chrom_sizes_path}"
-            task_details = task_details(task)
             aln_dir_norm  = "${params.aln_dir_norm}.${aln_type}"
             bed_frag      = "${aln[2]}"
             bed_frag_base = "${bed_frag - ~/.bed.clean.frag$/}" 
             norm_bdg      = "${aln_dir_norm}/${bed_frag_base + "_norm.bdg"}"
         
             shell:
-            task_details + '''
-        
-            echo !{aln}
-            echo ""
+            '''
             mkdir -v !{aln_dir_norm}
             cp -v !{aln[0]} !{aln[2]} !{aln[3]} !{aln_dir_norm}           
 
@@ -1776,7 +1743,7 @@ if( params.mode == 'run' ) {
             set +v +H +o history
 
             echo "Step 02, Part D, Create Normalized Bedgraph, Complete."
-            '''.stripIndent()
+            '''
         }
     } else {
         bdg_aln_outs.set { final_alns }
@@ -1814,26 +1781,23 @@ if( params.mode == 'run' ) {
                  .into { macs_alns; seacr_alns }
     }
 
-    //Channel.empty()
-    //            .into { macs_alns; seacr_alns }   
- 
-    // Step 03, Part A, option 1, Utilize MACS for Peak Calling
+    // Step 03, Part A, Utilize MACS for Peak Calling
     if( peak_callers.contains("macs") ) {
-        process CR_S3_A_Peaks_MACS {
+        process CnR_S3_A_Peaks_MACS {
             if( has_module(params, 'macs2') ) {
                 module get_module(params, 'macs2')
             } else if( has_conda(params, 'macs2') ) {
                 conda get_conda(params, 'macs2')
             }
-            tag { name }
-            errorStrategy 'ignore' // DEBUG
+            tag          { name }
+            beforeScript { task_details(task) }
                
             input:
-            tuple val(name), val(cond), val(group), val(aln_type), path(aln) from macs_alns
+            tuple val(name), val(group), val(aln_type), path(aln), val(ctrl_name), path(ctrl_aln) from macs_alns
         
             output:
             path "${peaks_dir}/*" into macs_peak_all_outs
-            tuple val(name), val(cond), val(group), val(aln_type), 
+            tuple val(name), val(group), val(aln_type), 
                   path("${peaks_dir}/*") into macs_peak_outs
             path '.command.log' into macs_peak_log_outs
         
@@ -1853,24 +1817,27 @@ if( params.mode == 'run' ) {
             run_id        = "${task.tag}.${task.process}.${aln_type}"
             out_log_name  = "${run_id}.nf.log.txt"
             use_name      = "${name}.${aln_type}"
-            peaks_dir     = "${params.peaks_macs_dir}.${aln_type}"
-            treat_bam     = "treat.bam"
-            ctrl_bam      = "ctrl.bam"
-            ctrl_flag     = "--control ${ctrl_bam}"
+            peaks_dir     = "${params.peaks_dir_macs}.${aln_type}"
+            treat_bams    = aln.findAll {fn -> 
+                ("${fn}".endsWith('.bam') && !"${fn}".contains("_byname"))
+            }
+            treat_bam     = treat_bams[0]
+            if( ctrl_name ) {
+                ctrl_bams = ctrl_aln.findAll {fn -> 
+                    ("${fn}".endsWith('.bam') && !"${fn}".contains("_byname"))
+                }
+                ctrl_flag = "--control ${ctrl_bams[0]}"
+            } else {
+                ctrl_flag = ""
+            }
             qval          = "${params.macs_qval}"
             genome_size   = "${params.ref_eff_genome_size}"
-            bedgraph_flag = ""
-            //bedgraph_flag = "-B --SPMR"
+            bedgraph_flag = "-B --SPMR"
             keep_dup_flag = aln_type.contains('_dedup') ? "" : "--keep-dup all " 
-            task_details = task_details(task)
             //add_threads = (task.cpus ? (task.cpus - 1) : 0) 
         
             shell:
-            task_details + '''
-        
-            echo ""
-            ls *
-         
+            '''
             mkdir -v !{peaks_dir}
 
             echo "Calling Peaks for base name: !{name} ... utilizing macs2 callpeak"
@@ -1879,7 +1846,7 @@ if( params.mode == 'run' ) {
             # --SPMR Saves bedgraph normalized to counts per million
 
             set -v -H -o history
-            !{params.macs2_call} callpeak
+            !{params.macs2_call} callpeak \\
                 -f BAMPE \\
                 --treatment !{treat_bam} \\
                 !{ctrl_flag} \\
@@ -1892,19 +1859,20 @@ if( params.mode == 'run' ) {
             set +v +H +o history
     
             echo "Step 03, Part A, Call Peaks Using MACS, Complete."
-            '''.stripIndent()
+            '''
         }
     }
 
-    // Step 03, Part A, option 2, Utilize MACS for Peak Calling
+    // Step 03, Part B, Utilize MACS for Peak Calling
     if( peak_callers.contains("seacr") ) {
-        process CR_S3_B_Peaks_SEACR {
+        process CnR_S3_B_Peaks_SEACR {
             if( has_module(params, 'seacr') ) {
                 module get_module(params, 'seacr')
             } else if( has_conda(params, 'seacr') ) {
                 conda get_conda(params, 'seacr')
             }
-            tag { name }
+            tag          { name }
+            beforeScript { task_details(task) }
         
             input:
             tuple val(name), val(group), val(aln_type), path(aln), val(ctrl_name), path(ctrl_aln) from seacr_alns
@@ -1927,7 +1895,6 @@ if( params.mode == 'run' ) {
             script:
             run_id        = "${task.tag}.${task.process}.${aln_type}"
             out_log_name  = "${run_id}.nf.log.txt"
-            task_details = task_details(task)
             peaks_dir     = "${params.peaks_dir_seacr}.${aln_type}"
             all_treat_bdg = aln.findAll {fn -> "${fn}".endsWith(".bdg") }
             treat_bdg     = all_treat_bdg[0]
@@ -1955,9 +1922,7 @@ if( params.mode == 'run' ) {
                 norm_mode = "${params.seacr_norm_mode}"
             }
             shell:
-            task_details + '''
-        
-            echo ""
+            '''
             mkdir -v !{peaks_dir}
            
             echo "Calling Peaks for base name: !{name} ... utilizing SEACR"
@@ -1985,11 +1950,10 @@ if( params.mode == 'run' ) {
             fi
             set +v +H +o history
     
-            echo "Step 03, Part A2, Call Peaks Using SEACR, Complete."
-            '''.stripIndent()
+            echo "Step 03, Part B, Call Peaks Using SEACR, Complete."
+            '''
         }
     }
-
 }
     
 
@@ -2253,16 +2217,15 @@ def task_details(task, run_id='') {
     mem_str   = ( "${task.memory}" == "null" ? "" : "${task.memory}" )
     queue_str = ( "${task.queue}" == "null" ? "" : "${task.queue}" )
     
-    '''
-    echo    "  !{run_id}"
-    echo    "  -  Executor:  !{task.executor}"
-    echo    "  -  CPUs:      !{task.cpus}"
-    echo    "  -  Time:      !{time_str}"
-    echo    "  -  Mem:       !{mem_str}"
-    echo    "  -  Queue:     !{queue_str}"
-    echo    "  -  !{resource_string}"
-    echo -e "  -  Log:       !{out_log_name}\\n"
-    '''.stripIndent()
+    """
+    echo    "  ${task.name}.${task.tag}"
+    echo    "  -  Executor:  ${task.executor}"
+    echo    "  -  CPUs:      ${task.cpus}"
+    echo    "  -  Time:      ${time_str}"
+    echo    "  -  Mem:       ${mem_str}"
+    echo    "  -  Queue:     ${queue_str}"
+    echo -e "  -  ${resource_string}\\n"
+    """.stripIndent()
 }
 
 sleep(1500)

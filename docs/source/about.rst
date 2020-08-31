@@ -27,6 +27,11 @@ Lead Developer
 
 Changelog
 ---------
+    * v0.10 | Refinements
+            | Changed verbose task logging to implementation with "beforeScript"
+            | Documentation Work
+            | Moved macs2 peak-calling out of alpha testing
+            | "Reordered" output step directories
     * v0.09 | Refinements
             | Added one-step database preparation
             | Implemented 'list_refs' mode 

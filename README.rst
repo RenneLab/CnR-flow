@@ -84,8 +84,8 @@ Prepare Task Directory:
     |
     .. code-block:: bash   
 
-            $ mkdir /path/to/my_task
-            $ cd /path/to/my_task
+            $ mkdir /path/to/my_task  # (Example)
+            $ cd /path/to/my_task     # (Example)
 
 Install Nextflow (if necessary):
     | Download the nextflow executable to your current directory.
@@ -123,7 +123,7 @@ Configure, Validate, and Test:
 
         $ nextflow run CnR-flow --mode validate_all
 
-    | Fill the required task input paramaters in ".../my_task/nextflow.config"
+    | Fill the required task input paramaters in "nextflow.config"
     | For detailed setup instructions, see the  |Task Setup| 
       section of |docs_link|_
     | *Additionally, configure your system executor, time, and memory settings in the pipe
@@ -132,7 +132,7 @@ Configure, Validate, and Test:
     .. code-block:: bash
 
         # Configure:
-        $ <vi/nano/emacs/...> .../my_task/nextflow.config   # Task Input, Steps, etc. Configuration
+        $ <vi/nano/emacs/...> nextflow.config   # Task Input, Steps, etc. Configuration
     
         #REQUIRED values to enter (all others *should* work as default):
         # ref_fasta               (or some other ref-mode/location)
