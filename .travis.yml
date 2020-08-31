@@ -1,3 +1,4 @@
+language: bash
 jdk:
 - openjdk8
 branches:
