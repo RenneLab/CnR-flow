@@ -80,21 +80,21 @@ Here is a brief introduction on how to install and get started using the pipelin
 For full details visit  `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
 
 Prepare Task Directory:
-    Create a task directory, and navigate to it.
-
+    | Create a task directory, and navigate to it.
+    |
     .. code-block:: bash   
 
-            mkdir /path/to/my_task
-            cd /path/to/my_task
+            $ mkdir /path/to/my_task
+            $ cd /path/to/my_task
 
 Install Nextflow (if necessary):
     | Download the nextflow executable to your current directory.
     | (You can move the nextflow executable and add to $PATH for 
       future usage)
-
+    |
     .. code-block:: bash
 
-        curl -s https://get.nextflow.io | bash
+        $ curl -s https://get.nextflow.io | bash
 
         # For the following steps, use:
         nextflow    # If nextflow executable on $PATH (assumed)
@@ -103,10 +103,10 @@ Install Nextflow (if necessary):
 Download and Install CnR-Flow:
     | Nextflow will download and store the pipeline in the 
       user's Nextflow info directory (Default: "~/.nextflow/")
-
+    |
     .. code-block:: bash
 
-        nextflow run dstrib/CnR-flow --mode initiate    
+        $ nextflow run dstrib/CnR-flow --mode initiate    
 
 Configure, Validate, and Test:
     | If using Nextflow's builtin Conda dependency handling (recommended),
@@ -118,21 +118,21 @@ Configure, Validate, and Test:
       section of |docs_link|_ for dependency configuration options.
     |
     | Once dependencies have been configured, validate all dependencies:
-
+    |
     .. code-block:: bash
 
-        nextflow run CnR-flow --mode validate_all
+        $ nextflow run CnR-flow --mode validate_all
 
     | Fill the required task input paramaters in ".../my_task/nextflow.config"
     | For detailed setup instructions, see the  |Task Setup| 
       section of |docs_link|_
     | *Additionally, configure your system executor, time, and memory settings in the pipe
       configuration file, if necessary*
-
+    |
     .. code-block:: bash
 
         # Configure:
-        .../my_task/nextflow.config   # Task Input, Steps, etc. Configuration
+        $ <vi/nano/emacs/...> .../my_task/nextflow.config   # Task Input, Steps, etc. Configuration
     
         #REQUIRED values to enter (all others *should* work as default):
         # ref_fasta               (or some other ref-mode/location)
@@ -142,19 +142,19 @@ Configure, Validate, and Test:
 Prepare and Execute Pipeline:
     | Prepare your reference databse (and normalization reference) from .fasta[.gz]
       file(s): 
-
+    |
     .. code-block:: bash
 
         $ nextflow run CnR-flow --mode prep_fasta
 
     | Perform a test run to check inputs, paramater setup, and process execution:
-
+    |
     .. code-block:: bash
 
         $ nextflow run CnR-flow --mode dry_run
 
     | If satisifed with the pipeline setup, execute the pipeline:
-
+    |
     .. code-block:: bash
 
         $ nextflow run CnR-flow --mode run
