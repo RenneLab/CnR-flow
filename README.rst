@@ -1,11 +1,11 @@
 
 CnR-flow
 ==================================
-.. image:: https://img.shields.io/github/v/release/dstrib/cnr-flow?include_prereleases
-   :target: https://github.com/dstrib/cnr-flow/releases
+.. image:: https://img.shields.io/github/v/release/rennelab/cnr-flow?include_prereleases
+   :target: https://github.com/rennelab/cnr-flow/releases
    :alt: GitHub release (latest by date including pre-releases)
-.. image:: https://travis-ci.com/dstrib/CnR-flow.svg?branch=master
-   :target: https://travis-ci.com/dstrib/CnR-flow
+.. image:: https://travis-ci.com/rennelab/CnR-flow.svg?branch=master
+   :target: https://travis-ci.com/rennelab/CnR-flow
    :alt: Travis-CI Build Status
 .. image:: https://readthedocs.org/projects/cnr-flow/badge/?version=latest
    :target: https://CnR-flow.readthedocs.io/en/latest/?badge=latest
@@ -21,7 +21,7 @@ CnR-flow
   trimming, normalization, and peak calling for paired-end sequencing 
   data from CUT&RUN experiments.
 | This software is available via GitHub, at 
-  http://www.github.com/dstrib/CnR-flow .
+  http://www.github.com/rennelab/CnR-flow .
 | Full project documentation is available at
   `CUT&RUN-Flow's ReadTheDocs Documentation <https://cnr-flow.readthedocs.io/>`_.
 |
@@ -106,7 +106,7 @@ Download and Install CnR-Flow:
     |
     .. code-block:: bash
 
-        $ nextflow run dstrib/CnR-flow --mode initiate    
+        $ nextflow run rennelab/CnR-flow --mode initiate    
 
 Configure, Validate, and Test:
     | If using Nextflow's builtin Conda dependency handling (recommended),
