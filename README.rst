@@ -75,6 +75,8 @@ Pipeline Features:
       as recently described by Meers et. al. (eLife 2019)
       (see the |References| section of |docs_link|_).
 
+    |pipe_dotgraph|
+
 | For a full list of required dependencies and tested versions, see 
   the |Dependencies| section of |docs_link|_, and for dependency 
   configuration options see the |Dependency Config| section.
@@ -177,10 +179,12 @@ Prepare and Execute Pipeline:
     | Further documentation on CUT&RUN-Flow components, setup, and usage can
       be found in |docs_link|_.
 
+
 .. |References| replace:: *References*
 .. |Dependency Config| replace:: *Dependency Configuration*
 .. |Dependencies| replace:: *Dependencies*
 .. |Task Setup| replace:: *Task Setup*
+.. |pipe_dotgraph| image:: build_info/current_dotgraph.png
 .. |docs_link| replace:: CUT&RUN-Flow's ReadTheDocs
 .. _docs_link: https://cnr-flow.readthedocs.io#
 
