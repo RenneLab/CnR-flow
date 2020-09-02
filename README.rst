@@ -74,6 +74,7 @@ Pipeline Features:
       included for utiliziation of *E. coli* as a spike-in control 
       as recently described by Meers et. al. (eLife 2019)
       (see the |References| section of |docs_link|_).
+    |
 
     |pipe_dotgraph|
 
@@ -185,6 +186,8 @@ Prepare and Execute Pipeline:
 .. |Dependencies| replace:: *Dependencies*
 .. |Task Setup| replace:: *Task Setup*
 .. |pipe_dotgraph| image:: build_info/current_dotgraph.png
+   :scale: 50 %
+   :alt: CUT&RUN-Flow Pipe Flowchart
 .. |docs_link| replace:: CUT&RUN-Flow's ReadTheDocs
 .. _docs_link: https://cnr-flow.readthedocs.io#
 
