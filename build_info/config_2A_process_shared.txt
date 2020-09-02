@@ -4,10 +4,16 @@ process {
     //executor = 'slurm'  // for running processes using SLURM (Default: 'local')
     // Process Walltime, See https://www.nextflow.io/docs/latest/process.html#process-time
     //time = '12h'
-    // Process Memory, See https://www.nextflow.io/docs/latest/process.html#process-memory
-    //memory = "16 GB"
     // Process CPUs, See https://www.nextflow.io/docs/latest/process.html#cpus
     //cpus = 8
+    // 
+    // Memory: See https://www.nextflow.io/docs/latest/process.html#process-memory
+    // Set Memory for specific task sizes (1n/2n/4n scheme recommended)
+    //withLabel: big_mem   { memory = '16 GB' }
+    //withLabel: norm_mem  { memory = '4 GB'  }
+    //withLabel: small_mem { memory = '2 GB'  }
+    // -*OR*- Set Memory for all processes
+    //memory = "16 GB"
 
     ext.ph = null //Placeholder to prevent errors.
 }

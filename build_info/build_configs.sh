@@ -17,10 +17,13 @@
 #along with CnR-Flow.  If not, see <https://www.gnu.org/licenses/>.
 
 
-./ensure_commented.py config_3A_params_task_inputs.txt config_5B_suffix_pipe_inputs_auto.txt "//" "    " 
+../flow_code/ensure_commented.py config_3A_params_task_inputs.txt config_5B_suffix_pipe_inputs_auto.txt "//" "    " 
 
 PIPE_FILES=$(find *shared* *pipe* | sort)
 TASK_FILES=$(find *shared* *task* | sort)
 
 cat ${PIPE_FILES} > ../nextflow.config
 cat ${TASK_FILES} > ../nextflow.config.task_default
+
+cp -v ../nextflow.config              ../templates/nextflow.config.backup
+cp -v ../nextflow.config.task_default ../templates/nextflow.config.task_default.backup

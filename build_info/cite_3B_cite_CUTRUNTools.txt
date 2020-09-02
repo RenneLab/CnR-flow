@@ -1,0 +1,1 @@
+Zhu, Qian, et al. "CUT&RUNTools: a flexible pipeline for CUT&RUN processing and footprint analysis." Genome biology 20.1 (2019): 192.

@@ -16,8 +16,6 @@ echo "Unpacking TAR: ${TAR_NAME}"
 tar -xf ${TAR_NAME}
 echo "Fetching kseq_test related files."
 cp ./cutruntools/*kseq* ./
-echo "Fetching filter_below related files."
-cp ./cutruntools/filter_below.awk ./
 echo "Building kseq_test executable..."
 bash ./make_kseq_test.sh
 echo "Cleaning up source files..."

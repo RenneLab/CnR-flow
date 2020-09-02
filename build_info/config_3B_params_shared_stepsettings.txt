@@ -5,6 +5,11 @@
     do_trim        = true  // Trim tags using Trimmomatic
     do_retrim      = true  // Retrim tags using kseq_test (CUTRUNTools)
     do_norm_spike  = true  // Normalize using aligment count to a spike-in reference
+    do_make_bigwig = true  // Create UCSC bigWig files from final alignments
+
+
+    //FastQC Settings:
+    fastqc_flags = ''
     
     // Alignment Mode Options (params.use_aln_modes) :
     //   "all"            : Use all reads
@@ -26,7 +31,8 @@
     
     //--Trimmomatic Adapter Path, Downloaded after "nextflow CnR-Flow --mode initiate"
     trimmomatic_adapterpath = "${projectDir}/ref_dbs/trimmomatic_adapters/TruSeq3-PE-2.fa"
-    
+    trimmomatic_settings    = "ILLUMINACLIP:${params.trimmomatic_adapterpath}/Truseq3.PE.fa:2:15:4:4:true LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25"
+    trimmomatic_flags       = "-phred33"
     //kseq_test (CUTRUNTools) Retrim Settings
     input_seq_len = 'auto'  // Length of untrimmed sequence reads (Ex: '150') or 'auto'
     
@@ -40,8 +46,9 @@
     norm_mode      = 'adj' // Options: ['adj', 'all']
     
     //Macs2 Settings
-    macs_qval  = "0.01"
-    
+    macs_qval  = '0.01'
+    macs_flags = ''   
+ 
     //SEACR Settings
     seacr_fdr_threshhold = "0.01"
     seacr_norm_mode      = "auto" // Options: "auto", "norm", "non"

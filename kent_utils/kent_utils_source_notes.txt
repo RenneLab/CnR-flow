@@ -1,6 +1,0 @@
-
-The faCount binary is one portion of the UCSC Kent Utilities Package
-The full, up-to-date verison of this and the other Kent Utilities are available at:
-http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/
-Thanks to the UCSC Genome Browser Group for publishing this code and making it available for use.
-

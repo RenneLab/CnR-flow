@@ -4,6 +4,8 @@ References
 
     #. To Fill
 
+    .. include:: citations.rst 
+
 
 About
 =====
@@ -32,6 +34,13 @@ Changelog
             | Documentation Work
             | Moved macs2 peak-calling out of alpha testing
             | "Reordered" output step directories
+            | Tuned resource usage defaults
+            | Added process memory usage categories
+            | Move UCSC/Kent tools to external dependency setup
+            | Added bigWig track format creation step
+            | Overhauled alignment modification step
+            | Removed Picard dependency
+            | Changed (non-track) alignment output files to CRAM (compressed BAM)
     * v0.09 | Refinements
             | Added one-step database preparation
             | Implemented 'list_refs' mode 

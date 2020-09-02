@@ -51,10 +51,16 @@ process {
     //executor = 'slurm'  // for running processes using SLURM (Default: 'local')
     // Process Walltime, See https://www.nextflow.io/docs/latest/process.html#process-time
     //time = '12h'
-    // Process Memory, See https://www.nextflow.io/docs/latest/process.html#process-memory
-    //memory = "16 GB"
     // Process CPUs, See https://www.nextflow.io/docs/latest/process.html#cpus
     //cpus = 8
+    // 
+    // Memory: See https://www.nextflow.io/docs/latest/process.html#process-memory
+    // Set Memory for specific task sizes (1n/2n/4n scheme recommended)
+    //withLabel: big_mem   { memory = '16 GB' }
+    //withLabel: norm_mem  { memory = '4 GB'  }
+    //withLabel: small_mem { memory = '2 GB'  }
+    // -*OR*- Set Memory for all processes
+    //memory = "16 GB"
 
     ext.ph = null //Placeholder to prevent errors.
 }
@@ -70,19 +76,19 @@ params {
     //     https://docs.conda.io/en/latest/miniconda.html
     //
     // -- External Conda Environments:
-    bowtie2_conda     = 'bioconda::bowtie2=2.4.1'
-    fastqc_conda      = 'bioconda::fastqc=0.11.9'
-    trimmomatic_conda = 'bioconda::trimmomatic=0.39'
-    picard_conda      = 'bioconda::picard=2.23.3'
-    bedtools_conda    = 'bioconda::bedtools=2.29.2'
-    macs2_conda       = 'bioconda::macs2=2.2.6'
-    R_conda           = 'r=3.6.0'
-    samtools_conda    = 'bioconda::samtools=1.9=*_11'
+    facount_conda          = 'bioconda::ucsc-facount=366=*_0'
+    bowtie2_conda          = 'bioconda::bowtie2=2.4.1'
+    fastqc_conda           = 'bioconda::fastqc=0.11.9'
+    trimmomatic_conda      = 'bioconda::trimmomatic=0.39'
+    bedtools_conda         = 'bioconda::bedtools=2.29.2'
+    macs2_conda            = 'bioconda::macs2=2.2.6'
+    R_conda                = 'r=3.6.0'
+    samtools_conda         = 'bioconda::samtools=1.9=*_11'
+    bedgraphtobigwig_conda = 'libgcc-ng libpng conda-forge::libuuid mysql-connector-c openssl zlib bioconda::ucsc-bedgraphtobigwig=377'
     
     // -- Packaged/Installed Tool Conda Environments (Changes should not be necessary):
     seacr_conda         = "${params.R_conda} ${params.bedtools_conda}"
-    //kseqtest_module     = ""  // (uses binary, should not be needed)
-    //filter_below_module = ""  // (uses awk, should not be needed)
+    //kseqtest_conda      = ""  // (uses binary, should not be needed)
     
     // -- Comprehensive Conda Environment (If provided, is used for all execution)
     //all_conda           = ""
@@ -91,18 +97,18 @@ params {
     // (values will vary depending on system)
     // To enable, comment ("//") the conda-configuration and uncomment this configuration.
     // -- External Tool Modules:
-    //bowtie2_module     = ""  // Ex: "bowtie2/2.3.5.1"
-    //fastqc_module      = ""  // Ex: "fastqc/0.11.7"
-    //trimmomatic_module = ""  // Ex: "trimmomatic/0.39"
-    //picard_module      = ""  // Ex: "picard/2.21.2"
-    //bedtools_module    = ""  // Ex: "bedtools/2.29.2"
-    //macs2_module       = ""  // Ex: "macs/2.2.7.1"
-    //R_module           = ""  // Ex: "R/4.0"
+    //facount_module          = ""  // Ex: "ucsc/20200320"
+    //bowtie2_module          = ""  // Ex: "bowtie2/2.3.5.1"
+    //fastqc_module           = ""  // Ex: "fastqc/0.11.7"
+    //trimmomatic_module      = ""  // Ex: "trimmomatic/0.39"
+    //bedtools_module         = ""  // Ex: "bedtools/2.29.2"
+    //macs2_module            = ""  // Ex: "macs/2.2.7.1"
+    //R_module                = ""  // Ex: "R/4.0"
+    //bedgraphtobigwig_module = ""  // Ex: "ucsc/20200320"
     
     // -- Packaged/Installed Tool Modules (Changes should not be necessary):
     //seacr_module         = "${params.R_module}:${params.bedtools_module}"
     //kseqtest_module      = ""  // (uses binary, should not be needed)
-    //filter_below_module  = ""  // (uses awk, should not be needed)
     
     // -- Comprehensive Tool Modules (If provided, is used for all execution)
     //all_module           = ""  // Ex: "cutruntools/20200104"
@@ -114,24 +120,19 @@ params {
     //   Ex:
     //        samtools_call = "samtools"
     //     or samtools_call = "/path/to/samtools/dir/samtools" 
-    java_call           = "java"
-    bowtie2_build_call  = "bowtie2-build"
-    samtools_call       = "samtools"
-    fastqc_call         = "fastqc"
-    trimmomatic_call    = "trimmomatic"
-    bowtie2_call        = "bowtie2"
-    picard_call         = "picard"
-    bedtools_call       = "bedtools"
-    macs2_call          = "macs2"
-    kseqtest_call       = "${projectDir}/CUTRUNTools/kseq_test"         //Works after install
-    filter_below_script = "${projectDir}/CUTRUNTools/filter_below.awk"  //Works after install
-    faCount_call        = "${projectDir}/kent_utils/faCount"            //Packaged with download
-    seacr_call          = "${projectDir}/SEACR/SEACR_1.3.sh"            //Packaged with download
-    seacr_R_script      = "${projectDir}/SEACR/SEACR_1.3.R"             //Packaged with download
-    // -- Options with Explicit Java Usage:
-    //fastqc_call         = "fastqc --java ${params.java_call}"
-    //trimmomatic_call    = "${params.java_call} -jar /path/to/trimmomatic-0.??.jar"
-    //picard_call         = "${params.java_call} -jar /path/to/picard.jar"
+    java_call             = "java"
+    bowtie2_build_call    = "bowtie2-build"
+    facount_call          = "faCount"
+    samtools_call         = "samtools"
+    fastqc_call           = "fastqc"
+    trimmomatic_call      = "trimmomatic"
+    bowtie2_call          = "bowtie2"
+    bedtools_call         = "bedtools"
+    macs2_call            = "macs2"
+    bedgraphtobigwig_call = "bedGraphToBigWig"
+    kseqtest_call         = "${projectDir}/CUTRUNTools/kseq_test"         //Installed with --mode initiate
+    seacr_call            = "${projectDir}/SEACR/SEACR_1.3.sh"            //Packaged with download
+    seacr_R_script        = "${projectDir}/SEACR/SEACR_1.3.R"             //Packaged with download
     
     // ------- Step-Specific Pipeline Paramaters --------
     // Step Settings:
@@ -140,6 +141,11 @@ params {
     do_trim        = true  // Trim tags using Trimmomatic
     do_retrim      = true  // Retrim tags using kseq_test (CUTRUNTools)
     do_norm_spike  = true  // Normalize using aligment count to a spike-in reference
+    do_make_bigwig = true  // Create UCSC bigWig files from final alignments
+
+
+    //FastQC Settings:
+    fastqc_flags = ''
     
     // Alignment Mode Options (params.use_aln_modes) :
     //   "all"            : Use all reads
@@ -161,7 +167,8 @@ params {
     
     //--Trimmomatic Adapter Path, Downloaded after "nextflow CnR-Flow --mode initiate"
     trimmomatic_adapterpath = "${projectDir}/ref_dbs/trimmomatic_adapters/TruSeq3-PE-2.fa"
-    
+    trimmomatic_settings    = "ILLUMINACLIP:${params.trimmomatic_adapterpath}/Truseq3.PE.fa:2:15:4:4:true LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25"
+    trimmomatic_flags       = "-phred33"
     //kseq_test (CUTRUNTools) Retrim Settings
     input_seq_len = 'auto'  // Length of untrimmed sequence reads (Ex: '150') or 'auto'
     
@@ -175,8 +182,9 @@ params {
     norm_mode      = 'adj' // Options: ['adj', 'all']
     
     //Macs2 Settings
-    macs_qval  = "0.01"
-    
+    macs_qval  = '0.01'
+    macs_flags = ''   
+ 
     //SEACR Settings
     seacr_fdr_threshhold = "0.01"
     seacr_norm_mode      = "auto" // Options: "auto", "norm", "non"
@@ -207,10 +215,11 @@ params {
     aln_dir_ref      = 'S2_A_aln_ref'
     aln_dir_mod      = 'S2_B_aln_mod'
     aln_dir_bdg      = 'S2_C_aln_bdg'
-    aln_dir_spike    = 'S2_D_aln_spikein'
-    aln_dir_norm     = 'S2_E_aln_norm'
-    peaks_dir_macs   = 'S3_A_peaks_macs'
-    peaks_dir_seacr  = 'S3_B_peaks_seacr'
+    aln_dir_spike    = 'S3_A_aln_spikein'
+    aln_dir_norm     = 'S3_B_aln_norm'
+    aln_bigwig_dir   = 'S4_A_aln_bigWig'
+    peaks_dir_macs   = 'S5_A_peaks_macs'
+    peaks_dir_seacr  = 'S5_B_peaks_seacr'
     prep_bt2db_suf   = 'bt2_db'
 
 }

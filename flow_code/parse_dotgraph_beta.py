@@ -50,6 +50,7 @@ with open(sys.argv[1], 'r') as dot_file:
 out_base = 'test_out_dot'
 out_dot = out_base + '.dot'
 
+origins = {}
 conn_forward = {}
 conn_backward = {}
 remove_nodes = {}
@@ -65,6 +66,8 @@ for group in graph_groups:
                 conn_forward[source] = []
             if target not in conn_backward:
                 conn_backward[target] = []
+            if source not in conn_backward:
+                origins[source] = None
             conn_forward[source].append(target)
             conn_backward[target].append(source)
 
@@ -127,7 +130,4 @@ with open('test_out_dot.dot', 'w') as out_dot_file:
 command = ['dot', '-Tpng', '-O', out_dot]
 subprocess.call(command)
 
-
-
-
-
+print o
