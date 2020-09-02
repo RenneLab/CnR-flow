@@ -77,8 +77,6 @@ Pipeline Features:
     |
 
     |pipe_dotgraph|
-    :scale: 50 %
-    :alt: CUT&RUN-Flow Pipe Flowchart
 
 | For a full list of required dependencies and tested versions, see 
   the |Dependencies| section of |docs_link|_, and for dependency 
@@ -188,6 +186,8 @@ Prepare and Execute Pipeline:
 .. |Dependencies| replace:: *Dependencies*
 .. |Task Setup| replace:: *Task Setup*
 .. |pipe_dotgraph| image:: build_info/current_dotgraph.png
+    :width: 75%
+    :alt: CUT&RUN-Flow Pipe Flowchart
 .. |docs_link| replace:: CUT&RUN-Flow's ReadTheDocs
 .. _docs_link: https://cnr-flow.readthedocs.io#
 
