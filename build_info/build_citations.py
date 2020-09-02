@@ -9,7 +9,7 @@ main_bib_path = main_cite_path.replace('.txt', '.bib')
 rst_cite_path = os.path.join('..', 'docs', 'source', 'citations.rst')
 
 all_citations = []
-rst_indent = 4
+rst_indent = 0
 
 for cite in sorted(glob.glob('*cite*cite*txt')):
     all_citations.append(cite.strip().replace(".txt", ""))
@@ -31,7 +31,7 @@ with open(main_cite_path, 'w') as main_cite, \
             main_bib.writelines(cite_bib.readlines() + ['\n'])
 
             # Write title for main file.
-            main_cite.write(citation_name + '\n')
+            main_cite.write(citation_name + ':\n')
 
             # Iterate through normal citation lines:
             first_line = next(cite_txt)
