@@ -34,6 +34,11 @@ Pipeline Design:
       `Conda`_ / `Bioconda`_ and `Environment Modules <Environment_Modules>`_.
     
 Dependencies:
+    | In addition to standard local configurations, Nextflow allows handling of 
+      dependencies in separated working environments within the same pipeline 
+      using `Conda`_ or `Environment Modules <Environment_Modules>`_. 
+      **CnR-Flow is pre-configured to acquire and utilize dependencies
+      using conda environments with no additional required setup.**
     | CUT&RUN-Flow utilizes 
       `UCSC Genome Browser Tools <faCount>`_ and  `Samtools`_
       for reference library preparation,
@@ -44,25 +49,24 @@ Dependencies:
       for alignment manipulation, and `MACS2`_ and/or `SEACR`_
       for peak calling, as well as their associated language subdependencies of
       Java, Python2/3, R, and C++.
-    | In addition to standard local configurations, Nextflow allows handling of 
-      dependencies in separated working environments within the same pipeline 
-      using `Conda`_ or `Environment Modules <Environment_Modules>`_. 
-      **CnR-Flow is pre-configured to acquire and utilize dependencies
-      using conda environments with no additional required setup.**
 
 Pipeline Features:
-    | A notable feature of CnR-flow pipeline is the ability to specify groups
+    * One-step reference database prepration using a path (or URL)
+      to a FASTA file.
+    * Ability to specify groups
       of samples containing both treatment and control (Ex: IgG) antibody
       groups, with automated association of each control sample with the 
-      respective treatment samples during the peak calling step.
-    | Additionally, this pipeline includes an (optional) built-in normalization
+      respective treatment samples during the peak calling step
+    * (Optional) Built-in normalization
       protocol to normalize to a sequence library of the user's choice
-      when spike-in DNA is used in the CUT&RUN Protocol. An 
-      *E. coli* reference genome is also provided with the pipline 
-      included for utiliziation of *E. coli* as a spike-in control 
-      as recently described by |Meers2019|
-      (see the |References| section of |docs_link|_).
-    |
+      when spike-in DNA is used in the CUT&RUN Protocol (Includes an 
+      *E. coli* reference genome for utiliziation of *E. coli* 
+      as a spike-in control as described by |Meers2019| 
+      [see the |References| section of |docs_link|_])
+    * SLURM, PBS... and many other job scheduling environments 
+      enabled natively by Nextflow
+    * Output of CRAM (alignment), bedgraph (genome coverage), 
+      and bigWig (genome coverage) file formats
 
     |pipe_dotgraph|
 
@@ -74,7 +78,7 @@ Quickstart:
 ------------
 
 Here is a brief introduction on how to install and get started using the pipeline. 
-For full details, see |docs_link|.
+For full details, see |docs_link|_.
 
 Prepare Task Directory:
     | Create a task directory, and navigate to it.
@@ -99,7 +103,7 @@ Install Nextflow (if necessary):
 
 Download and Install CnR-Flow:
     | Nextflow will download and store the pipeline in the 
-      user's Nextflow info directory (Default: "~/.nextflow/")
+      user's Nextflow info directory (Default: ``~/.nextflow/``)
 
     .. code-block:: bash
 
@@ -121,9 +125,9 @@ Configure, Validate, and Test:
         $ nextflow run CnR-flow --mode validate_all
 
     | Fill the required task input paramaters in "nextflow.config"
-    | For detailed setup instructions, see the  |Task Setup| 
+      For detailed setup instructions, see the  |Task Setup| 
       section of |docs_link|_
-    | *Additionally, for usage on a SLURM, PBS, or other cluster, 
+      *Additionally, for usage on a SLURM, PBS, or other cluster, 
       configure your system executor, time, and memory settings in this
       pipe configuration file.*
 
