@@ -186,7 +186,7 @@ Prepare and Execute Pipeline:
 .. |Dependencies| replace:: *Dependencies*
 .. |Task Setup| replace:: *Task Setup*
 .. |pipe_dotgraph| image:: build_info/current_dotgraph.png
-    :width: 75%
+    :width: 500px
     :alt: CUT&RUN-Flow Pipe Flowchart
 .. |docs_link| replace:: CUT&RUN-Flow's ReadTheDocs
 .. _docs_link: https://cnr-flow.readthedocs.io#
