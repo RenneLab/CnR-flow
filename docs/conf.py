@@ -7,7 +7,7 @@
 import os
 import sys
 #import proj_rst_vars
-import sphinx_nextflow
+#import sphinx_nextflow
 import sphinx_rtd_theme
 
 import imp
