@@ -13,9 +13,11 @@ import sphinx_rtd_theme
 import imp
 sys.path.insert(0, os.path.abspath('.'))
 
-proj_rst_vars = imp.load_source(
-    'proj_rst_vars', 
+proj_rst_vars = imp.load_source('proj_rst_vars', 
      os.path.abspath(os.path.join('proj_rst_vars.py'))
+)
+sphinx_nextflow = imp.load_source('sphinx_nextflow', 
+     os.path.abspath(os.path.join('sphinx_nextflow.py'))
 )
 
 
