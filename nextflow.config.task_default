@@ -126,8 +126,7 @@ params {
     input_seq_len = 'auto'  // Length of untrimmed sequence reads (Ex: '150') or 'auto'
     
     //Bowtie2 Alignment Settings
-    aln_ref_flags  = ("--local --very-sensitive-local --phred33 -I 10 -X 700 "
-                              + "--dovetail --no-unal --no-mixed --no-discordant")
+    aln_ref_flags  = "--local --very-sensitive-local --phred33 -I 10 -X 700 --dovetail --no-unal --no-mixed --no-discordant"
     
     //Normalization Settings
     aln_norm_flags = params.aln_ref_flags

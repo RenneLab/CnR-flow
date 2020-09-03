@@ -28,7 +28,7 @@ params {
     
     // Dependency Configuration Using Environment Modules
     // (values will vary depending on system)
-    // To enable, comment ("//") the conda-configuration and uncomment this configuration.
+    // To enable, comment ("//") / delete the conda-configuration and uncomment this configuration.
     // -- External Tool Modules:
     //facount_module          = ""  // Ex: "ucsc/20200320"
     //bowtie2_module          = ""  // Ex: "bowtie2/2.3.5.1"
@@ -47,7 +47,7 @@ params {
     //all_module           = ""  // Ex: "cutruntools/20200104"
     
     // System Call Settings
-    //   Call executed onthe system, defaults assume that each tool is available
+    //   Call executed on the system, defaults assume that each tool is available
     //     on the system PATH (as with conda setup)
     //   Can replace with direct path as desired:
     //   Ex:
@@ -63,7 +63,7 @@ params {
     bedtools_call         = "bedtools"
     macs2_call            = "macs2"
     bedgraphtobigwig_call = "bedGraphToBigWig"
-    kseqtest_call         = "${projectDir}/CUTRUNTools/kseq_test"         //Installed with --mode initiate
-    seacr_call            = "${projectDir}/SEACR/SEACR_1.3.sh"            //Packaged with download
-    seacr_R_script        = "${projectDir}/SEACR/SEACR_1.3.R"             //Packaged with download
+    kseqtest_call         = "${projectDir}/CUTRUNTools/kseq_test"  //Installed with --mode initiate
+    seacr_call            = "${projectDir}/SEACR/SEACR_1.3.sh"     //Packaged with download
+    seacr_R_script        = "${projectDir}/SEACR/SEACR_1.3.R"      //Packaged with download
     

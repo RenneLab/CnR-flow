@@ -3,13 +3,17 @@
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # http://www.sphinx-doc.org/en/master/config
+
 import os
 import sys
+import proj_rst_vars
+import sphinx_nextflow
+import sphinx_rtd_theme
+
 
 # -- Path setup --------------------------------------------------------------
 
 # -- Project information -----------------------------------------------------
-
 with open(os.path.join('..', 'nextflow.config'), 'r') as config_file:
     for line in config_file:
         if 'author =' in line:
@@ -18,8 +22,6 @@ with open(os.path.join('..', 'nextflow.config'), 'r') as config_file:
             version = line.split('version =')[1].strip().strip('"').strip("'")
         elif 'name =' in line:
             project = line.split('name =')[1].strip().strip('"').strip("'")
-
- 
 
 #project = 'CUT&RUN-Flow'
 copyright = '2020, Daniel Stribling'
@@ -33,11 +35,12 @@ release = version
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx_rtd_theme',
     'sphinx.ext.autosectionlabel',
     ]
 
 # add_module_names
-autosectionlabel_maxdepth = 1
+autosectionlabel_maxdepth = 2
 #autosectionlabel_prefix_document = True
 master_doc = 'index'
 
@@ -47,13 +50,24 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'setup.py']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'setup.py', 
+                    'proj_rst_vars.rst', 
+                    'source/specification.rst',
+                    'source/citations.rst',
+                   ]
 
 
 intersphinx_mapping = {
-                       'python': ('https://docs.python.org/3', None),
+                       #'python': ('https://docs.python.org/3', None),
                        #'matplotlib': ('https://readthedocs.org/projects/matplotlib/latest/', None)
                       }
+
+
+# -- Nextflow-specific Configuration -----------------------------------------
+
+primary_domain = None
+manpages_url = 'https://www.nextflow.io/docs/latest/{path}.html' 
+extensions.append('sphinx_nextflow')
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -69,11 +83,12 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 # Fix to RTD table wrapping: https://rackerlabs.github.io/docs-rackspace/tools/rtd-tables.html
-html_context = {
-    'css_files': [
-        '_static/theme_overrides.css',  # override wide tables in RTD theme
-        ],
-     }
+#html_context = {
+#    'css_files': [
+#        '_static/theme_overrides.css',  # override wide tables in RTD theme
+#        ],
+#     }
 
 # Define custom variables
+rst_epilog = proj_rst_vars.rst_epilog
 

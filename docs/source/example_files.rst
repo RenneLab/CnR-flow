@@ -1,6 +1,24 @@
 
-Task Config
-===========
+Example Files
+=============
+
+.. contents::
+   :local:
+
+
+Pipe nextflow.config
+--------------------
+
+This nextflow.config file is contains configuration
+paramaters for pipeline setup.
+
+.. literalinclude:: ../../templates/nextflow.config.backup
+   :caption: .../CnR-Flow/nextflow.config (Pipe Settings)
+   :name: pipe_config_file
+
+
+Task nextflow.config
+--------------------
 
 This nextflow.config file is copied to the task directory by the command:
 

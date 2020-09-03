@@ -1,0 +1,18 @@
+// -- External Conda Environments:
+facount_conda          = 'bioconda::ucsc-facount=366=*_0'
+bowtie2_conda          = 'bioconda::bowtie2=2.4.1'
+fastqc_conda           = 'bioconda::fastqc=0.11.9'
+trimmomatic_conda      = 'bioconda::trimmomatic=0.39'
+bedtools_conda         = 'bioconda::bedtools=2.29.2'
+macs2_conda            = 'bioconda::macs2=2.2.6'
+R_conda                = 'r=3.6.0'
+samtools_conda         = 'bioconda::samtools=1.9=*_11'
+bedgraphtobigwig_conda = 'libgcc-ng libpng conda-forge::libuuid mysql-connector-c openssl zlib bioconda::ucsc-bedgraphtobigwig=377'
+
+// -- Packaged/Installed Tool Conda Environments (Changes should not be necessary):
+seacr_conda         = "${params.R_conda} ${params.bedtools_conda}"
+//kseqtest_conda      = ""  // (uses binary, should not be needed)
+
+// -- Comprehensive Conda Environment (If provided, is used for all execution)
+//all_conda           = ""
+

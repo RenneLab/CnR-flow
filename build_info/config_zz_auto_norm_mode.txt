@@ -1,0 +1,2 @@
+norm_mode = 'adj' // Options: ['adj', 'all']
+seacr_norm_mode = "auto" // Options: "auto", "norm", "non"
