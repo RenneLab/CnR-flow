@@ -6,9 +6,17 @@
 
 import os
 import sys
-import proj_rst_vars
+#import proj_rst_vars
 import sphinx_nextflow
 import sphinx_rtd_theme
+
+import imp
+sys.path.insert(0, os.path.abspath('.'))
+
+proj_rst_vars = imp.load_source(
+    'proj_rst_vars', 
+     os.path.abspath(os.path.join('proj_rst_vars.py'))
+)
 
 
 # -- Path setup --------------------------------------------------------------
