@@ -14,7 +14,7 @@
 //You should have received a copy of the GNU General Public License
 //along with CnR-flow.  If not, see <https://www.gnu.org/licenses/>.
 
-// To prevent duplication, all required paramaters are listed in the bundled files:
+// To prevent duplication, all required parameters are listed in the bundled files:
 //   /CnR-flow/nextflow.config
 //   /CnR-flow/templates/nextflow.config.backup
 
@@ -130,7 +130,7 @@ if( ['prep_fasta'].contains(params.mode) ) {
     // If Run mode, automatically set reference keys based on reference mode.
     if (['run', 'dry_run'].contains(params.mode) ) {
         if( !params.containsKey('ref_mode') ) {
-            log.warn "No --ref_mode (params.ref_mode) paramater provided."
+            log.warn "No --ref_mode (params.ref_mode) parameter provided."
             log.warn "Defaulting to 'fasta'"
             log.warn ""
             params.ref_mode = 'fasta'

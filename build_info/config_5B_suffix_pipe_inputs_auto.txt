@@ -19,7 +19,7 @@
     //ctrl_fastqs  = []  //           Single-group Control   fastq pattern
     
     // Can specify multiple treat/control groups as Groovy mapping.
-    //   Specified INSTEAD of treat_fasts/ctrl_fastqs paramaters.
+    //   Specified INSTEAD of treat_fasts/ctrl_fastqs parameters.
     //   Note: There should be only one control sample per group 
     //     (after optional lane combination)
     //Example:

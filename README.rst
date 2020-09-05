@@ -128,7 +128,7 @@ Configure, Validate, and Test:
 
         $ nextflow run CnR-flow --mode validate_all
 
-    | Fill the required task input paramaters in "nextflow.config"
+    | Fill the required task input parameters in "nextflow.config"
       For detailed setup instructions, see the  |Task Setup| 
       section of |docs_link|_
       *Additionally, for usage on a SLURM, PBS, or other cluster systems, 
