@@ -11,9 +11,9 @@ in the user's ``$HOME`` directory as such:
 
 .. code-block:: bash
    
-      # PIpe Defaults Configuration:
-      $NXF_HOME/assets/rennelab/CnR-flow/nextflow.config  # Pipe Executor, Dependency, Resource, etc. Configuration
-      #Default: $HOME/.nextflow/assets/rennelab/CnR-flow/nextflow.config
+      # Pipe Defaults Configuration:
+      $NXF_HOME/assets/RenneLab/CnR-flow/nextflow.config  # Pipe Executor, Dependency, Resource, etc. Configuration
+      #Default: $HOME/.nextflow/assets/RenneLab/CnR-flow/nextflow.config
 
 It is recommended that dependency configuration and other pipe-level
 settings be configured here. An example of this file is provided 

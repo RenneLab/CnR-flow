@@ -25,7 +25,7 @@ Download and Installation
 
     .. code-block:: bash
   
-        $ nextflow run rennelab/CnR-flow --mode initiate
+        $ nextflow run RenneLab/CnR-flow --mode initiate
 
     | This should download the pipeline, install the few required local 
       files and dependencies, and prepare the pipeline for execution.
@@ -281,7 +281,7 @@ Aln_Spike
         reference. The number of read pairs that align to both references
         is then subtracted from the normalization factor output by this
         step, depending on the value of :param:`norm_mode` 
-        (default: obj:`true`).
+        (default: :obj:`true`).
     
     Details:
         | Sequence reads are first aligned to the normalization reference 

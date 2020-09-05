@@ -24,7 +24,7 @@ CUT&RUN-Flow (CnR-flow)
   trimming, normalization, and peak calling for paired-end sequencing 
   data from CUT&RUN experiments.
 | This software is available via GitHub, at 
-  http://www.github.com/rennelab/CnR-flow .
+  http://www.github.com/RenneLab/CnR-flow .
 | Full project documentation is available at |docs_link|_.
 
 Pipeline Design:
@@ -111,7 +111,7 @@ Download and Install CnR-flow:
 
     .. code-block:: bash
 
-        $ nextflow run rennelab/CnR-flow --mode initiate    
+        $ nextflow run RenneLab/CnR-flow --mode initiate    
 
 Configure, Validate, and Test:
     | If using Nextflow's builtin Conda dependency handling (recommended),

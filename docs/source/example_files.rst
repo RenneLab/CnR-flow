@@ -15,7 +15,7 @@ This nextflow.config file is copied to the task directory by the command:
   
     #mkdir ./my_task_dir
     #cd ./my_task_dir
-    nextflow run rennelab/CnR-flow --mode initiate
+    nextflow run RenneLab/CnR-flow --mode initiate
 
 This configuration file contains paramaters for input file and task 
 workflow setup.

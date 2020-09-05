@@ -7,3 +7,8 @@ References
     .. include:: citations.rst 
 
 
+References (BibTeX)
+-------------------
+
+    .. include:: ../../citations.bib
+       :literal:
