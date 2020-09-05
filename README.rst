@@ -16,6 +16,9 @@ CUT&RUN-Flow (CnR-flow)
 .. image:: https://img.shields.io/badge/License-GPLv3+-blue
    :target: https://www.gnu.org/licenses/gpl-3.0.en.html
    :alt: GNU GPLv3+ License
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.4015699.svg
+   :target: https://doi.org/10.5281/zenodo.4015699
+   :alt: Zenodo DOI:10.5281/zenodo.4015699
 
 | Welcome to *CUT&RUN-Flow* (*CnR-flow*), a Nextflow pipeline for QC, tag 
   trimming, normalization, and peak calling for paired-end sequencing 
