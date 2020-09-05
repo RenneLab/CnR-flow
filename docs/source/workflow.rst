@@ -403,8 +403,10 @@ Peaks_SEACR
       produced in previous steps (if normalization is enabled,
       using the SEACR_ peak caller [SEACR_Citation]_.
     |
-    | *Special thanks to the Henikoff group for their permission to 
-      distribute SEACR bundled with this pipeline.*
+    | *Special thanks to 
+      `Michael Meers <https://github.com/mpmeers>`_ and the 
+      `Henikoff Group <http://research.fhcrc.org/henikoff>`_ for 
+      their permission to distribute SEACR bundled with this pipeline.*
     
 
     Parameters:
