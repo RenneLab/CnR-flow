@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e -u -o pipefail
 START_DIR=$PWD
 SOURCE_URL="http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-Src-0.39.zip"
 ZIP_NAME="Trimmomatic-Src-0.39.zip"

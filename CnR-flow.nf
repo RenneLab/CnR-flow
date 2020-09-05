@@ -417,7 +417,14 @@ if( ['initiate'].contains( params.mode ) ) {
     kseq_test_exe = file("${projectDir}/CUTRUNTools/kseq_test")
     if( !(kseq_test_exe.exists()) ) {
         log.info "Downloading and Compiling Utilized CUTRUNTools Utilities"
-        println "${projectDir}/CUTRUNTools/install_cutruntools.sh".execute().text
+        ret_text = "${projectDir}/CUTRUNTools/install_cutruntools.sh".execute().text
+        println ret_text
+        if (ret_text.contains("kseq_test Installation Failure.") 
+            || !(kseq_test_exe.exists())) {
+            println "kseq_test Installation Failure Detected."
+            println "Please report issue to project developers."
+            exit 1
+        }
     }
     trimmomatic_dir = file("${projectDir}/ref_dbs/trimmomatic_adapters")
     if( !(trimmomatic_dir.exists()) ) {
