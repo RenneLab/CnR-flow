@@ -1033,7 +1033,7 @@ if( params.mode == 'run' ) {
     use_fastqs.into { fastqcPre_inputs; trim_inputs } 
 
     
-    // Step 0, Part B, FastQC Analysis (If Enabled)
+    // Step 0, Part C, FastQC Analysis (If Enabled)
     if( params.do_fastqc ) {
         process CnR_S0_C_FastQCPre {
             if( has_module(params, 'fastqc') ) {
@@ -1946,14 +1946,10 @@ if( params.mode == 'run' ) {
             out_log_name  = "${run_id}.nf.log.txt"
             use_name      = "${name}.${aln_type}"
             peaks_dir     = "${params.peaks_dir_macs}.${aln_type}"
-            treat_bams    = aln.findAll {fn -> 
-                ("${fn}".endsWith('_byname.bam'))
-            }
+            treat_bams    = aln.findAll {fn -> "${fn}".endsWith('_byname.bam') }
             treat_bam     = treat_bams[0]
             if( ctrl_name ) {
-                ctrl_bams = ctrl_aln.findAll {fn -> 
-                    ("${fn}".endsWith('.bam') && !"${fn}".contains("_byname"))
-                }
+                ctrl_bams = ctrl_aln.findAll {fn -> "${fn}".endsWith('_byname.bam') }
                 ctrl_flag = "--control ${ctrl_bams[0]}"
             } else {
                 ctrl_flag = ""
