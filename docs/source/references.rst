@@ -10,5 +10,5 @@ References
 References (BibTeX)
 -------------------
 
-    .. include:: ../../citations.bib
+    .. include:: ../../Citations.bib
        :literal:
