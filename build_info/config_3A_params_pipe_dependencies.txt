@@ -16,8 +16,8 @@ params {
     bedtools_conda         = 'bioconda::bedtools=2.29.2'
     macs2_conda            = 'bioconda::macs2=2.2.6'
     R_conda                = 'r=3.6.0'
-    samtools_conda         = 'bioconda::samtools=1.9=*_11'
-    bedgraphtobigwig_conda = 'libgcc-ng libpng conda-forge::libuuid mysql-connector-c openssl zlib bioconda::ucsc-bedgraphtobigwig=377'
+    samtools_conda         = 'bioconda::samtools=1.9'
+    bedgraphtobigwig_conda = 'conda-forge::libgcc-ng conda-forge::libpng conda-forge::libuuid conda-forge::mysql-connector-c conda-forge::openssl conda-forge::zlib bioconda::ucsc-bedgraphtobigwig=377'
     
     // -- Packaged/Installed Tool Conda Environments (Changes should not be necessary):
     seacr_conda         = "${params.R_conda} ${params.bedtools_conda}"
