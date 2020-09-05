@@ -2,21 +2,21 @@
 //Daniel Stribling
 //Renne Lab, University of Florida
 //
-//This file is part of CnR-Flow.
-//CnR-Flow is free software: you can redistribute it and/or modify
+//This file is part of CnR-flow.
+//CnR-flow is free software: you can redistribute it and/or modify
 //it under the terms of the GNU General Public License as published by
 //the Free Software Foundation, either version 3 of the License, or
 //(at your option) any later version.
-//CnR-Flow is distributed in the hope that it will be useful,
+//CnR-flow is distributed in the hope that it will be useful,
 //but WITHOUT ANY WARRANTY; without even the implied warranty of
 //MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //GNU General Public License for more details.
 //You should have received a copy of the GNU General Public License
-//along with CnR-Flow.  If not, see <https://www.gnu.org/licenses/>.
+//along with CnR-flow.  If not, see <https://www.gnu.org/licenses/>.
 
 // To prevent duplication, all required paramaters are listed in the bundled files:
 //   /CnR-flow/nextflow.config
-//   /CnR-flow/templates/nextflow.config.master (backup)
+//   /CnR-flow/templates/nextflow.config.backup
 
 // --------------- Setup Default Pipe Variables: ---------------
 params.verbose = false
@@ -28,7 +28,6 @@ params.out_front_pad = 4
 params.out_prop_pad = 17
 
 // --------------- Check (and Describe) "--mode" param: ---------------
-    //params.mode='run' //DEBUG
     modes = ['initiate', 'validate', 'validate_all', 'prep_fasta',
              'list_refs', 'dry_run', 'run', 'help', 'version']
     usage = """\
@@ -91,7 +90,6 @@ if( params.help || params.h ) {
 }
 
 print_in_files = []
-
 
 // If mode is 'prep_fasta', ensure "ref_fasta" has been provided.
 if( ['prep_fasta'].contains(params.mode) ) {
@@ -221,7 +219,7 @@ if( ['prep_fasta'].contains(params.mode) ) {
 
     // Keys and Params for merging langes
     if( params.do_merge_lanes ) {
-        null//No custom settings
+        null // No custom settings
     }
     // Keys and Params for FastQC
     if( params.do_fastqc ) {
@@ -448,7 +446,6 @@ if( ['initiate'].contains( params.mode ) ) {
     println ""
 }
 
-
 // -- Run Mode: validate
 if( ['validate', 'validate_all'].contains( params.mode ) ) { 
     process CnR_Validate {
@@ -503,9 +500,7 @@ if( ['validate', 'validate_all'].contains( params.mode ) ) {
     validate_outs
                 .collect()
                 .view { it -> "\nDependencies Have been Validated, Results:\n    $it\n" } 
-
 }
-
 
 def get_refs_locations(params) {
     refs_locations = [
@@ -612,7 +607,7 @@ if( params.mode == 'prep_fasta' ) {
 
     process CnR_Prep_GetFasta {
         tag          { name }
-d       label        'big_mem'
+        label        'big_mem'
         beforeScript { task_details(task) }
         stageInMode  'copy'    
         echo         true
@@ -783,7 +778,6 @@ d       label        'big_mem'
                             ["${name}.refinfo.txt", details]
                         }
                         .view { "Database Prepared and published in:\n    ${params.refs_dir}/${it}\nDetails:\n${it.text}" }
-
 }
 
 // -- Run Mode: 'dry_run'
@@ -1031,7 +1025,6 @@ if( params.mode == 'run' ) {
 
     // Prepare Step 0/1 Input Channels
     use_fastqs.into { fastqcPre_inputs; trim_inputs } 
-
     
     // Step 0, Part B, FastQC Analysis (If Enabled)
     if( params.do_fastqc ) {
@@ -1042,7 +1035,7 @@ if( params.mode == 'run' ) {
                 conda get_conda(params, 'fastqc')
             }
             tag          { name }
-            label        'norm_mem'
+            label        'small_mem'
             beforeScript { task_details(task) }
             cpus         1   //Multiple CPUS for FastQC are for multiple files.
 
@@ -1074,7 +1067,6 @@ if( params.mode == 'run' ) {
             '''
         }
     }
-
 
     // Step 1, Part A, Trim Reads using Trimmomatic (if_enabled)
     if( params.do_trim ) {
@@ -1210,8 +1202,9 @@ if( params.mode == 'run' ) {
                 conda get_conda(params, 'fastqc')
             }
             tag          { name }
-            label        'norm_mem'
+            label        'small_mem'
             beforeScript { task_details(task) }
+            cpus         1   //Multiple CPUS for FastQC are for multiple files.
            
             input:
             tuple val(name), val(cond), val(group), path(fastq) from fastqcPost_inputs
@@ -1731,7 +1724,6 @@ if( params.mode == 'run' ) {
 
             echo -e "name,fq_pairs,spike_aln_pairs,spike_aln_pct,cross_aln_pairs,cross_aln_pct,adj_aln_pairs,adj_aln_pct" > !{aln_count_csv}
             echo -e "!{name},${PAIR_NUM},${SPIKE_COUNT},${SPIKE_PERCENT},${CROSS_COUNT},CROSS_PCT,${ADJ_COUNT},${ADJ_PERCENT}" >> !{aln_count_csv}
- 
 
             echo "Step 3, Part A, Spike-In Alignment, Complete."
             '''
@@ -1830,7 +1822,6 @@ if( params.mode == 'run' ) {
             label        'norm_mem'
             beforeScript { task_details(task) }
             cpus         1
-            errorStrategy 'ignore' //Debug          
 
             input:
             tuple val(name), val(cond), val(group), val(aln_type), path(aln) from make_bigwig_alns
@@ -2082,7 +2073,6 @@ if( params.mode == 'run' ) {
         }
     }
 }
-    
 
 // --------------- Groovy Helper Functions ---------------
 def return_as_list(item) {
@@ -2190,12 +2180,11 @@ def has_conda(params, name, def_val="") {
     use_conda != def_val
 }
 
-//Return Boolean true if resources exist for name(s).
+// Return Boolean true if resources exist for name(s).
 def has_resources(params, name) {
     def resources = get_resources(params, name, def_val="")
     ( resources[0].toBoolean() || resources[1].toBoolean() )
 }   
-
 
 def test_params_key(params, key, allowed_opts=null) {
     if( !params.containsKey(key) ) {

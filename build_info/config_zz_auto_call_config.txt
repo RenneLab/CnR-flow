@@ -15,7 +15,7 @@ bowtie2_call          = "bowtie2"
 bedtools_call         = "bedtools"
 macs2_call            = "macs2"
 bedgraphtobigwig_call = "bedGraphToBigWig"
-kseqtest_call         = "${projectDir}/CUTRUNTools/kseq_test"         //Installed with --mode initiate
-seacr_call            = "${projectDir}/SEACR/SEACR_1.3.sh"            //Packaged with download
-seacr_R_script        = "${projectDir}/SEACR/SEACR_1.3.R"             //Packaged with download
+kseqtest_call         = "${projectDir}/CUTRUNTools/kseq_test"  //Installed with --mode initiate
+seacr_call            = "${projectDir}/SEACR/SEACR_1.3.sh"     //Packaged with download
+seacr_R_script        = "${projectDir}/SEACR/SEACR_1.3.R"      //Packaged with download
 

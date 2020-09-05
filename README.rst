@@ -37,7 +37,7 @@ Dependencies:
     | In addition to standard local configurations, Nextflow allows handling of 
       dependencies in separated working environments within the same pipeline 
       using `Conda`_ or `Environment Modules <Environment_Modules>`_. 
-      **CnR-Flow is pre-configured to acquire and utilize dependencies
+      **CnR-flow is pre-configured to acquire and utilize dependencies
       using conda environments with no additional required setup.**
     | CUT&RUN-Flow utilizes 
       `UCSC Genome Browser Tools <faCount>`_ and  `Samtools`_
@@ -54,12 +54,13 @@ Pipeline Features:
     * One-step reference database prepration using a path (or URL)
       to a FASTA file.
     * Ability to specify groups
-      of samples containing both treatment and control (Ex: IgG) antibody
+      of samples containing both treatment (Ex: H3K4me3) and 
+      control (Ex: IgG) antibody
       groups, with automated association of each control sample with the 
       respective treatment samples during the peak calling step
-    * (Optional) Built-in normalization
+    * Built-in normalization
       protocol to normalize to a sequence library of the user's choice
-      when spike-in DNA is used in the CUT&RUN Protocol (Includes an 
+      when spike-in DNA is used in the CUT&RUN Protocol (Optional, includes an 
       *E. coli* reference genome for utiliziation of *E. coli* 
       as a spike-in control as described by |Meers2019| 
       [see the |References| section of |docs_link|_])
@@ -74,7 +75,7 @@ Pipeline Features:
   the |Dependencies| section of |docs_link|_, and for dependency 
   configuration options see the |Dependency Config| section.
 
-Quickstart:
+Quickstart
 ------------
 
 Here is a brief introduction on how to install and get started using the pipeline. 
@@ -85,8 +86,8 @@ Prepare Task Directory:
 
     .. code-block:: bash   
 
-            $ mkdir /path/to/my_task  # (Example)
-            $ cd /path/to/my_task     # (Example)
+            $ mkdir ./my_task  # (Example)
+            $ cd ./my_task     # (Example)
 
 Install Nextflow (if necessary):
     | Download the nextflow executable to your current directory.
@@ -101,7 +102,7 @@ Install Nextflow (if necessary):
         nextflow    # If nextflow executable on $PATH (assumed)
         ./nextflow  # If running nextflow executable from local directory
 
-Download and Install CnR-Flow:
+Download and Install CnR-flow:
     | Nextflow will download and store the pipeline in the 
       user's Nextflow info directory (Default: ``~/.nextflow/``)
 
@@ -127,14 +128,13 @@ Configure, Validate, and Test:
     | Fill the required task input paramaters in "nextflow.config"
       For detailed setup instructions, see the  |Task Setup| 
       section of |docs_link|_
-      *Additionally, for usage on a SLURM, PBS, or other cluster, 
-      configure your system executor, time, and memory settings in this
-      pipe configuration file.*
+      *Additionally, for usage on a SLURM, PBS, or other cluster systems, 
+      configure your system executor, time, and memory settings.*
 
     .. code-block:: bash
 
         # Configure:
-        $ <vi/nano/emacs/...> nextflow.config   # Task Input, Steps, etc. Configuration
+        $ <vim/nano...> nextflow.config   # Task Input, Steps, etc. Configuration
     
         #REQUIRED values to enter (all others *should* work as default):
         # ref_fasta               (or some other ref-mode/location)
@@ -169,7 +169,7 @@ Prepare and Execute Pipeline:
 .. |Dependency Config| replace:: *Dependency Configuration*
 .. |Dependencies| replace:: *Dependencies*
 .. |Task Setup| replace:: *Task Setup*
-.. |pipe_dotgraph| image:: build_info/current_dotgraph.png
+.. |pipe_dotgraph| image:: build_info/dotgraph_parsed.png
     :alt: CUT&RUN-Flow Pipe Flowchart
 .. |docs_link| replace:: CUT&RUN-Flow's ReadTheDocs
 .. _docs_link: https://cnr-flow.readthedocs.io#

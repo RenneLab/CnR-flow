@@ -1,0 +1,354 @@
+digraph "next58176259flow" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p0 -> p1;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p1 -> p21;
+
+p2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p2 -> p3;
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p3 -> p23;
+
+p4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p4 -> p5;
+
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p5 -> p21;
+
+p6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p6 -> p7;
+
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p7 -> p23;
+
+p8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p8 -> p9;
+
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p9 -> p21;
+
+p10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p10 -> p11;
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p11 -> p23;
+
+p12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p12 -> p13;
+
+p13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p13 -> p21;
+
+p14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p14 -> p15;
+
+p15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p15 -> p23;
+
+p16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p16 -> p17;
+
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p17 -> p21;
+
+p18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p18 -> p19;
+
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p19 -> p23;
+
+p20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p20 -> p21;
+
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+p21 -> p24 [label="treat_fastqs"];
+
+p22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p22 -> p23;
+
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+p23 -> p24 [label="ctrl_fastqs"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+p24 -> p25;
+
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p25 -> p26;
+
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p26 -> p27;
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p27 -> p30 [label="prep_fastqs"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p27 -> p28 [label="seq_len_fastqs"];
+
+p28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p33 [label="CnR_S0_A_GetSeqLen"];
+p28 -> p33;
+
+p33 [label="CnR_S0_A_GetSeqLen"];
+p42 [label="CnR_S1_B_Retrim"];
+p33 -> p42 [label="input_seq_len"];
+
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p30 -> p31;
+
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p31 -> p32;
+
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p29 [label="CnR_S0_B_MergeFastqs"];
+p32 -> p29 [label="merge_fastqs"];
+
+p29 [label="CnR_S0_B_MergeFastqs"];
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p29 -> p35 [label="use_fastqs"];
+
+p29 [label="CnR_S0_B_MergeFastqs"];
+p34 [shape=point];
+p29 -> p34 [label="mergeFastqs_log_outs"];
+
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p36 [label="CnR_S0_C_FastQCPre"];
+p35 -> p36 [label="fastqcPre_inputs"];
+
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p39 [label="CnR_S1_A_Trim"];
+p35 -> p39 [label="trim_inputs"];
+
+p36 [label="CnR_S0_C_FastQCPre"];
+p38 [shape=point];
+p36 -> p38 [label="fastqcPre_outs"];
+
+p36 [label="CnR_S0_C_FastQCPre"];
+p37 [shape=point];
+p36 -> p37 [label="fastqcPre_log_outs"];
+
+p39 [label="CnR_S1_A_Trim"];
+p41 [shape=point];
+p39 -> p41 [label="trim_all_outs"];
+
+p39 [label="CnR_S1_A_Trim"];
+p42 [label="CnR_S1_B_Retrim"];
+p39 -> p42 [label="trim_outs"];
+
+p39 [label="CnR_S1_A_Trim"];
+p40 [shape=point];
+p39 -> p40 [label="trim_log_outs"];
+
+p42 [label="CnR_S1_B_Retrim"];
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p42 -> p44 [label="trim_final"];
+
+p42 [label="CnR_S1_B_Retrim"];
+p43 [shape=point];
+p42 -> p43 [label="retrim_log_outs"];
+
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p61 [label="CnR_S1_C_FastQCPost"];
+p44 -> p61 [label="fastqcPost_inputs"];
+
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p45 [label="CnR_S2_A_Aln_Ref"];
+p44 -> p45 [label="aln_ref_inputs"];
+
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p48 [label="CnR_S3_A_Aln_Spike"];
+p44 -> p48 [label="aln_spike_inputs"];
+
+p61 [label="CnR_S1_C_FastQCPost"];
+p47 [shape=point];
+p61 -> p47 [label="fastqcPost_outs"];
+
+p61 [label="CnR_S1_C_FastQCPost"];
+p46 [shape=point];
+p61 -> p46 [label="fastqcPost_log_outs"];
+
+p45 [label="CnR_S2_A_Aln_Ref"];
+p50 [label="CnR_S2_B_Modify_Aln"];
+p45 -> p50 [label="aln_outs"];
+
+p45 [label="CnR_S2_A_Aln_Ref"];
+p49 [shape=point];
+p45 -> p49 [label="aln_log_outs"];
+
+p50 [label="CnR_S2_B_Modify_Aln"];
+p55 [shape=point];
+p50 -> p55 [label="sort_aln_all_outs"];
+
+p50 [label="CnR_S2_B_Modify_Aln"];
+p56 [label="CnR_S2_C_Make_Bdg"];
+p50 -> p56 [label="sort_aln_outs_all"];
+
+p50 [label="CnR_S2_B_Modify_Aln"];
+p54 [shape=point];
+p50 -> p54 [label="sort_aln_outs_all_dedup"];
+
+p50 [label="CnR_S2_B_Modify_Aln"];
+p53 [shape=point];
+p50 -> p53 [label="sort_aln_outs_120"];
+
+p50 [label="CnR_S2_B_Modify_Aln"];
+p52 [shape=point];
+p50 -> p52 [label="sort_aln_outs_120_dedup"];
+
+p50 [label="CnR_S2_B_Modify_Aln"];
+p51 [shape=point];
+p50 -> p51 [label="sort_aln_log_outs"];
+
+p56 [label="CnR_S2_C_Make_Bdg"];
+p58 [shape=point];
+p56 -> p58 [label="bdg_aln_all_outs"];
+
+p56 [label="CnR_S2_C_Make_Bdg"];
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+p56 -> p65 [label="bdg_aln_outs"];
+
+p56 [label="CnR_S2_C_Make_Bdg"];
+p57 [shape=point];
+p56 -> p57 [label="bdg_aln_log_outs"];
+
+p59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+p60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p59 -> p60;
+
+p60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p48 [label="CnR_S3_A_Aln_Spike"];
+p60 -> p48;
+
+p48 [label="CnR_S3_A_Aln_Spike"];
+p64 [shape=point];
+p48 -> p64 [label="aln_spike_all_outs"];
+
+p48 [label="CnR_S3_A_Aln_Spike"];
+p63 [shape=point];
+p48 -> p63 [label="aln_spike_csv_outs"];
+
+p48 [label="CnR_S3_A_Aln_Spike"];
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+p48 -> p65 [label="aln_spike_outs"];
+
+p48 [label="CnR_S3_A_Aln_Spike"];
+p62 [shape=point];
+p48 -> p62 [label="aln_spike_log_outs"];
+
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p65 -> p66;
+
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p67 [label="CnR_S3_B_Norm_Bdg"];
+p66 -> p67 [label="norm_bdg_input"];
+
+p67 [label="CnR_S3_B_Norm_Bdg"];
+p69 [shape=point];
+p67 -> p69 [label="norm_all_outs"];
+
+p67 [label="CnR_S3_B_Norm_Bdg"];
+p70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p67 -> p70 [label="final_alns"];
+
+p67 [label="CnR_S3_B_Norm_Bdg"];
+p68 [shape=point];
+p67 -> p68 [label="norm_log_outs"];
+
+p70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p70 -> p74 [label="peak_call_alns"];
+
+p70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p82 [label="CnR_S4_A_Make_BigWig"];
+p70 -> p82 [label="make_bigwig_alns"];
+
+p82 [label="CnR_S4_A_Make_BigWig"];
+p73 [shape=point];
+p82 -> p73 [label="bigwig_outs"];
+
+p82 [label="CnR_S4_A_Make_BigWig"];
+p72 [shape=point];
+p82 -> p72 [label="bigwig_log_outs"];
+
+p74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+p74 -> p75;
+
+p74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+p74 -> p75;
+
+p75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p75 -> p76;
+
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p76 -> p77;
+
+p77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p78 [label="CnR_S5_B_Peaks_SEACR"];
+p77 -> p78 [label="seacr_alns"];
+
+p77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p71 [label="CnR_S5_A_Peaks_MACS"];
+p77 -> p71 [label="macs_alns"];
+
+p71 [label="CnR_S5_A_Peaks_MACS"];
+p81 [shape=point];
+p71 -> p81 [label="macs_peak_all_outs"];
+
+p71 [label="CnR_S5_A_Peaks_MACS"];
+p80 [shape=point];
+p71 -> p80 [label="macs_peak_outs"];
+
+p71 [label="CnR_S5_A_Peaks_MACS"];
+p79 [shape=point];
+p71 -> p79 [label="macs_peak_log_outs"];
+
+p78 [label="CnR_S5_B_Peaks_SEACR"];
+p85 [shape=point];
+p78 -> p85 [label="seacr_peak_all_outs"];
+
+p78 [label="CnR_S5_B_Peaks_SEACR"];
+p84 [shape=point];
+p78 -> p84 [label="seacr_peak_outs"];
+
+p78 [label="CnR_S5_B_Peaks_SEACR"];
+p83 [shape=point];
+p78 -> p83 [label="seacr_peak_log_outs"];
+
+}

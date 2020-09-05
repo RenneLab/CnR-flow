@@ -2,34 +2,37 @@
 Workflow
 ===============
 
-| The CUT&RUN-Flow (CnR-Flow) workflow is designed to be simple to install and execute 
+| The CUT&RUN-Flow (CnR-flow) workflow is designed to be simple to install and execute 
   without sacrificing analysis capabilities. Nextflow_ [Nextflow_Citation]_ provides several
   features that facilitate this design, included automatic download of 
   dependencies and i/o handling between workflow components.
 
-Full workflow:
-    .. image:: ../../build_info/current_dotgraph.png
+Full Workflow:
+    .. image:: ../../build_info/dotgraph_parsed.png
         :alt: CUT&RUN-Flow Pipe Flowchart
 
 Download and Installation
 --------------------------
 
+    (If necessary, begin by installing Nextflow_ and Conda_ as 
+    described in :ref:`Quickstart`)
+
     | Nextflow allows the pipeline to be downloaded simply by using the 
       "nextflow run" command, and providing the user/repository path to
-      the relevant github repository. CnR-Flow has a one-step installation 
+      the relevant github repository. CnR-flow has a one-step installation 
       mode that can be performed simultaneously ( :cl_param:`--mode initiate` ).
     | Together, this gives the command:
 
     .. code-block:: bash
   
-        $ nextflow run rennelab/CnR-Flow --mode initiate
+        $ nextflow run rennelab/CnR-flow --mode initiate
 
     | This should download the pipeline, install the few required local 
       files and dependencies, and prepare the pipeline for execution.
 
     .. note:: | After the initial download, the pipeline can then be referred
                 to by name, as with: 
-              | "nextflow run CnR-Flow ..."
+              | "nextflow run CnR-flow ..."
 
 Dependency Setup and Validation
 -------------------------------
@@ -47,18 +50,18 @@ Dependency Setup and Validation
        :name: mode_validate_all
 
         # validate all workflow dependencies (recommended)
-        $ nextflow run CnR-Flow --mode validate_all
+        $ nextflow run CnR-flow --mode validate_all
 
     .. code-block:: bash
        :name: mode_validate
 
         # validate only steps enabled in nextflow.config
-        $ nextflow run CnR-Flow --mode validate
+        $ nextflow run CnR-flow --mode validate
 
 Reference Preparation
 ----------------------
 
-    | CnR-Flow provides one-step preparation of alignment reference genome(s)
+    | CnR-flow provides one-step preparation of alignment reference genome(s)
       for use by the pipeline. Either the local path or URL of a fasta file are 
       provided to the :param:`ref_fasta` paramater, and the execution
       is performed with:
@@ -66,7 +69,7 @@ Reference Preparation
     .. code-block:: bash
        :name: mode_prep_fasta
   
-        $ nextflow run CnR-Flow --mode prep_fasta
+        $ nextflow run CnR-flow --mode prep_fasta
 
     | This copies the reference fasta to the directory specified by 
       :param:`ref_dir`, creates a bowtie2 alignment reference, 
@@ -88,7 +91,7 @@ Reference Preparation
     .. code-block:: bash
        :name: mode_list_refs
   
-        $ nextflow run CnR-Flow --mode list_refs
+        $ nextflow run CnR-flow --mode list_refs
 
 Experimental Condition
 ----------------------

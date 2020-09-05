@@ -50,7 +50,7 @@ extensions = [
     ]
 
 # add_module_names
-autosectionlabel_maxdepth = 2
+autosectionlabel_maxdepth = 3
 #autosectionlabel_prefix_document = True
 master_doc = 'index'
 

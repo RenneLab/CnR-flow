@@ -1,6 +1,6 @@
 //Daniel Stribling
 //Renne Lab, University of Florida
-//CnR-Flow Configuration File
+//CnR-flow Configuration File
 //
 // Config syntax:
 // This config file uses the syntax described here:

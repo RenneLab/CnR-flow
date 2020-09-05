@@ -6,17 +6,6 @@ Example Files
    :local:
 
 
-Pipe nextflow.config
---------------------
-
-This nextflow.config file is contains configuration
-paramaters for pipeline setup.
-
-.. literalinclude:: ../../templates/nextflow.config.backup
-   :caption: .../CnR-Flow/nextflow.config (Pipe Settings)
-   :name: pipe_config_file
-
-
 Task nextflow.config
 --------------------
 
@@ -34,3 +23,16 @@ workflow setup.
 .. literalinclude:: ../../templates/nextflow.config.task_default.backup
    :caption: .../my_task_dir/nextflow.config (Task Settings)
    :name: task_config_file
+
+
+Pipe nextflow.config
+--------------------
+
+This nextflow.config file is contains configuration
+paramaters for pipeline setup.
+
+.. literalinclude:: ../../templates/nextflow.config.backup
+   :caption: .../CnR-flow/nextflow.config (Pipe Settings)
+   :name: pipe_config_file
+
+

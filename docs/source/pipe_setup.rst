@@ -12,16 +12,16 @@ in the user's ``$HOME`` directory as such:
 .. code-block:: bash
    
       # PIpe Defaults Configuration:
-      $NXF_HOME/assets/rennelab/CnR-Flow/nextflow.config  # Pipe Executor, Dependency, Resource, etc. Configuration
-      #Default: $HOME/.nextflow/assets/rennelab/CnR-Flow/nextflow.config
+      $NXF_HOME/assets/rennelab/CnR-flow/nextflow.config  # Pipe Executor, Dependency, Resource, etc. Configuration
+      #Default: $HOME/.nextflow/assets/rennelab/CnR-flow/nextflow.config
 
 It is recommended that dependency configuration and other pipe-level
 settings be configured here. An example of this file is provided 
 in :ref:`Pipe nextflow.config`.
 
-.. note:: If any provided settings differ between the 
-   above ``nextflow.config`` file and the 
-   ``nextflow.config`` file located in the task directory, 
+.. note:: If any settings are provided in both the 
+   above :ref:`Pipe nextflow.config` file and the 
+   :ref:`Task nextflow.config` file located in the task directory, 
    the task-directory settings will take precedence. For more
    information on Nextflow configuration precedence, see
    :manpage:`config`.
