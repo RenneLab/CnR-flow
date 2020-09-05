@@ -5,7 +5,7 @@
 //
 //   This configuration only includes task-specific paramaters and paramaters 
 //   designed to be modified at runtime. Other parameters are provided in the 
-//   pipe configuration, at CnR-Flow/nextflow.config. Parameters
+//   pipe configuration, at CnR-flow/nextflow.config. Parameters
 //   provided here will override system defaults.
 //
 

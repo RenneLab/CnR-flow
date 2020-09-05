@@ -6,10 +6,11 @@
    :caption: Documentation Contents:
 
    self
-   source/dependencies
+   source/workflow
    source/task_setup
-   source/task_config
-   source/pipe_config
+   source/pipe_setup
+   source/example_files
+   source/references
    source/about
  
 

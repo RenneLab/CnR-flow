@@ -10,7 +10,7 @@
     // Default Pre-Supplied Normalization library is Ecoli:
     //norm_ref_fasta = "${projectDir}/ref_dbs/gcf_000005845.2_asm584v2_genomic.fasta.gz"
 
-    // CnR Input Files:
+    // CnR-flow Input Files:
     //   Provided fastqs must be in glob pattern matching pairs.
     //     Example: ['./relpath/to/base*R{1,2}*.fastq']
     //     Example: ['/abs/path/to/other*R{1,2}*.fastq']

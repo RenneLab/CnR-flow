@@ -1,0 +1,1 @@
+peak_callers = ['macs', 'seacr']  // Options: ['macs', 'seacr']

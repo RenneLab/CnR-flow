@@ -1,0 +1,21 @@
+// System Call Settings
+//   Call executed on the system, defaults assume that each tool is available
+//     on the system PATH (as with conda setup)
+//   Can replace with direct path as desired:
+//   Ex:
+//        samtools_call = "samtools"
+//     or samtools_call = "/path/to/samtools/dir/samtools" 
+java_call             = "java"
+bowtie2_build_call    = "bowtie2-build"
+facount_call          = "faCount"
+samtools_call         = "samtools"
+fastqc_call           = "fastqc"
+trimmomatic_call      = "trimmomatic"
+bowtie2_call          = "bowtie2"
+bedtools_call         = "bedtools"
+macs2_call            = "macs2"
+bedgraphtobigwig_call = "bedGraphToBigWig"
+kseqtest_call         = "${projectDir}/CUTRUNTools/kseq_test"  //Installed with --mode initiate
+seacr_call            = "${projectDir}/SEACR/SEACR_1.3.sh"     //Packaged with download
+seacr_R_script        = "${projectDir}/SEACR/SEACR_1.3.R"      //Packaged with download
+

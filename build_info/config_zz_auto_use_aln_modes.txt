@@ -1,0 +1,1 @@
+use_aln_modes = ["all"]  // Options: ["all", "all_dedup", "less_120", "less_120_dedup"]

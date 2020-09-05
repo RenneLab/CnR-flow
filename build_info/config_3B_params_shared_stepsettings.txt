@@ -29,7 +29,7 @@
     
     //Trimmomatic Trim Settings
     
-    //--Trimmomatic Adapter Path, Downloaded after "nextflow CnR-Flow --mode initiate"
+    //--Trimmomatic Adapter Path, Downloaded after "nextflow CnR-flow --mode initiate"
     trimmomatic_adapterpath = "${projectDir}/ref_dbs/trimmomatic_adapters/TruSeq3-PE-2.fa"
     trimmomatic_settings    = "ILLUMINACLIP:${params.trimmomatic_adapterpath}/Truseq3.PE.fa:2:15:4:4:true LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25"
     trimmomatic_flags       = "-phred33"
@@ -37,8 +37,7 @@
     input_seq_len = 'auto'  // Length of untrimmed sequence reads (Ex: '150') or 'auto'
     
     //Bowtie2 Alignment Settings
-    aln_ref_flags  = ("--local --very-sensitive-local --phred33 -I 10 -X 700 "
-                              + "--dovetail --no-unal --no-mixed --no-discordant")
+    aln_ref_flags  = "--local --very-sensitive-local --phred33 -I 10 -X 700 --dovetail --no-unal --no-mixed --no-discordant"
     
     //Normalization Settings
     aln_norm_flags = params.aln_ref_flags

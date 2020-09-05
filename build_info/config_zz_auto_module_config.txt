@@ -1,0 +1,20 @@
+// Dependency Configuration Using Environment Modules
+// (values will vary depending on system)
+// To enable, comment ("//") / delete the conda-configuration and uncomment this configuration.
+// -- External Tool Modules:
+//facount_module          = ""  // Ex: "ucsc/20200320"
+//bowtie2_module          = ""  // Ex: "bowtie2/2.3.5.1"
+//fastqc_module           = ""  // Ex: "fastqc/0.11.7"
+//trimmomatic_module      = ""  // Ex: "trimmomatic/0.39"
+//bedtools_module         = ""  // Ex: "bedtools/2.29.2"
+//macs2_module            = ""  // Ex: "macs/2.2.7.1"
+//R_module                = ""  // Ex: "R/4.0"
+//bedgraphtobigwig_module = ""  // Ex: "ucsc/20200320"
+
+// -- Packaged/Installed Tool Modules (Changes should not be necessary):
+//seacr_module         = "${params.R_module}:${params.bedtools_module}"
+//kseqtest_module      = ""  // (uses binary, should not be needed)
+
+// -- Comprehensive Tool Modules (If provided, is used for all execution)
+//all_module           = ""  // Ex: "cutruntools/20200104"
+

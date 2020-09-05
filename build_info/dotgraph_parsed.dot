@@ -1,0 +1,58 @@
+digraph "next58176259flow" {
+p01a -> p01c
+p01a [shape=invtriangle,label="treat_fastqs"];
+p01b -> p01c
+p01b [shape=invtriangle,label="ctrl_fastqs"];
+p01c -> p27;
+p01c [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+p27 -> p29;
+p27 -> p33;
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p29 -> p35 [label="use_fastqs"];
+p29 [label="CnR_S0_B_MergeFastqs"];
+p33 -> p42 [label="input_seq_len"];
+p33 [label="CnR_S0_A_GetSeqLen"];
+p35 -> p36 [label="fastqcPre_inputs"];
+p35 -> p39 [label="trim_inputs"];
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p36 -> p38 [label="fastqcPre_outs"];
+p36 [label="CnR_S0_C_FastQCPre"];
+p38 [label=output,shape=octagon];
+p39 -> p42 [label="trim_outs"];
+p39 [label="CnR_S1_A_Trim"];
+p42 -> p44 [label="trim_final"];
+p42 [label="CnR_S1_B_Retrim"];
+p44 -> p45 [label="aln_ref_inputs"];
+p44 -> p48 [label="aln_spike_inputs"];
+p44 -> p61 [label="fastqcPost_inputs"];
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p45 -> p50 [label="aln_outs"];
+p45 [shape=box,label="CnR_S2_A_Aln_Ref"];
+p47 [label=output,shape=octagon];
+p48 -> p67;
+p48 [label="CnR_S3_A_Aln_Spike"];
+p50 -> p56 [label="sort_aln_outs_all"];
+p50 [shape=box,label="CnR_S2_B_Modify_Aln"];
+p56 -> p67;
+p56 [shape=box,label="CnR_S2_C_Make_Bdg"];
+p61 -> p47 [label="fastqcPost_outs"];
+p61 [label="CnR_S1_C_FastQCPost"];
+p67 -> p70 [label="final_alns"];
+p67 [label="CnR_S3_B_Norm_Bdg"];
+p70 -> p77;
+p70 -> p82 [label="make_bigwig_alns"];
+p70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p71 -> p80 [label="macs_peak_outs"];
+p71 [label="CnR_S5_A_Peaks_MACS"];
+p73 [label=output,shape=octagon];
+p77 -> p71 [label="macs_alns"];
+p77 -> p78 [label="seacr_alns"];
+p77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p78 -> p84 [label="seacr_peak_outs"];
+p78 [label="CnR_S5_B_Peaks_SEACR"];
+p80 [label=output,shape=octagon];
+p82 -> p73 [label="bigwig_outs"];
+p82 [label="CnR_S4_A_Make_BigWig"];
+p84 [label=output,shape=octagon];
+}
+

@@ -4,17 +4,17 @@
 #Changelog:
 #   2020-08-28, Initial (Beta) Version
 #
-#This file is part of CnR-Flow.
-#CnR-Flow is free software: you can redistribute it and/or modify
+#This file is part of CnR-flow.
+#CnR-flow is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
 #(at your option) any later version.
-#CnR-Flow is distributed in the hope that it will be useful,
+#CnR-flow is distributed in the hope that it will be useful,
 #but WITHOUT ANY WARRANTY; without even the implied warranty of
 #MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
-#along with CnR-Flow.  If not, see <https://www.gnu.org/licenses/>.
+#along with CnR-flow.  If not, see <https://www.gnu.org/licenses/>.
 
 """
 This script reads a file and ensures that every non-blank line begins 

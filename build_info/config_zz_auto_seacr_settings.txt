@@ -1,0 +1,5 @@
+//SEACR Settings
+seacr_fdr_threshhold = "0.01"
+seacr_norm_mode = "auto" // Options: "auto", "norm", "non"
+seacr_call_stringent = true
+seacr_call_relaxed = true

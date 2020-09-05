@@ -1,0 +1,16 @@
+params {
+    // ------- General Pipeline Output Paramaters --------
+    publish_files    = 'default' // Options: ["minimal", "default", "all"]
+    publish_mode     = 'copy'    // Options: ["symlink", "copy"]
+
+    //Name trim guide: ( regex-based )
+    //   ~/groovy-slashy-string/  ;  "~" denotes groovy pattern type.
+    //   ~/^/ matches beginning   ;   ~/$/ matches end    
+    trim_name_prefix = ''        // Example: ~/^myprefix./ removes "myprefix." prefix.
+    trim_name_suffix = ''        // Example: ~/_mysuffix$/ removes "_mysuffix" suffix.   
+
+    // Workflow Output Default Naming Scheme:
+    //   Absolute paths for output:
+    out_dir          = "${launchDir}/cnr_output"
+    refs_dir         = "${launchDir}/cnr_references"
+}
