@@ -46,8 +46,9 @@ Conda/Bioconda
 ++++++++++++++
 
 | *CUT&RUN-FLow* comes preconfigured to use the Conda_ package manager, 
-  along with tools from the Bioconda_ [Bioconda_Citation]_ package 
-  suite for automated dependency handling. Nextflow_ automatically 
+  along with tools from the Bioconda_  package 
+  suite for automated dependency handling. 
+  [Conda_Citation]_ [Bioconda_Citation]_  Nextflow_ automatically 
   acquires, stores, and activates each conda environment as it is
   required in the pipeline. For more information on Nextflow's,
   usage of conda, see :manpage:`conda`. 
@@ -59,7 +60,7 @@ Modules
 ++++++++++++++
 
 | *CUT&RUN-FLow* comes with an alternative "easy" configuration option
-  utilizng `Environment Modules <Envrionment_Modules>`_. Each conda
+  utilizing `Environment Modules <Envrionment_Modules>`_. Each conda
   dependency paramater has an equivalent "module" paramater. Each module
   will then be loaded at runtime for the appropriate steps of the pipeline.
   For more information on Nextflow's use of Environment Modules, 

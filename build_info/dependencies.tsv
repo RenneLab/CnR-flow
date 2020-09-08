@@ -1,6 +1,6 @@
 **Dependency**	**Def. Ver.**	**Lowest Ver.**	**Highest Ver.**	**Citation**	**Default Conda**
 Nextflow	20.07.1	20.07.1	20.07.1	[Nextflow_Citation]_	N/A
-UCSC-faCount	366	366	366	[faCount_Citation]_	bioconda::ucsc-facount=366=*_0'
+UCSC-faCount	366	366	366	[faCount_Citation]_	bioconda::ucsc-facount=366'
 Bowtie2	2.4.1	2.4.1	2.4.1	[Bowtie2_Citation]_	bioconda::bowtie2=2.4.1
 Samtools	1.9	1.9	1.9	[Samtools_Citation]_	bioconda::samtools=1.9
 FastQC	0.11.9	0.11.9	0.11.9	[FastQC_Citation]_	bioconda::fastqc=0.11.9

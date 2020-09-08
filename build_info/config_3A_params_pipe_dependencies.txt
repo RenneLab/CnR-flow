@@ -9,7 +9,7 @@ params {
     //     https://docs.conda.io/en/latest/miniconda.html
     //
     // -- External Conda Environments:
-    facount_conda          = 'bioconda::ucsc-facount=366=*_0'
+    facount_conda          = 'bioconda::ucsc-facount=366'
     bowtie2_conda          = 'bioconda::bowtie2=2.4.1'
     fastqc_conda           = 'bioconda::fastqc=0.11.9'
     trimmomatic_conda      = 'bioconda::trimmomatic=0.39'

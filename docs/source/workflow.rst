@@ -38,9 +38,9 @@ Dependency Setup and Validation
 -------------------------------
 
     | CUT&RUN-Flow comes preconfigured to utilize the Conda_ package
-      management suite together with bioconda packages to handle 
-      pipeline dependencies (Currently supported with Linux64 systems,
-      with macOS support under development.
+      management suite together with Bioconda_ packages to handle 
+      pipeline dependencies (currently supported with Linux64 systems,
+      with macOS support under development).
     | for more details, or for an alternative configuration, see 
       :ref:`dependency config`
 

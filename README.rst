@@ -69,7 +69,8 @@ Pipeline Features:
       [see the |References| section of |docs_link|_])
     * SLURM, PBS... and many other job scheduling environments 
       enabled natively by Nextflow
-    * Output of CRAM (alignment), bedgraph (genome coverage), 
+    * Output of memory-efficient CRAM (alignment), 
+      bedgraph (genome coverage), 
       and bigWig (genome coverage) file formats
 
     |pipe_dotgraph|

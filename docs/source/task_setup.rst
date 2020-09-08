@@ -107,6 +107,16 @@ Input File Setup
            :literal:
 
 
+    .. note:: Note, for convenience, if the same file is
+       found both as a treatment and control, the copy passed to treatment
+       will be ignored (facilitates easy pattern matching).
+ 
+    .. warning:: Input files must be paired-end, and in fastq[.gz] format.
+       Nextflow requires the use of this (strange-looking) ``R{1,2}``
+       naming construct, (matches either R1 or R2)
+       which ensures that files are fed into the pipeline 
+       as pairs.
+
     Multiple Sample Group:
         | A multi-group layout, with groups of samples provided
           where each group has a control sample.
@@ -121,16 +131,6 @@ Input File Setup
     were sequenced on different lanes can be automatically recognized and
     combined (default: ``true``). For more information see: 
     :ref:`MergeFastqs`. 
-
-    .. note:: Note, for convenience, if the same file is
-       found both as a treatment and control, the copy passed to treatment
-       will be ignored (facilitates easy pattern matching).
- 
-    .. warning:: Input files must be paired-end, and in fastq[.gz] format.
-       Nextflow requires the use of this (strange-looking) ``R{1,2}``
-       naming construct, (matches either R1 or R2)
-       which ensures that files are fed into the pipeline 
-       as pairs.
 
 Executor Setup
 -------------------
@@ -208,16 +208,16 @@ Output Setup
           nextflow working directory.
 
     trim_name_prefix & trim_name_suffix:
-        | :param:`trim_name_prefix` & :param:`trim_name_suffix`
+        | :config_param:`trim_name_prefix` & :config_param:`trim_name_suffix`
         | These options allow trimming of a prefix or suffix from sample
           names (after any merging steps).
   
     out_dir:
-        :param:`out_dir` : Location for output of the files
+        :param:`out_dir` : Location for output of the files.
 
     refs_dir:
         :param:`refs_dir` : Location for placing and searching 
-        for refernce directories 
+        for reference directories.
 
     .. include:: ../../build_info/config_zz_auto_naming.txt
        :literal:

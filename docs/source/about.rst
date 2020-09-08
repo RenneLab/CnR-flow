@@ -22,6 +22,9 @@ Lead Developer
 Changelog
 ---------
 
+    v0.11-dev:
+        * Refinements
+
     v0.10:
         * Refinements
         * Changed verbose task logging to implementation with "beforeScript"
@@ -36,7 +39,6 @@ Changelog
         * Removed Picard dependency
         * Changed (non-track) alignment output files to CRAM (compressed BAM)
 
-
     v0.09:
         * Refinements
         * Added one-step database preparation
@@ -50,8 +52,7 @@ Changelog
         * Implemented MACS2 peak calling
         * Added autodetection of tag sequence length
 
-
-     v0.08
+     v0.08:
         * Initial Github Upload
 
 
