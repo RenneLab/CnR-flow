@@ -764,7 +764,7 @@ if( params.mode == 'prep_fasta' ) {
         echo -e "Preparing chrom.sizes File..."
         cut -f1,2 !{faidx_name} > !{chrom_sizes_name}
         echo -e "Counting Reference Nucleotides..."
-        !{params.faCount_call} !{fasta} > !{fa_count_name}
+        !{params.facount_call} !{fasta} > !{fa_count_name}
         echo -e "Calculating Reference Effective Genome Size (Total - N's method )..."
         TOTAL=$(tail -n 1 !{fa_count_name} | cut -f2) 
         NS=$(tail -n 1 !{fa_count_name} | cut -f7)
