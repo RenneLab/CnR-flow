@@ -996,6 +996,7 @@ if( params.mode == 'run' ) {
                 command = '''
                 echo "No Merge Necessary. Renaming Files..."
                 set -v -H -o history
+                mkdir !{merge_fastqs_dir}
                 mv -v "!{R1_files[0]}" "!{R1_out_file}"
                 mv -v "!{R2_files[0]}" "!{R2_out_file}"
                 set +v +H +o history
