@@ -13,15 +13,13 @@ params {
     bowtie2_conda          = 'bioconda::bowtie2=2.4.1'
     fastqc_conda           = 'bioconda::fastqc=0.11.9'
     trimmomatic_conda      = 'bioconda::trimmomatic=0.39'
+    kseqtest_conda         = 'RenneLab::cutruntools-exec'
     bedtools_conda         = 'bioconda::bedtools=2.29.2'
     macs2_conda            = 'bioconda::macs2=2.2.6'
     R_conda                = 'r=3.6.0'
+    seacr_conda            = "${params.R_conda} ${params.bedtools_conda}"
     samtools_conda         = 'bioconda::samtools=1.9'
     bedgraphtobigwig_conda = 'conda-forge::libpng conda-forge::libuuid conda-forge::mysql-connector-c conda-forge::openssl conda-forge::zlib bioconda::ucsc-bedgraphtobigwig=377'
-    
-    // -- Packaged/Installed Tool Conda Environments (Changes should not be necessary):
-    seacr_conda         = "${params.R_conda} ${params.bedtools_conda}"
-    //kseqtest_conda      = ""  // (uses binary, should not be needed)
     
     // -- Comprehensive Conda Environment (If provided, is used for all execution)
     //all_conda           = ""
@@ -34,14 +32,12 @@ params {
     //bowtie2_module          = ""  // Ex: "bowtie2/2.3.5.1"
     //fastqc_module           = ""  // Ex: "fastqc/0.11.7"
     //trimmomatic_module      = ""  // Ex: "trimmomatic/0.39"
+    //kseqtest_module         = ""  // Ex: "cutruntools/20190822"
     //bedtools_module         = ""  // Ex: "bedtools/2.29.2"
     //macs2_module            = ""  // Ex: "macs/2.2.7.1"
     //R_module                = ""  // Ex: "R/4.0"
-    //bedgraphtobigwig_module = ""  // Ex: "ucsc/20200320"
-    
-    // -- Packaged/Installed Tool Modules (Changes should not be necessary):
     //seacr_module         = "${params.R_module}:${params.bedtools_module}"
-    //kseqtest_module      = ""  // (uses binary, should not be needed)
+    //bedgraphtobigwig_module = ""  // Ex: "ucsc/20200320"
     
     // -- Comprehensive Tool Modules (If provided, is used for all execution)
     //all_module           = ""  // Ex: "cutruntools/20200104"
@@ -59,11 +55,11 @@ params {
     samtools_call         = "samtools"
     fastqc_call           = "fastqc"
     trimmomatic_call      = "trimmomatic"
+    kseqtest_call         = "kseq_test"
     bowtie2_call          = "bowtie2"
     bedtools_call         = "bedtools"
     macs2_call            = "macs2"
     bedgraphtobigwig_call = "bedGraphToBigWig"
-    kseqtest_call         = "${projectDir}/CUTRUNTools/kseq_test"  //Installed with --mode initiate
     seacr_call            = "${projectDir}/SEACR/SEACR_1.3.sh"     //Packaged with download
     seacr_R_script        = "${projectDir}/SEACR/SEACR_1.3.R"      //Packaged with download
     

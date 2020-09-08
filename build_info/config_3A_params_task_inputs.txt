@@ -8,7 +8,7 @@ params {
     ref_mode       = 'fasta'  // Options: ['name', 'fasta', 'manual']
     ref_fasta      = ''       // REQUIRED: Ex: '/path/to/my/reference.fasta[.gz]'
     // Default Pre-Supplied Normalization library is Ecoli:
-    norm_ref_fasta = "${projectDir}/ref_dbs/gcf_000005845.2_asm584v2_genomic.fasta.gz"
+    norm_ref_fasta = "${projectDir}/ref_dbs/GCF_000005845.2_ASM584v2_genomic.fna.gz"
 
     // CnR-flow Input Files:
     //   Provided fastqs must be in glob pattern matching pairs.

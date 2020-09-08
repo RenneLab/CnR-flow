@@ -24,6 +24,7 @@ Changelog
 
     v0.11-dev:
         * Refinements
+        * Moved CUTRUNTools:kseq_test to external dependency config
 
     v0.10:
         * Refinements

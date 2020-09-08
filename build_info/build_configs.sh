@@ -78,9 +78,9 @@ egrep -A 4 "//SEACR Settings" config_3B_params_shared_stepsettings.txt \
      | sed 's/[[:space:]]*=/=/' \
      | sed 's/=[[:space:]]*/=/' \
      | sed 's/=/ = /' > config_zz_auto_seacr_settings.txt 
-egrep -A 17 "// -- External Conda Environments" config_3A_params_pipe_dependencies.txt \
+egrep -A 15 "// -- External Conda Environments" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_conda_config.txt
-egrep -A 19 "// Dependency Configuration Using Environment Modules" config_3A_params_pipe_dependencies.txt \
+egrep -A 17 "// Dependency Configuration Using Environment Modules" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_module_config.txt
 egrep -A 20 "// System Call Settings" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_call_config.txt
