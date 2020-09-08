@@ -15,7 +15,7 @@ curl -o "${ZIP_NAME}" "${SOURCE_URL}"
 echo "Unzipping Package..."
 unzip -q "${ZIP_NAME}"
 echo "Extracting Trimmomatic Adapters..."
-mv -v "$(pwd)/trimmomatic-0.39/adapters)" "$(pwd)/trimmomatic_adapters)"
+mv -v "$(pwd)/trimmomatic-0.39/adapters" "$(pwd)/trimmomatic_adapters"
 echo "Cleaning up Trimmomatic Package..."
 rm -r ${ZIP_NAME} ./trimmomatic-0.39
 echo "Done."
