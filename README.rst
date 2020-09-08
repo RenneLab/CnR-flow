@@ -192,7 +192,7 @@ Prepare and Execute Pipeline:
 .. _MACS2: https://github.com/macs3-project/MACS
 .. _PBS: https://www.openpbs.org/
 .. _SLURM: https://slurm.schedmd.com/
-.. _CONDA: https://slurm.schedmd.com/
+.. _CONDA: https://anaconda.org/
 .. _Environment_Modules: http://modules.sourceforge.net/
 
 .. include:: docs_readme_format.rst

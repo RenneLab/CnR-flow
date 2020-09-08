@@ -3,9 +3,9 @@ Workflow
 ===============
 
 | The CUT&RUN-Flow (CnR-flow) workflow is designed to be simple to install and execute 
-  without sacrificing analysis capabilities. Nextflow_ [Nextflow_Citation]_ provides several
+  without sacrificing analysis capabilities. Nextflow_ provides several
   features that facilitate this design, included automatic download of 
-  dependencies and i/o handling between workflow components.
+  dependencies and i/o handling between workflow components. [Nextflow_Citation]_
 
 Full Workflow:
     .. image:: ../../build_info/dotgraph_parsed.png
@@ -37,14 +37,15 @@ Download and Installation
 Dependency Setup and Validation
 -------------------------------
 
-    | cnr-flow comes preconfigured to utilize the conda environment management
-      together with bioconda packages to handle dependency utilization.
+    | CUT&RUN-Flow comes preconfigured to utilize the Conda_ package
+      management suite together with bioconda packages to handle 
+      pipeline dependencies (Currently supported with Linux64 systems,
+      with macOS support under development.
     | for more details, or for an alternative configuration, see 
       :ref:`dependency config`
 
-    | either using the default dependency configuration, or with a user's
-      custom configuration, the dependency setup can then be tested using the 
-      :cl_param:`--mode validate` or :cl_param:`--mode validate_all` parameters.
+    | Once dependency setup has been completed, it can be tested using the 
+      :cl_param:`--mode validate` or :cl_param:`--mode validate_all` run modes.
 
     .. code-block:: bash
        :name: mode_validate_all
@@ -63,7 +64,7 @@ Reference Preparation
 
     | CnR-flow provides one-step preparation of alignment reference genome(s)
       for use by the pipeline. Either the local path or URL of a fasta file are 
-      provided to the :param:`ref_fasta` paramater, and the execution
+      provided to the :param:`ref_fasta` paramater and the execution
       is performed with:
 
     .. code-block:: bash
@@ -74,9 +75,9 @@ Reference Preparation
     | This copies the reference fasta to the directory specified by 
       :param:`ref_dir`, creates a bowtie2 alignment reference, 
       creates a fasta index using Samtools, and creates a ".chrom.sizes" 
-      file using `UCSC faCount <faCount>`_ [faCount_Citation]_.
+      file using `UCSC faCount <faCount>`_.
       The effective genome size is also calculated
-      with faCount_, using the (Total - N's) method. 
+      with faCount_, using the (Total - N's) method. [faCount_Citation]_ 
       Reference details are written to a ".refinfo.txt" in the same directory.
     
     .. note:: If normalization is enabled, the same process will be repeated 
@@ -84,7 +85,8 @@ Reference Preparation
               for alignments to the spike-in control genome.
 
     | These referenes are then detected automatically, using the same parameter
-      used for preparation setup. For more details, see :ref:`Task Setup`.
+      used for preparation setup. For more details, see 
+      :ref:`Reference Files Setup`.
       The list of all detectable prepared databases can be provided using the
       :cl_param:`mode list_refs` run mode:
 
@@ -136,15 +138,15 @@ FastQCPre
 
     This step is enabled with paramater :flag_param:`do_fastqc`
     (default: :obj:`true`).
-    FastQC_ [FastQC_Citation]_ is utilized to perform quality control checks on the input
-    (presumably untrimmed) fastq[.gz] files. 
+    FastQC_ is utilized to perform quality control checks on the input
+    (presumably untrimmed) fastq[.gz] files. [FastQC_Citation]_ 
 
 Trim   
 +++++++++
 
     | This step is enabled with paramater :flag_param:`do_trim` (default: :obj:`true`).
       Trimming of input fastq[.gz] files for read quality and adapter content
-      is performed by Trimmomatic_ [Trimmomatic_Citation]_.
+      is performed by Trimmomatic_. [Trimmomatic_Citation]_
     | 
     | Default trimming parameters:
 
@@ -162,7 +164,7 @@ Retrim
     | This step is enabled with paramater :flag_param:`do_retrim` 
       (default: :obj:`true`). Trimming of input fastq[.gz] 
       files is performed by the kseq_test executable
-      from the CUTRUNTools_ toolkit [CUTRUNTools_Citation]_. It is 
+      from the CUTRUNTools_ toolkit. [CUTRUNTools_Citation]_ It is 
       designed to identify and remove very short adapter sequences 
       from tags that were potentially missed by previous trimming steps.
 
@@ -171,8 +173,8 @@ FastQCPost
 
     This step is enabled with paramater :flag_param:`do_fastqc`
     (default: :obj:`true`).
-    FastQC_ [FastQC_Citation]_ is utilized to perform quality control checks on 
-    sequences after any/all trimming steps are performed.
+    FastQC_ is utilized to perform quality control checks on 
+    sequences after any/all trimming steps are performed. [FastQC_Citation]_
 
 Alignment Steps
 ----------------------
@@ -181,7 +183,7 @@ Aln_Ref
 +++++++++
 
     | Sequence reads are aligned to the reference genome using 
-      Bowtie2_ [Bowtie2_Citation]_.
+      Bowtie2_. [Bowtie2_Citation]_
     | Default alignment parameters were selected using concepts 
       presented in work by the Henikoff Lab [Meers2019]_
       and the Yuan Lab [CUTRUNTools_Citation]_.
@@ -201,7 +203,7 @@ Modify_Aln
 
     | Output alignments are then subjected to several cleaning, 
       filtering, and preprocessing steps utilizing 
-      Samtools_ [Samtools_Citation]_. 
+      Samtools_. [Samtools_Citation]_
     | These are:
     
     #. Removal of unmapped reads (samtools view)
@@ -285,7 +287,7 @@ Aln_Spike
     
     Details:
         | Sequence reads are first aligned to the normalization reference 
-          genome using Bowtie2_ [Bowtie2_Citation]_.
+          genome using Bowtie2_. [Bowtie2_Citation]_
           Default alignment parameters are the same as with 
           alignment to the primary reference genome.
         
@@ -295,11 +297,11 @@ Aln_Spike
                :literal:
    
         | All reads that aligned to the normalization reference are then again
-          aligned to the primary reference using Bowtie2_ [Bowtie2_Citation]_.
+          aligned to the primary reference using Bowtie2_. [Bowtie2_Citation]_
         |
         | Counts are then performed of **pairs** of sequence reads that align
           (and re-align, respectively) to each reference using Samtools_ 
-          [Samtools_Citation]_ (via ``samtools view``). 
+          (via ``samtools view``). [Samtools_Citation]_
           The count of aligned pairs to the spike-in genome 
           reference is then returned, with the number of cross-mapped pairs 
           subtracted depending on the value of :param:`norm_mode`.
@@ -342,7 +344,7 @@ Norm_Bdg
        :literal:
 
     | The normalized genome coverage track is then created by bedtools_ 
-      [bedtools_Citation]_ using the ``-scale`` option.
+      using the ``-scale`` option. [bedtools_Citation]_
 
 Conversion Steps
 ----------------------
@@ -355,7 +357,7 @@ Make_BigWig
     | This step converts the output genome coverage file from the
       previous steps as in the UCSC bigWig file format using 
       `UCSC bedGraphToBigWig <bedGraphToBigWig>`_, a genome coverage
-      format with significantly decreased file size [bedGraphToBigWig_Citation]_.
+      format with significantly decreased file size. [bedGraphToBigWig_Citation]_
 
     .. warning:: The bigWig file format is a "lossy" file format that
        cannot be reconverted to bedGraph with all information intact.
@@ -386,7 +388,7 @@ Peaks_MACS2
       :config_param:`peak-callers`.
     | This step calls peaks using the **non-normalized** alignment data
       produced in previous steps, 
-      using the MACS2_ peak_caller [MACS2_Citation]_
+      using the MACS2_ peak_caller. [MACS2_Citation]_
 
     Default MACS2 Settings:
 
@@ -401,7 +403,7 @@ Peaks_SEACR
       :config_param:`peak_callers`.
     | This step calls peaks using the **normalized** alignment data
       produced in previous steps (if normalization is enabled,
-      using the SEACR_ peak caller [SEACR_Citation]_.
+      using the SEACR_ peak caller. [SEACR_Citation]_
     |
     | *Special thanks to*
       `Michael Meers <https://github.com/mpmeers>`_ *and the* 
