@@ -16,7 +16,7 @@ unzip -q "${ZIP_NAME}"
 echo "Extracting Trimmomatic Adapters..."
 mv -v "$(realpath ./trimmomatic-0.39/adapters)" "$(realpath ./trimmomatic_adapters)"
 echo "Cleaning up Trimmomatic Package..."
-rm -r "${ZIP_NAME}" ./trimmomatic-0.39
+rm -r ${ZIP_NAME} ./trimmomatic-0.39
 echo "Done."
 echo ""
 cd "${START_DIR}"
