@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e -u -o pipefail
+exec 2>&1
 START_DIR=$PWD
 SOURCE_URL="http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-Src-0.39.zip"
 ZIP_NAME="Trimmomatic-Src-0.39.zip"
@@ -14,7 +15,7 @@ curl -o "${ZIP_NAME}" "${SOURCE_URL}"
 echo "Unzipping Package..."
 unzip -q "${ZIP_NAME}"
 echo "Extracting Trimmomatic Adapters..."
-mv -v "$(realpath ./trimmomatic-0.39/adapters)" "$(realpath ./trimmomatic_adapters)"
+mv -v "$(pwd)/trimmomatic-0.39/adapters)" "$(pwd)/trimmomatic_adapters)"
 echo "Cleaning up Trimmomatic Package..."
 rm -r ${ZIP_NAME} ./trimmomatic-0.39
 echo "Done."
