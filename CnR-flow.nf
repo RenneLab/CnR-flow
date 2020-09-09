@@ -987,12 +987,19 @@ if( params.mode == 'run' ) {
             run_id = "${task.tag}.${task.process}"
             out_log_name = "${run_id}.nf.log.txt"
             merge_fastqs_dir = "${params.merge_fastqs_dir}"
-            R1_files = fastq.findAll {fn -> "${fn}".contains("_R1_") }
-            R2_files = fastq.findAll {fn -> "${fn}".contains("_R2_") }
+            R1_files = fastq.findAll {fn ->
+                "${fn}".contains("_R1_") || "${fn}".contains("_1.f")
+            }
+            R2_files = fastq.findAll {fn -> 
+                "${fn}".contains("_R2_") || "${fn}".contains("_2.f")
+            }
             R1_out_file = "${params.merge_fastqs_dir}/${name}_R1_001.fastq.gz"
             R2_out_file = "${params.merge_fastqs_dir}/${name}_R2_001.fastq.gz" 
 
-            if( R1_files.size() == 1 && R2_files.size() == 1 ) {
+            if( R1_files.size() < 1 || R2_files.size() < 1 ) {
+                message = "Merge Error:\nR1 Files: ${R1_files}\nR2 Files: ${R2_Files}"
+                throw new Exception(message)
+            } else if( R1_files.size() == 1 && R2_files.size() == 1 ) {
                 command = '''
                 echo "No Merge Necessary. Renaming Files..."
                 set -v -H -o history
@@ -1341,9 +1348,11 @@ if( params.mode == 'run' ) {
         aln_sort_dedup_120  = "${aln_dir_mod}/${name}_sort_dedup_120.cram"
         dedup_metrics       = "${aln_dir_mod}/${name}.dedup_metrics.txt"
         add_threads         = (task.cpus ? (task.cpus - 1) : 0) 
-        max_mem_per_cpu_fix = trim_split_task_mem(task, 9, 10, "MB", true)
-        max_mem_per_cpu     = max_mem_per_cpu_fix.split()[0] + "M"
-    
+        mem_flag            = ""
+        if( "${task.memory}" != "null" ) {
+            max_mem_per_cpu_fix = trim_split_task_mem(task, 9, 10, "MB", true)
+            mem_flag = "-m " + max_mem_per_cpu_fix.split()[0] + "M"
+        }
         shell:
         '''
         set -o pipefail
@@ -1362,7 +1371,7 @@ if( params.mode == 'run' ) {
         !{params.samtools_call} sort -n \\
                                      -o !{aln_pre}.mapped.nsort.bam \\
                                      -@ !{task.cpus} \\
-                                     -m !{max_mem_per_cpu} \\
+                                     !{mem_flag} \\
                                      !{aln_pre}.mapped.bam
         set +v +H +o history
         rm -v !{aln_pre}.mapped.bam  # Clean Intermediate File
@@ -1380,7 +1389,7 @@ if( params.mode == 'run' ) {
         set -v -H -o history
         !{params.samtools_call} sort \\
                                 -o !{aln_pre}.mapped.nsort.fm.csort.bam \\
-                                -m !{max_mem_per_cpu} \\
+                                !{mem_flag} \\
                                 -@ !{task.cpus} \\
                                 !{aln_pre}.mapped.nsort.fm.bam
         set +v +H +o history
@@ -1542,8 +1551,11 @@ if( params.mode == 'run' ) {
         aln_bdg      = "${aln_dir_bdg}/${aln_in_base + ".bdg"}"
         chrom_sizes  = "${params.ref_chrom_sizes_path}"
         add_threads  = (task.cpus ? (task.cpus - 1) : 0) 
-        max_mem_per_cpu_fix = trim_split_task_mem(task, 9, 10, "MB", true)
-        max_mem_per_cpu     = max_mem_per_cpu_fix.split()[0] + "M"
+        mem_flag     = ""
+        if( "${task.memory}" != "null" ) {
+            max_mem_per_cpu_fix = trim_split_task_mem(task, 9, 10, "MB", true)
+            mem_flag = "-m " + max_mem_per_cpu_fix.split()[0] + "M"
+        }
     
         shell:
         '''
@@ -1555,7 +1567,7 @@ if( params.mode == 'run' ) {
         set -v -H -o history
         !{params.samtools_call} sort -n \\
                                      -@ !{task.cpus} \\
-                                     -m !{max_mem_per_cpu} \\
+                                     !{mem_flag} \\
                                      -o !{aln_by_name} \\
                                      !{aln_in}
         set -v -H -o history
