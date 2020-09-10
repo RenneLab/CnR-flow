@@ -156,7 +156,9 @@ if( ['prep_fasta'].contains(params.mode) ) {
             ref_info.each {detail -> 
                 if( !params.containsKey(detail.key) ) {
                     params["ref_${detail.key}".toString()] = detail.value
-                } else if (!(['name', 'fasta'].contains(detail) ) ) {
+                } else if( detail.key == 'fasta' ) {
+                    params["ref_fasta_local".toString()] = detail.value
+                } else if( !(['name', 'fasta'].contains(detail_key) ) ) {
                     log.warn "Key: ref_${detail.key} already exists in params."
                     log.warn "-   Skipping auto-setting of this params value."
                     println ""
@@ -180,7 +182,9 @@ if( ['prep_fasta'].contains(params.mode) ) {
                 ref_info.each {detail -> 
                     if( !params.containsKey(detail.key) ) {
                         params["norm_ref_${detail.key}".toString()] = detail.value
-                    } else if (!(['name', 'fasta'].contains(detail) ) ) {
+                    } else if( detail.key == 'fasta' ) {
+                        params["norm_ref_fasta_local".toString()] = detail.value
+                    } else if (!(['name', 'fasta'].contains(detail.key) ) ) {
                         log.warn "Key: norm_ref_${detail.key} already exists in params."
                         log.warn "-   Skipping auto-setting of this params value."
                         println ""
@@ -192,7 +196,6 @@ if( ['prep_fasta'].contains(params.mode) ) {
                 log.info "Using Manual Reference File Location Paramaters."
                 log.info ""
             }
-            req_keys = []
         }
     }
 
@@ -1340,7 +1343,7 @@ if( params.mode == 'run' ) {
         run_id              = "${task.tag}.${task.process}"
         out_log_name        = "${run_id}.nf.log.txt"
         aln_dir_mod         = "${params.aln_dir_mod}"
-        ref_fasta           = "${params.ref_fasta}"
+        ref_fasta           = "${params.ref_fasta_local}"
         aln_pre             = "${aln_dir_mod}/${name}_pre"
         aln_sort            = "${aln_dir_mod}/${name}_sort.cram"
         aln_sort_dedup      = "${aln_dir_mod}/${name}_sort_dedup.cram"
