@@ -75,7 +75,7 @@ Reference Preparation
     | This copies the reference fasta to the directory specified by 
       :param:`ref_dir`, creates a bowtie2 alignment reference, 
       creates a fasta index using Samtools, and creates a ".chrom.sizes" 
-      file using `UCSC faCount <faCount>`_.
+      file using :ref:`UCSC faCount <faCount>`.
       The effective genome size is also calculated
       with faCount_, using the (Total - N's) method. [faCount_Citation]_ 
       Reference details are written to a ".refinfo.txt" in the same directory.
