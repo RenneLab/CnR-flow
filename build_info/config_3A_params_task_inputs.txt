@@ -1,5 +1,5 @@
 params {
-    //REQUIRED values to enter (all others should work as default):
+    // REQUIRED values to enter (all others should work as default):
     // ref_fasta               (or some other ref-mode/location)
     // treat_fastqs            (input paired-end fastq[.gz] file paths)
     //   [OR fastq_groups]     (mutli-group input paired-end .fastq[.gz] file paths)
@@ -14,24 +14,24 @@ params {
     //   Provided fastqs must be in glob pattern matching pairs.
     //     Example: ['./relpath/to/base*R{1,2}*.fastq']
     //     Example: ['/abs/path/to/other*R{1,2}*.fastq']
-    //
-    treat_fastqs = []  // REQUIRED, Single-group Treatment fastq Pattern
-    ctrl_fastqs  = []  //           Single-group Control   fastq pattern
+
+    treat_fastqs   = []    // REQUIRED, Single-group Treatment fastq Pattern
+    ctrl_fastqs    = []    //           Single-group Control   fastq pattern
     
     // Can specify multiple treat/control groups as Groovy mapping.
     //   Specified INSTEAD of treat_fasts/ctrl_fastqs parameters.
     //   Note: There should be only one control sample per group 
     //     (after optional lane combination)
-    //Example:
-    //fastq_groups = [
-    //  'group_1_name': ['treat': 'relpath/to/treat1*R{1,2}*',
-    //                   'ctrl':  'relpath/to/ctrl1*R{1,2}*',
-    //                  ]
-    //  'group_2_name': ['treat': ['relpath/to/g2_treat1*R{1,2}*'
-    //                             '/abs/path/to/g2_treat2*R{1,2}*'
-    //                            ],
-    //                   'ctrl':  'relpath/to/g2_ctrl1*R{1,2}*'
-    //                  ]
-    //]
+    // Example:
+    // fastq_groups = [
+    //   'group_1_name': ['treat': 'relpath/to/treat1*R{1,2}*',
+    //                    'ctrl':  'relpath/to/ctrl1*R{1,2}*',
+    //                   ]
+    //   'group_2_name': ['treat': ['relpath/to/g2_treat1*R{1,2}*'
+    //                              '/abs/path/to/g2_treat2*R{1,2}*'
+    //                             ],
+    //                    'ctrl':  'relpath/to/g2_ctrl1*R{1,2}*'
+    //                   ]
+    // ]
     //fastq_groups = []    
 

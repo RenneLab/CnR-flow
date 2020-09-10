@@ -435,23 +435,29 @@ if( ['initiate'].contains( params.mode ) ) {
         println "${projectDir}/ref_dbs/get_trimmomatic_adapters.sh".execute().text
     }
     log.info "Copying CnR-flow nextflow task configuration into launch directory"
-    task_default_config = file("${projectDir}/nextflow.config.task_default")
-    config_target = file("${launchDir}/nextflow.config")
-    if( config_target.exists() ) {
+    task_config = file("${projectDir}/nextflow.config.task")
+    task_config_target = file("${launchDir}/nextflow.config")
+    task_config_nodoc = file("${projectDir}/nextflow.config.task.nodoc")
+    task_config_nodoc_target = file("${launchDir}/nextflow.config.nodoc")
+    task_config_minimal = file("${projectDir}/nextflow.config.task.nodoc.minimal")
+    task_config_minimal_target = file("${launchDir}/nextflow.config.minimal")
+    if( task_config_target.exists() ) {
         message =  "Cannot overwrite existing task config file:\n"
-        message += "    ${config_target}\n"
+        message += "    ${task_config_target}\n"
         message += "Please remove and retry.\n"
         log.error message
         exit 1
     }
-    task_default_config.copyTo("${config_target}")
+    task_config.copyTo("${task_config_target}")
+    task_config_nodoc.copyTo("${task_config_nodoc_target}")
+    task_config_minimal.copyTo("${task_config_minimal_target}")
     log.info ""
     log.info "Initialization Complete."
     log.info "Please configure pipeline cluster / dependency settings (if necessary) at:"
     log.info "-   ${projectDir}/nextflow.config"
     log.info ""
     log.info "Please modify task configuration file:"
-    log.info "-   ${config_target}"
+    log.info "-   ${task_config_target}"
     log.info "Then check using 'validate' or 'dry_run' modes to test setup."
     println ""
 }

@@ -5,3 +5,4 @@ ref_dbs/trimmomatic_adapters
 private
 conda_envs
 docs/_build
+docs/__pycache__

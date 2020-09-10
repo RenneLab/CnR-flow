@@ -23,10 +23,21 @@ PIPE_FILES=$(find *shared* *pipe* | sort)
 TASK_FILES=$(find *shared* *task* | sort)
 
 cat ${PIPE_FILES} > ../nextflow.config
-cat ${TASK_FILES} > ../nextflow.config.task_default
+cat ${TASK_FILES} > ../nextflow.config.task
+grep -vh "^\s*//\s" config_2A_process_shared.txt config_3A_params_task_inputs.txt \
+    config_3B_params_shared_stepsettings.txt config_3Z_params_shared_close.txt \
+    | grep -v "^\s*$" > ../nextflow.config.task.nodoc
+grep -vh "^\s*//\s" config_2A_process_shared.txt config_3A_params_task_inputs.txt \
+    config_3Z_params_shared_close.txt \
+    | grep -v "^\s*$" > ../nextflow.config.task.nodoc.minimal
 
-cp -v ../nextflow.config              ../templates/nextflow.config.backup
-cp -v ../nextflow.config.task_default ../templates/nextflow.config.task_default.backup
+cp -v ../nextflow.config      ../templates/nextflow.config.backup
+cp -v ../nextflow.config.task ../templates/nextflow.config.task.backup
+cp -v ../nextflow.config.task.nodoc \
+    ../templates/nextflow.config.task.nodoc.backup
+cp -v ../nextflow.config.task.nodoc.minimal \
+    ../templates/nextflow.config.task.nodoc.minimal.backup
+
 
 # Create File Snippets
 rm -v config_zz_auto*

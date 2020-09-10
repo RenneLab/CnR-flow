@@ -1,0 +1,18 @@
+process {
+    //executor = 'slurm'  // for running processes using SLURM (Default: 'local')
+    //time = '12h'
+    //cpus = 8
+    //withLabel: big_mem   { memory = '16 GB' }
+    //withLabel: norm_mem  { memory = '4 GB'  }
+    //withLabel: small_mem { memory = '2 GB'  }
+    //memory = "16 GB"
+    ext.ph = null //Placeholder to prevent errors.
+}
+params {
+    ref_mode       = 'fasta'  // Options: ['name', 'fasta', 'manual']
+    ref_fasta      = ''       // REQUIRED: Ex: '/path/to/my/reference.fasta[.gz]'
+    norm_ref_fasta = "${projectDir}/ref_dbs/GCF_000005845.2_ASM584v2_genomic.fna.gz"
+    treat_fastqs   = []    // REQUIRED, Single-group Treatment fastq Pattern
+    ctrl_fastqs    = []    //           Single-group Control   fastq pattern
+    //fastq_groups = []    
+}

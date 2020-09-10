@@ -48,7 +48,7 @@ Conda/Bioconda
 | *CUT&RUN-FLow* comes preconfigured to use the Conda_ package manager, 
   along with tools from the Bioconda_  package 
   suite for automated dependency handling. 
-  [Conda_Citation]_ [Bioconda_Citation]_  Nextflow_ automatically 
+  [Bioconda_Citation]_  Nextflow_ automatically 
   acquires, stores, and activates each conda environment as it is
   required in the pipeline. For more information on Nextflow's,
   usage of conda, see :manpage:`conda`. 

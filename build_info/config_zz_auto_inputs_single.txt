@@ -3,8 +3,8 @@ params {
 //   Provided fastqs must be in glob pattern matching pairs.
 //     Example: ['./relpath/to/base*R{1,2}*.fastq']
 //     Example: ['/abs/path/to/other*R{1,2}*.fastq']
-//
-treat_fastqs = []  // REQUIRED, Single-group Treatment fastq Pattern
-ctrl_fastqs  = []  //           Single-group Control   fastq pattern
+
+treat_fastqs   = []    // REQUIRED, Single-group Treatment fastq Pattern
+ctrl_fastqs    = []    //           Single-group Control   fastq pattern
 
 }

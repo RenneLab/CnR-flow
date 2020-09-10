@@ -1,3 +1,0 @@
-//Macs2 Settings
-macs_qval = '0.01'
-macs_flags = ''   
