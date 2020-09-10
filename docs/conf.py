@@ -93,6 +93,11 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Latex/PDF output options:
+latex_toplevel_sectioning = 'chapter'
+latex_show_pagerefs = True
+latex_show_urls = 'footnote'
+
 # Fix to RTD table wrapping: https://rackerlabs.github.io/docs-rackspace/tools/rtd-tables.html
 #html_context = {
 #    'css_files': [
