@@ -93,7 +93,7 @@ print_in_files = []
 
 // If mode is 'prep_fasta', ensure "ref_fasta" has been provided.
 if( ['prep_fasta'].contains(params.mode) ) {
-    test_params_key(params, 'ref_fasta')
+    test_params_key(params, 'ref_fasta', 'nonblank')
     if( !file("${params.ref_fasta}", checkIfExists: false).exists() ) {
         message = "File for reference preparation does not exist:\n"
         message += "    genome_sequence: ${params['ref_fasta']}\n"
@@ -2217,13 +2217,15 @@ def test_params_key(params, key, allowed_opts=null) {
         log.error "    ${key}"
         log.error ""
         exit 1
-    } else if( params[(key)] == null || params[(key)] == "" ) {
-        log.error "Value of key cannot be blank:"
-        log.error "    ${key}"
-        log.error ""
-        exit 1
     }
-    if( allowed_opts ) { 
+    if( allowed_opts == "nonblank" ) { 
+        if( params[(key)] == null || params[(key)] == "" ) {
+            log.error "Value of key cannot be blank:"
+            log.error "    ${key}"
+            log.error ""
+            exit 1
+        }
+    } else if( allowed_opts ) { 
         def value = params[key]
         def value_list = []
         if( value instanceof List) {
