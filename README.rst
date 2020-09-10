@@ -34,21 +34,21 @@ Pipeline Design:
       Nextflow provides extensive flexibility in utilizing cluster 
       computing environments such as `PBS`_ and `SLURM`_, 
       and in automated and compartmentalized handling of dependencies using 
-      `Conda`_ / `Bioconda`_ and `Environment Modules <Environment_Modules>`_.
+      `Conda`_ / `Bioconda`_ and `Environment Modules`_.
     
 Dependencies:
     | In addition to standard local configurations, Nextflow allows handling of 
       dependencies in separated working environments within the same pipeline 
-      using `Conda`_ or `Environment Modules <Environment_Modules>`_. 
+      using `Conda`_ or `Environment Modules`_. 
       **CnR-flow is pre-configured to acquire and utilize dependencies
       using conda environments with no additional required setup.**
     | CUT&RUN-Flow utilizes 
-      `UCSC Genome Browser Tools <faCount>`_ and  `Samtools`_
+      `UCSC Genome Browser Tools`_ and  `Samtools`_
       for reference library preparation,
       `FastQC`_ for tag quality control,
-      `Trimmomatic`_ and `CUT&RUN-Tools:kseq_test <CUTRUNTools>`_ 
+      `Trimmomatic`_ and `kseq_test`_ (`CUT&RUN-Tools`_) 
       for tag trimming, `Bowtie2`_ for tag alignment,
-      `Samtools`_, `bedtools`_ and `UCSC Genome Browser Tools <faCount>`_
+      `Samtools`_, `bedtools`_ and `UCSC Genome Browser Tools`_
       for alignment manipulation, and `MACS2`_ and/or `SEACR`_
       for peak calling, as well as their associated language subdependencies of
       Java, Python2/3, R, and C++.
@@ -194,6 +194,8 @@ Prepare and Execute Pipeline:
 .. _PBS: https://www.openpbs.org/
 .. _SLURM: https://slurm.schedmd.com/
 .. _CONDA: https://anaconda.org/
-.. _Environment_Modules: http://modules.sourceforge.net/
+.. _Environment Modules: http://modules.sourceforge.net/
+.. _UCSC Genome Browser Tools: faCount_
+.. _kseq_test: CUTRUNTools_
 
 .. include:: docs_readme_format.rst

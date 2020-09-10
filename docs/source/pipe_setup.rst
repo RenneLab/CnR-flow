@@ -60,7 +60,7 @@ Modules
 ++++++++++++++
 
 | *CUT&RUN-FLow* comes with an alternative "easy" configuration option
-  utilizing `Environment Modules <Envrionment_Modules>`_. Each conda
+  utilizing `Environment Modules`_. Each conda
   dependency paramater has an equivalent "module" paramater. Each module
   will then be loaded at runtime for the appropriate steps of the pipeline.
   For more information on Nextflow's use of Environment Modules, 

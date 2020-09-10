@@ -75,7 +75,7 @@ Reference Preparation
     | This copies the reference fasta to the directory specified by 
       :param:`ref_dir`, creates a bowtie2 alignment reference, 
       creates a fasta index using Samtools, and creates a ".chrom.sizes" 
-      file using :ref:`UCSC faCount <faCount>`.
+      file using `UCSC faCount`_.
       The effective genome size is also calculated
       with faCount_, using the (Total - N's) method. [faCount_Citation]_ 
       Reference details are written to a ".refinfo.txt" in the same directory.
@@ -356,7 +356,7 @@ Make_BigWig
       (default: :obj:`true`).
     | This step converts the output genome coverage file from the
       previous steps as in the UCSC bigWig file format using 
-      `UCSC bedGraphToBigWig <bedGraphToBigWig>`_, a genome coverage
+      `UCSC bedGraphToBigWig`_, a genome coverage
       format with significantly decreased file size. [bedGraphToBigWig_Citation]_
 
     .. warning:: The bigWig file format is a "lossy" file format that
