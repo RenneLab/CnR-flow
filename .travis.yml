@@ -1,12 +1,21 @@
 language: bash
+os:
+- linux
+- osx
+jobs:
+  allow_failures:
+    - os: osx
 jdk:
 - openjdk8
 branches:
   only:
   - master  
 install:
+- mkdir ./programs ; cd ./programs ; PATH=$PATH:$PWD
 - curl -fsSL https://get.nextflow.io | bash
-- wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+- cd ..
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ];   then curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o miniconda.sh; fi 
 - bash miniconda.sh -b -p $HOME/miniconda
 - source "$HOME/miniconda/etc/profile.d/conda.sh"
 - hash -r
@@ -16,5 +25,5 @@ install:
 script:
 - mkdir ./test_dir
 - cd    ./test_dir
-- ../nextflow run ../CnR-flow.nf --mode initiate
-- ../nextflow run ../CnR-flow.nf --mode validate_all
+- nextflow run ../CnR-flow.nf --mode initiate
+- nextflow run ../CnR-flow.nf --mode validate_all
