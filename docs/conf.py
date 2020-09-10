@@ -47,6 +47,7 @@ release = version
 extensions = [
     'sphinx_rtd_theme',
     'sphinx.ext.autosectionlabel',
+    'sphinx.ext.imgconverter',
     ]
 
 # add_module_names
