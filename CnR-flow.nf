@@ -2217,7 +2217,7 @@ def test_params_key(params, key, allowed_opts=null) {
         log.error "    ${key}"
         log.error ""
         exit 1
-    } else if( !params[(key)] ) {
+    } else if( params[(key)] == null || params[(key)] == "" ) {
         log.error "Value of key cannot be blank:"
         log.error "    ${key}"
         log.error ""
