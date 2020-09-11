@@ -65,6 +65,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'setup.py',
                     'proj_rst_vars.rst', 
                     'source/specification.rst',
                     'source/citations.rst',
+                    'extra_readme_header.rst',
                    ]
 
 

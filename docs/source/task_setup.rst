@@ -29,7 +29,7 @@ Task Setup Overview
       basis (in :ref:`Task nextflow.config`) or as defaults for the pipeline 
       (in :ref:`Pipe nextflow.config` ). These include nextflow "executor" 
       settings for use of SLURM_ and 
-      `Environment Modules <Environment_Modules>`_
+      `Environment Modules`_
       and associated settings such as memory and cpu usage. 
       These settings are described here, in :ref:`Executor Setup`, but can
       also be set in the :ref:`Pipe nextflow.config`.
