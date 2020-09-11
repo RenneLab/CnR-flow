@@ -154,10 +154,10 @@ if( ['prep_fasta'].contains(params.mode) ) {
             }
             // Set database details.
             ref_info.each {detail -> 
-                if( !params.containsKey(detail.key) ) {
-                    params["ref_${detail.key}".toString()] = detail.value
-                } else if( detail.key == 'fasta' ) {
+                if( detail.key == 'fasta' ) {
                     params["ref_fasta_local".toString()] = detail.value
+                } else if( !params.containsKey(detail.key) ) {
+                    params["ref_${detail.key}".toString()] = detail.value
                 } else if( !(['name', 'fasta'].contains(detail_key) ) ) {
                     log.warn "Key: ref_${detail.key} already exists in params."
                     log.warn "-   Skipping auto-setting of this params value."
@@ -180,10 +180,10 @@ if( ['prep_fasta'].contains(params.mode) ) {
                 }
                 // Set database details.
                 ref_info.each {detail -> 
-                    if( !params.containsKey(detail.key) ) {
-                        params["norm_ref_${detail.key}".toString()] = detail.value
-                    } else if( detail.key == 'fasta' ) {
+                    if( detail.key == 'fasta' ) {
                         params["norm_ref_fasta_local".toString()] = detail.value
+                    } else if( !params.containsKey("norm_ref_${detail.key}".toString()) ) {
+                        params["norm_ref_${detail.key}".toString()] = detail.value
                     } else if (!(['name', 'fasta'].contains(detail.key) ) ) {
                         log.warn "Key: norm_ref_${detail.key} already exists in params."
                         log.warn "-   Skipping auto-setting of this params value."
