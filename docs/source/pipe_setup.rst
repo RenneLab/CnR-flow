@@ -35,6 +35,7 @@ The following external dependencies are utilized by *CUT&RUN-Flow*:
    :header-rows: 1
    :file: ../../build_info/dependencies.tsv
    :delim: tab
+   :class: longtable
    :name: dependencies_table
 
 Dependency Config
