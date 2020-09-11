@@ -95,7 +95,7 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 # Latex/PDF output options:
-latex_toplevel_sectioning = 'section'
+latex_toplevel_sectioning = 'chapter'
 latex_show_pagerefs = True
 latex_show_urls = 'footnote'
 
