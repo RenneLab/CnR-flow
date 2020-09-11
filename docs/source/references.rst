@@ -10,5 +10,7 @@ References
 References (BibTeX)
 -------------------
 
+    :download:`Download Citations.bib <../../Citations.bib>`
+
     .. include:: ../../Citations.bib
        :literal:
