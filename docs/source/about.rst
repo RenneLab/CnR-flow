@@ -24,7 +24,11 @@ Changelog
 
     v0.11-dev:
         * Refinements
+        * Bugfixes
         * Moved CUTRUNTools:kseq_test to external dependency config
+        * Added additional template nextflow.config files for task
+        * Added macOS support (for all dependencies) 
+        * Added macOS automated testing (with Travis CI)
 
     v0.10:
         * Refinements
@@ -53,7 +57,6 @@ Changelog
         * Implemented MACS2 peak calling
         * Added autodetection of tag sequence length
 
-     v0.08:
+    v0.08:
         * Initial Github Upload
-
 

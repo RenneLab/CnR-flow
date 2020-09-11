@@ -1,6 +1,8 @@
 
+=======================
 CUT&RUN-Flow (CnR-flow)
-==================================
+=======================
+
 .. image:: https://img.shields.io/github/v/release/rennelab/cnr-flow?include_prereleases
    :target: https://github.com/rennelab/cnr-flow/releases
    :alt: GitHub release (latest by date including pre-releases)
