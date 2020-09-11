@@ -99,6 +99,9 @@ html_static_path = ['_static']
 latex_toplevel_sectioning = 'chapter'
 latex_show_pagerefs = True
 latex_show_urls = 'footnote'
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
+}
 
 # Fix to RTD table wrapping: https://rackerlabs.github.io/docs-rackspace/tools/rtd-tables.html
 #html_context = {
