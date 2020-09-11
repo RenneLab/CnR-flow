@@ -82,8 +82,7 @@ Pipeline Features:
 
 .. _Quickstart:
 
-Quickstart
-------------
+Quickstart:
     Here is a brief introduction on how to install and get started using the pipeline. 
     For full details, see |docs_link|_.
     

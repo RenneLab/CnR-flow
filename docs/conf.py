@@ -65,8 +65,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'setup.py',
                     'proj_rst_vars.rst', 
                     'source/specification.rst',
                     'source/citations.rst',
-                    'extra_readme_header.rst',
-                    'extra_index_header.rst',
+                    'index_contents.rst',
+                    'docs_readme_format.rst',
                    ]
 
 
@@ -96,7 +96,7 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 # Latex/PDF output options:
-latex_toplevel_sectioning = 'part'
+latex_toplevel_sectioning = 'chapter'
 latex_show_pagerefs = True
 latex_show_urls = 'footnote'
 

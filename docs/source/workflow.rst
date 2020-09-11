@@ -15,7 +15,7 @@ Download and Installation
 --------------------------
 
     (If necessary, begin by installing Nextflow_ and Conda_ as 
-    described in :ref:`Quickstart`)
+    described in :ref:`Quickstart <Quickstart>`)
 
     | Nextflow allows the pipeline to be downloaded simply by using the 
       "nextflow run" command, and providing the user/repository path to
