@@ -154,9 +154,7 @@ if( ['prep_fasta'].contains(params.mode) ) {
             }
             // Set database details.
             ref_info.each {detail -> 
-                if( detail.key == 'fasta' ) {
-                    params["ref_fasta_local".toString()] = detail.value
-                } else if( !params.containsKey(detail.key) ) {
+                if( !params.containsKey(detail.key) ) {
                     params["ref_${detail.key}".toString()] = detail.value
                 } else if( !(['name', 'fasta'].contains(detail_key) ) ) {
                     log.warn "Key: ref_${detail.key} already exists in params."
@@ -180,9 +178,7 @@ if( ['prep_fasta'].contains(params.mode) ) {
                 }
                 // Set database details.
                 ref_info.each {detail -> 
-                    if( detail.key == 'fasta' ) {
-                        params["norm_ref_fasta_local".toString()] = detail.value
-                    } else if( !params.containsKey("norm_ref_${detail.key}".toString()) ) {
+                    if( !params.containsKey("norm_ref_${detail.key}".toString()) ) {
                         params["norm_ref_${detail.key}".toString()] = detail.value
                     } else if (!(['name', 'fasta'].contains(detail.key) ) ) {
                         log.warn "Key: norm_ref_${detail.key} already exists in params."
@@ -1349,7 +1345,7 @@ if( params.mode == 'run' ) {
         run_id              = "${task.tag}.${task.process}"
         out_log_name        = "${run_id}.nf.log.txt"
         aln_dir_mod         = "${params.aln_dir_mod}"
-        ref_fasta           = "${params.ref_fasta_local}"
+        ref_fasta           = "${params.ref_fasta_path}"
         aln_pre             = "${aln_dir_mod}/${name}_pre"
         aln_sort            = "${aln_dir_mod}/${name}_sort.cram"
         aln_sort_dedup      = "${aln_dir_mod}/${name}_sort_dedup.cram"
