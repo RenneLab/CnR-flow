@@ -1566,7 +1566,7 @@ if( params.mode == 'run' ) {
         '''
         echo ""
         mkdir -v !{aln_dir_bdg}
-        cp -v !{aln_in} !{aln_dir_bdg}/!{aln_in}       
+        cp -vPR !{aln_in} !{aln_dir_bdg}/!{aln_in}       
 
         echo "Sorting alignment file by name: !{aln_in} ... utilizing samtools sort"
         set -v -H -o history
@@ -1810,7 +1810,7 @@ if( params.mode == 'run' ) {
             shell:
             '''
             mkdir -v !{aln_dir_norm}
-            cp -v --no-dereference !{aln_cram} !{aln_bdg} !{aln_byname} !{aln_dir_norm}           
+            cp -vPR !{aln_cram} !{aln_bdg} !{aln_byname} !{aln_dir_norm}           
 
             echo "Calculating Scaling Factor..."
             # Reference: https://github.com/Henikoff/Cut-and-Run/blob/master/spike_in_calibration.csh
