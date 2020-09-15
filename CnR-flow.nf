@@ -914,12 +914,13 @@ if( params.mode == 'run' ) {
                 stageInMode 'copy'
         
                 input:
-                tuple val(name), val(cond), val(group), path(test_fastq) from seq_len_fastqs.first()
+                tuple val(name), val(cond), val(group), path(fastq) from seq_len_fastqs.first()
                 
                 output:
                 env SIZE into input_seq_len
         
                 script:
+                test_fastq = fastq[0]
                 if( "${test_fastq}".endsWith('.gz') ) {
                     first_command = "head -c 10000 ${test_fastq} | zcat 2>/dev/null"
                 } else {
@@ -993,10 +994,10 @@ if( params.mode == 'run' ) {
             out_log_name = "${run_id}.nf.log.txt"
             merge_fastqs_dir = "${params.merge_fastqs_dir}"
             R1_files = fastq.findAll {fn ->
-                "${fn}".contains("_R1_") || "${fn}".contains("_1.f")
+                "${fn}".contains("_R1_") || "${fn}".contains("_1.f") || "${fn}".contains("_1_")
             }
             R2_files = fastq.findAll {fn -> 
-                "${fn}".contains("_R2_") || "${fn}".contains("_2.f")
+                "${fn}".contains("_R2_") || "${fn}".contains("_2.f") || "${fn}".contains("_2_")
             }
             R1_out_file = "${params.merge_fastqs_dir}/${name}_R1_001.fastq.gz"
             R2_out_file = "${params.merge_fastqs_dir}/${name}_R2_001.fastq.gz" 

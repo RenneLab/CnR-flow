@@ -1,0 +1,11 @@
+
+This test is designed to briefly runthrough an analysis of CUT&RUN data 
+to test all components. This is not the recommended way of setting up a
+run, as several preparation steps have been truncated to fit into the
+timeframe of the Travis-CI automated testing.
+
+The SeqKit software package is also utilized here to subsample the reads 
+from the provided dataset, but is not listed as an "official" dependency
+of CUT&RUN-Flow.
+
+
