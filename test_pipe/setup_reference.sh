@@ -15,14 +15,14 @@
 #along with CnR-flow.  If not, see <https://www.gnu.org/licenses/>.
 
 # Source: http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/latest/hg38.chromFa.tar.gz
-if [ -d test_reference ] ; then
+if [ $(ls test_reference/hg38_chr22.fa 2>/dev/null | wc -l) -ge 1 ] ; then
   echo "Reference Data Exists."
   exit 0
 fi
-mkdir test_reference
+mkdir -p test_reference
 cd test_reference
 
-wget --progress=dot:mega --waitretry=60 --retry-connrefused http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/latest/hg38.chromFa.tar.gz
+wget -c --progress=dot:mega --waitretry=60 --retry-connrefused http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/latest/hg38.chromFa.tar.gz
 tar -xvf hg38.chromFa.tar.gz ./chroms/chr22.fa
 rm  hg38.chromFa.tar.gz
 mv chroms/chr22.fa ./hg38_chr22.fa

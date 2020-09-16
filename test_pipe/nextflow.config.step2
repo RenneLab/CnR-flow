@@ -6,3 +6,8 @@ params {
     treat_fastqs   = ["subsampled_data/SRR6128978_{1,2}_*"] 
     ctrl_fastqs    = ["subsampled_data/SRR6128981_{1,2}_*"]
 }
+process {
+    withName: CnR_S5_B_Peaks_SEACR {
+        errorStrategy = 'ignore'
+    }
+}

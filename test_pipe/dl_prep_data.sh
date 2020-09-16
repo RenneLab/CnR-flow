@@ -16,12 +16,12 @@
 #You should have received a copy of the GNU General Public License
 #along with CnR-flow.  If not, see <https://www.gnu.org/licenses/>.
 
-if [ -d subsampled_data ] ; then
+if [ $(ls subsampled_data 2>/dev/null | wc -l) -ge 4 ] ; then
   echo "Input Data Exists."
   exit 0
 fi
 
-mkdir raw_data
+mkdir -p raw_data
 cd raw_data
 
 echo "Downloading SRR6128981"

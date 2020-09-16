@@ -15,14 +15,19 @@ jobs:
   allow_failures:
   - os: osx
 
+cache:
+  directories:
+  - test_pipe/subsampled_data
+  - test_pipe/raw_data
+  - test_pipe/test_reference
+  timeout: 1800
+
 install:
 - mkdir ./programs ; cd ./programs ; export PATH=$PATH:$PWD
 - curl -fsSL https://get.nextflow.io | bash
 - cd ..
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  -O miniconda.sh; fi
-- if [ "$TRAVIS_OS_NAME" = "osx" ];   then curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-  -o miniconda.sh; fi
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget --progress=dot --retry-connrefused https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ];   then curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
 - bash miniconda.sh -b -p $HOME/miniconda
 - source "$HOME/miniconda/etc/profile.d/conda.sh"
 - hash -r
@@ -31,11 +36,11 @@ install:
 - conda info -a
 
 script:
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then set -e ; fi
 - export NXF_ANSI_LOG=false
 - mkdir ./test_init
 - cd    ./test_init
 - nextflow run ../CnR-flow.nf --mode initiate
+- travis_retry nextflow run ../CnR-flow.nf --mode validate_all
 - nextflow run ../CnR-flow.nf --mode validate_all
 - cd ../test_pipe
 - cat test_notes.txt
