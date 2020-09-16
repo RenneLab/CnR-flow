@@ -41,7 +41,6 @@ script:
 - cd    ./test_init
 - nextflow run ../CnR-flow.nf --mode initiate
 - travis_retry nextflow run ../CnR-flow.nf --mode validate_all
-- nextflow run ../CnR-flow.nf --mode validate_all
 - cd ../test_pipe
 - cat test_notes.txt
 - ./setup_reference.sh

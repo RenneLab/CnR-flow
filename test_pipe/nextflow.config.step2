@@ -3,6 +3,7 @@ params {
     ref_fasta      = 'test_reference/hg38_chr22.fa'
     norm_ref_fasta = "${projectDir}/ref_dbs/GCF_000005845.2_ASM584v2_genomic.fna.gz"
     refs_dir       = "${launchDir}/test_reference"
+    aln_ref_flags  = "--very-sensitive --phred33 -I 10 -X 700 --dovetail --no-unal --no-mixed --no-discordant"
     treat_fastqs   = ["subsampled_data/SRR6128978_{1,2}_*"] 
     ctrl_fastqs    = ["subsampled_data/SRR6128981_{1,2}_*"]
 }
