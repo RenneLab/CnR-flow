@@ -934,8 +934,9 @@ if( params.mode == 'run' ) {
                 echo -e "    !{test_fastq}"
 
                 !{first_command} | head -n 2 | tail -n 1 > seq.txt
-                SIZE=$(cat seq.txt | head -c -1 | wc -c )
-        
+                SIZE_PLUS=$(cat seq.txt | wc -c )
+                SIZE=$(bc <<< "${SIZE_PLUS} - 1")        
+
                 echo "Read Size: ${SIZE}"
                 '''
             }
