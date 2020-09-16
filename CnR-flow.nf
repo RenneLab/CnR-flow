@@ -922,7 +922,8 @@ if( params.mode == 'run' ) {
                 script:
                 test_fastq = fastq[0]
                 if( "${test_fastq}".endsWith('.gz') ) {
-                    first_command = "head -c 10000 ${test_fastq} | zcat 2>/dev/null"
+                    //first_command = "head -c 10000 ${test_fastq} | zcat 2>/dev/null"
+                    first_command = "zcat < ${test_fastq}"
                 } else {
                     first_command = "cat ${test_fastq}"
                 }
