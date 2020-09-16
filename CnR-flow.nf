@@ -1677,7 +1677,7 @@ if( params.mode == 'run' ) {
             }
 
             if( fastq[0].toString().endsWith('.gz') ) {
-                count_command = 'echo "$(zcat ' + "${fastq[0]}" + ' | wc -l)/4" | bc'
+                count_command = 'echo "$(zcat < ' + "${fastq[0]}" + ' | wc -l)/4" | bc'
             } else {
                 count_command = 'echo "$(wc -l ' + "${fastq[0]}" + ')/4" | bc'
             }
