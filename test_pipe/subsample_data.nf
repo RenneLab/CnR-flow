@@ -52,7 +52,7 @@ process Subsample_Fastq {
     script:
     out_log  = "${task.tag}.${task.process}.nflog.txt"
     out_dir  = 'subsampled_data'
-    prop     = 0.10
+    prop     = 0.40
     prop_str = "${prop}" - ~/\./
     fq_names = ""
     fastqs.each{name -> 

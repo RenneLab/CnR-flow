@@ -8,6 +8,8 @@ params {
     ctrl_fastqs    = ["subsampled_data/SRR6128981_{1,2}_*"]
 }
 process {
+    memory = "4 GB"
+    cpus = 2
     withName: CnR_S5_B_Peaks_SEACR {
         errorStrategy = 'ignore'
     }
