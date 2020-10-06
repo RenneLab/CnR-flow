@@ -47,9 +47,7 @@ script:
 - ./dl_prep_data.sh
 - nextflow ../CnR-flow.nf --verbose --mode prep_fasta
 - nextflow ../CnR-flow.nf --verbose --mode run
-- ls
-- ls cnr_output
-- cat $(find ./cnr_output/logs/ -maxdepth 1 | sort )
+- cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
 - cp nextflow.config.step2 nextflow.config
 - nextflow ../CnR-flow.nf -resume --verbose --mode run
 
