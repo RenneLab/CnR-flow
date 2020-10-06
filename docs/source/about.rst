@@ -29,6 +29,8 @@ Changelog
         * Added additional template nextflow.config files for task
         * Added macOS support (for all dependencies) 
         * Added macOS automated testing (with Travis CI)
+        * Added input data file integrity checks to Merge process
+        * Added internal output checks for early error catching
 
     v0.10:
         * Refinements

@@ -1007,18 +1007,39 @@ if( params.mode == 'run' ) {
             if( R1_files.size() < 1 || R2_files.size() < 1 ) {
                 message = "Merge Error:\nR1 Files: ${R1_files}\nR2 Files: ${R2_Files}"
                 throw new Exception(message)
-            } else if( R1_files.size() == 1 && R2_files.size() == 1 ) {
+            } 
+            check_command = ""
+            if( "${R1_files[0]}".endsWith('.gz') ) {
+                check_command = "gzip -vt ${R1_files.join(' ')} ${R2_files.join(' ')}"
+            }
+            if( R1_files.size() == 1 && R2_files.size() == 1 ) {
                 command = '''
                 echo "No Merge Necessary. Renaming Files..."
-                set -v -H -o history
                 mkdir !{merge_fastqs_dir}
+
+                # Check File Integrity if gzipped
+                !{check_command}
+
+                set -v -H -o history
                 mv -v "!{R1_files[0]}" "!{R1_out_file}"
                 mv -v "!{R2_files[0]}" "!{R2_out_file}"
                 set +v +H +o history
+                R1_OUT_LEN=$(zcat -f !{R1_out_file} | wc -l)
+                R2_OUT_LEN=$(zcat -f !{R2_out_file} | wc -l)
+                echo "R1 Lines: ${R1_OUT_LEN}"
+                echo "R2 Lines: ${R2_OUT_LEN}"
+                if [ "${R1_OUT_LEN}" == "0" || "${R2_OUT_LEN}" == "0" ]; then
+                    echo "Input file of zero length detected."
+                    exit 1
+                fi
                 '''
             } else {
                 command = '''
                 mkdir !{merge_fastqs_dir}
+
+                # Check File Integrity if gzipped
+                !{check_command}
+
                 echo -e "\\nCombining Files: !{R1_files.join(' ')}"
                 echo "    Into: !{R1_out_file}"
                 set -v -H -o history
@@ -1030,6 +1051,15 @@ if( params.mode == 'run' ) {
                 set -v -H -o history
                 cat '!{R2_files.join("' '")}' > '!{R2_out_file}'
                 set +v +H +o history
+
+                R1_OUT_LEN=$(zcat -f !{R1_out_file} | wc -l)
+                R2_OUT_LEN=$(zcat -f !{R2_out_file} | wc -l)
+                echo "R1 Lines: ${R1_OUT_LEN}"
+                echo "R2 Lines: ${R2_OUT_LEN}"
+                if [ "${R1_OUT_LEN}" == "0" || "${R2_OUT_LEN}" == "0" ]; then
+                    echo "Input file of zero length detected."
+                    exit 1
+                fi
                 '''
             }
             shell:
@@ -1306,6 +1336,13 @@ if( params.mode == 'run' ) {
                                    > !{params.aln_dir_ref}/!{name}.bam
         set +v +H +o history
 
+        ALNS=$(!{params.samtools_call} view -c !{params.aln_dir_ref}/!{name}.bam )
+        echo "Alignments: ${ALNS}"
+        if [ "${ALNS}" == "0" ]; then 
+            echo "No Alignments Found. Please check alignment paramaters and reference setup."
+            exit 1
+        fi
+
         echo "Step 2, Part A, Alignment, Complete."
         '''
     }
@@ -1571,6 +1608,13 @@ if( params.mode == 'run' ) {
         mkdir -v !{aln_dir_bdg}
         cp -vPR !{aln_in} !{aln_dir_bdg}/!{aln_in}       
 
+        IN_ALNS=$(!{params.samtools_call} view -c !{aln_in} )
+        echo "Input Alignments: ${IN_ALNS}"
+        if [ "${IN_ALNS}" == "0" ]; then 
+            echo "No Input Alignments Found. Please check alignment processing output log."
+            exit 1
+        fi
+
         echo "Sorting alignment file by name: !{aln_in} ... utilizing samtools sort"
         set -v -H -o history
         !{params.samtools_call} sort -n \\
@@ -1596,6 +1640,12 @@ if( params.mode == 'run' ) {
         cut -f 1,2,6 !{aln_bed}.clean | sort -k1,1 -k2,2n -k3,3n > !{aln_bed}.clean.frag
         set +v +H +o history
 
+        NUM_FRAGS=$(wc -l !{aln_bed}.clean.frag )
+        echo "Number of Processed Fragments: ${NUM_FRAGS}"
+        if [ "${NUM_FRAGS}" == "0" ]; then
+            echo "No bed fragments detected after processing."
+            exit 1
+        fi      
 
         echo ""
         echo "Creating Bedgraph using bedtools genomecov."
