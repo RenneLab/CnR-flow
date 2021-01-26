@@ -996,17 +996,22 @@ if( params.mode == 'run' ) {
             out_log_name = "${run_id}.nf.log.txt"
             merge_fastqs_dir = "${params.merge_fastqs_dir}"
             R1_files = fastq.findAll {fn ->
-                "${fn}".contains("_R1_") || "${fn}".contains("_1.f") || "${fn}".contains("_1_")
+                "${fn}".contains("_R1_") || "${fn}".contains("_R1.")
+                || "${fn}".contains("_1.f") || "${fn}".contains("_1_")
             }
             R2_files = fastq.findAll {fn -> 
-                "${fn}".contains("_R2_") || "${fn}".contains("_2.f") || "${fn}".contains("_2_")
+                "${fn}".contains("_R2_") || "${fn}".contains("_R2.")
+                || "${fn}".contains("_2.f") || "${fn}".contains("_2_")
             }
             R1_out_file = "${params.merge_fastqs_dir}/${name}_R1_001.fastq.gz"
             R2_out_file = "${params.merge_fastqs_dir}/${name}_R2_001.fastq.gz" 
 
             if( R1_files.size() < 1 || R2_files.size() < 1 ) {
-                message = "Merge Error:\nR1 Files: ${R1_files}\nR2 Files: ${R2_Files}"
-                throw new Exception(message)
+                log.error "Error: Merge cannot classify .fastq[.gz] 1/2 or R1/R2 file names."
+                log.error "Detected R1 Files: ${R1_files}"
+                log.error "Detected R2 Files: ${R2_files}"
+                log.error "Supported schemes are '_R1_', '_R1.', '_1_', '_1.'"
+                exit 1
             } 
             check_command = ""
             if( "${R1_files[0]}".endsWith('.gz') ) {
