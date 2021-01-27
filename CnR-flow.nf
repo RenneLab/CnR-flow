@@ -1029,8 +1029,8 @@ if( params.mode == 'run' ) {
                 mv -v "!{R1_files[0]}" "!{R1_out_file}"
                 mv -v "!{R2_files[0]}" "!{R2_out_file}"
                 set +v +H +o history
-                R1_OUT_LEN=$(zcat -f $(readlink !{R1_out_file}) | wc -l | xargs)
-                R2_OUT_LEN=$(zcat -f $(readlink !{R2_out_file}) | wc -l | xargs)
+                R1_OUT_LEN=$(zcat -f < !{R1_out_file} | wc -l | xargs)
+                R2_OUT_LEN=$(zcat -f < !{R2_out_file} | wc -l | xargs)
                 echo "R1 Lines: ${R1_OUT_LEN}"
                 echo "R2 Lines: ${R2_OUT_LEN}"
                 if [ "${R1_OUT_LEN}" == "0" -o "${R2_OUT_LEN}" == "0" ] ; then
