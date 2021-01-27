@@ -1033,8 +1033,8 @@ if( params.mode == 'run' ) {
                 R2_OUT_LEN=$(zcat -f !{R2_out_file} | wc -l)
                 echo "R1 Lines: ${R1_OUT_LEN}"
                 echo "R2 Lines: ${R2_OUT_LEN}"
-                if [ "${R1_OUT_LEN}" == "0" || "${R2_OUT_LEN}" == "0" ]; then
-                    echo "Input file of zero length detected."
+                if [ "${R1_OUT_LEN}" == "0" || "${R2_OUT_LEN}" == "0" ] ; then
+                    echo "Input file not found, or input file of zero length detected."
                     exit 1
                 fi
                 '''
@@ -1061,8 +1061,8 @@ if( params.mode == 'run' ) {
                 R2_OUT_LEN=$(zcat -f !{R2_out_file} | wc -l)
                 echo "R1 Lines: ${R1_OUT_LEN}"
                 echo "R2 Lines: ${R2_OUT_LEN}"
-                if [ "${R1_OUT_LEN}" == "0" || "${R2_OUT_LEN}" == "0" ]; then
-                    echo "Input file of zero length detected."
+                if [ "${R1_OUT_LEN}" == "0" || "${R2_OUT_LEN}" == "0" ] ; then
+                    echo "Input file not found, or input file of zero length detected."
                     exit 1
                 fi
                 '''
