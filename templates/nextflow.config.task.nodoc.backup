@@ -25,7 +25,7 @@ params {
     use_aln_modes  = ["all"]  // Options: ["all", "all_dedup", "less_120", "less_120_dedup"]
     peak_callers   = ['macs', 'seacr']  // Options: ['macs', 'seacr']
     trimmomatic_adapterpath = "${projectDir}/ref_dbs/trimmomatic_adapters/TruSeq3-PE-2.fa"
-    trimmomatic_settings    = "ILLUMINACLIP:${params.trimmomatic_adapterpath}/Truseq3.PE.fa:2:15:4:4:true LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25"
+    trimmomatic_settings    = "ILLUMINACLIP:${params.trimmomatic_adapterpath}:2:15:4:4:true LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25"
     trimmomatic_flags       = "-phred33"
     input_seq_len  = 'auto'  // Length of untrimmed sequence reads (Ex: '150') or 'auto'
     aln_ref_flags  = "--local --very-sensitive-local --phred33 -I 10 -X 700 --dovetail --no-unal --no-mixed --no-discordant"

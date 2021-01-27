@@ -1,1 +1,1 @@
-trimmomatic_settings = "ILLUMINACLIP:${params.trimmomatic_adapterpath}/Truseq3.PE.fa:2:15:4:4:true LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25"
+trimmomatic_settings = "ILLUMINACLIP:${params.trimmomatic_adapterpath}:2:15:4:4:true LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25"
