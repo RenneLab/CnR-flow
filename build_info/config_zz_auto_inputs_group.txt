@@ -6,9 +6,9 @@ params {
 // Example:
 // fastq_groups = [
 //   'group_1_name': ['treat': 'relpath/to/treat1*R{1,2}*',
-//                    'ctrl':  'relpath/to/ctrl1*R{1,2}*',
-//                   ]
-//   'group_2_name': ['treat': ['relpath/to/g2_treat1*R{1,2}*'
+//                    'ctrl':  'relpath/to/ctrl1*R{1,2}*'
+//                   ],
+//   'group_2_name': ['treat': ['relpath/to/g2_treat1*R{1,2}*',
 //                              '/abs/path/to/g2_treat2*R{1,2}*'
 //                             ],
 //                    'ctrl':  'relpath/to/g2_ctrl1*R{1,2}*'
