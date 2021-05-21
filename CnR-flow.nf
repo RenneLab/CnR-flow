@@ -2090,14 +2090,24 @@ if( params.mode == 'run' ) {
         
             
             script:
-            run_id        = "${task.tag}.${task.process}.${aln_type}"
-            out_log_name  = "${run_id}.nf.log.txt"
-            peaks_dir     = "${params.peaks_dir_seacr}.${aln_type}"
-            all_treat_bdg = aln.findAll {fn -> "${fn}".endsWith(".bdg") }
-            treat_bdg     = all_treat_bdg[0]
+            run_id             = "${task.tag}.${task.process}.${aln_type}"
+            out_log_name       = "${run_id}.nf.log.txt"
+            peaks_dir          = "${params.peaks_dir_seacr}.${aln_type}"
+            all_treat_bdg      = aln.findAll {fn -> "${fn}".endsWith(".bdg") }
+            all_treat_norm_bdg = aln.findAll {fn -> "${fn}".endsWith("_norm.bdg") }
+            if( all_treat_norm_bdg.isEmpty() ) {
+                treat_bdg      = all_treat_bdg[0]
+            } else {
+                treat_bdg      = all_treat_norm_bdg[0]
+            }
             if( ctrl_name ) {
-                all_ctrl_bdg = ctrl_aln.findAll {fn -> "${fn}".endsWith(".bdg") } 
-                ctrl_flag = all_ctrl_bdg[0]
+                all_ctrl_bdg      = ctrl_aln.findAll {fn -> "${fn}".endsWith(".bdg") } 
+                all_ctrl_norm_bdg = ctrl_aln.findAll {fn -> "${fn}".endsWith("_norm.bdg") } 
+                if(all_treat_norm_bdg.isEmpty()) {
+                    ctrl_flag     = all_ctrl_bdg[0]
+                } else {
+                    ctrl_flag     = all_ctrl_norm_bdg[0]
+                }
             } else {
                 ctrl_flag = params.seacr_fdr_threshhold 
             }
