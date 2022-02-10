@@ -53,7 +53,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - data-cache
+            - data2-cache
       - attach_workspace:
           at: ./
       - run:
@@ -67,15 +67,15 @@ jobs:
       - run:
           name: Setup Reference Data
           command: |
-            ls
+            echo "" ; ls ; echo ""
             cd ./test_pipe
-            ls
+            echo "" ; ls : echo ""
             cat test_notes.txt
             ./setup_reference.sh
             ./dl_prep_data.sh
             ls
       - save_cache:
-          key: data-cache
+          key: data2-cache
           paths:
             - test_pipe/subsampled_data
             - test_pipe/test_reference
