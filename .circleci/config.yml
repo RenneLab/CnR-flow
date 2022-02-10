@@ -101,7 +101,7 @@ jobs:
             ls
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
             echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
-            cd ./test_init
+            cd ../test_pipe
             echo "test_reference:" ; ls test_reference ; echo ""
             echo "subsampled_data:" ; ls subsampled_data ; echo ""
       - run:
@@ -150,6 +150,9 @@ jobs:
             ls
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
             echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
+            cd ../test_pipe
+            echo "test_reference" ; ls test_reference ; echo ""
+            echo "subsampled_data" ; ls subsampled_data ; echo ""
       - run:
           name: Test Mode:Initiate
           environment: 
