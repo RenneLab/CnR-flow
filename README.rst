@@ -5,9 +5,9 @@ CUT&RUN-Flow (CnR-flow)
 .. image:: https://img.shields.io/github/v/release/rennelab/cnr-flow?include_prereleases&logo=github
    :target: https://github.com/rennelab/cnr-flow/releases
    :alt: GitHub release (latest by date including pre-releases)
-.. image:: https://img.shields.io/travis/com/RenneLab/CnR-flow/master.svg?logo=travis
-   :target: https://travis-ci.com/rennelab/CnR-flow
-   :alt: Travis-CI Build Status
+.. image:: https://circleci.com/gh/RenneLab/CnR-flow.svg?style=shield&circle-token=0c2e0d49a95709cbb3f0bb8b7d8d05ffa4547d14
+   :target: https://app.circleci.com/pipelines/github/RenneLab/CnR-flow
+   :alt: CircleCI Build Status
 .. image:: https://img.shields.io/readthedocs/cnr-flow?logo=read-the-docs
    :target: https://CnR-flow.readthedocs.io/en/latest/?badge=latest
    :alt: ReadTheDocs Documentation Status
