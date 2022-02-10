@@ -14,4 +14,3 @@ params {
     //bt2_db_prefix_exchange     = [ "${launchDir}/test_reference", "~/test_reference" ]
 }
 docker.enabled = true
-docker.runOptions = "-v ${launchDir}/test_reference:~/test_reference"
