@@ -16,7 +16,6 @@ jobs:
             mkdir ./programs
             cd ./programs
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
-            echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
       - run:
           name: Download Nextflow
           command: |
@@ -44,6 +43,32 @@ jobs:
           paths:
             - programs
 
+  prep-data:
+    executor: bash-env
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Re-initiate Environment
+          command: |
+            pwd
+            cd ./programs
+            ls
+            echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
+            echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
+      - run:
+          name: Setup Reference Data
+          command: |
+            cd ./test_pipe
+            cat test_notes.txt
+            ./setup_reference.sh
+            ./dl_prep_data.sh
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - test_pipe/raw_data
+
   test-conda:
     executor: bash-env
     steps:
@@ -57,6 +82,7 @@ jobs:
             cd ./programs
             ls
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
+            echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
       - run:
           name: Test Mode:Initiate
           environment: 
@@ -79,8 +105,6 @@ jobs:
           command: |
             cd ./test_pipe
             cat test_notes.txt
-            ./setup_reference.sh
-            ./dl_prep_data.sh
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
             nextflow ../CnR-flow.nf --verbose --mode run
             cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
@@ -91,6 +115,9 @@ workflows:
   test-conda:
       jobs:
         - prep-bash
-        - test-conda:
+        - prep-data:
             requires:
               - prep-bash
+        - test-conda:
+            requires:
+              - prep-data
