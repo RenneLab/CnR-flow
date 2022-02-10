@@ -1,13 +1,21 @@
 version: 2.1
 jobs:
   test-bash:
-    docker:
-      - image: continuumio/miniconda3
+    machine:
+      image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run: mkdir ./programs ; cd ./programs ; export PATH=$PATH:$PWD ; echo "Path Set"
-      - run: wget -qO- https://get.nextflow.io | bash
+      - run: mkdir ./programs ; cd ./programs ; export PATH=$PATH:$PWD
+      - run: curl -fsSL https://get.nextflow.io | bash
+      - run: wget --progress=dot --retry-connrefused https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+      - run: bash miniconda.sh -b -p $HOME/miniconda
+      - run: source "$HOME/miniconda/etc/profile.d/conda.sh"
+      - run: hash -r
+      - run: conda config --set always_yes yes --set changeps1 no
+      - run: conda update -q conda
+      - run: conda info -a
       - run: cd ..
+      - run: conda
       - run: nextflow
       - run: docker
 
