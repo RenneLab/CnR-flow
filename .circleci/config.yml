@@ -11,7 +11,7 @@ jobs:
             pwd
             mkdir ./programs
             cd ./programs
-            export PATH=$PATH:$PWD
+            echo 'export PATH=$PATH:$PWD' >> $BASH_ENV
       - run: pwd; echo $PATH
       - run:
           name: Download Nextflow
