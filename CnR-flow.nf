@@ -1297,6 +1297,8 @@ if( params.mode == 'run' ) {
         mkdir !{params.aln_dir_ref}
         echo "Aligning file name base: !{name} ... utilizing Bowtie2"
 
+        pwd
+        ls ~
         echo "Reference Files:"
         ls !{ref_bt2db_path}*
     
@@ -1736,6 +1738,8 @@ if( params.mode == 'run' ) {
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" > !{aln_count_report}
 
+            pwd
+            ls ~
             echo "Spike-in Reference Files:"
             ls !{spike_ref}*
 
@@ -1762,6 +1766,8 @@ if( params.mode == 'run' ) {
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" >> !{aln_count_report}
 
+            pwd
+            ls ~
             echo "Genome Reference Files:"
             ls !{ref_bt2db_path}*
 
@@ -1776,6 +1782,8 @@ if( params.mode == 'run' ) {
 
             RAW_CROSS_COUNT="$(!{params.samtools_call} view -Sc !{aln_cross_sam})"
             #bc <<< "${RAW_CROSS_COUNT}/2" > !{aln_cross_count}
+            echo ${RAW_CROSS_COUNT}
+            echo "expr ${RAW_CROSS_COUNT} / 2  !{aln_cross_count}"
             expr ${RAW_CROSS_COUNT} / 2 > !{aln_cross_count}
             CROSS_COUNT=$(cat !{aln_cross_count})
             set +v +H +o history
