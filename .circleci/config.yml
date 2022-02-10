@@ -101,6 +101,9 @@ jobs:
             ls
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
             echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
+            cd ./test_init
+            echo "test_reference:" ; ls test_reference ; echo ""
+            echo "subsampled_data:" ; ls subsampled_data ; echo ""
       - run:
           name: Test Mode:Initiate
           environment: 
@@ -126,6 +129,8 @@ jobs:
             echo "" ; ls test_reference ; echo ""
             echo "" ; ls subsampled_data ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
+            echo "test_reference" ; ls test_reference ; echo ""
+            echo "test_reference/*" ; ls test_reference/*/* ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode run
             cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
             cp nextflow.config.step2 nextflow.config
@@ -170,7 +175,11 @@ jobs:
             cd ./test_pipe
             cat test_notes.txt
             cat nextflow.config.docker >> nextflow.config
+            echo "" ; ls test_reference ; echo ""
+            echo "" ; ls subsampled_data ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
+            echo "test_reference" ; ls test_reference ; echo ""
+            echo "test_reference/*" ; ls test_reference/*/* ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode run
             cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
             cp nextflow.config.step2 nextflow.config
