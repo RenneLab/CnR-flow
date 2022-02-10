@@ -1985,14 +1985,17 @@ if( params.mode == 'run' ) {
             all_norm_bdg = aln.findAll {fn -> "${fn}".endsWith("_norm.bdg") }
             all_cpm_bdg  = aln.findAll {fn -> "${fn}".endsWith("_normCPM.bdg") }
             if( ! all_norm_bdg.isEmpty() ) {
-                in_bdg   = all_norm_bdg[0]
+                in_bdg     = all_norm_bdg[0]
+                out_suffix = "_normSpike" 
             } else if( ! all_cpm_bdg.isEmpty() ) {
-                in_bdg   = all_cpm_bdg[0]
+                in_bdg     = all_cpm_bdg[0]
+                out_suffix = "_normCPM"
             } else {
-                in_bdg   = all_bdg[0]
+                in_bdg     = all_bdg[0]
+                out_suffix = ""   
             }
             in_bdg_sort  = "${in_bdg}.sort"
-            out_bigwig   = "${bigwig_dir}/${name}.bigWig"
+            out_bigwig   = "${bigwig_dir}/${name}${out_suffix}.bigWig"
             chrom_sizes  = "${params.ref_chrom_sizes_path}"
         
             shell:
