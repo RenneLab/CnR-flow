@@ -58,6 +58,6 @@ params {
     bedtools_call         = "bedtools"
     macs2_call            = "macs2"
     bedgraphtobigwig_call = "bedGraphToBigWig"
-    seacr_call            = "${projectDir}/SEACR/SEACR_1.3.sh"     //Packaged with download
-    seacr_R_script        = "${projectDir}/SEACR/SEACR_1.3.R"      //Packaged with download
+    seacr_call            = "SEACR_1.3.sh"
+    seacr_R_script        = "SEACR_1.3.R"
     
