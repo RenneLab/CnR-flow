@@ -57,7 +57,7 @@ jobs:
           environment: 
             NXF_ANSI_LOG: false
           command: |
-            cd ../test_pipe
+            cd ./test_pipe
             cat test_notes.txt
             ./setup_reference.sh
             ./dl_prep_data.sh
