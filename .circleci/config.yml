@@ -31,7 +31,7 @@ jobs:
             conda config --set always_yes yes --set changeps1 no
             conda update -q conda
             conda info -a
-            export CONDA_PATH=dirname $(whereis conda | cut -d\  -f 2)
+            export CONDA_PATH=$(dirname $(whereis conda | cut -d\  -f 2))
             echo 'export PATH=$PATH:$CONDA_PATH' >> $BASH_ENV
       - run: pwd; conda
       - run: pwd; nextflow
