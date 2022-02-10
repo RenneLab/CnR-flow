@@ -5,9 +5,9 @@ jobs:
       - image: quay.io/biocontainers/nextflow:21.10.6--h4a94de4_0
     steps:
       - checkout
-      - run: nextflow
       - run: conda
       - run: docker
+      - run: nextflow
 
 workflows:
   test-all:
