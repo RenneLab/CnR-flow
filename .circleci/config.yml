@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: mkdir ./programs ; cd ./programs ; export PATH=$PATH:$PWD ; echo "Path Set"
-      - run: curl -fsSL https://get.nextflow.io | bash
+      - run: wget -qO- https://get.nextflow.io | bash
       - run: cd ..
       - run: nextflow
       - run: docker
