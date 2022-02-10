@@ -758,7 +758,7 @@ if( params.mode == 'prep_fasta' ) {
         echo -e "Calculating Reference Effective Genome Size (Total - N's method )..."
         TOTAL=$(tail -n 1 !{fa_count_name} | cut -f2) 
         NS=$(tail -n 1 !{fa_count_name} | cut -f7)
-        EFFECTIVE=$( expr "${TOTAL} - ${NS}")
+        EFFECTIVE=$( expr "${TOTAL}-${NS}")
         echo "${EFFECTIVE}" > !{eff_size_name}
         echo "Effective Genome Size: ${TOTAL} - ${NS} = ${EFFECTIVE}"
         echo "Done."
@@ -885,7 +885,7 @@ if( params.mode == 'run' ) {
 
                 !{first_command} | head -n 2 | tail -n 1 > seq.txt
                 SIZE_PLUS=$(cat seq.txt | wc -c )
-                SIZE=$(expr "${SIZE_PLUS} - 1")        
+                SIZE=$(expr "${SIZE_PLUS}-1")        
 
                 echo "Read Size: ${SIZE}"
                 '''
