@@ -5,19 +5,32 @@ jobs:
       image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run: pwd; mkdir ./programs ; cd ./programs ; export PATH=$PATH:$PWD
+      - run: 
+        name: Setup Directories
+        command: |
+          pwd
+          mkdir ./programs
+          cd ./programs
+          export PATH=$PATH:$PWD
       - run: pwd; echo $PATH
-      - run: pwd; cd ./programs; curl -fsSL https://get.nextflow.io | bash
-      - run: pwd; wget --progress=dot --retry-connrefused https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-      - run: pwd; bash miniconda.sh -b -p $HOME/miniconda
-      - run: pwd; source "$HOME/miniconda/etc/profile.d/conda.sh"
-      - run: pwd; hash -r
-      - run: pwd; ls
-      - run: pwd; ls $HOME
-      - run: pwd; conda config --set always_yes yes --set changeps1 no
-      - run: pwd; conda update -q conda
-      - run: pwd; conda info -a
-      - run: pwd; ls ; cd .. ; ls
+      - run:
+        name: Download Nextflow
+        command: |
+          pwd
+          cd ./programs
+          curl -fsSL https://get.nextflow.io | bash
+      - run:
+        name: Download & Install Conda
+        command: |
+          pwd
+          cd ./programs
+          wget --progress=dot --retry-connrefused https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+          bash miniconda.sh -b -p $HOME/miniconda
+          source "$HOME/miniconda/etc/profile.d/conda.sh"
+          hash -r
+          conda config --set always_yes yes --set changeps1 no
+          conda update -q conda
+          conda info -a
       - run: pwd; conda
       - run: pwd; nextflow
       - run: pwd; docker
