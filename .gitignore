@@ -3,7 +3,10 @@ CUTRUNTools/*filter_below*
 kent_utils/faCount
 ref_dbs/trimmomatic_adapters
 private
+envs_conda
+envs_singularity
 conda_envs
+singularity_envs
 docs/_build
 docs/__pycache__
 test_pipe/.nextflow*

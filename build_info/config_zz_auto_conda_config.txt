@@ -1,6 +1,6 @@
 // -- External Conda Environments:
 facount_conda          = 'bioconda::ucsc-facount=366'
-bowtie2_conda          = 'bioconda::bowtie2=2.4.1'
+bowtie2_conda          = 'bioconda::bowtie2=2.4.4 conda-forge::libgcc-ng=9.3'
 fastqc_conda           = 'bioconda::fastqc=0.11.9'
 trimmomatic_conda      = 'bioconda::trimmomatic=0.39'
 kseqtest_conda         = 'RenneLab::cutruntools-exec'

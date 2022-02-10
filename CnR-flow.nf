@@ -28,19 +28,17 @@ params.out_front_pad = 4
 params.out_prop_pad = 17
 
 // --------------- Check (and Describe) "--mode" param: ---------------
-    modes = ['initiate', 'validate', 'validate_all', 'prep_fasta',
-             'list_refs', 'dry_run', 'run', 'help', 'version']
+    modes = ['initiate', 'validate', 'prep_fasta',
+             'list_refs', 'run', 'help', 'version']
     usage = """\
     USAGE:
         nextflow [NF_OPTIONS] run CnR-flow --mode <run-mode> [PIPE_OPTIONS]
 
     Run Modes:
         initiate     : Copy configuration templates to current directory
-        validate     : Validate current dependency configuration
-        validate_all : Validate all dependencies
+        validate     : Validate dependency configuration
         prep_fasta   : Prepare alignment reference(s) from <genome>.fa[sta]
         list_refs    : List prepared alignment references
-        dry_run      : Check configruation and all inputs, but don't run pipeline
         run          : Run pipeline
         help         : Print help and usage information for pipeline
         version      : Print pipeline version
@@ -56,8 +54,6 @@ params.out_prop_pad = 17
     full_version = " -- ${workflow.manifest.name} : ${workflow.manifest.mainScript} "
     full_version += ": ${workflow.manifest.version}"  
 
-if( params.containsKey('mode') && params.mode == 'prep_all' ) { params.mode = 'prep' }
-
 if( params.help || params.h ) {
     println full_help
     exit 0
@@ -66,11 +62,11 @@ if( params.help || params.h ) {
     exit 0
 } else if( !params.containsKey('mode') ) {
     println ""
-    log.warn "--mode Keyword ('params.mode) not provided." 
+    log.warn "--mode Keyword ('params.mode') not provided." 
     log.warn "Use --h, --help, --mode=help, or --mode help  for more information."
-    log.warn "Defaulting to --mode='dry_run'"
+    log.warn "Defaulting to --mode='validate'"
     log.warn ""
-    params.mode = 'dry_run'
+    params.mode = 'validate'
 } else if( !modes.any{it == params.mode} ) {
     println ""
     log.error "Unrecognized --mode Keyword ('params.mode):"
@@ -106,11 +102,11 @@ if( ['prep_fasta'].contains(params.mode) ) {
     test_params_key(params, 'refs_dir')
      
 // If a run or validate mode, ensure all required keys have been provided correctly.
-} else if(['run', 'dry_run', 'validate', 'validate_all'].contains(params.mode) ) {
+} else if(['run', 'validate'].contains(params.mode) ) {
     // Check to ensure required keys have been provided correctly.
     first_test_keys = [
         'do_merge_lanes', 'do_fastqc', 'do_trim', 'do_retrim', 'do_norm_spike', 
-        'do_make_bigwig',
+        'do_norm_cpm', 'do_make_bigwig',
         'peak_callers', 'java_call', 'bowtie2_build_call', 'samtools_call',
         'facount_call', 'bedgraphtobigwig_call',
         'fastqc_call', 'trimmomatic_call', 'kseqtest_call', 'bowtie2_call', 
@@ -118,7 +114,8 @@ if( ['prep_fasta'].contains(params.mode) ) {
         'seacr_call', 'out_dir', 'refs_dir', 'log_dir', 'prep_bt2db_suf',
         'merge_fastqs_dir', 'fastqc_pre_dir', 'trim_dir', 'retrim_dir',
         'fastqc_post_dir', 'aln_dir_ref', 'aln_dir_spike', 'aln_dir_mod',
-        'aln_dir_norm', 'aln_bigwig_dir', 'peaks_dir_macs', 'peaks_dir_seacr',
+        'aln_dir_norm', 'aln_dir_norm_cpm', 
+        'aln_bigwig_dir', 'peaks_dir_macs', 'peaks_dir_seacr',
         'verbose', 'help', 'h', 'version', 'v', 'out_front_pad', 'out_prop_pad', 
         'trim_name_prefix', 'trim_name_suffix'
     ]
@@ -128,13 +125,7 @@ if( ['prep_fasta'].contains(params.mode) ) {
     req_files = []
     
     // If Run mode, automatically set reference keys based on reference mode.
-    if (['run', 'dry_run'].contains(params.mode) ) {
-        if( !params.containsKey('ref_mode') ) {
-            log.warn "No --ref_mode (params.ref_mode) parameter provided."
-            log.warn "Defaulting to 'fasta'"
-            log.warn ""
-            params.ref_mode = 'fasta'
-        }
+    if (['run'].contains(params.mode) ) {
         test_params_key(params, 'ref_mode', ['manual', 'name', 'fasta'])
         ref_key = ''
         norm_ref_key = ''
@@ -196,7 +187,7 @@ if( ['prep_fasta'].contains(params.mode) ) {
     }
 
     test_commands = [
-        "Java": ["${params.java_call} -version", 0, *get_resources(params, 'java')],
+        //"Java": ["${params.java_call} -version", 0, *get_resources(params, 'java')],
         "bowtie2-build": ["${params.bowtie2_build_call} --version", 0, 
             *get_resources(params, 'bowtie2')],
         "faCount": ["${params.facount_call}", 255, *get_resources(params, 'facount')],
@@ -222,26 +213,20 @@ if( ['prep_fasta'].contains(params.mode) ) {
     }
     // Keys and Params for FastQC
     if( params.do_fastqc ) {
-        use_tests.add(["FastQC", *test_commands["FastQC"]])
         req_keys.add(['fastqc_flags'])
     }
     // Keys and Params for Trimmomatic trimming
     if( params.do_trim ) {
-        use_tests.add(["Trimmomatic", *test_commands["Trimmomatic"]])
         req_files.add(['trimmomatic_adapterpath'])
         req_keys.add(['trimmomatic_settings'])
         req_keys.add(['trimmomatic_flags'])
     }
     // Keys and Params for Trimmomatic trimming
     if( params.do_retrim ) {
-        use_tests.add(["kseqtest", *test_commands["kseqtest"]])
         req_keys.add(['input_seq_len'])
     }
     // keys and params for alignment steps
     if( true ) {
-        use_tests.add(["bowtie2", *test_commands["bowtie2"]])
-        use_tests.add(["Samtools", *test_commands["Samtools"]])
-        use_tests.add(["bedtools", *test_commands["bedtools"]])
         req_keys.add(['ref_bt2db_path'])
         req_keys.add(['ref_name'])
         req_keys.add(['aln_ref_flags'])
@@ -257,42 +242,43 @@ if( ['prep_fasta'].contains(params.mode) ) {
         req_keys.add(['norm_ref_name'])
         req_keys.add(['norm_mode', ['adj', 'all']])
     }
+    // keys and params for CPM normalization
+    if( params.do_norm_cpm ) {
+        req_keys.add(['norm_cpm_scale'])
+    }
     // keys and params for bigWig creation
     if( params.do_make_bigwig ) {
         req_keys.add(['norm_mode', ['adj', 'all']])
-        use_tests.add(["bedGraphToBigWig", *test_commands["bedGraphToBigWig"]])
     }
     // keys and params for peak calling
     req_keys.add(['peak_callers', ['macs', 'seacr']])
     if( params.peak_callers.contains('macs') ) {
-        use_tests.add(["MACS2", *test_commands["MACS2"]])
         req_keys.add(['macs_qval'])
         req_keys.add(['macs_flags'])
         req_keys.add(['ref_eff_genome_size'])
     }
     if( params.peak_callers.contains('seacr') ) {
-        use_tests.add(["SEACR", *test_commands["SEACR"]])
         req_keys.add(['seacr_fdr_threshhold'])
         req_keys.add(['seacr_norm_mode', ['auto', 'norm', 'non']])
         req_keys.add(['seacr_call_stringent', [true, false]])
         req_keys.add(['seacr_call_relaxed', [true, false]])
     }
 
-    // If validate_all, ignore prepared tests and test all dependencies.
-    if( params.mode == 'validate_all' ) {
+    // For validate, test all dependencies.
+    if( params.mode == 'validate' ) {
         use_tests = []
         test_commands.each{test -> use_tests.add([test.key, *test.value]) }
     }
 
     // If a Run Mode, Test Step-Specific Keys and Required Files:
-    if( ['run', 'dry_run'].contains(params.mode) ) {
+    if( params.mode == 'run') {
         test_params_keys(params, req_keys)
         test_params_files(params, req_files) 
     }
 }
 
 // If run mode, ensure input files have been provided and test existence.
-if( ['run', 'dry_run'].contains(params.mode) ) {
+if( params.mode == 'run' ) {
     if( params.containsKey('treat_fastqs') && params.containsKey('fastq_groups') ) {
         message =  "Please provide input fastq file data to either of \n"
         message += "    --treat_fastqs  (params.treat_fastqs)\n"
@@ -380,7 +366,7 @@ if( params.verbose ) {
 }
 
 // -- If a Run Mode, Check-for and Print Input Files
-if( ['run', 'dry_run'].contains( params.mode) ) {
+if( params.mode == 'run' ) {
     if( print_in_files.size() < 2 ) {
         message =  "No Input Files Provided.\n"
         message += "Please provide valid --treat_fastqs (params.treat_fastqs) option.\n"
@@ -413,18 +399,6 @@ System.out.flush(); System.err.flush()
 
 // -- Run Mode: validate
 if( ['initiate'].contains( params.mode ) ) { 
-    //kseq_test_exe = file("${projectDir}/CUTRUNTools/kseq_test")
-    //if( !(kseq_test_exe.exists()) ) {
-    //    log.info "Downloading and Compiling Utilized CUTRUNTools Utilities"
-    //    ret_text = "${projectDir}/CUTRUNTools/install_cutruntools.sh".execute().text
-    //    println ret_text
-    //    if (ret_text.contains("kseq_test Installation Failure.") 
-    //        || !(kseq_test_exe.exists())) {
-    //        println "kseq_test Installation Failure Detected."
-    //        println "Please report issue to project developers."
-    //        exit 1
-    //    }
-    //}
     trimmomatic_dir = file("${projectDir}/ref_dbs/trimmomatic_adapters")
     if( !(trimmomatic_dir.exists()) ) {
         log.info "Downloading Trimmomatic Sequence Adapter Files"
@@ -454,7 +428,7 @@ if( ['initiate'].contains( params.mode ) ) {
     log.info ""
     log.info "Please modify task configuration file:"
     log.info "-   ${task_config_target}"
-    log.info "Then check using 'validate' or 'dry_run' modes to test setup."
+    log.info "Then check using 'validate' mode to test setup."
     println ""
 }
 
@@ -463,23 +437,29 @@ if( ['validate', 'validate_all'].contains( params.mode ) ) {
     process CnR_Validate {
         tag             { title }
         // Previous step ensures only one or another (non-null) resource is provided:
-        module          { "${test_module}" }
-        conda           { "${test_conda}" }
+        container       { "${test_container}" } 
+        module          { if(!("${test_container}")) { "${test_module}"} else { "" } }
+        conda           { if(!("${test_container}") && !("${test_module}")) { 
+                          "${test_conda}" } else { "" } 
+                        }
         label           'small_mem'   
         maxForks        1
         errorStrategy   'terminate'
         cpus            1
+        beforeScript    { task_details(task) }
         echo            true
 
         input:
-        tuple val(title), val(test_call), val(exp_code), val(test_module), val(test_conda) from Channel.fromList(use_tests)
+        tuple val(title), val(test_call), val(exp_code), val(test_module), val(test_conda), val(test_container) from Channel.fromList(use_tests)
         
         output:
         val('success') into validate_outs
 
         script:
-        resource_string = ''
-        if( task.module) { 
+        resource_string = ""
+        if( task.container) { 
+            resource_string = "echo -e '  -  Container: ${task.container.toString()}'"
+        } else if( task.module) { 
             resource_string = "echo -e '  -  Module(s): ${task.module.join(':')}'"
         } else if( task.conda) {
             resource_string = "echo -e '  -  Conda-env: \"${task.conda.toString()}\"'"
@@ -492,6 +472,7 @@ if( ['validate', 'validate_all'].contains( params.mode ) ) {
         echo -e "\\nTesting System Call for dependency: !{title}"
         echo -e "Using Command:"
         echo -e "    !{test_call}\\n"
+
 
         set +e
         !{test_call}
@@ -674,7 +655,9 @@ if( params.mode == 'prep_fasta' ) {
     get_fasta_outs.into{prep_bt2db_inputs; prep_sizes_inputs}
 
     process CnR_Prep_Bt2db {
-        if( has_module(params, 'bowtie2') ) {
+        if( has_container(params, 'bowtie2') ) {
+            container get_container(params, 'bowtie2')
+        } else if( has_module(params, 'bowtie2') ) {
             module get_module(params, 'bowtie2')
         } else if( has_conda(params, 'bowtie2') ) {
             conda get_conda(params, 'bowtie2')
@@ -725,6 +708,8 @@ if( params.mode == 'prep_fasta' ) {
     }
     
     process CnR_Prep_Sizes {
+        //if( has_container(params, 'bowtie2') ) {
+        //    container get_container(params, 'bowtie2') 
         if( has_module(params, ['samtools', 'facount']) ) {
             module get_module(params, ['samtools', 'facount'])
         } else if( has_conda(params, ['samtools', 'facount']) ) {
@@ -773,7 +758,7 @@ if( params.mode == 'prep_fasta' ) {
         echo -e "Calculating Reference Effective Genome Size (Total - N's method )..."
         TOTAL=$(tail -n 1 !{fa_count_name} | cut -f2) 
         NS=$(tail -n 1 !{fa_count_name} | cut -f7)
-        EFFECTIVE=$( bc <<< "${TOTAL} - ${NS}")
+        EFFECTIVE=$( expr "${TOTAL} - ${NS}")
         echo "${EFFECTIVE}" > !{eff_size_name}
         echo "Effective Genome Size: ${TOTAL} - ${NS} = ${EFFECTIVE}"
         echo "Done."
@@ -790,41 +775,6 @@ if( params.mode == 'prep_fasta' ) {
                             ["${name}.refinfo.txt", details]
                         }
                         .view { "Database Prepared and published in:\n    ${params.refs_dir}/${it}\nDetails:\n${it.text}" }
-}
-
-// -- Run Mode: 'dry_run'
-if( params.mode == 'dry_run' ) {
-    process CnR_DryRun {
-        tag          { "my_input" }
-        label        'norm_mem'
-        beforeScript { task_details(task) }
-        echo         true
-    
-        output:
-        path "${test_out_file_name}" into dryRun_outs
-        path '.command.log' into dryRun_log_outs
-    
-        publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
-                   pattern: ".command.log", saveAs: { out_log_name } 
-        publishDir "${params.out_dir}", mode: params.publish_mode, 
-                   pattern: "${test_out_file_name}"
-    
-        script:
-        run_id = "${task.tag}.${task.process}"
-        out_log_name = "${run_id}.nf.log.txt"
-        test_out_file_name = "test_out_file.txt"
-        shell:
-        '''
-        echo "Performing 'Dry Run' Test:"
-    
-        echo "Would Execute Pipeline now."
-    
-        echo "Creating Test Out File: !{test_out_file_name}"
-        echo "Dry Run Test Output File Created on: $(date)" > !{test_out_file_name}
-    
-        echo -e '\\n"Dry Run" test complete.\\n'
-        '''
-    }
 }
 
 // -- Run Mode: 'run'
@@ -907,7 +857,7 @@ if( params.mode == 'run' ) {
         if( params.input_seq_len == "auto" ) {
             process CnR_S0_A_GetSeqLen {
                 label       'small_mem'
-                executor    'local'
+                //executor    'local'
                 cpus        1
                 time        '1h'
                 echo        params.verbose
@@ -935,7 +885,7 @@ if( params.mode == 'run' ) {
 
                 !{first_command} | head -n 2 | tail -n 1 > seq.txt
                 SIZE_PLUS=$(cat seq.txt | wc -c )
-                SIZE=$(bc <<< "${SIZE_PLUS} - 1")        
+                SIZE=$(expr "${SIZE_PLUS} - 1")        
 
                 echo "Read Size: ${SIZE}"
                 '''
@@ -973,7 +923,7 @@ if( params.mode == 'run' ) {
         // Step 0, Part A, Merge Lanes (If Enabled)
         process CnR_S0_B_MergeFastqs {
             tag          { name }
-            label        'norm_mem'
+            label        'big_mem'
             beforeScript { task_details(task) }
             cpus         1
            
@@ -1015,7 +965,7 @@ if( params.mode == 'run' ) {
             } 
             check_command = ""
             if( "${R1_files[0]}".endsWith('.gz') ) {
-                check_command = "gzip -vt ${R1_files.join(' ')} ${R2_files.join(' ')}"
+                check_command = "gzip -t ${R1_files.join(' ')} ${R2_files.join(' ')}"
             }
             if( R1_files.size() == 1 && R2_files.size() == 1 ) {
                 command = '''
@@ -1087,13 +1037,15 @@ if( params.mode == 'run' ) {
     // Step 0, Part C, FastQC Analysis (If Enabled)
     if( params.do_fastqc ) {
         process CnR_S0_C_FastQCPre {
-            if( has_module(params, 'fastqc') ) {
+            if( has_container(params, 'fastqc') ) {
+                container get_container(params, 'fastqc')
+            } else if( has_module(params, 'fastqc') ) {
                 module get_module(params, 'fastqc')
             } else if( has_conda(params, 'fastqc') ) {
                 conda get_conda(params, 'fastqc')
             }
             tag          { name }
-            label        'small_mem'
+            label        'norm_mem'
             beforeScript { task_details(task) }
             cpus         1   //Multiple CPUS for FastQC are for multiple files.
 
@@ -1129,7 +1081,9 @@ if( params.mode == 'run' ) {
     // Step 1, Part A, Trim Reads using Trimmomatic (if_enabled)
     if( params.do_trim ) {
         process CnR_S1_A_Trim { 
-            if( has_module(params, 'trimmomatic') ) {
+            if( has_container(params, 'trimmomatic') ) {
+                container get_container(params, 'trimmomatic')
+            } else if( has_module(params, 'trimmomatic') ) {
                 module get_module(params, 'trimmomatic')
             } else if( has_conda(params, 'trimmomatic') ) {
                 conda get_conda(params, 'trimmomatic')
@@ -1195,7 +1149,9 @@ if( params.mode == 'run' ) {
     // Step 1, Part B, Retrim Sequences Using Cut&RunTools kseq_test (If Enabled)
     if( params.do_retrim ) {
         process CnR_S1_B_Retrim { 
-            if( has_module(params, 'kseqtest') ) {
+            if( has_container(params, 'kseqtest') ) {
+                container get_container(params, 'kseqtest')
+            } else if( has_module(params, 'kseqtest') ) {
                 module get_module(params, 'kseqtest')
             } else if( has_conda(params, 'kseqtest') ) {
                 conda get_conda(params, 'kseqtest')
@@ -1254,13 +1210,15 @@ if( params.mode == 'run' ) {
     // Step 1, Part C, Evaluate Final Trimmed Sequences With FastQC (If Enabled)
     if( params.do_fastqc ) {
         process CnR_S1_C_FastQCPost {
-            if( has_module(params, 'fastqc') ) {
+            if( has_container(params, 'fastqc') ) {
+                container get_container(params, 'fastqc')
+            } else if( has_module(params, 'fastqc') ) {
                 module get_module(params, 'fastqc')
             } else if( has_conda(params, 'fastqc') ) {
                 conda get_conda(params, 'fastqc')
             }
             tag          { name }
-            label        'small_mem'
+            label        'norm_mem'
             beforeScript { task_details(task) }
             cpus         1   //Multiple CPUS for FastQC are for multiple files.
            
@@ -1295,7 +1253,9 @@ if( params.mode == 'run' ) {
 
     // Step 2, Part A, Align Reads to Reference Genome(s)
     process CnR_S2_A_Aln_Ref {
-        if( has_module(params, ['bowtie2', 'samtools']) ) {
+        if( has_container(params, 'bowtie2_samtools') ) {
+            container get_container(params, 'bowtie2_samtools')
+        } else if( has_module(params, ['bowtie2', 'samtools']) ) {
             module get_module(params, ['bowtie2', 'samtools'])
         } else if( has_conda(params, ['bowtie2', 'samtools']) ) {
             conda get_conda(params, ['bowtie2', 'samtools'])
@@ -1341,6 +1301,7 @@ if( params.mode == 'run' ) {
                                    > !{params.aln_dir_ref}/!{name}.bam
         set +v +H +o history
 
+
         ALNS=$(!{params.samtools_call} view -c !{params.aln_dir_ref}/!{name}.bam )
         echo "Alignments: ${ALNS}"
         if [ "${ALNS}" == "0" ]; then 
@@ -1354,7 +1315,9 @@ if( params.mode == 'run' ) {
 
     // Step 2, Part B, Sort and Process Alignments
     process CnR_S2_B_Modify_Aln {
-        if( has_module(params, 'samtools') ) {
+        if( has_container(params, 'samtools') ) {
+            container get_container(params, 'samtools')
+        } else if( has_module(params, 'samtools') ) {
             module get_module(params, 'samtools')
         } else if( has_conda(params, 'samtools') ) {
             conda get_conda(params, 'samtools')
@@ -1400,8 +1363,9 @@ if( params.mode == 'run' ) {
         add_threads         = (task.cpus ? (task.cpus - 1) : 0) 
         mem_flag            = ""
         if( "${task.memory}" != "null" ) {
-            max_mem_per_cpu_fix = trim_split_task_mem(task, 9, 10, "MB", true)
-            mem_flag = "-m " + max_mem_per_cpu_fix.split()[0] + "M"
+            //max_mem_per_cpu_fix = trim_split_task_mem(task, 8, 10, "MB", true)
+            //max_mem_per_cpu_fix = trim_split_task_mem(task, 8, 10, "MB", true)
+            mem_flag = "-m " + "${task.memory * 0.8}".replaceAll(" ", '').replaceAll('B', '')
         }
         shell:
         '''
@@ -1550,6 +1514,8 @@ if( params.mode == 'run' ) {
 
     // Step 2, Part C, Create Paired-end Bedgraphs
     process CnR_S2_C_Make_Bdg {
+        //if( has_container(params, 'bowtie2') ) {
+        //    container get_container(params, 'bowtie2')
         if( has_module(params, ['samtools', 'bedtools']) ) {
             module get_module(params, ['samtools', 'bedtools'])
         } else if( has_conda(params, ['samtools', 'bedtools']) ) {
@@ -1603,8 +1569,9 @@ if( params.mode == 'run' ) {
         add_threads  = (task.cpus ? (task.cpus - 1) : 0) 
         mem_flag     = ""
         if( "${task.memory}" != "null" ) {
-            max_mem_per_cpu_fix = trim_split_task_mem(task, 9, 10, "MB", true)
-            mem_flag = "-m " + max_mem_per_cpu_fix.split()[0] + "M"
+            //max_mem_per_cpu_fix = trim_split_task_mem(task, 9, 10, "MB", true)
+            //mem_flag = "-m " + max_mem_per_cpu_fix.split()[0] + "M"
+            mem_flag = "-m " + "${task.memory * 0.9}".replaceAll(' ', '').replaceAll('B', '')
         }
     
         shell:
@@ -1671,7 +1638,9 @@ if( params.mode == 'run' ) {
 
         // Step 3, Part A, Align Reads to Spike-In Genome (If Enabled)
         process CnR_S3_A_Aln_Spike {
-            if( has_module(params, ['bowtie2', 'samtools']) ) {
+            if( has_container(params, 'bowtie2_samtools') ) {
+                container get_container(params, 'bowtie2_samtools')
+            } else if( has_module(params, ['bowtie2', 'samtools']) ) {
                 module get_module(params, ['bowtie2', 'samtools'])
             } else if( has_conda(params, ['bowtie2', 'samtools']) ) {
                 conda get_conda(params, ['bowtie2', 'samtools'])
@@ -1734,9 +1703,9 @@ if( params.mode == 'run' ) {
             }
 
             if( fastq[0].toString().endsWith('.gz') ) {
-                count_command = 'echo "$(zcat < ' + "${fastq[0]}" + ' | wc -l)/4" | bc'
+                count_command = 'expr "$(zcat < ' + "${fastq[0]}" + ' | wc -l)/4"'
             } else {
-                count_command = 'echo "$(wc -l ' + "${fastq[0]}" + ')/4" | bc'
+                count_command = 'expr "$(wc -l ' + "${fastq[0]}" + ')/4"'
             }
             shell:
             '''
@@ -1761,9 +1730,11 @@ if( params.mode == 'run' ) {
                                    --al-conc-gz !{aln_spike_fq}
                                           
             RAW_SPIKE_COUNT="$(!{params.samtools_call} view -Sc !{aln_spike_sam})"
-            bc <<< "${RAW_SPIKE_COUNT}/2" > !{aln_spike_count}
+            #bc <<< "${RAW_SPIKE_COUNT}/2" > !{aln_spike_count}
+            expr "${RAW_SPIKE_COUNT}/2" > !{aln_spike_count}
             SPIKE_COUNT=$(cat !{aln_spike_count})
-            SPIKE_PERCENT=$(bc -l <<< "scale=8; (${SPIKE_COUNT}/${PAIR_NUM})*100")
+            #SPIKE_PERCENT=$(bc -l <<< "scale=8; (${SPIKE_COUNT}/${PAIR_NUM})*100")
+            SPIKE_PERCENT=$(python <<< "print((${SPIKE_COUNT}/${PAIR_NUM})*100)")
           
             set +v +H +o history
 
@@ -1781,7 +1752,8 @@ if( params.mode == 'run' ) {
                                    -S !{aln_cross_sam}
 
             RAW_CROSS_COUNT="$(!{params.samtools_call} view -Sc !{aln_cross_sam})"
-            bc <<< "${RAW_CROSS_COUNT}/2" > !{aln_cross_count}
+            #bc <<< "${RAW_CROSS_COUNT}/2" > !{aln_cross_count}
+            expr "${RAW_CROSS_COUNT}/2" > !{aln_cross_count}
             CROSS_COUNT=$(cat !{aln_cross_count})
             set +v +H +o history
 
@@ -1791,9 +1763,11 @@ if( params.mode == 'run' ) {
          
             # Get Difference Between All Spike-In and Cross-Mapped Reads
             OPERATION="${SPIKE_COUNT} - ${CROSS_COUNT}"
-            bc <<< "${OPERATION}" > !{aln_adj_count}  
+            #bc <<< "${OPERATION}" > !{aln_adj_count}  
+            expr "${OPERATION}" > !{aln_adj_count}  
             ADJ_COUNT=$(cat !{aln_adj_count})
-            ADJ_PERCENT=$(bc -l <<< "scale=8; (${ADJ+COUNT}/${PAIR_NUM})*100")
+            #ADJ_PERCENT=$(bc -l <<< "scale=8; (${ADJ_COUNT}/${PAIR_NUM})*100")
+            ADJ_PERCENT=$(python <<< "print((${ADJ_COUNT}/${PAIR_NUM})*100)")
 
             MESSAGE="$(cat !{aln_adj_count}) (${OPERATION}, ${ADJ_PERCENT}) Adjusted Spike-in Reads Detected."
             echo -e "\\n${MESSAGE}\\n"
@@ -1821,6 +1795,8 @@ if( params.mode == 'run' ) {
 
         // Step 3, Part B, Normalize to Spike-in (If Enabled)
         process CnR_S3_B_Norm_Bdg {
+            //if( has_container(params, 'bowtie2') ) {
+            //    container get_container(params, 'bowtie2')
             if( has_module(params, ['bedtools', 'samtools']) ) {
                 module get_module(params, ['bedtools', 'samtools'])
             } else if( has_conda(params, ['bedtools', 'samtools']) ) {
@@ -1873,7 +1849,8 @@ if( params.mode == 'run' ) {
             echo "Calculating Scaling Factor..."
             # Reference: https://github.com/Henikoff/Cut-and-Run/blob/master/spike_in_calibration.csh
             CALC="!{params.norm_scale}/$(cat !{norm})"
-            SCALE=$(bc -l <<< "scale=8; $CALC")
+            #SCALE=$(bc -l <<< "scale=8; $CALC")
+            SCALE=$(python <<< "print($CALC)")
 
             echo "Scaling factor caluculated: ( ${CALC} ) = ${SCALE} "
 
@@ -1886,6 +1863,83 @@ if( params.mode == 'run' ) {
             echo "Step 3, Part B, Create Normalized Bedgraph, Complete."
             '''
         }
+    } else if( params.do_norm_cpm ) {
+        // Step 3, Part X, Normalize to Counts Per Million Alignments (If Enabled)
+        process CnR_S3_X_NormCPM_Bdg {
+            //if( has_container(params, 'bowtie2') ) {
+            //    container get_container(params, 'bowtie2')
+            if( has_module(params, ['bedtools', 'samtools']) ) {
+                module get_module(params, ['bedtools', 'samtools'])
+            } else if( has_conda(params, ['bedtools', 'samtools']) ) {
+                conda get_conda(params, ['bedtools', 'samtools'])
+            }
+            tag          { name }
+            label        'norm_mem'
+            beforeScript { task_details(task) }
+            cpus         1        
+
+            input:
+            tuple val(name), val(cond), val(group), val(aln_type), path(aln) from bdg_aln_outs
+        
+            output:
+            path "${aln_dir_norm_cpm}/*" into norm_all_outs
+            tuple val(name), val(cond), val(group), val(aln_type), 
+                  path("${aln_dir_norm_cpm}/*.{bam,bdg}*", includeInputs: true
+                  ) into final_alns
+            path '.command.log' into norm_cpm_log_outs
+        
+            // Publish Log
+            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
+                       pattern: '.command.log', saveAs: { out_log_name }
+            // Publish bedgraph if publish_files == "minimal" or "default"
+            publishDir "${params.out_dir}", mode: params.publish_mode, 
+                       pattern: "${aln_dir_norm_cpm}/*_norm.bdg",
+                       enabled: (params.publish_files!="all")
+            // Publish all outputs if publish_files == "all"
+            publishDir "${params.out_dir}", mode: params.publish_mode, 
+                       pattern: "${aln_dir_norm_cpm}/*",
+                       enabled: (params.publish_files=="all") 
+            script:
+            run_id           = "${task.tag}.${task.process}.${aln_type}"
+            out_log_name     = "${run_id}.nf.log.txt"
+            chrom_sizes      = "${params.ref_chrom_sizes_path}"
+            aln_dir_norm_cpm = "${params.aln_dir_norm_cpm}.${aln_type}"
+            aln_bed_frag     = ( aln.findAll{fn -> "${fn}".endsWith(".frag") } )[0]
+            aln_cram         = ( aln.findAll{fn -> "${fn}".endsWith(".cram") } )[0]
+            aln_bdg          = ( aln.findAll{fn -> "${fn}".endsWith(".bdg")  } )[0]
+            aln_byname       = ( aln.findAll{fn -> "${fn}".endsWith(".bam")  } )[0]
+            bed_frag_base    = "${aln_bed_frag}" - ~/.bed.clean.frag$/
+            norm_bdg         = "${aln_dir_norm_cpm}/${bed_frag_base + '_normCPM.bdg'}"
+        
+            shell:
+            '''
+            mkdir -v !{aln_dir_norm_cpm}
+            cp -vPR !{aln_cram} !{aln_bdg} !{aln_byname} !{aln_dir_norm_cpm}           
+
+            echo "Calculating CPM Scaling Factor..."
+
+            set -v -H -o history
+            RAW_ALNS_COUNT="$(!{params.samtools_call} view -Sc !{aln_dir_norm_cpm}/!{aln_cram})"
+            #bc <<< "${RAW_ALNS_COUNT}/2" > aln_pair_count.txt
+            expr "${RAW_ALNS_COUNT}/2" > aln_pair_count.txt
+            ALN_PAIR_COUNT=$(cat aln_pair_count.txt)
+            
+            CALC="!{params.norm_cpm_scale}*1000000/${ALN_PAIR_COUNT}"
+            #SCALE=$(bc -l <<< "scale=8; $CALC")
+            SCALE=$(python <<< "print($CALC)")
+            set +v +H +o history
+
+            echo "Scaling factor caluculated: ( ${CALC} ) = ${SCALE} "
+
+            echo ""
+            echo "Creating CPM-normalized bedgraph using bedtools genomecov."
+            set -v -H -o history
+            !{params.bedtools_call} genomecov -bg -i !{aln_bed_frag} -g !{chrom_sizes} -scale ${SCALE} > !{norm_bdg}
+            set +v +H +o history
+
+            echo "Step 3, Part X, Create CPM-Normalized Bedgraph, Complete."
+            '''
+        }
     } else {
         bdg_aln_outs.set { final_alns }
     }
@@ -1896,7 +1950,9 @@ if( params.mode == 'run' ) {
         final_alns.into { peak_call_alns; make_bigwig_alns }
 
         process CnR_S4_A_Make_BigWig {
-            if( has_module(params, 'bedgraphtobigwig') ) {
+            if( has_container(params, 'bedgraphtobigwig') ) {
+                container get_container(params, 'bedgraphtobigwig')
+            } else if( has_module(params, 'bedgraphtobigwig') ) {
                 module get_module(params, 'bedgraphtobigwig')
             } else if( has_conda(params, 'bedgraphtobigwig') ) {
                 conda get_conda(params, 'bedgraphtobigwig')
@@ -1925,8 +1981,16 @@ if( params.mode == 'run' ) {
             out_log_name = "${run_id}.nf.log.txt"
             use_name     = "${name}.${aln_type}"
             bigwig_dir   = "${params.aln_bigwig_dir}.${aln_type}"
-            in_bdgs      = aln.findAll {fn -> "${fn}".endsWith('.bdg') }
-            in_bdg       = in_bdgs[0]
+            all_bdg      = aln.findAll {fn -> "${fn}".endsWith(".bdg") }
+            all_norm_bdg = aln.findAll {fn -> "${fn}".endsWith("_norm.bdg") }
+            all_cpm_bdg  = aln.findAll {fn -> "${fn}".endsWith("_normCPM.bdg") }
+            if( ! all_norm_bdg.isEmpty() ) {
+                in_bdg   = all_norm_bdg[0]
+            } else if( ! all_cpm_bdg.isEmpty() ) {
+                in_bdg   = all_cpm_bdg[0]
+            } else {
+                in_bdg   = all_bdg[0]
+            }
             in_bdg_sort  = "${in_bdg}.sort"
             out_bigwig   = "${bigwig_dir}/${name}.bigWig"
             chrom_sizes  = "${params.ref_chrom_sizes_path}"
@@ -1984,7 +2048,9 @@ if( params.mode == 'run' ) {
     // Step 5, Part A, Utilize MACS for Peak Calling
     if( peak_callers.contains("macs") ) {
         process CnR_S5_A_Peaks_MACS {
-            if( has_module(params, 'macs2') ) {
+            if( has_container(params, 'macs2') ) {
+                container get_container(params, 'macs2')
+            } else if( has_module(params, 'macs2') ) {
                 module get_module(params, 'macs2')
             } else if( has_conda(params, 'macs2') ) {
                 conda get_conda(params, 'macs2')
@@ -2061,7 +2127,9 @@ if( params.mode == 'run' ) {
     // Step 5, Part B, Utilize MACS for Peak Calling
     if( peak_callers.contains("seacr") ) {
         process CnR_S5_B_Peaks_SEACR {
-            if( has_module(params, 'seacr') ) {
+            if( has_container(params, 'seacr') ) {
+                container get_container(params, 'seacr')
+            } else if( has_module(params, 'seacr') ) {
                 module get_module(params, 'seacr')
             } else if( has_conda(params, 'seacr') ) {
                 conda get_conda(params, 'seacr')
@@ -2239,40 +2307,45 @@ def get_resource_item(params, item_name, use_suffix, join_char, def_val="") {
 def get_module(params, name, def_val="") {
     get_resource_item(params, name, '_module', ':', def_val) 
 }
-
 def get_conda(params, name, def_val="") {
     get_resource_item(params, name, '_conda',  ' ', def_val)
 }
-
-def get_resources(params, name, def_val="") {
-    def use_module = get_module(params, name, def_val) 
-    def use_conda  = get_conda(params, name, def_val)
-    if( use_module && use_conda ) {
-        message =  "Both a '[item]_module' and a '[item]_conda' resource parameter provided "
-        message += "for dependency/dependencies: ${name}\n"
-        message += "    Module: ${use_module}\n"
-        message += "    Conda:  ${use_conda}\n"
-        message += "Please provide only one of these parameters.\n"  
-        log.error message
-        exit 1
-    }
-    [use_module, use_conda]
+def get_container(params, name, def_val="") {
+    get_resource_item(params, name, '_container',  ' ', def_val)
 }
 
+def get_resources(params, name, def_val="") {
+    def use_module    = get_module(params, name, def_val) 
+    def use_conda     = get_conda(params, name, def_val)
+    def use_container = get_container(params, name, def_val)
+    //if( use_module && use_conda ) {
+    //    message =  "Both a '[item]_module' and a '[item]_conda' resource parameter provided "
+    //    message += "for dependency/dependencies: ${name}\n"
+    //    message += "    Module: ${use_module}\n"
+    //    message += "    Conda:  ${use_conda}\n"
+    //    message += "Please provide only one of these parameters.\n"  
+    //    log.error message
+    //    exit 1
+    //}
+    [use_module, use_conda, use_container]
+}
 def has_module(params, name, def_val="") {
     def use_module = get_resource_item(params, name, '_module', ':', def_val) 
     use_module != def_val
 }
-
 def has_conda(params, name, def_val="") {
     def use_conda = get_resource_item(params, name, '_conda',  ' ', def_val)
+    use_conda != def_val
+}
+def has_container(params, name, def_val="") {
+    def use_conda = get_resource_item(params, name, '_container',  ' ', def_val)
     use_conda != def_val
 }
 
 // Return Boolean true if resources exist for name(s).
 def has_resources(params, name) {
     def resources = get_resources(params, name, def_val="")
-    ( resources[0].toBoolean() || resources[1].toBoolean() )
+    ( resources[0].toBoolean() || resources[1].toBoolean() || resources[2].toBoolean() )
 }   
 
 def test_params_key(params, key, allowed_opts=null) {
@@ -2422,7 +2495,9 @@ def print_workflow_details(
 
 def task_details(task, run_id='') {
     def resource_string = ""
-    if( task.module ) { 
+    if( task.container ) { 
+        resource_string = "Container: '${task.container.toString()}'"
+    } else if( task.module ) { 
         resource_string = "Module(s): '${task.module.join(':')}'"
     } else if( task.conda ) {
         resource_string = "Conda-env: '${task.conda.toString()}'"
@@ -2444,79 +2519,68 @@ def task_details(task, run_id='') {
     ret_string
 }
 
-def sanitize_mem(mem_num, mem_size, return_as='MB', as_string=false) {
-    factors = [
-        'B' : (long) 1,             // B  Bytes
-        'KB': (long) 1000,          // KB Kilobytes
-        'MB': (long) 1000000,       // MB Megabytes
-        'GB': (long) 1000000000,    // GB Gigabytes
-        'TB': (long) 1000000000000, // TB Terabytes
-    ]
-    def mem_bytes       = (long) 0
-    if( mem_num.isFloat() ) {
-        def mem_bytes_float = Float.valueOf(mem_num) * factors[mem_size]
-        mem_bytes = mem_bytes_float.toLong()
-    } else {
-        mem_bytes = Long.valueOf(mem_num) * ( factors[mem_size] )
-    }
-    if( !return_as ) { return_as = mem_size }
-    if( factors[return_as] > mem_bytes ) {
-        message =  "Value: ${mem_bytes} cannot be int-divided "
-        message += "by factor: ${factors[return_as]}"
-        throw new Exception(message)
-    }
-    def mem_num_return = mem_bytes.intdiv(factors[return_as])
-    if( as_string ) { 
-        return ["${mem_num_return}", return_as]
-    }
-    [mem_num_return, return_as]
-}
+//def sanitize_mem(mem_num, mem_size, return_as='MB', as_string=false) {
+//    factors = [
+//        'B' : (long) 1,             // B  Bytes
+//        'KB': (long) 1000,          // KB Kilobytes
+//        'MB': (long) 1000000,       // MB Megabytes
+//        'GB': (long) 1000000000,    // GB Gigabytes
+//        'TB': (long) 1000000000000, // TB Terabytes
+//    ]
+//    def mem_bytes       = (long) 0
+//    if( mem_num.isFloat() ) {
+//        def mem_bytes_float = Float.valueOf(mem_num) * factors[mem_size]
+//        mem_bytes = mem_bytes_float.toLong()
+//    } else {
+//        mem_bytes = Long.valueOf(mem_num) * ( factors[mem_size] )
+//    }
+//    if( !return_as ) { return_as = mem_size }
+//    if( factors[return_as] > mem_bytes ) {
+//        message =  "Value: ${mem_bytes} cannot be int-divided "
+//        message += "by factor: ${factors[return_as]}"
+//        throw new Exception(message)
+//    }
+//    def mem_num_return = mem_bytes.intdiv(factors[return_as])
+//    if( as_string ) { 
+//        return ["${mem_num_return}", return_as]
+//    }
+//    [mem_num_return, return_as]
+//}
 
-def sanitize_mem_str(mem, return_as='MB', as_string=false) {
-    // Assumes memory has already been processed by "memory:" directive
-    def mem_split = mem.split()
-    def ret_pair  = sanitize_mem(mem_split[0], mem_split[1], return_as, as_string)
-    if(as_string) {
-        return "${ret_pair[0]} ${ret_pair[1]}"
-    }
-    ret_pair
-}
+//def sanitize_mem_str(mem, return_as='MB', as_string=false) {
+//    // Assumes memory has already been processed by "memory:" directive
+//    def mem_split = mem.split()
+//    def ret_pair  = sanitize_mem(mem_split[0], mem_split[1], return_as, as_string)
+//    if(as_string) {
+//        return "${ret_pair[0]} ${ret_pair[1]}"
+//    }
+//    ret_pair
+//}
 
-def trim_task_mem(task, trim_num=9, trim_div=10, return_as="MB", as_string=false) {
-    def mem_num  = (long) 0
-    def mem_type = ""
-    (mem_num, mem_type) = sanitize_mem_str("${task.memory}", 'B')
-    def adj_bytes = (mem_num * trim_num).intdiv(trim_div)
-    def ret_pair = sanitize_mem("${adj_bytes}", 'B', return_as, as_string)
-    if( as_string ) {
-        return "${ret_pair[0]} ${ret_pair[1]}"
-    }
-    ret_pair
-}
 
-def split_task_mem(task, return_as="MB", as_string=false) {
-    def mem_num  = (long) 0
-    def mem_type = ""
-    (mem_num, mem_type) = sanitize_mem_str("${task.memory}", 'B')
-    def adj_bytes = mem_num.intdiv(Long.valueOf("${task.cpus}"))
-    def ret_pair = sanitize_mem("${adj_bytes}", 'B', return_as, as_string)
-    if( as_string ) {
-        return "${ret_pair[0]} ${ret_pair[1]}"
-    }
-    ret_pair
-}
+//def split_task_mem(task, return_as="MB", as_string=false) {
+//    def mem_num  = (long) 0
+//    def mem_type = ""
+//    (mem_num, mem_type) = sanitize_mem_str("${task.memory}", 'B')
+//    def adj_bytes = mem_num.intdiv(Long.valueOf("${task.cpus}"))
+//    def ret_pair = sanitize_mem("${adj_bytes}", 'B', return_as, as_string)
+//    if( as_string ) {
+//        return "${ret_pair[0]} ${ret_pair[1]}"
+//    }
+//    ret_pair
+//}
 
-def trim_split_task_mem(task, trim_num=9, trim_div=10, return_as="MB", as_string=false) {
-    def mem_num  = (long) 0
-    def mem_type = ""
-    (mem_num, mem_type) = sanitize_mem_str("${task.memory}", 'B')
-    def divisor = (Long.valueOf("${task.cpus}") * trim_div)
-    def adj_bytes = (mem_num * trim_num).intdiv(divisor)
-    def ret_pair = sanitize_mem("${adj_bytes}", 'B', return_as, as_string)
-    if( as_string ) {
-        return "${ret_pair[0]} ${ret_pair[1]}"
-    }
-    ret_pair
-}
+//def trim_split_task_mem(task, trim_num=9, trim_div=10, return_as="MB", as_string=false) {
+//    def mem_num  = (long) 0
+//    def mem_type = ""
+//    (mem_num, mem_type) = sanitize_mem_str("${task.memory}", 'B')
+//    def divisor = (Long.valueOf("${task.cpus}") * trim_div)
+//    def adj_bytes = (mem_num * trim_num).intdiv(divisor)
+//    def ret_pair = sanitize_mem("${adj_bytes}", 'B', return_as, as_string)
+//    if( as_string ) {
+//        return "${ret_pair[0]} ${ret_pair[1]}"
+//    }
+//    ret_pair
+//}
 
 sleep(1500)

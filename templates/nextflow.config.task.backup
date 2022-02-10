@@ -94,8 +94,8 @@ params {
     do_trim        = true  // Trim tags using Trimmomatic
     do_retrim      = true  // Retrim tags using kseq_test (CUTRUNTools)
     do_norm_spike  = true  // Normalize using aligment count to a spike-in reference
+    do_norm_cpm    = true  // Normalize using millions of reads per sample
     do_make_bigwig = true  // Create UCSC bigWig files from final alignments
-
 
     // FastQC Settings:
     fastqc_flags   = ''
@@ -133,6 +133,9 @@ params {
     norm_scale     = 1000  // Arbitrary value for scaling of normalized counts.
     norm_mode      = 'adj' // Options: ['adj', 'all']
     
+    // CPM Normalization Settings
+    norm_cpm_scale = 1000 // Arbitrary value for scaling of normalized counts.
+
     // Macs2 Settings
     macs_qval      = '0.01'
     macs_flags     = ''   

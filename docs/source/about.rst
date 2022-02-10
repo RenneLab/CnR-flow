@@ -16,7 +16,7 @@ Lead Developer
 --------------
     | Dan Stribling <ds@ufl.edu>
     | https://github.com/dstrib
-    | https://www.linkedin.com/in/DanielStribling
+    | https://orcid.org/0000-0002-0649-9506
     | University of Florida, Renne Lab
 
 Changelog
@@ -25,12 +25,19 @@ Changelog
     v0.11-dev:
         * Refinements
         * Bugfixes
-        * Moved CUTRUNTools:kseq_test to external dependency config
+        * Removed CUTRUNTools
         * Added additional template nextflow.config files for task
-        * Added macOS support (for all dependencies) 
+        * Added macOS support for Conda machines (for all dependencies) 
         * Added macOS automated testing (with Travis CI)
         * Added input data file integrity checks to Merge process
         * Added internal output checks for early error catching
+        * Updated Conda Bowtie2 Version to 2.4.4 and added component dependency 
+        * Merge "validate" and "validate-all" modes into "validate" mode
+        * Remove "dry-run" mode as low utility per complexity
+        * Switch to nextflow-implementation of memory handling
+        * Add support for task execution via Docker / Singularity containers
+        * Corrected error in handling of normalized alignment files
+        * Moved SEACR to external dependency config
 
     v0.10:
         * Refinements
@@ -54,7 +61,7 @@ Changelog
         * Shifted paramaters to config files
         * Implemented initiate mode
         * Added minimal documentation
-        * Added Kent's-Util (faCount) automated installation
+        * Added UCSC (faCount) automated installation
         * Added automated acquisition of Trimmomatic adapters
         * Implemented MACS2 peak calling
         * Added autodetection of tag sequence length

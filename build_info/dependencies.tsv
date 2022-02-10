@@ -1,14 +1,13 @@
-**Dependency**	**Def. Ver.**	**Lowest Ver.**	**Highest Ver.**	**Citation**	**Default Conda**
-Nextflow	20.07.1	20.07.1	20.07.1	[Nextflow_Citation]_	N/A
-UCSC-faCount	366	366	366	[faCount_Citation]_	bioconda::ucsc-facount=366'
-Bowtie2	2.4.1	2.4.1	2.4.1	[Bowtie2_Citation]_	bioconda::bowtie2=2.4.1
-Samtools	1.9	1.9	1.9	[Samtools_Citation]_	bioconda::samtools=1.9
-FastQC	0.11.9	0.11.9	0.11.9	[FastQC_Citation]_	bioconda::fastqc=0.11.9
-Trimmomatic	0.39	0.39	0.39	[Trimmomatic_Citation]_	bioconda::trimmomatic=0.39
-CUTRUNTools	20190822	20190822	20190822	[CUTRUNTools_Citation]_	RenneLab::cutruntools-exec
-bedtools	2.29.2	2.29.2	2.29.2	[bedtools_Citation]_	bioconda::bedtools=2.29.2
-UCSC-bedGraphToBigWig	377	377	377	[bedGraphToBigWig_Citation]_	conda-forge::libgcc-ng conda-forge::libpng conda-forge::libuuid conda-forge::mysql-connector-c conda-forge::openssl conda-forge::zlib bioconda::ucsc-bedgraphtobigwig=377
-MACS2	2.2.6	2.2.6	2.2.6	[MACS2_Citation]_	bioconda::macs2=2.2.6
-R	3.6.0	3.6.0	3.6.0	[R_Citation]_	r=3.6.0
-SEACR	1.3	1.3	1.3	[SEACR_Citation]_	r=3.6.0 bioconda::bedtools=2.29.2
+**Dependency**	**Tested Ver.**	**Citation**	**Default Conda**
+Nextflow	20.10.4	[Nextflow_Citation]_	N/A
+UCSC-faCount	366	[faCount_Citation]_	bioconda::ucsc-facount=366'
+Bowtie2	2.4.4	[Bowtie2_Citation]_	bioconda::bowtie2=2.4.1
+Samtools	1.9	[Samtools_Citation]_	bioconda::samtools=1.9
+FastQC	0.11.9	[FastQC_Citation]_	bioconda::fastqc=0.11.9
+Trimmomatic	0.39	[Trimmomatic_Citation]_	bioconda::trimmomatic=0.39
+bedtools	2.29.2	[bedtools_Citation]_	bioconda::bedtools=2.29.2
+UCSC-bedGraphToBigWig	377	[bedGraphToBigWig_Citation]_	conda-forge::libgcc-ng conda-forge::libpng conda-forge::libuuid conda-forge::mysql-connector-c conda-forge::openssl conda-forge::zlib bioconda::ucsc-bedgraphtobigwig=377
+MACS2	2.2.6	[MACS2_Citation]_	bioconda::macs2=2.2.6
+R	3.6.0	[R_Citation]_	r=3.6.0
+SEACR	1.3	[SEACR_Citation]_	r=3.6.0 bioconda::seacr=1.3-2 bioconda::bedtools=2.29.2
 

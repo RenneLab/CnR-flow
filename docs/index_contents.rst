@@ -2,19 +2,19 @@
 ***********************
 CUT&RUN-Flow (CnR-flow)
 ***********************
-.. image:: https://img.shields.io/github/v/release/rennelab/cnr-flow?include_prereleases
+.. image:: https://img.shields.io/github/v/release/rennelab/cnr-flow?include_prereleases&logo=github
    :target: https://github.com/rennelab/cnr-flow/releases
    :alt: GitHub release (latest by date including pre-releases)
-.. image:: https://travis-ci.com/rennelab/CnR-flow.svg?branch=master
+.. image:: https://img.shields.io/travis/com/RenneLab/CnR-flow/master.svg?logo=travis
    :target: https://travis-ci.com/rennelab/CnR-flow
    :alt: Travis-CI Build Status
-.. image:: https://readthedocs.org/projects/cnr-flow/badge/?version=latest
+.. image:: https://img.shields.io/readthedocs/cnr-flow?logo=read-the-docs
    :target: https://CnR-flow.readthedocs.io/en/latest/?badge=latest
    :alt: ReadTheDocs Documentation Status
 .. image:: https://img.shields.io/badge/nextflow-%3E%3D20.07.01-green
    :target: https://www.nextflow.io/
    :alt: Nextflow Version Required >= 20.07.01
-.. image:: https://img.shields.io/badge/License-GPLv3+-blue
+.. image:: https://img.shields.io/badge/License-GPLv3+-blue?logo=GNU
    :target: https://www.gnu.org/licenses/gpl-3.0.en.html
    :alt: GNU GPLv3+ License
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.4015699.svg

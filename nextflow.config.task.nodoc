@@ -20,6 +20,7 @@ params {
     do_trim        = true  // Trim tags using Trimmomatic
     do_retrim      = true  // Retrim tags using kseq_test (CUTRUNTools)
     do_norm_spike  = true  // Normalize using aligment count to a spike-in reference
+    do_norm_cpm    = true  // Normalize using millions of reads per sample
     do_make_bigwig = true  // Create UCSC bigWig files from final alignments
     fastqc_flags   = ''
     use_aln_modes  = ["all"]  // Options: ["all", "all_dedup", "less_120", "less_120_dedup"]
@@ -32,6 +33,7 @@ params {
     aln_norm_flags = params.aln_ref_flags
     norm_scale     = 1000  // Arbitrary value for scaling of normalized counts.
     norm_mode      = 'adj' // Options: ['adj', 'all']
+    norm_cpm_scale = 1000 // Arbitrary value for scaling of normalized counts.
     macs_qval      = '0.01'
     macs_flags     = ''   
     seacr_fdr_threshhold = "0.01"
