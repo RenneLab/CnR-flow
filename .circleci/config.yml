@@ -31,9 +31,38 @@ jobs:
             conda config --set always_yes yes --set changeps1 no
             conda update -q conda
             conda info -a
+            export CONDA_PATH=dirname $(whereis conda | cut -d\  -f 2)
+            echo 'export PATH=$PATH:$CONDA_PATH' >> $BASH_ENV
       - run: pwd; conda
       - run: pwd; nextflow
       - run: pwd; docker
+      - run:
+          name: Test Mode:Initiate
+          command: |
+            export NXF_ANSI_LOG=false
+            mkdir ./test_init
+            cd    ./test_init
+            nextflow run ../CnR-flow.nf --mode initiate
+      - run:
+          name: Test Mode:validate
+          command: |
+            export NXF_ANSI_LOG=false
+            mkdir ./test_init
+            cd    ./test_init
+            nextflow run ../CnR-flow.nf --mode validate
+      - run:
+          name: Test Execution
+          command: |
+            export NXF_ANSI_LOG=false
+            cd ../test_pipe
+            cat test_notes.txt
+            ./setup_reference.sh
+            ./dl_prep_data.sh
+            nextflow ../CnR-flow.nf --verbose --mode prep_fasta
+            nextflow ../CnR-flow.nf --verbose --mode run
+            cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
+            cp nextflow.config.step2 nextflow.config
+            nextflow ../CnR-flow.nf -resume --verbose --mode run
 
 workflows:
   test-all:
