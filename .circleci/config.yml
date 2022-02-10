@@ -67,10 +67,13 @@ jobs:
       - run:
           name: Setup Reference Data
           command: |
+            ls
             cd ./test_pipe
+            ls
             cat test_notes.txt
             ./setup_reference.sh
             ./dl_prep_data.sh
+            ls
       - save_cache:
           key: data-cache
           paths:
@@ -171,7 +174,7 @@ jobs:
             nextflow ../CnR-flow.nf -resume --verbose --mode run
 
 workflows:
-  test-conda:
+  test-bash:
       jobs:
         - prep-bash
         - prep-data:

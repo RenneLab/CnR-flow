@@ -6,7 +6,7 @@ params {
     bowtie2_samtools_container = 'quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:b6524911af823c7c52518f6c886b86916d062940-0'
     fastqc_container           = 'quay.io/biocontainers/fastqc:0.11.9--hdfd78af_1'
     trimmomatic_container      = 'quay.io/biocontainers/trimmomatic:0.39--1'
-    bedtools_container         = 'quay.io/biocontainers/bedtools:2.27.1dfsg-4-deb_cv1'
+    bedtools_container         = 'quay.io/biocontainers/bedtools:2.27.1--h9a82719_5'
     macs2_container            = 'quay.io/biocontainers/macs2:2.2.6--py37h516909a_0'
     seacr_container            = 'quay.io/biocontainers/seacr:1.3--hdfd78af_2'
     samtools_container         = 'quay.io/biocontainers/samtools:1.13--h8c37831_0'
