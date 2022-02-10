@@ -74,12 +74,13 @@ jobs:
       - save_cache:
           key: data-cache
           paths:
-            - test_pipe/raw_data
+            - test_pipe/subsampled_data
             - test_pipe/test_reference
       - persist_to_workspace:
           root: ./
           paths:
-            - test_pipe/raw_data
+            - test_pipe/test_reference
+            - test_pipe/subsampled_data
 
   test-conda:
     executor: bash-env
