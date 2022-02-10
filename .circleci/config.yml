@@ -183,12 +183,12 @@ jobs:
             echo "" ; ls subsampled_data ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
             sleep 30
-            echo "test_reference" ; ls test_reference ; echo ""
-            echo "test_reference/*" ; ls test_reference/*/* ; echo ""
+            cat nextflow.config.docker.vol >> nextflow.config
             nextflow ../CnR-flow.nf --verbose --mode run
             cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
             cp nextflow.config.step2 nextflow.config
             cat nextflow.config.docker >> nextflow.config
+            cat nextflow.config.docker.vol >> nextflow.config
             nextflow ../CnR-flow.nf -resume --verbose --mode run
 
 workflows:
