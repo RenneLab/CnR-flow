@@ -47,6 +47,8 @@ jobs:
             nextflow run ../CnR-flow.nf --mode initiate
       - run:
           name: Test Mode:validate
+          environment: 
+            NXF_ANSI_LOG: false
           command: |
             cd    ./test_init
             nextflow run ../CnR-flow.nf --mode validate
