@@ -1,8 +1,12 @@
 version: 2.1
-jobs:
-  test-bash:
+executors:
+  bash-env:
     machine:
       image: ubuntu-2004:202111-02
+
+jobs:
+  prep-bash:
+    executor: bash-env
     steps:
       - checkout
       - run: 
@@ -34,9 +38,17 @@ jobs:
             whereis conda
             echo "Conda Path: $CONDA_PATH"
             echo "export PATH=\$PATH:$CONDA_PATH" >> $BASH_ENV
-      - run: pwd; conda
-      - run: pwd; nextflow
-      - run: pwd; docker
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - programs
+
+  test-conda:
+    executor: bash-env
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ./
       - run:
           name: Test Mode:Initiate
           environment: 
@@ -68,6 +80,9 @@ jobs:
             nextflow ../CnR-flow.nf -resume --verbose --mode run
 
 workflows:
-  test-all:
+  test-conda:
       jobs:
-        - test-bash
+        - prep-bash
+        - test-conda:
+            requires:
+              - prep-bash
