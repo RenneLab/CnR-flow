@@ -16,6 +16,7 @@ jobs:
             mkdir ./programs
             cd ./programs
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
+            echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
       - run:
           name: Download Nextflow
           command: |
@@ -28,7 +29,7 @@ jobs:
             pwd
             cd ./programs
             wget --progress=dot --retry-connrefused https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-            bash miniconda.sh -b -p .programs/miniconda
+            bash miniconda.sh -b -p ./miniconda
             source ".programs/miniconda/etc/profile.d/conda.sh"
             hash -r
             conda config --set always_yes yes --set changeps1 no
@@ -49,6 +50,13 @@ jobs:
       - checkout
       - attach_workspace:
           at: ./
+      - run:
+          name: Re-initiate Environment
+          command: |
+            pwd
+            cd ./programs
+            ls
+            echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
       - run:
           name: Test Mode:Initiate
           environment: 
