@@ -75,6 +75,7 @@ jobs:
           key: data-cache
           paths:
             - test_pipe/raw_data
+            - test_pipe/test_reference
       - persist_to_workspace:
           root: ./
           paths:
