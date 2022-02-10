@@ -201,3 +201,6 @@ workflows:
         - test-conda:
             requires:
               - prep-data
+        - test-docker:
+            requires:
+              - prep-data
