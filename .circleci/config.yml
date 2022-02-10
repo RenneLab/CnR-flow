@@ -11,7 +11,7 @@ jobs:
             pwd
             mkdir ./programs
             cd ./programs
-            echo 'export PATH=$PATH:$PWD' >> $BASH_ENV
+            echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
       - run: pwd; echo $PATH
       - run:
           name: Download Nextflow
@@ -35,7 +35,7 @@ jobs:
             export CONDA_PATH=$(dirname $(whereis conda | cut -d\  -f 2))
             whereis conda
             echo "Conda Path: $CONDA_PATH"
-            echo 'export PATH=$PATH:$CONDA_PATH' >> $BASH_ENV
+            echo "export PATH=\$PATH:$CONDA_PATH" >> $BASH_ENV
       - run: pwd; /home/circleci/miniconda/condabin/conda
       - run: pwd; echo $PATH
       - run: pwd; conda
