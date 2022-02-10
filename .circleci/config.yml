@@ -69,7 +69,7 @@ jobs:
           command: |
             echo "" ; ls ; echo ""
             cd ./test_pipe
-            echo "" ; ls : echo ""
+            echo "" ; ls ; echo ""
             cat test_notes.txt
             ./setup_reference.sh
             ./dl_prep_data.sh
