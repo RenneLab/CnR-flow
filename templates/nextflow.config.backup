@@ -133,7 +133,7 @@ params {
     do_merge_lanes = true  // Merge sample names differing only by lane-ID (Ex: L001, L002)
     do_fastqc      = true  // Perform FastQC Analysis
     do_trim        = true  // Trim tags using Trimmomatic
-    do_retrim      = true  // Retrim tags using kseq_test (CUTRUNTools)
+    do_retrim      = false // Retrim tags using kseq_test (CUTRUNTools)
     do_norm_spike  = true  // Normalize using aligment count to a spike-in reference
     do_norm_cpm    = true  // Normalize using millions of reads per sample
     do_make_bigwig = true  // Create UCSC bigWig files from final alignments
