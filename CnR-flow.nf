@@ -1283,8 +1283,14 @@ if( params.mode == 'run' ) {
         run_id         = "${task.tag}.${task.process}"
         out_log_name   = "${run_id}.nf.log.txt"
         aln_ref_flags  = params.aln_ref_flags
-        ref_bt2db_path = params.ref_bt2db_path
-    
+        if(params.containsKey('bt2_db_prefix_exchange') && params.bt2_db_prefix_exchange) {
+            query_path = params.bt2_db_prefix_exchange[0]
+            replace_path = params.bt2_db_prefix_exchange[1]
+            ref_bt2db_path = "${params.ref_bt2db_path}".replace(query_path, replace_path)
+        } else {
+            ref_bt2db_path = params.ref_bt2db_path
+        }
+ 
         shell:
         '''
         set -o pipefail
@@ -1681,7 +1687,6 @@ if( params.mode == 'run' ) {
             script:
             run_id           = "${task.tag}.${task.process}"
             out_log_name     = "${run_id}.nf.log.txt"
-            ref_bt2db_path   = params.ref_bt2db_path
             if( params.containsKey('ref_title') ) {
                 ref_name     = params.ref_title
             } else {
@@ -1710,6 +1715,15 @@ if( params.mode == 'run' ) {
             } else {
                 count_command = 'expr $(wc -l ' + "${fastq[0]}" + ') / 4'
             }
+            if(params.containsKey('bt2_db_prefix_exchange') && params.bt2_db_prefix_exchange) {
+                query_path     = params.bt2_db_prefix_exchange[0]
+                replace_path   = params.bt2_db_prefix_exchange[1]
+                ref_bt2db_path = "${params.ref_bt2db_path}".replace(query_path, replace_path)
+                spike_ref_path = "${spike_ref}".replace(query_path, replace_path)
+            } else {
+                ref_bt2db_path = params.ref_bt2db_path
+                spike_ref_path = spike_ref
+            }
             shell:
             '''
             set -o pipefail
@@ -1729,7 +1743,7 @@ if( params.mode == 'run' ) {
             set -v -H -o history
             !{params.bowtie2_call} -p !{task.cpus} \\
                                    !{aln_norm_flags} \\
-                                   -x !{spike_ref} \\
+                                   -x !{spike_ref_path} \\
                                    -1 !{fastq[0]} \\
                                    -2 !{fastq[1]} \\
                                    -S !{aln_spike_sam} \\
