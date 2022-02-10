@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  test-bash:
+    docker:
+      - image: quay.io/biocontainers/nextflow:21.10.6--h4a94de4_0
+    steps:
+      - checkout
+      - run: nextflow
+      - run: conda
+      - run: docker
+
+workflows:
+  test-all:
+      jobs:
+        - test-bash
