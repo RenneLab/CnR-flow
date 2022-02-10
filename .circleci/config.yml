@@ -8,12 +8,14 @@ jobs:
   prep-bash:
     executor: bash-env
     steps:
-      - checkout
+      - restore_cache:
+          keys:
+            - programs-cache
       - run: 
           name: Setup Directories
           command: |
             pwd
-            mkdir ./programs
+            mkdir -p ./programs
             cd ./programs
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
       - run:
@@ -38,6 +40,10 @@ jobs:
             whereis conda
             echo "Conda Path: $CONDA_PATH"
             echo "export PATH=\$PATH:$CONDA_PATH" >> $BASH_ENV
+      - save_cache:
+          key: programs-cache
+          paths:
+            - programs
       - persist_to_workspace:
           root: ./
           paths:
@@ -47,6 +53,9 @@ jobs:
     executor: bash-env
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - data-cache
       - attach_workspace:
           at: ./
       - run:
@@ -64,6 +73,10 @@ jobs:
             cat test_notes.txt
             ./setup_reference.sh
             ./dl_prep_data.sh
+      - save_cache:
+          key: data-cache
+          paths:
+            - test_pipe/raw_data
       - persist_to_workspace:
           root: ./
           paths:
