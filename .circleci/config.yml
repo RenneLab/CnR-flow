@@ -129,6 +129,7 @@ jobs:
             echo "" ; ls test_reference ; echo ""
             echo "" ; ls subsampled_data ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
+            sleep 30
             echo "test_reference" ; ls test_reference ; echo ""
             echo "test_reference/*" ; ls test_reference/*/* ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode run
@@ -181,6 +182,7 @@ jobs:
             echo "" ; ls test_reference ; echo ""
             echo "" ; ls subsampled_data ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
+            sleep 30
             echo "test_reference" ; ls test_reference ; echo ""
             echo "test_reference/*" ; ls test_reference/*/* ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode run
