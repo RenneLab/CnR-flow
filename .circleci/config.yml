@@ -73,7 +73,9 @@ jobs:
             cat test_notes.txt
             ./setup_reference.sh
             ./dl_prep_data.sh
-            ls
+            echo "" ; ls subsampled_data ; echo ""
+            echo "" ; ls test_reference ; echo ""
+          
       - save_cache:
           key: data2-cache
           paths:
@@ -82,8 +84,8 @@ jobs:
       - persist_to_workspace:
           root: ./
           paths:
-            - test_pipe/test_reference
             - test_pipe/subsampled_data
+            - test_pipe/test_reference
 
   test-conda:
     executor: bash-env
@@ -121,6 +123,8 @@ jobs:
           command: |
             cd ./test_pipe
             cat test_notes.txt
+            echo "" ; ls test_reference ; echo ""
+            echo "" ; ls subsampled_data ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
             nextflow ../CnR-flow.nf --verbose --mode run
             cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
