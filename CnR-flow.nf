@@ -1363,9 +1363,9 @@ if( params.mode == 'run' ) {
         add_threads         = (task.cpus ? (task.cpus - 1) : 0) 
         mem_flag            = ""
         if( "${task.memory}" != "null" ) {
-            //max_mem_per_cpu_fix = trim_split_task_mem(task, 8, 10, "MB", true)
-            //max_mem_per_cpu_fix = trim_split_task_mem(task, 8, 10, "MB", true)
-            mem_flag = "-m " + "${task.memory * 0.8}".replaceAll(" ", '').replaceAll('B', '')
+            reduced_mem = ( task.memory * 0.8 )
+            split_mem = ( reduced_mem.div(task.cpus) )
+            mem_flag = "-m ${split_mem.toUnit("MB")}MB"
         }
         shell:
         '''
@@ -1569,9 +1569,9 @@ if( params.mode == 'run' ) {
         add_threads  = (task.cpus ? (task.cpus - 1) : 0) 
         mem_flag     = ""
         if( "${task.memory}" != "null" ) {
-            //max_mem_per_cpu_fix = trim_split_task_mem(task, 9, 10, "MB", true)
-            //mem_flag = "-m " + max_mem_per_cpu_fix.split()[0] + "M"
-            mem_flag = "-m " + "${task.memory * 0.9}".replaceAll(' ', '').replaceAll('B', '')
+            reduced_mem = ( task.memory * 0.8 )
+            split_mem = ( reduced_mem.div(task.cpus) )
+            mem_flag = "-m ${split_mem.toUnit("MB")}MB"
         }
     
         shell:
