@@ -39,22 +39,21 @@ jobs:
       - run: pwd; docker
       - run:
           name: Test Mode:Initiate
+          environment: NXF_ANSI_LOG: false
           command: |
-            export NXF_ANSI_LOG=false
             mkdir ./test_init
             cd    ./test_init
             nextflow run ../CnR-flow.nf --mode initiate
       - run:
           name: Test Mode:validate
+          environment: NXF_ANSI_LOG: false
           command: |
-            export NXF_ANSI_LOG=false
-            mkdir ./test_init
             cd    ./test_init
             nextflow run ../CnR-flow.nf --mode validate
       - run:
           name: Test Execution
+          environment: NXF_ANSI_LOG: false
           command: |
-            export NXF_ANSI_LOG=false
             cd ../test_pipe
             cat test_notes.txt
             ./setup_reference.sh
