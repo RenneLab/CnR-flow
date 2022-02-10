@@ -1290,6 +1290,9 @@ if( params.mode == 'run' ) {
         set -o pipefail
         mkdir !{params.aln_dir_ref}
         echo "Aligning file name base: !{name} ... utilizing Bowtie2"
+
+        echo "Reference Files:"
+        ls !{ref_bt2db_path}*
     
         set -v -H -o history
         !{params.bowtie2_call} -p !{task.cpus} \\
@@ -1719,6 +1722,9 @@ if( params.mode == 'run' ) {
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" > !{aln_count_report}
 
+            echo "Spike-in Reference Files:"
+            ls !{spike_ref}*
+
             # Align Reads to Spike-in Genome
             set -v -H -o history
             !{params.bowtie2_call} -p !{task.cpus} \\
@@ -1741,6 +1747,9 @@ if( params.mode == 'run' ) {
             MESSAGE="${SPIKE_COUNT} ( ${SPIKE_PERCENT}% ) Total Spike-In Read Pairs Detected"
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" >> !{aln_count_report}
+
+            echo "Genome Reference Files:"
+            ls !{ref_bt2db_path}*
 
             # Realign Spike-in Alignments to Reference Genome to Check Cross-Mapping
             set -v -H -o history
