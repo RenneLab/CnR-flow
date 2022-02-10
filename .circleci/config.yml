@@ -124,6 +124,52 @@ jobs:
             cp nextflow.config.step2 nextflow.config
             nextflow ../CnR-flow.nf -resume --verbose --mode run
 
+  test-docker:
+    executor: bash-env
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Re-initiate Environment
+          command: |
+            pwd
+            cd ./programs
+            ls
+            echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
+            echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
+      - run:
+          name: Test Mode:Initiate
+          environment: 
+            NXF_ANSI_LOG: false
+          command: |
+            mkdir ./test_init
+            cd    ./test_init
+            nextflow run ../CnR-flow.nf --mode initiate
+            cat ../test_pipe/nextflow.config.docker
+            cat ../test_pipe/nextflow.config.docker >> nextflow.config
+      - run:
+          name: Test Mode:validate
+          environment: 
+            NXF_ANSI_LOG: false
+          command: |
+            cd    ./test_init
+            nextflow run ../CnR-flow.nf --mode validate
+      - run:
+          name: Test Execution
+          environment: 
+            NXF_ANSI_LOG: false
+          command: |
+            cd ./test_pipe
+            cat test_notes.txt
+            cat nextflow.config.docker >> nextflow.config
+            nextflow ../CnR-flow.nf --verbose --mode prep_fasta
+            nextflow ../CnR-flow.nf --verbose --mode run
+            cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
+            cp nextflow.config.step2 nextflow.config
+            cat nextflow.config.docker >> nextflow.config
+            nextflow ../CnR-flow.nf -resume --verbose --mode run
+
 workflows:
   test-conda:
       jobs:
@@ -132,5 +178,8 @@ workflows:
             requires:
               - prep-bash
         - test-conda:
+            requires:
+              - prep-data
+        - test-docker:
             requires:
               - prep-data
