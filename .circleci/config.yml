@@ -30,7 +30,7 @@ jobs:
             cd ./programs
             wget --progress=dot --retry-connrefused https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
             bash miniconda.sh -b -p ./miniconda
-            source ".programs/miniconda/etc/profile.d/conda.sh"
+            source "miniconda/etc/profile.d/conda.sh"
             hash -r
             conda config --set always_yes yes --set changeps1 no
             conda update -q conda
