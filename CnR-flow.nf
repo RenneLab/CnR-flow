@@ -1755,7 +1755,7 @@ if( params.mode == 'run' ) {
                                           
             RAW_SPIKE_COUNT="$(!{params.samtools_call} view -Sc !{aln_spike_sam})"
             #bc <<< "${RAW_SPIKE_COUNT}/2" > !{aln_spike_count}
-            expr ${RAW_SPIKE_COUNT} / 2 > !{aln_spike_count}
+            echo $(expr ${RAW_SPIKE_COUNT} / 2) > !{aln_spike_count}
             SPIKE_COUNT=$(cat !{aln_spike_count})
             #SPIKE_PERCENT=$(bc -l <<< "scale=8; (${SPIKE_COUNT}/${PAIR_NUM})*100")
             SPIKE_PERCENT=$(python <<< "print((${SPIKE_COUNT}/${PAIR_NUM})*100)")
@@ -1783,8 +1783,7 @@ if( params.mode == 'run' ) {
             RAW_CROSS_COUNT="$(!{params.samtools_call} view -Sc !{aln_cross_sam})"
             #bc <<< "${RAW_CROSS_COUNT}/2" > !{aln_cross_count}
             echo ${RAW_CROSS_COUNT}
-            echo "expr ${RAW_CROSS_COUNT} / 2  !{aln_cross_count}"
-            expr ${RAW_CROSS_COUNT} / 2 > !{aln_cross_count}
+            echo $(expr ${RAW_CROSS_COUNT} / 2) > !{aln_cross_count}
             CROSS_COUNT=$(cat !{aln_cross_count})
             set +v +H +o history
 
@@ -1795,7 +1794,7 @@ if( params.mode == 'run' ) {
             # Get Difference Between All Spike-In and Cross-Mapped Reads
             OPERATION="${SPIKE_COUNT} - ${CROSS_COUNT}"
             #bc <<< "${OPERATION}" > !{aln_adj_count}  
-            expr ${OPERATION} > !{aln_adj_count}  
+            echo $(expr ${OPERATION}) > !{aln_adj_count}  
             ADJ_COUNT=$(cat !{aln_adj_count})
             #ADJ_PERCENT=$(bc -l <<< "scale=8; (${ADJ_COUNT}/${PAIR_NUM})*100")
             ADJ_PERCENT=$(python <<< "print((${ADJ_COUNT}/${PAIR_NUM})*100)")
@@ -1952,7 +1951,7 @@ if( params.mode == 'run' ) {
             set -v -H -o history
             RAW_ALNS_COUNT="$(!{params.samtools_call} view -Sc !{aln_dir_norm_cpm}/!{aln_cram})"
             #bc <<< "${RAW_ALNS_COUNT}/2" > aln_pair_count.txt
-            expr ${RAW_ALNS_COUNT} / 2 > aln_pair_count.txt
+            echo $(expr ${RAW_ALNS_COUNT} / 2) > aln_pair_count.txt
             ALN_PAIR_COUNT=$(cat aln_pair_count.txt)
             
             CALC="!{params.norm_cpm_scale}*1000000/${ALN_PAIR_COUNT}"
