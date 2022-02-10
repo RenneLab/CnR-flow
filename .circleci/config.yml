@@ -6,7 +6,8 @@ jobs:
     steps:
       - checkout
       - run: pwd; mkdir ./programs ; cd ./programs ; export PATH=$PATH:$PWD
-      - run: pwd; curl -fsSL https://get.nextflow.io | bash
+      - run: pwd; echo $PATH
+      - run: pwd; cd ./programs; curl -fsSL https://get.nextflow.io | bash
       - run: pwd; wget --progress=dot --retry-connrefused https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
       - run: pwd; bash miniconda.sh -b -p $HOME/miniconda
       - run: pwd; source "$HOME/miniconda/etc/profile.d/conda.sh"
