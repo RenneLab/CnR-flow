@@ -1,1 +1,1 @@
-docker.runOptions = "-v ${launchDir}/test_reference:~/test_reference"
+docker.runOptions = "-v ${launchDir}/test_reference:${launchDir}/test_reference"
