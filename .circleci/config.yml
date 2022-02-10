@@ -11,10 +11,12 @@ jobs:
       - run: bash miniconda.sh -b -p $HOME/miniconda
       - run: source "$HOME/miniconda/etc/profile.d/conda.sh"
       - run: hash -r
+      - run: ls
+      - run: ls $HOME
       - run: conda config --set always_yes yes --set changeps1 no
       - run: conda update -q conda
       - run: conda info -a
-      - run: cd ..
+      - run: ls ; cd .. ; ls
       - run: conda
       - run: nextflow
       - run: docker
