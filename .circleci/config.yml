@@ -12,30 +12,28 @@ jobs:
           keys:
             - programs-cache
       - run: 
-          name: Setup Directories
+          name: Download and Install Programs
           command: |
             pwd
             mkdir -p ./programs
             cd ./programs
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
-      - run:
-          name: Download Nextflow
-          command: |
-            pwd
-            cd ./programs
-            curl -fsSL https://get.nextflow.io | bash
-      - run:
-          name: Download & Install Conda
-          command: |
-            pwd
-            cd ./programs
-            wget --progress=dot --retry-connrefused https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-            bash miniconda.sh -b -p ./miniconda
-            source "miniconda/etc/profile.d/conda.sh"
-            hash -r
-            conda config --set always_yes yes --set changeps1 no
-            conda update -q conda
-            conda info -a
+            if [ ! -f "./nextflow" ]; then
+                curl -fsSL https://get.nextflow.io | bash
+            else
+                echo "Nextflow Found"
+            fi
+            if [ ! -f "./miniconda/condabin/conda" ]; then
+                wget --progress=dot --retry-connrefused https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+                bash miniconda.sh -b -p ./miniconda
+                source "miniconda/etc/profile.d/conda.sh"
+                hash -r
+                conda config --set always_yes yes --set changeps1 no
+                conda update -q conda
+                conda info -a
+            else
+                echo "Conda Found"
+            fi
             export CONDA_PATH=$(dirname $(whereis conda | cut -d\  -f 2))
             whereis conda
             echo "Conda Path: $CONDA_PATH"
