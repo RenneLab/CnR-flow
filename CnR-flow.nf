@@ -1073,7 +1073,7 @@ if( params.mode == 'run' ) {
             echo "Trimming file name base: !{name} ... utilizing Trimmomatic"
 
             echo "Verifying accessibility of Trimmomatic adapters file:"
-            ls !{trimmomatic_adapterpath}
+            ls !{trimmomatic_adapter}
 
             set -v -H -o history
             !{params.trimmomatic_call} PE \\
