@@ -1415,9 +1415,9 @@ if( params.mode == 'run' ) {
 
     // Step 2, Part C, Create Paired-end Bedgraphs
     process CnR_S2_C_Make_Bdg {
-        //if( has_container(params, 'bowtie2') ) {
-        //    container get_container(params, 'bowtie2')
-        if( has_module(params, ['samtools', 'bedtools']) ) {
+        if( has_container(params, 'samtools_bedtools') ) {
+            container get_container(params, 'samtools_bedtools')
+        } else if( has_module(params, ['samtools', 'bedtools']) ) {
             module get_module(params, ['samtools', 'bedtools'])
         } else if( has_conda(params, ['samtools', 'bedtools']) ) {
             conda get_conda(params, ['samtools', 'bedtools'])
@@ -1715,9 +1715,9 @@ if( params.mode == 'run' ) {
 
         // Step 3, Part B, Normalize to Spike-in (If Enabled)
         process CnR_S3_B_Norm_Bdg {
-            //if( has_container(params, 'bowtie2') ) {
-            //    container get_container(params, 'bowtie2')
-            if( has_module(params, ['bedtools', 'samtools']) ) {
+            if( has_container(params, 'samtools_bedtools') ) {
+                container get_container(params, 'samtools_bedtools')
+            } else if( has_module(params, ['bedtools', 'samtools']) ) {
                 module get_module(params, ['bedtools', 'samtools'])
             } else if( has_conda(params, ['bedtools', 'samtools']) ) {
                 conda get_conda(params, ['bedtools', 'samtools'])
@@ -1786,12 +1786,12 @@ if( params.mode == 'run' ) {
     } else if( params.do_norm_cpm ) {
         // Step 3, Part X, Normalize to Counts Per Million Alignments (If Enabled)
         process CnR_S3_X_NormCPM_Bdg {
-            //if( has_container(params, 'bowtie2') ) {
-            //    container get_container(params, 'bowtie2')
-            if( has_module(params, ['bedtools', 'samtools']) ) {
-                module get_module(params, ['bedtools', 'samtools'])
-            } else if( has_conda(params, ['bedtools', 'samtools']) ) {
-                conda get_conda(params, ['bedtools', 'samtools'])
+            if( has_container(params, 'samtools_bedtools') ) {
+                container get_container(params, 'samtools_bedtools')
+            } else if( has_module(params, ['samtools', 'bedtools']) ) {
+                module get_module(params, ['samtools', 'bedtools'])
+            } else if( has_conda(params, ['samtools', 'bedtools']) ) {
+                conda get_conda(params, ['samtools', 'bedtools'])
             }
             tag          { name }
             label        'norm_mem'
