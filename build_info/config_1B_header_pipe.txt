@@ -20,7 +20,7 @@ manifest {
     homePage = 'http://www.RenneLab.com'
     mainScript = 'CnR-flow.nf'
     name = 'CUT&RUN-Flow'
-    nextflowVersion = '>=20.07.1'
+    nextflowVersion = '>=20.10.6'
     version = '0.11-dev'
 }
 

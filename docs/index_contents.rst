@@ -11,15 +11,15 @@ CUT&RUN-Flow (CnR-flow)
 .. image:: https://img.shields.io/readthedocs/cnr-flow?logo=read-the-docs
    :target: https://CnR-flow.readthedocs.io/en/latest/?badge=latest
    :alt: ReadTheDocs Documentation Status
-.. image:: https://img.shields.io/badge/nextflow-%3E%3D20.07.01-green
+.. image:: https://img.shields.io/badge/nextflow-%3E%3D20.10.6-green
    :target: https://www.nextflow.io/
-   :alt: Nextflow Version Required >= 20.07.01
+   :alt: Nextflow Version Required >= 20.10.6
 .. image:: https://img.shields.io/badge/License-GPLv3+-blue?logo=GNU
    :target: https://www.gnu.org/licenses/gpl-3.0.en.html
    :alt: GNU GPLv3+ License
-.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.4015699.svg
-   :target: https://doi.org/10.5281/zenodo.4015699
-   :alt: Zenodo DOI:10.5281/zenodo.4015699
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.4015698.svg
+   :target: https://doi.org/10.5281/zenodo.4015698
+   :alt: Zenodo DOI:10.5281/zenodo.4015698
 
 | Welcome to *CUT&RUN-Flow* (*CnR-flow*), a Nextflow pipeline for QC, tag 
   trimming, normalization, and peak calling for paired-end sequencing 

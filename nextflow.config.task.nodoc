@@ -18,7 +18,6 @@ params {
     do_merge_lanes = true  // Merge sample names differing only by lane-ID (Ex: L001, L002)
     do_fastqc      = true  // Perform FastQC Analysis
     do_trim        = true  // Trim tags using Trimmomatic
-    do_retrim      = false // Retrim tags using kseq_test (CUTRUNTools)
     do_norm_spike  = true  // Normalize using aligment count to a spike-in reference
     do_norm_cpm    = true  // Normalize using millions of reads per sample
     do_make_bigwig = true  // Create UCSC bigWig files from final alignments
@@ -28,7 +27,6 @@ params {
     trimmomatic_adapterpath = "${projectDir}/ref_dbs/trimmomatic_adapters/TruSeq3-PE-2.fa"
     trimmomatic_settings    = "ILLUMINACLIP:${params.trimmomatic_adapterpath}:2:15:4:4:true LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25"
     trimmomatic_flags       = "-phred33"
-    input_seq_len  = 'auto'  // Length of untrimmed sequence reads (Ex: '150') or 'auto'
     aln_ref_flags  = "--local --very-sensitive-local --phred33 -I 10 -X 700 --dovetail --no-unal --no-mixed --no-discordant"
     aln_norm_flags = params.aln_ref_flags
     norm_scale     = 1000  // Arbitrary value for scaling of normalized counts.

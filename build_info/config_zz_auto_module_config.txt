@@ -6,7 +6,6 @@
 //bowtie2_module          = ""  // Ex: "bowtie2/2.3.5.1"
 //fastqc_module           = ""  // Ex: "fastqc/0.11.7"
 //trimmomatic_module      = ""  // Ex: "trimmomatic/0.39"
-//kseqtest_module         = ""  // Ex: "cutruntools/20190822"
 //bedtools_module         = ""  // Ex: "bedtools/2.29.2"
 //macs2_module            = ""  // Ex: "macs/2.2.7.1"
 //seacr_module            = ""  // Ex: "R/4.0 seacr/1.3 ${params.bedtools_module}"
@@ -16,3 +15,4 @@
 //all_module           = ""  // Ex: "cutruntools/20200104"
 
 // System Call Settings
+//   Call executed on the system, defaults assume that each tool is available
