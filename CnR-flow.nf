@@ -35,7 +35,7 @@ params.out_prop_pad = 17
         nextflow [NF_OPTIONS] run CnR-flow --mode <run-mode> [PIPE_OPTIONS]
 
     Run Modes:
-        initiate     : Copy configuration templates to current directory
+        initiate     : Download files & copy configuration templates to current directory
         validate     : Validate dependency configuration
         prep_fasta   : Prepare alignment reference(s) from <genome>.fa[sta]
         list_refs    : List prepared alignment references
@@ -1181,10 +1181,8 @@ if( params.mode == 'run' ) {
         mkdir !{params.aln_dir_ref}
         echo "Aligning file name base: !{name} ... utilizing Bowtie2"
 
-        pwd
-        ls ~
-        echo "Reference Files:"
-        ls !{ref_bt2db_path}*
+        # echo "Reference Files:"
+        # ls !{ref_bt2db_path}*
     
         set -v -H -o history
         !{params.bowtie2_call} -p !{task.cpus} \\
@@ -1616,10 +1614,8 @@ if( params.mode == 'run' ) {
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" > !{aln_count_report}
 
-            pwd
-            ls ~
-            echo "Spike-in Reference Files:"
-            ls !{spike_ref}*
+            # echo "Spike-in Reference Files:"
+            # ls !{spike_ref}*
 
             # Align Reads to Spike-in Genome
             set -v -H -o history
@@ -1644,10 +1640,8 @@ if( params.mode == 'run' ) {
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" >> !{aln_count_report}
 
-            pwd
-            ls ~
-            echo "Genome Reference Files:"
-            ls !{ref_bt2db_path}*
+            # echo "Genome Reference Files:"
+            # ls !{ref_bt2db_path}*
 
             # Realign Spike-in Alignments to Reference Genome to Check Cross-Mapping
             set -v -H -o history
@@ -1961,6 +1955,7 @@ if( params.mode == 'run' ) {
         if( params.do_norm_spike || params.do_norm_cpm ) {
             log.warn "Calling Peaks with Macs2 does NOT use spike/CPM-normalized input"
             log.warn "  -- Please check macs2 settings for desired normalization options."
+            println ""
         }
 
         process CnR_S5_A_Peaks_MACS {
@@ -2234,15 +2229,6 @@ def get_resources(params, name, def_val="") {
     def use_module    = get_module(params, name, def_val) 
     def use_conda     = get_conda(params, name, def_val)
     def use_container = get_container(params, name, def_val)
-    //if( use_module && use_conda ) {
-    //    message =  "Both a '[item]_module' and a '[item]_conda' resource parameter provided "
-    //    message += "for dependency/dependencies: ${name}\n"
-    //    message += "    Module: ${use_module}\n"
-    //    message += "    Conda:  ${use_conda}\n"
-    //    message += "Please provide only one of these parameters.\n"  
-    //    log.error message
-    //    exit 1
-    //}
     [use_module, use_conda, use_container]
 }
 def has_module(params, name, def_val="") {
