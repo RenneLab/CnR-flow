@@ -1958,6 +1958,11 @@ if( params.mode == 'run' ) {
 
     // Step 5, Part A, Utilize MACS for Peak Calling
     if( peak_callers.contains("macs") ) {
+        if( params.do_norm_spike || params.do_norm_cpm ) {
+            log.warn "Calling Peaks with Macs2 does NOT use spike/CPM-normalized input"
+            log.warn "  -- Please check macs2 settings for desired normalization options."
+        }
+
         process CnR_S5_A_Peaks_MACS {
             if( has_container(params, 'macs2') ) {
                 container get_container(params, 'macs2')
