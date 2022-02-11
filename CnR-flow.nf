@@ -105,14 +105,14 @@ if( ['prep_fasta'].contains(params.mode) ) {
 } else if(['run', 'validate'].contains(params.mode) ) {
     // Check to ensure required keys have been provided correctly.
     first_test_keys = [
-        'do_merge_lanes', 'do_fastqc', 'do_trim', 'do_retrim', 'do_norm_spike', 
+        'do_merge_lanes', 'do_fastqc', 'do_trim', 'do_norm_spike', 
         'do_norm_cpm', 'do_make_bigwig',
         'peak_callers', 'java_call', 'bowtie2_build_call', 'samtools_call',
         'facount_call', 'bedgraphtobigwig_call',
-        'fastqc_call', 'trimmomatic_call', 'kseqtest_call', 'bowtie2_call', 
+        'fastqc_call', 'trimmomatic_call', 'bowtie2_call', 
         'bedtools_call', 'macs2_call', 
         'seacr_call', 'out_dir', 'refs_dir', 'log_dir', 'prep_bt2db_suf',
-        'merge_fastqs_dir', 'fastqc_pre_dir', 'trim_dir', 'retrim_dir',
+        'merge_fastqs_dir', 'fastqc_pre_dir', 'trim_dir', 
         'fastqc_post_dir', 'aln_dir_ref', 'aln_dir_spike', 'aln_dir_mod',
         'aln_dir_norm', 'aln_dir_norm_cpm', 
         'aln_bigwig_dir', 'peaks_dir_macs', 'peaks_dir_seacr',
@@ -194,7 +194,6 @@ if( ['prep_fasta'].contains(params.mode) ) {
         "Samtools": ["${params.samtools_call} help", 0, *get_resources(params, 'samtools')],
         "FastQC": ["${params.fastqc_call} -v", 0, *get_resources(params, 'fastqc')], 
         "Trimmomatic": ["${params.trimmomatic_call} -version", 0, *get_resources(params, 'trimmomatic')],
-        "kseqtest": ["${params.kseqtest_call}", 1, *get_resources(params, 'kseqtest') ],
         "bowtie2": ["${params.bowtie2_call} --version", 0, *get_resources(params, 'bowtie2')],
         "bedtools": ["${params.bedtools_call} --version", 0, *get_resources(params, 'bedtools')],
         "MACS2": ["${params.macs2_call} --version", 0, *get_resources(params, 'macs2')],
@@ -220,10 +219,6 @@ if( ['prep_fasta'].contains(params.mode) ) {
         req_files.add(['trimmomatic_adapterpath'])
         req_keys.add(['trimmomatic_settings'])
         req_keys.add(['trimmomatic_flags'])
-    }
-    // Keys and Params for Trimmomatic trimming
-    if( params.do_retrim ) {
-        req_keys.add(['input_seq_len'])
     }
     // keys and params for alignment steps
     if( true ) {
@@ -852,56 +847,6 @@ if( params.mode == 'run' ) {
                }
           .into { prep_fastqs; seq_len_fastqs }
 
-    //If utilizing retrimming, autodetect or confirm tag size:
-    if( params.do_retrim ) {
-        if( params.input_seq_len == "auto" ) {
-            process CnR_S0_A_GetSeqLen {
-                label       'small_mem'
-                //executor    'local'
-                cpus        1
-                time        '1h'
-                echo        params.verbose
-                stageInMode 'copy'
-        
-                input:
-                tuple val(name), val(cond), val(group), path(fastq) from seq_len_fastqs.first()
-                
-                output:
-                env SIZE into input_seq_len
-        
-                script:
-                test_fastq = fastq[0]
-                if( "${test_fastq}".endsWith('.gz') ) {
-                    //first_command = "head -c 10000 ${test_fastq} | zcat 2>/dev/null"
-                    first_command = "zcat < ${test_fastq}"
-                } else {
-                    first_command = "cat ${test_fastq}"
-                }
-                shell:
-                '''
-                echo -e "Auto-detecting Tag Sequence Length:"
-                echo -e "Using first provided file:"
-                echo -e "    !{test_fastq}"
-
-                !{first_command} | head -n 2 | tail -n 1 > seq.txt
-                SIZE_PLUS=$(cat seq.txt | wc -c )
-                SIZE=$(expr ${SIZE_PLUS} - 1)        
-
-                echo "Read Size: ${SIZE}"
-                '''
-            }
-        } else if( params.input_seq_len ) {
-            Channel
-                  .value(params.input_seq_len)
-                  .set { input_seq_len }
-        } else {
-            log.error "Invalid Value for Paramater 'input_seq_len' provided:"
-            log.error "-   '${input_seq_len}'"
-            log.error ""
-            exit 1
-        }   
-    }
-
     // If Merge, combine sample prefix-duplicates and catenate files.
     if( params.do_merge_lanes ) {
         prep_fastqs
@@ -1097,7 +1042,7 @@ if( params.mode == 'run' ) {
         
             output:
             path "${params.trim_dir}/*" into trim_all_outs
-            tuple val(name), val(cond), val(group), path("${params.trim_dir}/*.paired.*") into trim_outs
+            tuple val(name), val(cond), val(group), path("${params.trim_dir}/*.paired.*") into trim_final
             path '.command.log' into trim_log_outs
         
             // Publish Log
@@ -1107,7 +1052,7 @@ if( params.mode == 'run' ) {
             publishDir "${params.out_dir}", mode: params.publish_mode,
                        pattern: "${trim_dir}/*.paired.*",
                        enabled: (
-                           (params.publish_files == "default" && !params.do_retrim)
+                           (params.publish_files == "default")
                             || params.publish_files == "all"
                        )
         
@@ -1145,68 +1090,9 @@ if( params.mode == 'run' ) {
             echo "Step 1, Part A, Trimmomatic Trimming, Complete."
             '''
         }
-    // If not performing trimming, pass trim output to retrim channel.
+    // If not performing trimming, pass trim output forward.
     } else {
-        trim_inputs.set { trim_outs } 
-    }
-
-    // Step 1, Part B, Retrim Sequences Using Cut&RunTools kseq_test (If Enabled)
-    if( params.do_retrim ) {
-        process CnR_S1_B_Retrim { 
-            if( has_container(params, 'kseqtest') ) {
-                container get_container(params, 'kseqtest')
-            } else if( has_module(params, 'kseqtest') ) {
-                module get_module(params, 'kseqtest')
-            } else if( has_conda(params, 'kseqtest') ) {
-                conda get_conda(params, 'kseqtest')
-            }
-            tag          { name }
-            label        'small_mem'
-            beforeScript { task_details(task) }
-            cpus         1   
-     
-            input:
-            tuple val(name), val(cond), val(group), path(fastq) from trim_outs
-            val(seq_len) from input_seq_len        
-
-            output:
-            tuple val(name), val(cond), val(group), path("${params.retrim_dir}/*") into trim_final
-            path '.command.log' into retrim_log_outs
-        
-            // Publish Log
-            publishDir "${params.out_dir}/${params.log_dir}", mode: params.publish_mode, 
-                       pattern: '.command.log', saveAs: { out_log_name }
-            // Publish if publish_files == "all" or "default"
-            publishDir "${params.out_dir}", mode: params.publish_mode, 
-                       pattern: "${params.retrim_dir}/*",
-                       enabled: (
-                           params.publish_files == "all" 
-                           || params.publish_files == 'default'
-                       )
-        
-            script:
-            run_id = "${task.tag}.${task.process}"
-            out_log_name = "${run_id}.nf.log.txt"
-        
-            shell:
-            '''
-            mkdir !{params.retrim_dir}
-            echo "Second stage (retrimming) name base: !{name} ... utilizing kseq_test ..."
-
-            set -v -H -o history
-            !{params.kseqtest_call} !{fastq[0]} !{seq_len} \\
-                                    !{params.retrim_dir}/!{fastq[0]}
-        
-            !{params.kseqtest_call} !{fastq[1]} !{seq_len} \\
-                                    !{params.retrim_dir}/!{fastq[1]}
-            set +v +H +o history        
-
-            echo "Step 1, Part B, kseq_test Trimming, Complete."
-            '''
-        }
-    // If not performing retrimming, pass trim output onto alignments.
-    } else {
-        trim_outs.set { trim_final }
+        trim_inputs.set { trim_final } 
     }
 
     trim_final.into { aln_ref_inputs; aln_spike_inputs; fastqcPost_inputs }

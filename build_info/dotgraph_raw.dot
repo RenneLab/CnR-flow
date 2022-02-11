@@ -164,22 +164,11 @@ p41 [shape=point];
 p39 -> p41 [label="trim_all_outs"];
 
 p39 [label="CnR_S1_A_Trim"];
-p42 [label="CnR_S1_B_Retrim"];
-p39 -> p42 [label="trim_outs"];
-
-p39 [label="CnR_S1_A_Trim"];
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p39 -> p44 [label="trim_outs"];
 p40 [shape=point];
 p39 -> p40 [label="trim_log_outs"];
 
-p42 [label="CnR_S1_B_Retrim"];
-p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
-p42 -> p44 [label="trim_final"];
-
-p42 [label="CnR_S1_B_Retrim"];
-p43 [shape=point];
-p42 -> p43 [label="retrim_log_outs"];
-
-p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
 p61 [label="CnR_S1_C_FastQCPost"];
 p44 -> p61 [label="fastqcPost_inputs"];
 

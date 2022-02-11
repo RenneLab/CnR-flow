@@ -13,7 +13,6 @@ params {
     bowtie2_conda          = 'bioconda::bowtie2=2.4.4 conda-forge::libgcc-ng=9.3'
     fastqc_conda           = 'bioconda::fastqc=0.11.9'
     trimmomatic_conda      = 'bioconda::trimmomatic=0.39'
-    kseqtest_conda         = 'RenneLab::cutruntools-exec'
     bedtools_conda         = 'bioconda::bedtools=2.29.2'
     macs2_conda            = 'bioconda::macs2=2.2.6'
     seacr_conda            = "r=3.6.0 bioconda::seacr=1.3 ${params.bedtools_conda}"
@@ -31,7 +30,6 @@ params {
     //bowtie2_module          = ""  // Ex: "bowtie2/2.3.5.1"
     //fastqc_module           = ""  // Ex: "fastqc/0.11.7"
     //trimmomatic_module      = ""  // Ex: "trimmomatic/0.39"
-    //kseqtest_module         = ""  // Ex: "cutruntools/20190822"
     //bedtools_module         = ""  // Ex: "bedtools/2.29.2"
     //macs2_module            = ""  // Ex: "macs/2.2.7.1"
     //seacr_module            = ""  // Ex: "R/4.0 seacr/1.3 ${params.bedtools_module}"
@@ -53,7 +51,6 @@ params {
     samtools_call         = "samtools"
     fastqc_call           = "fastqc"
     trimmomatic_call      = "trimmomatic"
-    kseqtest_call         = "kseq_test"
     bowtie2_call          = "bowtie2"
     bedtools_call         = "bedtools"
     macs2_call            = "macs2"

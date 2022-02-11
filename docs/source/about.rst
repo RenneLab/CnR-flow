@@ -25,10 +25,8 @@ Changelog
     v0.11-dev:
         * Refinements
         * Bugfixes
-        * Removed CUTRUNTools
         * Added additional template nextflow.config files for task
         * Added macOS support for Conda machines (for all dependencies) 
-        * Added macOS automated testing (with Travis CI)
         * Added input data file integrity checks to Merge process
         * Added internal output checks for early error catching
         * Updated Conda Bowtie2 Version to 2.4.4 and added component dependency 
@@ -38,6 +36,10 @@ Changelog
         * Add support for task execution via Docker / Singularity containers
         * Corrected error in handling of normalized alignment files
         * Moved SEACR to external dependency config
+        * Removed CUTRUNTools:kseqtest from pipeline
+        * Migrate aumotated testing from TravisCI to CircleCI
+        * Add Beta support for Singularity/Docker dependency configurations
+        * Add CircleCI Docker dependency config testing
 
     v0.10:
         * Refinements
