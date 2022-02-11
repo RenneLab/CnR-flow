@@ -73,8 +73,6 @@ jobs:
             cat test_notes.txt
             ./setup_reference.sh
             ./dl_prep_data.sh
-            echo "" ; ls subsampled_data ; echo ""
-            echo "" ; ls test_reference ; echo ""
           
       - save_cache:
           key: data2-cache
@@ -93,6 +91,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: ./
+      - restore_cache:
+          keys:
+            - conda-cache
       - run:
           name: Re-initiate Environment
           command: |
@@ -101,9 +102,6 @@ jobs:
             ls
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
             echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
-            cd ../test_pipe
-            echo "test_reference:" ; ls test_reference ; echo ""
-            echo "subsampled_data:" ; ls subsampled_data ; echo ""
       - run:
           name: Test Mode:Initiate
           environment: 
@@ -126,16 +124,17 @@ jobs:
           command: |
             cd ./test_pipe
             cat test_notes.txt
-            echo "" ; ls test_reference ; echo ""
-            echo "" ; ls subsampled_data ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
             sleep 30
-            echo "test_reference" ; ls test_reference ; echo ""
-            echo "test_reference/*" ; ls test_reference/*/* ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode run
             cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
             cp nextflow.config.step2 nextflow.config
             nextflow ../CnR-flow.nf -resume --verbose --mode run
+            cat $(find ./cnr_output_2/logs/* -maxdepth 0 | sort )
+      - save_cache:
+          key: conda-cache
+          paths:
+            - envs_conda
 
   test-docker:
     executor: bash-env
@@ -143,6 +142,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: ./
+      - restore_cache:
+          keys:
+            - singularity-cache
       - run:
           name: Re-initiate Environment
           command: |
@@ -151,9 +153,6 @@ jobs:
             ls
             echo "export PATH=\$PATH:$PWD" >> $BASH_ENV
             echo "export PATH=\$PATH:$PWD/miniconda/condabin/" >> $BASH_ENV
-            cd ../test_pipe
-            echo "test_reference" ; ls test_reference ; echo ""
-            echo "subsampled_data" ; ls subsampled_data ; echo ""
       - run:
           name: Test Mode:Initiate
           environment: 
@@ -179,8 +178,6 @@ jobs:
             cd ./test_pipe
             cat test_notes.txt
             cat nextflow.config.docker >> nextflow.config
-            echo "" ; ls test_reference ; echo ""
-            echo "" ; ls subsampled_data ; echo ""
             nextflow ../CnR-flow.nf --verbose --mode prep_fasta
             sleep 30
             cat nextflow.config.docker.vol >> nextflow.config
@@ -190,6 +187,11 @@ jobs:
             cat nextflow.config.docker >> nextflow.config
             cat nextflow.config.docker.vol >> nextflow.config
             nextflow ../CnR-flow.nf -resume --verbose --mode run
+            cat $(find ./cnr_output_2/logs/* -maxdepth 0 | sort )
+      - save_cache:
+          key: singularity-cache
+          paths:
+            - envs_singularity
 
 workflows:
   test-bash:

@@ -1115,6 +1115,7 @@ if( params.mode == 'run' ) {
             run_id               = "${task.tag}.${task.process}"
             out_log_name         = "${run_id}.nf.log.txt"
             trimmomatic_flags    = params.trimmomatic_flags 
+            trimmomatic_adapter  = params.trimmomatic_adapterpath
             trimmomatic_settings = params.trimmomatic_settings
             trim_dir             = "${params.trim_dir}"       
             out_reads_1_paired   = "${trim_dir}/${name}_1.paired.fastq.gz"
@@ -1125,6 +1126,9 @@ if( params.mode == 'run' ) {
             '''
             mkdir !{trim_dir}
             echo "Trimming file name base: !{name} ... utilizing Trimmomatic"
+
+            echo "Verifying accessibility of Trimmomatic adapters file:"
+            ls !{trimmomatic_adapterpath}
 
             set -v -H -o history
             !{params.trimmomatic_call} PE \\
