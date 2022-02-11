@@ -17,5 +17,5 @@ params {
     seacr_container             = "${params.container_prefix}quay.io/biocontainers/seacr:1.3--hdfd78af_2"
     samtools_container          = "${params.container_prefix}quay.io/biocontainers/samtools:1.13--h8c37831_0"
     bedgraphtobigwig_container  = "${params.container_prefix}quay.io/biocontainers/ucsc-bedgraphtobigwig:377--h0b8a92a_2"
-    samtools_bedtools_container = "${params.container_prefix}quay.io/biocontainers/mulled-v2-8186960447c5cb2faa697666dc1e6d919ad23f3e:96081f93c4cf2811a53d5112d138ad07ebe1b815-0"         
+    samtools_bedtools_container = "${params.container_prefix}quay.io/biocontainers/mulled-v2-8e148fe04b62ba2eb78ae2fb5ec95a485e769bd1:4f77b710967ddebe9f29712ea090ac6aa72712f8-0"
 }
