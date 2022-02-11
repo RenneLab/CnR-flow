@@ -5,18 +5,16 @@ params {
     //Prefix should be "" (blank) for Docker config, 
     //  and "docker://" for Singularity Config
     container_prefix            = "" 
-
-    facount_container           = "${container_prefix}" + "quay.io/biocontainers/ucsc-facount:366--h5eb252a_0"
-    bowtie2_container           = "${container_prefix}" + "quay.io/biocontainers/bowtie2:2.4.4--py38he5f0661_1"
-    bowtie2_samtools_container  = "${container_prefix}" + "quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:b6524911af823c7c52518f6c886b86916d062940-0"
-    fastqc_container            = "${container_prefix}" + "quay.io/biocontainers/fastqc:0.11.9--hdfd78af_1"
-    trimmomatic_container       = "${container_prefix}" + "quay.io/biocontainers/trimmomatic:0.39--1"
-    bedtools_container          = "${container_prefix}" + "quay.io/biocontainers/bedtools:2.27.1--h9a82719_5"
-    macs2_container             = "${container_prefix}" + "quay.io/biocontainers/macs2:2.2.6--py37h516909a_0"
-    seacr_container             = "${container_prefix}" + "quay.io/biocontainers/seacr:1.3--hdfd78af_2"
-    samtools_container          = "${container_prefix}" + "quay.io/biocontainers/samtools:1.13--h8c37831_0"
-    bedgraphtobigwig_container  = "${container_prefix}" + "quay.io/biocontainers/ucsc-bedgraphtobigwig:377--h0b8a92a_2"
-    samtools_bedtools_container = "${container_prefix}" + "quay.io/biocontainers/mulled-v2-8186960447c5cb2faa697666dc1e6d919ad23f3e:96081f93c4cf2811a53d5112d138ad07ebe1b815-0"         
-    //bt2_db_prefix_exchange     = [ "${launchDir}/test_reference", "~/test_reference" ]
+    facount_container           = "${container_prefix}quay.io/biocontainers/ucsc-facount:366--h5eb252a_0"
+    bowtie2_container           = "${container_prefix}quay.io/biocontainers/bowtie2:2.4.4--py38he5f0661_1"
+    bowtie2_samtools_container  = "${container_prefix}quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:b6524911af823c7c52518f6c886b86916d062940-0"
+    fastqc_container            = "${container_prefix}quay.io/biocontainers/fastqc:0.11.9--hdfd78af_1"
+    trimmomatic_container       = "${container_prefix}quay.io/biocontainers/trimmomatic:0.39--1"
+    bedtools_container          = "${container_prefix}quay.io/biocontainers/bedtools:2.27.1--h9a82719_5"
+    macs2_container             = "${container_prefix}quay.io/biocontainers/macs2:2.2.6--py37h516909a_0"
+    seacr_container             = "${container_prefix}quay.io/biocontainers/seacr:1.3--hdfd78af_2"
+    samtools_container          = "${container_prefix}quay.io/biocontainers/samtools:1.13--h8c37831_0"
+    bedgraphtobigwig_container  = "${container_prefix}quay.io/biocontainers/ucsc-bedgraphtobigwig:377--h0b8a92a_2"
+    samtools_bedtools_container = "${container_prefix}quay.io/biocontainers/mulled-v2-8186960447c5cb2faa697666dc1e6d919ad23f3e:96081f93c4cf2811a53d5112d138ad07ebe1b815-0"         
 }
 docker.enabled = true

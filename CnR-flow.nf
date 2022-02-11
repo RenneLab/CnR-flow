@@ -1173,13 +1173,7 @@ if( params.mode == 'run' ) {
         run_id         = "${task.tag}.${task.process}"
         out_log_name   = "${run_id}.nf.log.txt"
         aln_ref_flags  = params.aln_ref_flags
-        if(params.containsKey('bt2_db_prefix_exchange') && params.bt2_db_prefix_exchange) {
-            query_path = params.bt2_db_prefix_exchange[0]
-            replace_path = params.bt2_db_prefix_exchange[1]
-            ref_bt2db_path = "${params.ref_bt2db_path}".replace(query_path, replace_path)
-        } else {
-            ref_bt2db_path = params.ref_bt2db_path
-        }
+        ref_bt2db_path = params.ref_bt2db_path
  
         shell:
         '''
@@ -1607,15 +1601,9 @@ if( params.mode == 'run' ) {
             } else {
                 count_command = 'expr $(wc -l ' + "${fastq[0]}" + ') / 4'
             }
-            if(params.containsKey('bt2_db_prefix_exchange') && params.bt2_db_prefix_exchange) {
-                query_path     = params.bt2_db_prefix_exchange[0]
-                replace_path   = params.bt2_db_prefix_exchange[1]
-                ref_bt2db_path = "${params.ref_bt2db_path}".replace(query_path, replace_path)
-                spike_ref_path = "${spike_ref}".replace(query_path, replace_path)
-            } else {
-                ref_bt2db_path = params.ref_bt2db_path
-                spike_ref_path = spike_ref
-            }
+            ref_bt2db_path = params.ref_bt2db_path
+            spike_ref_path = spike_ref
+            
             shell:
             '''
             set -o pipefail
