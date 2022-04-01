@@ -216,7 +216,7 @@ if( ['prep_fasta'].contains(params.mode) ) {
     }
     // Keys and Params for Trimmomatic trimming
     if( params.do_trim ) {
-        req_files.add(['trimmomatic_adapterpath'])
+        //req_files.add(['trimmomatic_adapterpath'])
         req_keys.add(['trimmomatic_settings'])
         req_keys.add(['trimmomatic_flags'])
     }
@@ -1062,6 +1062,11 @@ if( params.mode == 'run' ) {
             trimmomatic_flags    = params.trimmomatic_flags 
             trimmomatic_adapter  = params.trimmomatic_adapterpath
             trimmomatic_settings = params.trimmomatic_settings
+            if( params.trimmomatic_adapter_mode ) {
+                adapter_command = "${params.trimmomatic_adapter_mode}${trimmomatic_adapter}"
+                adapter_command += "${params.trimmomatic_adapter_params}"
+                trimmomatic_settings = "${adapter_command} ${trimmomatic_settings}"
+            }
             trim_dir             = "${params.trim_dir}"       
             out_reads_1_paired   = "${trim_dir}/${name}_1.paired.fastq.gz"
             out_reads_1_unpaired = "${trim_dir}/${name}_1.unpaired.fastq.gz" 
