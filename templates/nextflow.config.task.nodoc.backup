@@ -19,7 +19,7 @@ params {
     do_fastqc      = true  // Perform FastQC Analysis
     do_trim        = true  // Trim tags using Trimmomatic
     do_norm_spike  = true  // Normalize using aligment count to a spike-in reference
-    do_norm_cpm    = true  // Normalize using millions of reads per sample
+    do_norm_cpm    = false // Normalize using millions of reads per sample
     do_make_bigwig = true  // Create UCSC bigWig files from final alignments
     fastqc_flags   = ''
     use_aln_modes  = ["all"]  // Options: ["all", "all_dedup", "less_120", "less_120_dedup"]
