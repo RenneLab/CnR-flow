@@ -175,7 +175,6 @@ jobs:
           command: |
             cd ./test_pipe
             cat test_notes.txt
-            cat nextflow.config.docker >> nextflow.config
             nextflow ../CnR-flow.nf -profile docker --verbose --mode prep_fasta
             sleep 30
             cat nextflow.config.docker.vol >> nextflow.config
