@@ -42,8 +42,8 @@ profiles {
     docker {
         // Dependency Configuration Using Containers with Docker:
         docker.enabled = true
-        //docker.runOptions = "-v ${launchDir}:${launchDir}"
-        docker.runOptions = "-v ${params.refs_dir}:${params.refs_dir}"
+        docker.runOptions = "-v ${launchDir}:${launchDir}"
+        //docker.runOptions = "-v ${params.refs_dir}:${params.refs_dir}"
     
         params.facount_container           = "quay.io/biocontainers/ucsc-facount:366--h5eb252a_0"
         params.bowtie2_container           = "quay.io/biocontainers/bowtie2:2.4.4--py38he5f0661_1"
