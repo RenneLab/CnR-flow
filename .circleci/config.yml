@@ -161,15 +161,13 @@ jobs:
             mkdir ./test_init
             cd    ./test_init
             nextflow run ../CnR-flow.nf --mode initiate
-            cat ../test_pipe/nextflow.config.docker
-            cat ../test_pipe/nextflow.config.docker >> nextflow.config
       - run:
           name: Test Mode:validate
           environment: 
             NXF_ANSI_LOG: false
           command: |
             cd    ./test_init
-            nextflow run ../CnR-flow.nf --mode validate
+            nextflow run ../CnR-flow.nf -profile docker --mode validate
       - run:
           name: Test Execution
           environment: 
@@ -178,15 +176,14 @@ jobs:
             cd ./test_pipe
             cat test_notes.txt
             cat nextflow.config.docker >> nextflow.config
-            nextflow ../CnR-flow.nf --verbose --mode prep_fasta
+            nextflow ../CnR-flow.nf -profile docker --verbose --mode prep_fasta
             sleep 30
             cat nextflow.config.docker.vol >> nextflow.config
-            nextflow ../CnR-flow.nf --verbose --mode run
+            nextflow ../CnR-flow.nf -profile docker --verbose --mode run
             cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
             cp nextflow.config.step2 nextflow.config
-            cat nextflow.config.docker >> nextflow.config
             cat nextflow.config.docker.vol >> nextflow.config
-            nextflow ../CnR-flow.nf -resume --verbose --mode run
+            nextflow ../CnR-flow.nf -resume -profile docker --verbose --mode run
             cat $(find ./cnr_output_2/logs/* -maxdepth 0 | sort )
       - save_cache:
           key: singularity-cache
