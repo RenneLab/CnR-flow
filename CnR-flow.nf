@@ -703,9 +703,9 @@ if( params.mode == 'prep_fasta' ) {
     }
     
     process CnR_Prep_Sizes {
-        //if( has_container(params, 'bowtie2') ) {
-        //    container get_container(params, 'bowtie2') 
-        if( has_module(params, ['samtools', 'facount']) ) {
+        if( has_container(params, 'samtools_facount') ) {
+            container get_container(params, 'samtools_facount') 
+        } else if( has_module(params, ['samtools', 'facount']) ) {
             module get_module(params, ['samtools', 'facount'])
         } else if( has_conda(params, ['samtools', 'facount']) ) {
             conda get_conda(params, ['samtools', 'facount'])
@@ -1754,7 +1754,7 @@ if( params.mode == 'run' ) {
             #SCALE=$(bc -l <<< "scale=8; $CALC")
             SCALE=$(python <<< "print($CALC)")
 
-            echo "Scaling factor caluculated: ( ${CALC} ) = ${SCALE} "
+            echo "Scaling factor calculated: ( ${CALC} ) = ${SCALE} "
 
             echo ""
             echo "Creating normalized bedgraph using bedtools genomecov."
@@ -2208,8 +2208,6 @@ def get_resource_item(params, item_name, use_suffix, join_char, def_val="") {
         ret_val = use_items.join(join_char)
     } else if( params.containsKey(item_name.toString() + use_suffix) ) { 
         ret_val = params[item_name + use_suffix]
-    } else if( params.containsKey('all' + use_suffix) ) {
-        ret_val = params['all' + use_suffix]
     } else {
         ret_val = def_val
     }

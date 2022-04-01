@@ -1,4 +1,5 @@
 // Locations to store conda and/or singularity environments for reuse.
 conda.cacheDir       = "${projectDir}/envs_conda/"    
 singularity.cacheDir = "${projectDir}/envs_singularity/"    
+singularity.enabled  = false
 

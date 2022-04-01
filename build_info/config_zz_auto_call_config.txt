@@ -1,6 +1,6 @@
 // System Call Settings
 //   Call executed on the system, defaults assume that each tool is available
-//     on the system PATH (as with conda setup)
+//     on the system PATH
 //   Can replace with direct path as desired:
 //   Ex:
 //        samtools_call = "samtools"
