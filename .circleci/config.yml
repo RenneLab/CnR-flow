@@ -177,11 +177,9 @@ jobs:
             cat test_notes.txt
             nextflow ../CnR-flow.nf -profile docker --verbose --mode prep_fasta
             sleep 30
-            cat nextflow.config.docker.vol >> nextflow.config
             nextflow ../CnR-flow.nf -profile docker --verbose --mode run
             cat $(find ./cnr_output/logs/* -maxdepth 0 | sort )
             cp nextflow.config.step2 nextflow.config
-            cat nextflow.config.docker.vol >> nextflow.config
             nextflow ../CnR-flow.nf -resume -profile docker --verbose --mode run
             cat $(find ./cnr_output_2/logs/* -maxdepth 0 | sort )
       - save_cache:

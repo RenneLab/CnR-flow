@@ -35,14 +35,16 @@ Pipeline Design:
       Nextflow provides extensive flexibility in utilizing cluster 
       computing environments such as `PBS`_ and `SLURM`_, 
       and in automated and compartmentalized handling of dependencies using 
-      `Conda`_ / `Bioconda`_ and `Environment Modules`_.
+      `Conda`_ / `Bioconda`_, `Docker`_, `Singularity`_ or `Environment Modules`_.
     
 Dependencies:
     | In addition to standard local configurations, Nextflow allows handling of 
       dependencies in separated working environments within the same pipeline 
-      using `Conda`_ or `Environment Modules`_. 
+      using `Conda`_ or `Environment Modules`_ within your working environment,
+      or using container-encapsulated execution with `Docker`_ or `Singularity`_. 
       **CnR-flow is pre-configured to acquire and utilize dependencies
-      using conda environments with no additional required setup.**
+      using Conda, Docker, and Singularity environments with no
+      additional required setup.**
     | CUT&RUN-Flow utilizes 
       `UCSC Genome Browser Tools`_ and  `Samtools`_
       for reference library preparation,
@@ -68,6 +70,7 @@ Pipeline Features:
       *E. coli* reference genome for utiliziation of *E. coli* 
       as a spike-in control as described by |Meers2019| 
       [see the |References| section of |docs_link|_])
+    * OR: CPM-normalization to normalize total read counts between samples (beta).
     * SLURM, PBS... and many other job scheduling environments 
       enabled natively by Nextflow
     * Output of memory-efficient CRAM (alignment), 
@@ -117,19 +120,32 @@ Quickstart
             $ nextflow run RenneLab/CnR-flow --mode initiate    
     
     Configure, Validate, and Test:
-        | If using Nextflow's builtin Conda dependency handling (recommended),
-          install miniconda (if necessary).
-          `Installation instructions <https://docs.conda.io/en/latest/miniconda.html>`_
-        | The CnR-flow configuration with Conda should then work "out-of-the-box."
-        |
+        Conda: 
+          * Install miniconda (if necessary).
+            `Installation instructions <https://docs.conda.io/en/latest/miniconda.html>`_
+          * The CnR-flow configuration with Conda should then work "out-of-the-box."
+
+        Docker:
+          * Add '-profile docker' to all nextflow commands
+
+        Singularity:
+          * Add '-profile singularity' to all nextflow commands
+
         | If using an alternative configuration, see the |Dependency Config|
           section of |docs_link|_ for dependency configuration options.
         |
         | Once dependencies have been configured, validate all dependencies:
     
         .. code-block:: bash
-    
+
+            # Conda or other configs:    
             $ nextflow run CnR-flow --mode validate_all
+
+            # OR Docker Configuration:    
+            $ nextflow run CnR-flow -profile docker --mode validate_all
+
+            # OR Singularity Configuration:    
+            $ nextflow run CnR-flow -profile singularity --mode validate_all
     
         | Fill the required task input parameters in "nextflow.config"
           For detailed setup instructions, see the  |Task Setup| 
@@ -197,6 +213,8 @@ Quickstart
 .. _SLURM: https://slurm.schedmd.com/
 .. _CONDA: https://anaconda.org/
 .. _Environment Modules: http://modules.sourceforge.net/
+.. _Docker: http://www.docker.com/
+.. _Singularity: https://sylabs.io/
 .. _UCSC Genome Browser Tools: https://hgdownload.cse.ucsc.edu/admin/exe/
 .. _kseq_test: https://bitbucket.org/qzhudfci/cutruntools/src
 .. _CUT&RUN-Tools: https://bitbucket.org/qzhudfci/cutruntools/src
