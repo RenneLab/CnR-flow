@@ -65,49 +65,80 @@ process {
     ext.ph = null //Placeholder to prevent errors.
 }
 
+
+// ------- Dependency Configuration --------
+// Standard configuration is setup using conda.
+// Docker / Singularity execution is preferred where available.
+// Environment Modules also supported.
+// Where defined, dependencies are used in order [dep]_container > [dep]_module > [dep]_conda
+profiles {
+    standard {
+        // Dependency Configuration Using Anaconda
+        params.facount_conda          = 'bioconda::ucsc-facount=366'
+        params.bowtie2_conda          = 'bioconda::bowtie2=2.4.4 conda-forge::libgcc-ng=9.3'
+        params.fastqc_conda           = 'bioconda::fastqc=0.11.9'
+        params.trimmomatic_conda      = 'bioconda::trimmomatic=0.39'
+        params.bedtools_conda         = 'bioconda::bedtools=2.29.2'
+        params.macs2_conda            = 'bioconda::macs2=2.2.6'
+        params.seacr_conda            = "r=3.6.0 bioconda::seacr=1.3 ${params.bedtools_conda}"
+        params.samtools_conda         = 'bioconda::samtools=1.9'
+        params.bedgraphtobigwig_conda = 'conda-forge::libpng conda-forge::libuuid conda-forge::mysql-connector-c conda-forge::openssl conda-forge::zlib bioconda::ucsc-bedgraphtobigwig=377'
+    }
+
+    singularity {
+        // Dependency Configuration Using Containers with Singularity:
+        singularity.enabled = true
+        params.facount_container           = "docker://quay.io/biocontainers/ucsc-facount:366--h5eb252a_0"
+        params.bowtie2_container           = "docker://quay.io/biocontainers/bowtie2:2.4.4--py38he5f0661_1"
+        params.bowtie2_samtools_container  = "docker://quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:b6524911af823c7c52518f6c886b86916d062940-0"
+        params.fastqc_container            = "docker://quay.io/biocontainers/fastqc:0.11.9--hdfd78af_1"
+        params.trimmomatic_container       = "docker://quay.io/biocontainers/trimmomatic:0.39--1"
+        params.bedtools_container          = "docker://quay.io/biocontainers/bedtools:2.27.1--h9a82719_5"
+        params.macs2_container             = "docker://quay.io/biocontainers/macs2:2.2.6--py37h516909a_0"
+        params.seacr_container             = "docker://quay.io/biocontainers/seacr:1.3--hdfd78af_2"
+        params.samtools_container          = "docker://quay.io/biocontainers/samtools:1.13--h8c37831_0"
+        params.bedgraphtobigwig_container  = "docker://quay.io/biocontainers/ucsc-bedgraphtobigwig:377--h0b8a92a_2"
+        params.samtools_bedtools_container = "docker://quay.io/biocontainers/mulled-v2-fc325951871d402a00bdf9d0e712a5b81b8e0cb3:38034b9703d6561a40bcaf2f1ec16f8b158fde97-0"
+        params.samtools_facount_container  = "${params.samtools_bedtools_container}"
+     
+    }
+
+    docker {
+        // Dependency Configuration Using Containers with Docker:
+        docker.enabled = true
+    
+        params.facount_container           = "quay.io/biocontainers/ucsc-facount:366--h5eb252a_0"
+        params.bowtie2_container           = "quay.io/biocontainers/bowtie2:2.4.4--py38he5f0661_1"
+        params.bowtie2_samtools_container  = "quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:b6524911af823c7c52518f6c886b86916d062940-0"
+        params.fastqc_container            = "quay.io/biocontainers/fastqc:0.11.9--hdfd78af_1"
+        params.trimmomatic_container       = "quay.io/biocontainers/trimmomatic:0.39--1"
+        params.bedtools_container          = "quay.io/biocontainers/bedtools:2.27.1--h9a82719_5"
+        params.macs2_container             = "quay.io/biocontainers/macs2:2.2.6--py37h516909a_0"
+        params.seacr_container             = "quay.io/biocontainers/seacr:1.3--hdfd78af_2"
+        params.samtools_container          = "quay.io/biocontainers/samtools:1.13--h8c37831_0"
+        params.bedgraphtobigwig_container  = "quay.io/biocontainers/ucsc-bedgraphtobigwig:377--h0b8a92a_2"
+        params.samtools_bedtools_container = "quay.io/biocontainers/mulled-v2-fc325951871d402a00bdf9d0e712a5b81b8e0cb3:38034b9703d6561a40bcaf2f1ec16f8b158fde97-0"
+        params.samtools_facount_container  = "${params.samtools_bedtools_container}"
+    }
+
+    module {
+        // Dependency Configuration Using Environment Modules
+        //   (values will vary depending on system)
+        params.facount_module          = ""  // Ex: "ucsc/20200320"
+        params.bowtie2_module          = ""  // Ex: "bowtie2/2.3.5.1"
+        params.fastqc_module           = ""  // Ex: "fastqc/0.11.7"
+        params.trimmomatic_module      = ""  // Ex: "trimmomatic/0.39"
+        params.bedtools_module         = ""  // Ex: "bedtools/2.29.2"
+        params.macs2_module            = ""  // Ex: "macs/2.2.7.1"
+        params.seacr_module            = ""  // Ex: "R/4.0 seacr/1.3 ${params.bedtools_module}"
+        params.bedgraphtobigwig_module = ""  // Ex: "ucsc/20200320"
+    }
+}
+
 params {
-    // ------- Dependency Configuration --------
-    // Configuration using conda is recommended for most systems.
-    // Each dependency can only have one type of resource configured:
-    // (Ex: bowtie2_module OR bowtie2_conda)
-    
-    // Dependency Configuration Using Anaconda
-    // Miniconda Install Instructions:
-    //     https://docs.conda.io/en/latest/miniconda.html
-    //
-    // -- External Conda Environments:
-    facount_conda          = 'bioconda::ucsc-facount=366'
-    bowtie2_conda          = 'bioconda::bowtie2=2.4.4 conda-forge::libgcc-ng=9.3'
-    fastqc_conda           = 'bioconda::fastqc=0.11.9'
-    trimmomatic_conda      = 'bioconda::trimmomatic=0.39'
-    bedtools_conda         = 'bioconda::bedtools=2.29.2'
-    macs2_conda            = 'bioconda::macs2=2.2.6'
-    seacr_conda            = "r=3.6.0 bioconda::seacr=1.3 ${params.bedtools_conda}"
-    samtools_conda         = 'bioconda::samtools=1.9'
-    bedgraphtobigwig_conda = 'conda-forge::libpng conda-forge::libuuid conda-forge::mysql-connector-c conda-forge::openssl conda-forge::zlib bioconda::ucsc-bedgraphtobigwig=377'
-    
-    // -- Comprehensive Conda Environment (If provided, is used for all execution)
-    //all_conda           = ""
-    
-    // Dependency Configuration Using Environment Modules
-    // (values will vary depending on system)
-    // To enable, comment ("//") / delete the conda-configuration and uncomment this configuration.
-    // -- External Tool Modules:
-    //facount_module          = ""  // Ex: "ucsc/20200320"
-    //bowtie2_module          = ""  // Ex: "bowtie2/2.3.5.1"
-    //fastqc_module           = ""  // Ex: "fastqc/0.11.7"
-    //trimmomatic_module      = ""  // Ex: "trimmomatic/0.39"
-    //bedtools_module         = ""  // Ex: "bedtools/2.29.2"
-    //macs2_module            = ""  // Ex: "macs/2.2.7.1"
-    //seacr_module            = ""  // Ex: "R/4.0 seacr/1.3 ${params.bedtools_module}"
-    //bedgraphtobigwig_module = ""  // Ex: "ucsc/20200320"
-    
-    // -- Comprehensive Tool Modules (If provided, is used for all execution)
-    //all_module           = ""  // Ex: "cutruntools/20200104"
-    
     // System Call Settings
     //   Call executed on the system, defaults assume that each tool is available
-    //     on the system PATH (as with conda setup)
+    //     on the system PATH
     //   Can replace with direct path as desired:
     //   Ex:
     //        samtools_call = "samtools"
@@ -217,6 +248,7 @@ params {
 // Locations to store conda and/or singularity environments for reuse.
 conda.cacheDir       = "${projectDir}/envs_conda/"    
 singularity.cacheDir = "${projectDir}/envs_singularity/"    
+singularity.enabled  = false
 
 // ------- Individual Task Settings, Included for Completeness --------
 
