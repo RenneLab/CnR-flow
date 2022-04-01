@@ -41,17 +41,15 @@ Dependency Setup and Validation
       management suite together with Bioconda_ packages to handle 
       pipeline dependencies (currently supported with Linux64 systems,
       with macOS support under development).
+    | For even greater reproducibility, it is now recommended to utilize
+      Docker_ (```-profile docker```) 
+      or Singularity_ (```-profile singularity```)
+      to execute pipeline steps where these options are available. 
     | for more details, or for an alternative configuration, see 
       :ref:`dependency config`
 
     | Once dependency setup has been completed, it can be tested using the 
-      :cl_param:`--mode validate` or :cl_param:`--mode validate_all` run modes.
-
-    .. code-block:: bash
-       :name: mode_validate_all
-
-        # validate all workflow dependencies (recommended)
-        $ nextflow run CnR-flow --mode validate_all
+      :cl_param:`--mode validate` run mode.
 
     .. code-block:: bash
        :name: mode_validate
@@ -80,7 +78,7 @@ Reference Preparation
       with faCount_, using the (Total - N's) method. [faCount_Citation]_ 
       Reference details are written to a ".refinfo.txt" in the same directory.
     
-    .. note:: If normalization is enabled, the same process will be repeated 
+    .. note:: If spike-in normalization is enabled, the same process will be repeated 
               for the fasta file supplied to :param:`norm_ref_fasta`
               for alignments to the spike-in control genome.
 
@@ -158,16 +156,6 @@ Trim
     .. include:: ../../build_info/config_zz_auto_trimmomatic_flags.txt
        :literal:
 
-Retrim
-+++++++++
-
-    | This step is enabled with paramater :flag_param:`do_retrim` 
-      (default: :obj:`true`). Trimming of input fastq[.gz] 
-      files is performed by the kseq_test executable
-      from the CUTRUNTools_ toolkit. [CUTRUNTools_Citation]_ It is 
-      designed to identify and remove very short adapter sequences 
-      from tags that were potentially missed by previous trimming steps.
-
 FastQCPost   
 +++++++++++
 
@@ -195,8 +183,8 @@ Aln_Ref
 
     .. warning:: None of the output alignments (.sam/.bam/.cram) files
        produced in this step (or indeed, anywhere else in the pipeline)
-       are normalized. The only normalized outputs are are genome 
-       genome coverage tracks produced if normalization is enabled.
+       are normalized. The only normalized outputs are genome 
+       coverage tracks produced if normalization is enabled.
 
 Modify_Aln
 ++++++++++
@@ -316,7 +304,7 @@ Aln_Spike
 
         .. include:: ../../build_info/config_zz_auto_norm_mode.txt
            :literal:
-  
+
 Norm_Bdg
 +++++++++
 
@@ -335,7 +323,7 @@ Norm_Bdg
         :math:`scale\_factor = norm\_scale / norm\_factor`
 
     | Where ``norm_factor`` is calculated in the previous step,
-      and the arbitrary ``norm_scale`` is provided by the parameter:
+     and the arbitrary ``norm_scale`` is provided by the parameter:
       :param:`norm_scale`.
     |
     | Default ``norm_scale`` value:
@@ -345,6 +333,43 @@ Norm_Bdg
 
     | The normalized genome coverage track is then created by bedtools_ 
       using the ``-scale`` option. [bedtools_Citation]_
+
+Aln_CPM
++++++++++
+
+    | **(Beta Implementation)**
+    | This step is enabled with paramater :flag_param:`do_norm_cpm`
+      (default: :obj:`false`).
+    | As an alternative option to spike-in normalization, 
+      this "counts-per-million" normalization method
+      calculates a normalization factor for scaling output
+      genome coverage tracks by dividng by the total number of 
+      reference-aligned tags per sample, multiplying by 1M, and then by an
+      arbitrary scaling factor. 
+    
+    | Counts of reference-aligned reads are made using 
+      using Samtools_ (via ``samtools view``). [Samtools_Citation]_
+    |
+    | The per-site scaled count is then calculated: 
+
+        :math:`count_{norm} = (count_{site} * norm\_scale) 1,000,000 / total\_ref\_aln\_pairs`
+    
+    | Thus, the scaling factor used is calucated as: 
+
+        :math:`scale\_factor = norm\_scale * 1,000,000 / total\_ref\_aln\_pairs`
+
+    | The arbitrary ``norm_cpm_scale`` is provided by the parameter:
+      :param:`norm_cpm_scale`.
+    |
+    | Default ``norm_cpm_scale`` value:
+ 
+    .. include:: ../../build_info/config_zz_auto_norm_cpm_scale.txt
+       :literal:
+
+    | The normalized genome coverage track is then created by bedtools_ 
+      using the ``-scale`` option. [bedtools_Citation]_
+ 
+ 
 
 Conversion Steps
 ----------------------

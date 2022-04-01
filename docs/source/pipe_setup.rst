@@ -31,6 +31,10 @@ Dependencies
 
 The following external dependencies are utilized by *CUT&RUN-Flow*:
 
+.. note:: Versions utilized in containers may differ slightly 
+          from those listed based on availabilty.  
+
+
 .. csv-table:: Dependencies
    :header-rows: 1
    :file: ../../build_info/dependencies.tsv
@@ -46,7 +50,7 @@ Dependency Config
 Conda/Bioconda 
 ++++++++++++++
 
-| *CUT&RUN-FLow* comes preconfigured to use the Conda_ package manager, 
+| *CUT&RUN-Flow* comes preconfigured to use the Conda_ package manager, 
   along with tools from the Bioconda_  package 
   suite for automated dependency handling. 
   [Bioconda_Citation]_  Nextflow_ automatically 
@@ -55,6 +59,30 @@ Conda/Bioconda
   usage of conda, see :manpage:`conda`. 
 
     .. include:: ../../build_info/config_zz_auto_conda_config.txt
+       :literal:
+
+Singularity Containers 
+++++++++++++++++++++++
+
+| In addition to a default setup with Conda, *CUT&RUN-Flow* also 
+  comes preconfigured to use Docker_ containers with Singularity_.
+  Nextflow_ automatically 
+  pulls and runs singularity containers as required during the pipeline.
+  This feature is enabled with :obj:`-profile singularity`.
+
+    .. include:: ../../build_info/config_zz_auto_singularity_config.txt
+       :literal:
+
+Docker Containers 
++++++++++++++++++
+
+| In addition to a default setup with Conda, *CUT&RUN-Flow* also 
+  comes preconfigured to use Docker_ containers.
+  Nextflow_ automatically 
+  pulls and runs singularity containers as required during the pipeline.
+  This feature is enabled with :obj:`-profile docker`.
+
+    .. include:: ../../build_info/config_zz_auto_docker_config.txt
        :literal:
 
 Modules 

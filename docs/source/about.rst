@@ -22,7 +22,7 @@ Lead Developer
 Changelog
 ---------
 
-    v0.11-dev:
+    v0.11-dev - ongoing:
         * Refinements
         * Bugfixes
         * Added additional template nextflow.config files for task
@@ -40,8 +40,9 @@ Changelog
         * Migrate aumotated testing from TravisCI to CircleCI
         * Add Beta support for Singularity/Docker dependency configurations
         * Add CircleCI Docker dependency config testing
+        * Add default Singularity and Docker support configs via profiles
 
-    v0.10:
+    v0.10 - 2020-09-04: 
         * Refinements
         * Changed verbose task logging to implementation with "beforeScript"
         * Complete Initial Documentation

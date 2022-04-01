@@ -41,7 +41,7 @@ cp -v ../nextflow.config.task.nodoc.minimal \
 
 # Create File Snippets
 rm -v config_zz_auto*
-egrep "trimmomatic_settings.*=" config_3B_params_shared_stepsettings.txt \
+egrep -A 2 "trimmomatic_adapter_mode" config_3B_params_shared_stepsettings.txt \
      | sed 's/^[[:space:]]*//' \
      | sed 's/trimmomatic_settings[[:space:]]*=/trimmomatic_settings =/' \
      | sed 's/=[[:space:]]*"/= "/' > config_zz_auto_trimmomatic_settings.txt 
@@ -75,24 +75,32 @@ egrep "norm_scale.*=" config_3B_params_shared_stepsettings.txt \
      | sed 's/^[[:space:]]*//' \
      | sed 's/norm_scale[[:space:]]*=/norm_scale =/' \
      | sed 's/=[[:space:]]*"/= "/' > config_zz_auto_norm_scale.txt 
+egrep "norm_cpm_scale.*=" config_3B_params_shared_stepsettings.txt \
+     | sed 's/^[[:space:]]*//' \
+     | sed 's/norm_scale[[:space:]]*=/norm_cpm_scale =/' \
+     | sed 's/=[[:space:]]*"/= "/' > config_zz_auto_norm_cpm_scale.txt 
 egrep "peak_callers.*=" config_3B_params_shared_stepsettings.txt \
      | sed 's/^[[:space:]]*//' \
      | sed 's/peak_callers[[:space:]]*=/peak_callers =/' \
      | sed 's/=[[:space:]]*"/= "/' > config_zz_auto_peak_callers.txt 
-egrep -A 2 "//Macs2 Settings" config_3B_params_shared_stepsettings.txt \
+egrep -A 2 "// Macs2 Settings" config_3B_params_shared_stepsettings.txt \
      | sed 's/^[[:space:]]*//' \
      | sed 's/[[:space:]]*=/=/' \
      | sed 's/=[[:space:]]*/=/' \
      | sed 's/=/ = /' > config_zz_auto_macs_settings.txt 
-egrep -A 4 "//SEACR Settings" config_3B_params_shared_stepsettings.txt \
+egrep -A 4 "// SEACR Settings" config_3B_params_shared_stepsettings.txt \
      | sed 's/^[[:space:]]*//' \
      | sed 's/[[:space:]]*=/=/' \
      | sed 's/=[[:space:]]*/=/' \
      | sed 's/=/ = /' > config_zz_auto_seacr_settings.txt 
-egrep -A 15 "// -- External Conda Environments" config_3A_params_pipe_dependencies.txt \
+egrep -A 11 "Using Anaconda" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_conda_config.txt
-egrep -A 17 "// Dependency Configuration Using Environment Modules" config_3A_params_pipe_dependencies.txt \
+egrep -A 11 "// Dependency Configuration Using Environment Modules" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_module_config.txt
+egrep -A 15 "with Singularity" config_3A_params_pipe_dependencies.txt \
+     | sed 's/^[[:space:]]*//' > config_zz_auto_singularity_config.txt
+egrep -A 18 "with Docker" config_3A_params_pipe_dependencies.txt \
+     | sed 's/^[[:space:]]*//' > config_zz_auto_docker_config.txt
 egrep -A 20 "// System Call Settings" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_call_config.txt
 echo "params {" > config_zz_auto_params_header.txt

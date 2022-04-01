@@ -428,7 +428,7 @@ if( ['initiate'].contains( params.mode ) ) {
 }
 
 // -- Run Mode: validate
-if( ['validate', 'validate_all'].contains( params.mode ) ) { 
+if( ['validate'].contains( params.mode ) ) { 
     process CnR_Validate {
         tag             { title }
         // Previous step ensures only one or another (non-null) resource is provided:
