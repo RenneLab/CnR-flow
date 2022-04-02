@@ -1613,9 +1613,9 @@ if( params.mode == 'run' ) {
             mkdir !{params.aln_dir_spike}
             echo "Aligning file name base: !{name} ... utilizing Bowtie2"
 
-            # Count Total Read Pairs
-            PAIR_NUM="$(!{count_command})"
-            MESSAGE="Counted ${PAIR_NUM} Fastq Read Pairs."
+            # Count Total Reads
+            READ_NUM="$(!{count_command})"
+            MESSAGE="Counted ${READ_NUM} Fastq Reads."
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" > !{aln_count_report}
 
@@ -1632,16 +1632,13 @@ if( params.mode == 'run' ) {
                                    -S !{aln_spike_sam} \\
                                    --al-conc-gz !{aln_spike_fq}
                                           
-            RAW_SPIKE_COUNT="$(!{params.samtools_call} view -Sc !{aln_spike_sam})"
-            #bc <<< "${RAW_SPIKE_COUNT}/2" > !{aln_spike_count}
-            echo $(expr ${RAW_SPIKE_COUNT} / 2) > !{aln_spike_count}
-            SPIKE_COUNT=$(cat !{aln_spike_count})
-            #SPIKE_PERCENT=$(bc -l <<< "scale=8; (${SPIKE_COUNT}/${PAIR_NUM})*100")
-            SPIKE_PERCENT=$(python <<< "print((${SPIKE_COUNT}/${PAIR_NUM})*100)")
+            SPIKE_COUNT="$(!{params.samtools_call} view -Sc !{aln_spike_sam})"
+            echo "${SPIKE_COUNT}" > !{aln_spike_count}
+            SPIKE_PERCENT=$(python <<< "print((${SPIKE_COUNT}/${READ_NUM})*100)")
           
             set +v +H +o history
 
-            MESSAGE="${SPIKE_COUNT} ( ${SPIKE_PERCENT}% ) Total Spike-In Read Pairs Detected"
+            MESSAGE="${SPIKE_COUNT} ( ${SPIKE_PERCENT}% ) Total Spike-In Reads Detected"
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" >> !{aln_count_report}
 
@@ -1657,14 +1654,11 @@ if( params.mode == 'run' ) {
                                    -2 !{aln_spike_fq_2} \\
                                    -S !{aln_cross_sam}
 
-            RAW_CROSS_COUNT="$(!{params.samtools_call} view -Sc !{aln_cross_sam})"
-            #bc <<< "${RAW_CROSS_COUNT}/2" > !{aln_cross_count}
-            echo ${RAW_CROSS_COUNT}
-            echo $(expr ${RAW_CROSS_COUNT} / 2) > !{aln_cross_count}
-            CROSS_COUNT=$(cat !{aln_cross_count})
+            CROSS_COUNT="$(!{params.samtools_call} view -Sc !{aln_cross_sam})"
+            echo "${CROSS_COUNT}" > !{aln_cross_count}
             set +v +H +o history
 
-            MESSAGE="${CROSS_COUNT} Read Pairs Detected that Cross-Map to Reference Genome"
+            MESSAGE="${CROSS_COUNT} Reads Detected that Cross-Map to Reference Genome"
             echo -e "\\n${MESSAGE}\\n"
             echo    "${MESSAGE}" >> !{aln_count_report}
          
@@ -1686,8 +1680,8 @@ if( params.mode == 'run' ) {
             echo -e "\\n${MESSAGE}\\n"
             echo -e "${MESSAGE}" >> !{aln_count_report}
 
-            echo -e "name,fq_pairs,spike_aln_pairs,spike_aln_pct,cross_aln_pairs,cross_aln_pct,adj_aln_pairs,adj_aln_pct" > !{aln_count_csv}
-            echo -e "!{name},${PAIR_NUM},${SPIKE_COUNT},${SPIKE_PERCENT},${CROSS_COUNT},CROSS_PCT,${ADJ_COUNT},${ADJ_PERCENT}" >> !{aln_count_csv}
+            echo -e "name,fq_reads,spike_aln_pairs,spike_aln_pct,cross_aln_pairs,cross_aln_pct,adj_aln_pairs,adj_aln_pct" > !{aln_count_csv}
+            echo -e "!{name},${READ_NUM},${SPIKE_COUNT},${SPIKE_PERCENT},${CROSS_COUNT},CROSS_PCT,${ADJ_COUNT},${ADJ_PERCENT}" >> !{aln_count_csv}
 
             echo "Step 3, Part A, Spike-In Alignment, Complete."
             '''
@@ -1826,13 +1820,10 @@ if( params.mode == 'run' ) {
             echo "Calculating CPM Scaling Factor..."
 
             set -v -H -o history
-            RAW_ALNS_COUNT="$(!{params.samtools_call} view -Sc !{aln_dir_norm_cpm}/!{aln_cram})"
-            #bc <<< "${RAW_ALNS_COUNT}/2" > aln_pair_count.txt
-            echo $(expr ${RAW_ALNS_COUNT} / 2) > aln_pair_count.txt
-            ALN_PAIR_COUNT=$(cat aln_pair_count.txt)
+            ALNS_COUNT="$(!{params.samtools_call} view -Sc !{aln_dir_norm_cpm}/!{aln_cram})"
+            echo "${ALNS_COUNT}" > aln_count.txt
             
-            CALC="!{params.norm_cpm_scale}*1000000/${ALN_PAIR_COUNT}"
-            #SCALE=$(bc -l <<< "scale=8; $CALC")
+            CALC="!{params.norm_cpm_scale}*1000000/${ALNS_COUNT}"
             SCALE=$(python <<< "print($CALC)")
             set +v +H +o history
 
