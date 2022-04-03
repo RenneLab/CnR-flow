@@ -1664,11 +1664,9 @@ if( params.mode == 'run' ) {
          
             # Get Difference Between All Spike-In and Cross-Mapped Reads
             OPERATION="${SPIKE_COUNT} - ${CROSS_COUNT}"
-            #bc <<< "${OPERATION}" > !{aln_adj_count}  
             echo $(expr ${OPERATION}) > !{aln_adj_count}  
             ADJ_COUNT=$(cat !{aln_adj_count})
-            #ADJ_PERCENT=$(bc -l <<< "scale=8; (${ADJ_COUNT}/${PAIR_NUM})*100")
-            ADJ_PERCENT=$(python <<< "print((${ADJ_COUNT}/${PAIR_NUM})*100)")
+            ADJ_PERCENT=$(python <<< "print((${ADJ_COUNT}/${READ_NUM})*100)")
 
             MESSAGE="$(cat !{aln_adj_count}) (${OPERATION}, ${ADJ_PERCENT}) Adjusted Spike-in Reads Detected."
             echo -e "\\n${MESSAGE}\\n"
