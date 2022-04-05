@@ -34,7 +34,7 @@ with open(os.path.join('..', 'nextflow.config'), 'r') as config_file:
             project = line.split('name =')[1].strip().strip('"').strip("'")
 
 #project = 'CUT&RUN-Flow'
-copyright = '2020, Daniel Stribling'
+copyright = '2022, Daniel Stribling'
 
 # The full version, including alpha/beta/rc tags
 release = version

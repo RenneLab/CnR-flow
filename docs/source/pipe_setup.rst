@@ -65,7 +65,8 @@ Singularity Containers
 ++++++++++++++++++++++
 
 | In addition to a default setup with Conda, *CUT&RUN-Flow* also 
-  comes preconfigured to use Docker_ containers with Singularity_.
+  comes preconfigured to use Docker_ containers 
+  from the BioContainers_ project using Singularity_. [BioContainers_Citation]_
   Nextflow_ automatically 
   pulls and runs singularity containers as required during the pipeline.
   This feature is enabled with :obj:`-profile singularity`.

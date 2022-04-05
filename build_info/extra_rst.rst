@@ -8,3 +8,5 @@
 .. _UCSC faCount: https://hgdownload.cse.ucsc.edu/admin/exe/
 .. _UCSC bedGraphToBigWig: https://hgdownload.cse.ucsc.edu/admin/exe/
 .. _CUT&RUN-Tools: https://bitbucket.org/qzhudfci/cutruntools/src
+.. _BioContainers: https://biocontainers.pro/
+.. _Bioconda: https://bioconda.github.io/

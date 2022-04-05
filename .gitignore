@@ -17,3 +17,4 @@ test_pipe/test_reference/grch38_1kgmaj.fa.gz
 test_pipe/test_reference/grch38_1kgmaj.*.bt2
 test_pipe/test_reference/*.zip
 test_pipe/test_reference/*README*
+.DS_Store

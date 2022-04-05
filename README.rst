@@ -38,19 +38,20 @@ Pipeline Design:
       `Conda`_ / `Bioconda`_, `Docker`_, `Singularity`_ or `Environment Modules`_.
     
 Dependencies:
-    | In addition to standard local configurations, Nextflow allows handling of 
+    | In addition to local configurations, Nextflow handles 
       dependencies in separated working environments within the same pipeline 
       using `Conda`_ or `Environment Modules`_ within your working environment,
       or using container-encapsulated execution with `Docker`_ or `Singularity`_. 
-      **CnR-flow is pre-configured to acquire and utilize dependencies
-      using Conda, Docker, and Singularity environments with no
-      additional required setup.**
+      **CnR-flow is pre-configured to auto-acquire dependencies with no additional setup,
+      either using Conda recipes from the Bioconda project, 
+      or by using Docker or Singularity to execute Docker images hosted by the
+      BioContainers project** (`Bioconda`_; `BioContainers`_).
+
     | CUT&RUN-Flow utilizes 
       `UCSC Genome Browser Tools`_ and  `Samtools`_
       for reference library preparation,
       `FastQC`_ for tag quality control,
-      `Trimmomatic`_ and `kseq_test`_ (`CUT&RUN-Tools`_) 
-      for tag trimming, `Bowtie2`_ for tag alignment,
+      `Trimmomatic`_ for tag trimming, `Bowtie2`_ for tag alignment,
       `Samtools`_, `bedtools`_ and `UCSC Genome Browser Tools`_
       for alignment manipulation, and `MACS2`_ and/or `SEACR`_
       for peak calling, as well as their associated language subdependencies of
@@ -215,6 +216,7 @@ Quickstart
 .. _Environment Modules: http://modules.sourceforge.net/
 .. _Docker: http://www.docker.com/
 .. _Singularity: https://sylabs.io/
+.. _BioContainers: https://biocontainers.pro/
 .. _UCSC Genome Browser Tools: https://hgdownload.cse.ucsc.edu/admin/exe/
 .. _kseq_test: https://bitbucket.org/qzhudfci/cutruntools/src
 .. _CUT&RUN-Tools: https://bitbucket.org/qzhudfci/cutruntools/src

@@ -3,6 +3,7 @@
 .. _CUTRUNTools: https://bitbucket.org/qzhudfci/cutruntools/src
 .. _SEACR: https://github.com/FredHutch/SEACR
 .. _R: https://www.r-project.org/
+.. _BioContainers: https://biocontainers.pro/
 .. _Bowtie2: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 .. _faCount: https://hgdownload.cse.ucsc.edu/admin/exe/
 .. _Samtools: http://www.htslib.org/
@@ -21,3 +22,5 @@
 .. _UCSC faCount: https://hgdownload.cse.ucsc.edu/admin/exe/
 .. _UCSC bedGraphToBigWig: https://hgdownload.cse.ucsc.edu/admin/exe/
 .. _CUT&RUN-Tools: https://bitbucket.org/qzhudfci/cutruntools/src
+.. _BioContainers: https://biocontainers.pro/
+.. _Bioconda: https://bioconda.github.io/
