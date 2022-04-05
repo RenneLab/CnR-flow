@@ -97,9 +97,9 @@ egrep -A 11 "Using Anaconda" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_conda_config.txt
 egrep -A 11 "// Dependency Configuration Using Environment Modules" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_module_config.txt
-egrep -A 17 "with Singularity" config_3A_params_pipe_dependencies.txt \
+egrep -A 16 "with Singularity" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_singularity_config.txt
-egrep -A 20 "with Docker" config_3A_params_pipe_dependencies.txt \
+egrep -A 19 "with Docker" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_docker_config.txt
 egrep -A 20 "// System Call Settings" config_3A_params_pipe_dependencies.txt \
      | sed 's/^[[:space:]]*//' > config_zz_auto_call_config.txt
