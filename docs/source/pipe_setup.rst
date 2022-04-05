@@ -53,7 +53,8 @@ Conda/Bioconda
 | *CUT&RUN-Flow* comes preconfigured to use the Conda_ package manager, 
   along with tools from the Bioconda_  package 
   suite for automated dependency handling. 
-  [Bioconda_Citation]_  Nextflow_ automatically 
+  [Bioconda_Citation]_  
+| Nextflow_ automatically 
   acquires, stores, and activates each conda environment as it is
   required in the pipeline. For more information on Nextflow's,
   usage of conda, see :manpage:`conda`. 
@@ -67,7 +68,7 @@ Singularity Containers
 | In addition to a default setup with Conda, *CUT&RUN-Flow* also 
   comes preconfigured to use Docker_ containers 
   from the BioContainers_ project using Singularity_. [BioContainers_Citation]_
-  Nextflow_ automatically 
+| Nextflow_ automatically 
   pulls and runs singularity containers as required during the pipeline.
   This feature is enabled with :obj:`-profile singularity`.
 
@@ -79,7 +80,7 @@ Docker Containers
 
 | In addition to a default setup with Conda, *CUT&RUN-Flow* also 
   comes preconfigured to use Docker_ containers.
-  Nextflow_ automatically 
+| Nextflow_ automatically 
   pulls and runs singularity containers as required during the pipeline.
   This feature is enabled with :obj:`-profile docker`.
 

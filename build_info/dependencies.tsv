@@ -1,11 +1,11 @@
-**Dependency**	**Tested Ver.**	**Citation**	**Default Conda**	**Default Container**
+**Dependency**	**Min-Tested Ver.**	**Citation**	**Default Conda**	**Default Container(s)**
 Nextflow	20.10.4	[Nextflow_Citation]_	N/A	N/A
-UCSC-faCount	366	[faCount_Citation]_	bioconda::ucsc-facount=366'	quay.io/biocontainers/ucsc-facount:366--h5eb252a_0
-Bowtie2	2.4.4	[Bowtie2_Citation]_	bioconda::bowtie2=2.4.1	quay.io/biocontainers/bowtie2:2.4.4--py38he5f0661_1
-Samtools	1.9	[Samtools_Citation]_	bioconda::samtools=1.9 	quay.io/biocontainers/samtools:1.13--h8c37831_0
+UCSC-faCount	366	[faCount_Citation]_	bioconda::ucsc-facount=366'	quay.io/biocontainers/ucsc-facount:366--h5eb252a_0; docker://quay.io/biocontainers/mulled-v2-fc325951871d402a00bdf9d0e712a5b81b8e0cb3:38034b9703d6561a40bcaf2f1ec16f8b158fde97-0
+Bowtie2	2.4.4	[Bowtie2_Citation]_	bioconda::bowtie2=2.4.1	quay.io/biocontainers/bowtie2:2.4.4--py38he5f0661_1; docker://quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:b6524911af823c7c52518f6c886b86916d062940-0
+Samtools	1.9	[Samtools_Citation]_	bioconda::samtools=1.9 	quay.io/biocontainers/samtools:1.13--h8c37831_0; docker://quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:b6524911af823c7c52518f6c886b86916d062940-0; docker://quay.io/biocontainers/mulled-v2-fc325951871d402a00bdf9d0e712a5b81b8e0cb3:38034b9703d6561a40bcaf2f1ec16f8b158fde97-0
 FastQC	0.11.9	[FastQC_Citation]_	bioconda::fastqc=0.11.9	quay.io/biocontainers/fastqc:0.11.9--hdfd78af_1
 Trimmomatic	0.39	[Trimmomatic_Citation]_	bioconda::trimmomatic=0.39	quay.io/biocontainers/trimmomatic:0.39--1
-bedtools	2.29.2	[bedtools_Citation]_	bioconda::bedtools=2.29.2  	quay.io/biocontainers/bedtools:2.27.1--h9a82719_5
+bedtools	2.29.2	[bedtools_Citation]_	bioconda::bedtools=2.29.2  	quay.io/biocontainers/bedtools:2.27.1--h9a82719_5; docker://quay.io/biocontainers/mulled-v2-fc325951871d402a00bdf9d0e712a5b81b8e0cb3:38034b9703d6561a40bcaf2f1ec16f8b158fde97-0
 UCSC-bedGraphToBigWig	377	[bedGraphToBigWig_Citation]_	conda-forge::libgcc-ng conda-forge::libpng conda-forge::libuuid conda-forge::mysql-connector-c conda-forge::openssl conda-forge::zlib bioconda::ucsc-bedgraphtobigwig=377  	quay.io/biocontainers/ucsc-bedgraphtobigwig:377--h0b8a92a_2
 MACS2	2.2.6	[MACS2_Citation]_	bioconda::macs2=2.2.6  	quay.io/biocontainers/macs2:2.2.6--py37h516909a_0
 R	3.6.0	[R_Citation]_	r=3.6.0	N/A
