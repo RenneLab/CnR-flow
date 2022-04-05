@@ -36,6 +36,7 @@ profiles {
         params.samtools_bedtools_container = "docker://quay.io/biocontainers/mulled-v2-fc325951871d402a00bdf9d0e712a5b81b8e0cb3:38034b9703d6561a40bcaf2f1ec16f8b158fde97-0" 
         // Mulled: samtools=1.14.0,bedtools=2.30.0,ucsc-facount=377,python=3.8
         params.samtools_facount_container  = "${params.samtools_bedtools_container}"
+        params.bedtools_container          = "${params.samtools_bedtools_container}"
 
         params.trimmomatic_adapterpath     = "/usr/local/share/trimmomatic/adapters/TruSeq3-PE-2.fa"      
     }
@@ -59,6 +60,7 @@ profiles {
         params.samtools_bedtools_container = "quay.io/biocontainers/mulled-v2-fc325951871d402a00bdf9d0e712a5b81b8e0cb3:38034b9703d6561a40bcaf2f1ec16f8b158fde97-0"
         // Mulled: samtools=1.14.0,bedtools=2.30.0,ucsc-facount=377,python=3.8
         params.samtools_facount_container  = "${params.samtools_bedtools_container}"
+        params.bedtools_container          = "${params.samtools_bedtools_container}"
 
         params.trimmomatic_adapterpath     = "/usr/local/share/trimmomatic/adapters/TruSeq3-PE-2.fa"      
     }
